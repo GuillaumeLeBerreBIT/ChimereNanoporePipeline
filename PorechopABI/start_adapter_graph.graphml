@@ -1,0 +1,1753 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d1" for="node" attr.name="path" attr.type="string" />
+  <key id="d0" for="node" attr.name="weight" attr.type="long" />
+  <graph edgedefault="directed">
+    <node id="CTTCGTTCAGTTACGT">
+      <data key="d0">8077</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="TACTTCGTTCAGTTAC">
+      <data key="d0">7858</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="TCGTTCAGTTACGTAT">
+      <data key="d0">7496</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="ACTTCGTTCAGTTACG">
+      <data key="d0">7491</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="TTCGTTCAGTTACGTA">
+      <data key="d0">7454</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="CGTTCAGTTACGTATT">
+      <data key="d0">7389</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="GTTCAGTTACGTATTG">
+      <data key="d0">7117</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="GTACTTCGTTCAGTTA">
+      <data key="d0">7019</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="TGTACTTCGTTCAGTT">
+      <data key="d0">6982</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="TTCAGTTACGTATTGC">
+      <data key="d0">6844</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="TCAGTTACGTATTGCT">
+      <data key="d0">6780</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="CTTCGTTCAGTTACAT">
+      <data key="d0">5858</data>
+      <data key="d1" />
+    </node>
+    <node id="TGCTTCGTTCAGTTAC">
+      <data key="d0">5824</data>
+      <data key="d1" />
+    </node>
+    <node id="ATACTTCGTTCAGTTA">
+      <data key="d0">5575</data>
+      <data key="d1" />
+    </node>
+    <node id="TTGTACTTCGTTCAGT">
+      <data key="d0">5551</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="TTCGTTCAGTTACGTG">
+      <data key="d0">5494</data>
+      <data key="d1" />
+    </node>
+    <node id="GCTTCGTTCAGTTACG">
+      <data key="d0">5485</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTACGTGT">
+      <data key="d0">5482</data>
+      <data key="d1" />
+    </node>
+    <node id="TATACTTCGTTCAGTT">
+      <data key="d0">5434</data>
+      <data key="d1" />
+    </node>
+    <node id="CTTCGTTCAGTTGCGT">
+      <data key="d0">5407</data>
+      <data key="d1" />
+    </node>
+    <node id="ACTTCGTTCAGTTACA">
+      <data key="d0">5379</data>
+      <data key="d1" />
+    </node>
+    <node id="TACTTCGTTCAGTTGC">
+      <data key="d0">5315</data>
+      <data key="d1" />
+    </node>
+    <node id="CTTCCGTTCAGTTACG">
+      <data key="d0">5254</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCCGTTCAGTTACGT">
+      <data key="d0">5226</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTACTTCGTTCAGTT">
+      <data key="d0">5217</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTACATA">
+      <data key="d0">5210</data>
+      <data key="d1" />
+    </node>
+    <node id="ACTTCCGTTCAGTTAC">
+      <data key="d0">5178</data>
+      <data key="d1" />
+    </node>
+    <node id="TACTTCCGTTCAGTTA">
+      <data key="d0">5170</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTGCTC">
+      <data key="d0">5134</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="CTTCGTTCCAGTTACG">
+      <data key="d0">5117</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACTTCGTTCAGTTA">
+      <data key="d0">5101</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCCAGTTACGT">
+      <data key="d0">5091</data>
+      <data key="d1" />
+    </node>
+    <node id="TACTTCGTTCAGTTAT">
+      <data key="d0">5064</data>
+      <data key="d1" />
+    </node>
+    <node id="TACTTCGTTCCAGTTA">
+      <data key="d0">5040</data>
+      <data key="d1" />
+    </node>
+    <node id="ACTTCGTTCCAGTTAC">
+      <data key="d0">5038</data>
+      <data key="d1" />
+    </node>
+    <node id="CACTTCGTTCAGTTAC">
+      <data key="d0">4974</data>
+      <data key="d1" />
+    </node>
+    <node id="CCTTCGTTCAGTTACG">
+      <data key="d0">4970</data>
+      <data key="d1" />
+    </node>
+    <node id="ATGTACTTCGTTCAGT">
+      <data key="d0">4961</data>
+      <data key="d1" />
+    </node>
+    <node id="GTGCTTCGTTCAGTTA">
+      <data key="d0">4953</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACGTATTA">
+      <data key="d0">4914</data>
+      <data key="d1" />
+    </node>
+    <node id="ACTTCGTTCAGTTGCG">
+      <data key="d0">4910</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCCAGTTACGTAT">
+      <data key="d0">4889</data>
+      <data key="d1" />
+    </node>
+    <node id="TAGTACTTCGTTCAGT">
+      <data key="d0">4874</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTGCTA">
+      <data key="d0">4873</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACGTATTGT">
+      <data key="d0">4862</data>
+      <data key="d1" />
+    </node>
+    <node id="ACGTTCAGTTACGTAT">
+      <data key="d0">4861</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACGTATTT">
+      <data key="d0">4854</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTGCTG">
+      <data key="d0">4852</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCCAGTTACGTATT">
+      <data key="d0">4849</data>
+      <data key="d1" />
+    </node>
+    <node id="TGTGCTTCGTTCAGTT">
+      <data key="d0">4834</data>
+      <data key="d1" />
+    </node>
+    <node id="TCCGTTCAGTTACGTA">
+      <data key="d0">4832</data>
+      <data key="d1" />
+    </node>
+    <node id="CCGTTCAGTTACGTAT">
+      <data key="d0">4822</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTACGTACT">
+      <data key="d0">4820</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTGCGTA">
+      <data key="d0">4800</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTTCAGTTACGTA">
+      <data key="d0">4772</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTCAGTTACGTATT">
+      <data key="d0">4771</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTGCGTAT">
+      <data key="d0">4770</data>
+      <data key="d1" />
+    </node>
+    <node id="GATTCAGTTACGTATT">
+      <data key="d0">4764</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCCAGTTACGTA">
+      <data key="d0">4760</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTGCTT">
+      <data key="d0">4756</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTGCGTATT">
+      <data key="d0">4750</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTACGTAC">
+      <data key="d0">4689</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACGTATTTG">
+      <data key="d0">4686</data>
+      <data key="d1" />
+    </node>
+    <node id="GTGTACTTCGTTCAGT">
+      <data key="d0">4671</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACGTATTAC">
+      <data key="d0">4638</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCCAGTTACGTATTG">
+      <data key="d0">4612</data>
+      <data key="d1" />
+    </node>
+    <node id="GTACTTCGTTCAGTTG">
+      <data key="d0">4605</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTATTACT">
+      <data key="d0">4572</data>
+      <data key="d1" />
+    </node>
+    <node id="GTACTTCCGTTCAGTT">
+      <data key="d0">4552</data>
+      <data key="d1" />
+    </node>
+    <node id="TTTCAGTTACGTATTG">
+      <data key="d0">4552</data>
+      <data key="d1" />
+    </node>
+    <node id="GCACTTCGTTCAGTTA">
+      <data key="d0">4523</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTGCGTATTG">
+      <data key="d0">4509</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTATTGTT">
+      <data key="d0">4506</data>
+      <data key="d1" />
+    </node>
+    <node id="ATTCAGTTACGTATTG">
+      <data key="d0">4496</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTACTTCGTTCAGTT">
+      <data key="d0">4462</data>
+      <data key="d1" />
+    </node>
+    <node id="GTACTTCGTTCCAGTT">
+      <data key="d0">4447</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTTGCT">
+      <data key="d0">4422</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTATTTGC">
+      <data key="d0">4411</data>
+      <data key="d1" />
+    </node>
+    <node id="TCCAGTTACGTATTGC">
+      <data key="d0">4328</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTGCGTATTGC">
+      <data key="d0">4319</data>
+      <data key="d1" />
+    </node>
+    <node id="CCAGTTACGTATTGCT">
+      <data key="d0">4292</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTGCGTATTGCT">
+      <data key="d0">4276</data>
+      <data key="d1" />
+    </node>
+    <node id="ATTGTACTTCGTTCAG">
+      <data key="d0">4245</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="TCAGTTACGTATTGCC">
+      <data key="d0">4220</data>
+      <data key="d1" />
+    </node>
+    <node id="TGTACTTCCGTTCAGT">
+      <data key="d0">4199</data>
+      <data key="d1" />
+    </node>
+    <node id="TGTACTTCGTTCCAGT">
+      <data key="d0">4116</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTCA">
+      <data key="d0">3974</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="AGTTACGTATTGCTCT">
+      <data key="d0">3933</data>
+      <data key="d1" />
+    </node>
+    <node id="ATGCTTCGTTCAGTTA">
+      <data key="d0">3717</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTAC">
+      <data key="d0">3700</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTGC">
+      <data key="d0">3694</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTTA">
+      <data key="d0">3677</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTGTACTTCGTTCAG">
+      <data key="d0">3673</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTGA">
+      <data key="d0">3660</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTAT">
+      <data key="d0">3654</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTCG">
+      <data key="d0">3646</data>
+      <data key="d1" />
+    </node>
+    <node id="TATGCTTCGTTCAGTT">
+      <data key="d0">3641</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTGT">
+      <data key="d0">3636</data>
+      <data key="d1" />
+    </node>
+    <node id="ATTACTTCGTTCAGTT">
+      <data key="d0">3613</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTTC">
+      <data key="d0">3585</data>
+      <data key="d1" />
+    </node>
+    <node id="TTGTGCTTCGTTCAGT">
+      <data key="d0">3500</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTAG">
+      <data key="d0">3470</data>
+      <data key="d1" />
+    </node>
+    <node id="GCTTCGTTCAGTTACA">
+      <data key="d0">3457</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTGTACTTCGTTCAG">
+      <data key="d0">3447</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTACATG">
+      <data key="d0">3436</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTTG">
+      <data key="d0">3428</data>
+      <data key="d1" />
+    </node>
+    <node id="CTTCGTTCAGTTGCAT">
+      <data key="d0">3401</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTACATGT">
+      <data key="d0">3389</data>
+      <data key="d1" />
+    </node>
+    <node id="GTATACTTCGTTCAGT">
+      <data key="d0">3379</data>
+      <data key="d1" />
+    </node>
+    <node id="TGCTTCGTTCAGTTGC">
+      <data key="d0">3354</data>
+      <data key="d1" />
+    </node>
+    <node id="AATACTTCGTTCAGTT">
+      <data key="d0">3309</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTCC">
+      <data key="d0">3228</data>
+      <data key="d1" />
+    </node>
+    <node id="CTTCCGTTCAGTTACA">
+      <data key="d0">3224</data>
+      <data key="d1" />
+    </node>
+    <node id="ATACTTCGTTCAGTTG">
+      <data key="d0">3199</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTAA">
+      <data key="d0">3196</data>
+      <data key="d1" />
+    </node>
+    <node id="TTTGTACTTCGTTCAG">
+      <data key="d0">3186</data>
+      <data key="d1" />
+    </node>
+    <node id="TTGCTTCGTTCAGTTA">
+      <data key="d0">3179</data>
+      <data key="d1" />
+    </node>
+    <node id="TTGTACTTCCGTTCAG">
+      <data key="d0">3158</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTACGTGTG">
+      <data key="d0">3156</data>
+      <data key="d1" />
+    </node>
+    <node id="ATATACTTCGTTCAGT">
+      <data key="d0">3155</data>
+      <data key="d1" />
+    </node>
+    <node id="GCCTTCGTTCAGTTAC">
+      <data key="d0">3109</data>
+      <data key="d1" />
+    </node>
+    <node id="CATACTTCGTTCAGTT">
+      <data key="d0">3109</data>
+      <data key="d1" />
+    </node>
+    <node id="TTGTACTTCGTTCCAG">
+      <data key="d0">3098</data>
+      <data key="d1" />
+    </node>
+    <node id="AATGTACTTCGTTCAG">
+      <data key="d0">3087</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTTT">
+      <data key="d0">3072</data>
+      <data key="d1" />
+    </node>
+    <node id="GTATGCTTCGTTCAGT">
+      <data key="d0">3061</data>
+      <data key="d1" />
+    </node>
+    <node id="CTTCGTTCAGTTACAC">
+      <data key="d0">3039</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTACTC">
+      <data key="d0">3036</data>
+      <data key="d1" />
+    </node>
+    <node id="TAATACTTCGTTCAGT">
+      <data key="d0">3020</data>
+      <data key="d1" />
+    </node>
+    <node id="TATTACTTCGTTCAGT">
+      <data key="d0">3016</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTACATT">
+      <data key="d0">3016</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACGTGTGT">
+      <data key="d0">2991</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTACATGTT">
+      <data key="d0">2989</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTATTGTG">
+      <data key="d0">2976</data>
+      <data key="d1" />
+    </node>
+    <node id="ACTTCGTTCAGTTGCA">
+      <data key="d0">2974</data>
+      <data key="d1" />
+    </node>
+    <node id="CTTCACGTTCAGTTAC">
+      <data key="d0">2970</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCAT">
+      <data key="d0">2952</data>
+      <data key="d1">greedy</data>
+    </node>
+    <node id="GTTACGTATTGCTCTA">
+      <data key="d0">2948</data>
+      <data key="d1" />
+    </node>
+    <node id="GTAGTACTTCGTTCAG">
+      <data key="d0">2924</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGCTGG">
+      <data key="d0">2900</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTACACG">
+      <data key="d0">2898</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTACACGT">
+      <data key="d0">2872</data>
+      <data key="d1" />
+    </node>
+    <node id="CTTCGTTCAGTTGTAT">
+      <data key="d0">2864</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTGTTA">
+      <data key="d0">2851</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACGTATTAT">
+      <data key="d0">2812</data>
+      <data key="d1" />
+    </node>
+    <node id="CTTCGTTCAGTTGTGT">
+      <data key="d0">2807</data>
+      <data key="d1" />
+    </node>
+    <node id="ACACTTCGTTCAGTTA">
+      <data key="d0">2803</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTACTA">
+      <data key="d0">2784</data>
+      <data key="d1" />
+    </node>
+    <node id="TACTTCGTTCAGTTGT">
+      <data key="d0">2772</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCTG">
+      <data key="d0">2760</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCAG">
+      <data key="d0">2743</data>
+      <data key="d1" />
+    </node>
+    <node id="GTGTGCTTCGTTCAGT">
+      <data key="d0">2724</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACGTGTGTG">
+      <data key="d0">2715</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCGT">
+      <data key="d0">2704</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTACT">
+      <data key="d0">2700</data>
+      <data key="d1" />
+    </node>
+    <node id="ATGTGCTTCGTTCAGT">
+      <data key="d0">2698</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTACATTG">
+      <data key="d0">2693</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTACTT">
+      <data key="d0">2691</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCGA">
+      <data key="d0">2680</data>
+      <data key="d1" />
+    </node>
+    <node id="GATGTACTTCGTTCAG">
+      <data key="d0">2662</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGTA">
+      <data key="d0">2660</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGAT">
+      <data key="d0">2649</data>
+      <data key="d1" />
+    </node>
+    <node id="ACTTCGTTCAGTTGTA">
+      <data key="d0">2648</data>
+      <data key="d1" />
+    </node>
+    <node id="TACTTCACGTTCAGTT">
+      <data key="d0">2646</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTACATTAT">
+      <data key="d0">2642</data>
+      <data key="d1" />
+    </node>
+    <node id="TCACGTTCAGTTACGT">
+      <data key="d0">2635</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTACACGTA">
+      <data key="d0">2629</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTCA">
+      <data key="d0">2625</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACGTATTTA">
+      <data key="d0">2616</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTGTGT">
+      <data key="d0">2612</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCACGTTCAGTTACG">
+      <data key="d0">2591</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTATTTGT">
+      <data key="d0">2561</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACACGTAT">
+      <data key="d0">2553</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTACATTA">
+      <data key="d0">2547</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTATTATT">
+      <data key="d0">2547</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCAC">
+      <data key="d0">2528</data>
+      <data key="d1">heavy</data>
+    </node>
+    <node id="GTTACGTATTGCTTAT">
+      <data key="d0">2511</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTAGT">
+      <data key="d0">2508</data>
+      <data key="d1" />
+    </node>
+    <node id="CACGTTCAGTTACGTA">
+      <data key="d0">2506</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTACA">
+      <data key="d0">2502</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACGTGTGCT">
+      <data key="d0">2501</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTATG">
+      <data key="d0">2496</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTCT">
+      <data key="d0">2489</data>
+      <data key="d1" />
+    </node>
+    <node id="ACTTCACGTTCAGTTA">
+      <data key="d0">2485</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACGTGTGC">
+      <data key="d0">2480</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGAC">
+      <data key="d0">2467</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTATA">
+      <data key="d0">2463</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACACGTATT">
+      <data key="d0">2460</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACATTATT">
+      <data key="d0">2456</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTGA">
+      <data key="d0">2453</data>
+      <data key="d1" />
+    </node>
+    <node id="ATTTCAGTTACGTATT">
+      <data key="d0">2446</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTAG">
+      <data key="d0">2431</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCTC">
+      <data key="d0">2425</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTGTATT">
+      <data key="d0">2419</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCCA">
+      <data key="d0">2408</data>
+      <data key="d1" />
+    </node>
+    <node id="ACTTCGTTCAGTTGTG">
+      <data key="d0">2395</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTATC">
+      <data key="d0">2391</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGTC">
+      <data key="d0">2387</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACGTATTGTGC">
+      <data key="d0">2382</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCCT">
+      <data key="d0">2379</data>
+      <data key="d1" />
+    </node>
+    <node id="TTATGCTTCGTTCAGT">
+      <data key="d0">2378</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTATTTAT">
+      <data key="d0">2374</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGTG">
+      <data key="d0">2327</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTAGC">
+      <data key="d0">2326</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTGT">
+      <data key="d0">2325</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGTGCT">
+      <data key="d0">2320</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACGTACTC">
+      <data key="d0">2314</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTAAT">
+      <data key="d0">2297</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCAA">
+      <data key="d0">2289</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTTA">
+      <data key="d0">2280</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGAG">
+      <data key="d0">2267</data>
+      <data key="d1" />
+    </node>
+    <node id="ATTGCTTCGTTCAGTT">
+      <data key="d0">2266</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTAGA">
+      <data key="d0">2255</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACATTATTG">
+      <data key="d0">2249</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCGC">
+      <data key="d0">2245</data>
+      <data key="d1" />
+    </node>
+    <node id="CATTGTACTTCGTTCA">
+      <data key="d0">2239</data>
+      <data key="d1">greedy,heavy</data>
+    </node>
+    <node id="GTTACGTATTGCTCTT">
+      <data key="d0">2196</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTGTACTTCGTTCAG">
+      <data key="d0">2191</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACACGTATTG">
+      <data key="d0">2180</data>
+      <data key="d1" />
+    </node>
+    <node id="AATTGTACTTCGTTCA">
+      <data key="d0">2163</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTAAC">
+      <data key="d0">2156</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCCG">
+      <data key="d0">2147</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTATACTTCGTTCAG">
+      <data key="d0">2145</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTGTATTG">
+      <data key="d0">2133</data>
+      <data key="d1" />
+    </node>
+    <node id="ATTTGTACTTCGTTCA">
+      <data key="d0">2133</data>
+      <data key="d1" />
+    </node>
+    <node id="GTACTTCACGTTCAGT">
+      <data key="d0">2111</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTAAG">
+      <data key="d0">2105</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGGT">
+      <data key="d0">2083</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACACGTATTGCT">
+      <data key="d0">2070</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGGA">
+      <data key="d0">2066</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACACGTATTGC">
+      <data key="d0">2066</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTAA">
+      <data key="d0">2047</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTGTATTGCT">
+      <data key="d0">2036</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTGTATTGC">
+      <data key="d0">2020</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTATT">
+      <data key="d0">1983</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGAA">
+      <data key="d0">1971</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCGG">
+      <data key="d0">1963</data>
+      <data key="d1" />
+    </node>
+    <node id="TGTACTTCACGTTCAG">
+      <data key="d0">1951</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTTC">
+      <data key="d0">1942</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGTT">
+      <data key="d0">1942</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCAGT">
+      <data key="d0">1909</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCATG">
+      <data key="d0">1908</data>
+      <data key="d1">greedy</data>
+    </node>
+    <node id="TTACGTATTGCTCTGA">
+      <data key="d0">1883</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTACC">
+      <data key="d0">1859</data>
+      <data key="d1" />
+    </node>
+    <node id="TTATTACTTCGTTCAG">
+      <data key="d0">1858</data>
+      <data key="d1" />
+    </node>
+    <node id="TTAATACTTCGTTCAG">
+      <data key="d0">1813</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCTGT">
+      <data key="d0">1775</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTTCC">
+      <data key="d0">1771</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTAGG">
+      <data key="d0">1715</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGTTAT">
+      <data key="d0">1715</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCACA">
+      <data key="d0">1713</data>
+      <data key="d1">heavy</data>
+    </node>
+    <node id="TGTTGTACTTCGTTCA">
+      <data key="d0">1713</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCAGA">
+      <data key="d0">1703</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTAAA">
+      <data key="d0">1623</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTCCC">
+      <data key="d0">1575</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTGTAT">
+      <data key="d0">1573</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTGTGT">
+      <data key="d0">1566</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCTCT">
+      <data key="d0">1547</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCTAA">
+      <data key="d0">1505</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCCTA">
+      <data key="d0">1503</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTTATG">
+      <data key="d0">1488</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTTCTG">
+      <data key="d0">1473</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCTTA">
+      <data key="d0">1473</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTGACA">
+      <data key="d0">1462</data>
+      <data key="d1" />
+    </node>
+    <node id="ATATGCTTCGTTCAGT">
+      <data key="d0">1449</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTGTCT">
+      <data key="d0">1445</data>
+      <data key="d1" />
+    </node>
+    <node id="ATGCTTCGTTCAGTTG">
+      <data key="d0">1435</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTACAC">
+      <data key="d0">1420</data>
+      <data key="d1" />
+    </node>
+    <node id="CATGCTTCGTTCAGTT">
+      <data key="d0">1409</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTTGTG">
+      <data key="d0">1395</data>
+      <data key="d1" />
+    </node>
+    <node id="TTGTACTTCACGTTCA">
+      <data key="d0">1393</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTGAGA">
+      <data key="d0">1376</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGCTGGG">
+      <data key="d0">1352</data>
+      <data key="d1" />
+    </node>
+    <node id="GTATTACTTCGTTCAG">
+      <data key="d0">1346</data>
+      <data key="d1" />
+    </node>
+    <node id="ATATTACTTCGTTCAG">
+      <data key="d0">1312</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTCAAA">
+      <data key="d0">1302</data>
+      <data key="d1" />
+    </node>
+    <node id="GTAATACTTCGTTCAG">
+      <data key="d0">1289</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTAACA">
+      <data key="d0">1283</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTTCTC">
+      <data key="d0">1237</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTACCT">
+      <data key="d0">1209</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTACATGTG">
+      <data key="d0">1208</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTATGCTTCGTTCAG">
+      <data key="d0">1168</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTTACGTATTGTGTG">
+      <data key="d0">1157</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTGCATG">
+      <data key="d0">1153</data>
+      <data key="d1" />
+    </node>
+    <node id="GCTTCGTTCAGTTGCA">
+      <data key="d0">1110</data>
+      <data key="d1" />
+    </node>
+    <node id="TCATGCTTCGTTCAGT">
+      <data key="d0">1100</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTGCATGT">
+      <data key="d0">1094</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACATGTGT">
+      <data key="d0">1024</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTGTGCTC">
+      <data key="d0">1007</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTCTGTG">
+      <data key="d0">1001</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTGTGTG">
+      <data key="d0">996</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTCACAC">
+      <data key="d0">991</data>
+      <data key="d1">heavy</data>
+    </node>
+    <node id="TACGTATTGCTTGTGT">
+      <data key="d0">983</data>
+      <data key="d1" />
+    </node>
+    <node id="TGCTTCGTTCAGTTGT">
+      <data key="d0">980</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTCACAG">
+      <data key="d0">953</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTCAGAC">
+      <data key="d0">929</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGCTGGTT">
+      <data key="d0">927</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTTCTGT">
+      <data key="d0">922</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTACACA">
+      <data key="d0">913</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTGCATGTG">
+      <data key="d0">911</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTTCAGTTACATGCT">
+      <data key="d0">872</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTACATGC">
+      <data key="d0">852</data>
+      <data key="d1" />
+    </node>
+    <node id="CCGTTCAGTTACATGT">
+      <data key="d0">851</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTCTGTC">
+      <data key="d0">846</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTCTAAC">
+      <data key="d0">833</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACATGTGTG">
+      <data key="d0">832</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCAGTTACATGTGCT">
+      <data key="d0">827</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACATGTGC">
+      <data key="d0">824</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTAATACTTCGTTCA">
+      <data key="d0">807</data>
+      <data key="d1" />
+    </node>
+    <node id="AGTATTACTTCGTTCA">
+      <data key="d0">803</data>
+      <data key="d1" />
+    </node>
+    <node id="GCTTCGTTCAGTTGTG">
+      <data key="d0">783</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACGTGTGTGT">
+      <data key="d0">771</data>
+      <data key="d1" />
+    </node>
+    <node id="ACGTATTGCTGTGTGT">
+      <data key="d0">733</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTGAGAG">
+      <data key="d0">728</data>
+      <data key="d1" />
+    </node>
+    <node id="GGTATGCTTCGTTCAG">
+      <data key="d0">711</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTGCATT">
+      <data key="d0">709</data>
+      <data key="d1" />
+    </node>
+    <node id="ACGTATTGCTCACACA">
+      <data key="d0">694</data>
+      <data key="d1">heavy</data>
+    </node>
+    <node id="TCAGTTACATGTGTGT">
+      <data key="d0">694</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTACGTATTGTTATT">
+      <data key="d0">672</data>
+      <data key="d1" />
+    </node>
+    <node id="TTCGTTCAGTTGTGTG">
+      <data key="d0">635</data>
+      <data key="d1" />
+    </node>
+    <node id="ACGTATTGCTTGTGTG">
+      <data key="d0">630</data>
+      <data key="d1" />
+    </node>
+    <node id="CAGTTACATGTGTGTG">
+      <data key="d0">625</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTACATGTTA">
+      <data key="d0">608</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTGCATGTGC">
+      <data key="d0">561</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGCTGGTTA">
+      <data key="d0">520</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTATTGCTTGTGTGT">
+      <data key="d0">520</data>
+      <data key="d1" />
+    </node>
+    <node id="ACGTATTGCTACACAC">
+      <data key="d0">519</data>
+      <data key="d1" />
+    </node>
+    <node id="ATCATGCTTCGTTCAG">
+      <data key="d0">516</data>
+      <data key="d1" />
+    </node>
+    <node id="GGTAATACTTCGTTCA">
+      <data key="d0">502</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTATTGCTCACACAC">
+      <data key="d0">472</data>
+      <data key="d1">heavy</data>
+    </node>
+    <node id="ACGTATTGCTGAGAGA">
+      <data key="d0">440</data>
+      <data key="d1" />
+    </node>
+    <node id="TCAGTTACATGTGCTC">
+      <data key="d0">423</data>
+      <data key="d1" />
+    </node>
+    <node id="GTATTGCTCACACACA">
+      <data key="d0">415</data>
+      <data key="d1">heavy</data>
+    </node>
+    <node id="CGTTCAGTTGTGTGCT">
+      <data key="d0">402</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTGTGTGC">
+      <data key="d0">384</data>
+      <data key="d1" />
+    </node>
+    <node id="TTACGTATTGTTATTG">
+      <data key="d0">378</data>
+      <data key="d1" />
+    </node>
+    <node id="TCGTTCAGTTGCATTA">
+      <data key="d0">357</data>
+      <data key="d1" />
+    </node>
+    <node id="TATTGCTCACACACAC">
+      <data key="d0">334</data>
+      <data key="d1">heavy</data>
+    </node>
+    <node id="ACGTATTGCTCTAACC">
+      <data key="d0">323</data>
+      <data key="d1" />
+    </node>
+    <node id="AATCATGCTTCGTTCA">
+      <data key="d0">267</data>
+      <data key="d1" />
+    </node>
+    <node id="GTTCAGTTGTGTGCTC">
+      <data key="d0">254</data>
+      <data key="d1" />
+    </node>
+    <node id="CGTATTGCTCTAACCT">
+      <data key="d0">236</data>
+      <data key="d1" />
+    </node>
+    <node id="TACGTATTGTTATTGC">
+      <data key="d0">179</data>
+      <data key="d1" />
+    </node>
+    <node id="ACGTATTGTTATTGCT">
+      <data key="d0">152</data>
+      <data key="d1" />
+    </node>
+    <node id="GTATTGCTCTAACCTA">
+      <data key="d0">151</data>
+      <data key="d1" />
+    </node>
+    <edge source="CTTCGTTCAGTTACGT" target="TTCGTTCAGTTACGTA" />
+    <edge source="CTTCGTTCAGTTACGT" target="TTCGTTCAGTTACGTG" />
+    <edge source="TACTTCGTTCAGTTAC" target="ACTTCGTTCAGTTACG" />
+    <edge source="TACTTCGTTCAGTTAC" target="ACTTCGTTCAGTTACA" />
+    <edge source="TCGTTCAGTTACGTAT" target="CGTTCAGTTACGTATT" />
+    <edge source="ACTTCGTTCAGTTACG" target="CTTCGTTCAGTTACGT" />
+    <edge source="TTCGTTCAGTTACGTA" target="TCGTTCAGTTACGTAT" />
+    <edge source="TTCGTTCAGTTACGTA" target="TCGTTCAGTTACGTAC" />
+    <edge source="CGTTCAGTTACGTATT" target="GTTCAGTTACGTATTG" />
+    <edge source="CGTTCAGTTACGTATT" target="GTTCAGTTACGTATTA" />
+    <edge source="CGTTCAGTTACGTATT" target="GTTCAGTTACGTATTT" />
+    <edge source="GTTCAGTTACGTATTG" target="TTCAGTTACGTATTGC" />
+    <edge source="GTTCAGTTACGTATTG" target="TTCAGTTACGTATTGT" />
+    <edge source="GTACTTCGTTCAGTTA" target="TACTTCGTTCAGTTAC" />
+    <edge source="GTACTTCGTTCAGTTA" target="TACTTCGTTCAGTTAT" />
+    <edge source="TGTACTTCGTTCAGTT" target="GTACTTCGTTCAGTTA" />
+    <edge source="TGTACTTCGTTCAGTT" target="GTACTTCGTTCAGTTG" />
+    <edge source="TTCAGTTACGTATTGC" target="TCAGTTACGTATTGCT" />
+    <edge source="TTCAGTTACGTATTGC" target="TCAGTTACGTATTGCC" />
+    <edge source="TCAGTTACGTATTGCT" target="CAGTTACGTATTGCTC" />
+    <edge source="TCAGTTACGTATTGCT" target="CAGTTACGTATTGCTA" />
+    <edge source="TCAGTTACGTATTGCT" target="CAGTTACGTATTGCTG" />
+    <edge source="TCAGTTACGTATTGCT" target="CAGTTACGTATTGCTT" />
+    <edge source="CTTCGTTCAGTTACAT" target="TTCGTTCAGTTACATA" />
+    <edge source="CTTCGTTCAGTTACAT" target="TTCGTTCAGTTACATG" />
+    <edge source="CTTCGTTCAGTTACAT" target="TTCGTTCAGTTACATT" />
+    <edge source="TGCTTCGTTCAGTTAC" target="GCTTCGTTCAGTTACG" />
+    <edge source="TGCTTCGTTCAGTTAC" target="GCTTCGTTCAGTTACA" />
+    <edge source="ATACTTCGTTCAGTTA" target="TACTTCGTTCAGTTAC" />
+    <edge source="ATACTTCGTTCAGTTA" target="TACTTCGTTCAGTTAT" />
+    <edge source="TTGTACTTCGTTCAGT" target="TGTACTTCGTTCAGTT" />
+    <edge source="TTCGTTCAGTTACGTG" target="TCGTTCAGTTACGTGT" />
+    <edge source="GCTTCGTTCAGTTACG" target="CTTCGTTCAGTTACGT" />
+    <edge source="TCGTTCAGTTACGTGT" target="CGTTCAGTTACGTGTG" />
+    <edge source="TATACTTCGTTCAGTT" target="ATACTTCGTTCAGTTA" />
+    <edge source="TATACTTCGTTCAGTT" target="ATACTTCGTTCAGTTG" />
+    <edge source="CTTCGTTCAGTTGCGT" target="TTCGTTCAGTTGCGTA" />
+    <edge source="ACTTCGTTCAGTTACA" target="CTTCGTTCAGTTACAT" />
+    <edge source="ACTTCGTTCAGTTACA" target="CTTCGTTCAGTTACAC" />
+    <edge source="TACTTCGTTCAGTTGC" target="ACTTCGTTCAGTTGCG" />
+    <edge source="TACTTCGTTCAGTTGC" target="ACTTCGTTCAGTTGCA" />
+    <edge source="CTTCCGTTCAGTTACG" target="TTCCGTTCAGTTACGT" />
+    <edge source="TTCCGTTCAGTTACGT" target="TCCGTTCAGTTACGTA" />
+    <edge source="AGTACTTCGTTCAGTT" target="GTACTTCGTTCAGTTA" />
+    <edge source="AGTACTTCGTTCAGTT" target="GTACTTCGTTCAGTTG" />
+    <edge source="ACTTCCGTTCAGTTAC" target="CTTCCGTTCAGTTACG" />
+    <edge source="ACTTCCGTTCAGTTAC" target="CTTCCGTTCAGTTACA" />
+    <edge source="TACTTCCGTTCAGTTA" target="ACTTCCGTTCAGTTAC" />
+    <edge source="CAGTTACGTATTGCTC" target="AGTTACGTATTGCTCA" />
+    <edge source="CAGTTACGTATTGCTC" target="AGTTACGTATTGCTCT" />
+    <edge source="CAGTTACGTATTGCTC" target="AGTTACGTATTGCTCG" />
+    <edge source="CAGTTACGTATTGCTC" target="AGTTACGTATTGCTCC" />
+    <edge source="CTTCGTTCCAGTTACG" target="TTCGTTCCAGTTACGT" />
+    <edge source="TTACTTCGTTCAGTTA" target="TACTTCGTTCAGTTAC" />
+    <edge source="TTACTTCGTTCAGTTA" target="TACTTCGTTCAGTTAT" />
+    <edge source="TTCGTTCCAGTTACGT" target="TCGTTCCAGTTACGTA" />
+    <edge source="TACTTCGTTCCAGTTA" target="ACTTCGTTCCAGTTAC" />
+    <edge source="ACTTCGTTCCAGTTAC" target="CTTCGTTCCAGTTACG" />
+    <edge source="CACTTCGTTCAGTTAC" target="ACTTCGTTCAGTTACG" />
+    <edge source="CACTTCGTTCAGTTAC" target="ACTTCGTTCAGTTACA" />
+    <edge source="CCTTCGTTCAGTTACG" target="CTTCGTTCAGTTACGT" />
+    <edge source="ATGTACTTCGTTCAGT" target="TGTACTTCGTTCAGTT" />
+    <edge source="GTGCTTCGTTCAGTTA" target="TGCTTCGTTCAGTTAC" />
+    <edge source="GTTCAGTTACGTATTA" target="TTCAGTTACGTATTAC" />
+    <edge source="GTTCAGTTACGTATTA" target="TTCAGTTACGTATTAT" />
+    <edge source="ACTTCGTTCAGTTGCG" target="CTTCGTTCAGTTGCGT" />
+    <edge source="CGTTCCAGTTACGTAT" target="GTTCCAGTTACGTATT" />
+    <edge source="TAGTACTTCGTTCAGT" target="AGTACTTCGTTCAGTT" />
+    <edge source="CAGTTACGTATTGCTA" target="AGTTACGTATTGCTAC" />
+    <edge source="CAGTTACGTATTGCTA" target="AGTTACGTATTGCTAT" />
+    <edge source="CAGTTACGTATTGCTA" target="AGTTACGTATTGCTAG" />
+    <edge source="CAGTTACGTATTGCTA" target="AGTTACGTATTGCTAA" />
+    <edge source="TTCAGTTACGTATTGT" target="TCAGTTACGTATTGTT" />
+    <edge source="TTCAGTTACGTATTGT" target="TCAGTTACGTATTGTG" />
+    <edge source="ACGTTCAGTTACGTAT" target="CGTTCAGTTACGTATT" />
+    <edge source="GTTCAGTTACGTATTT" target="TTCAGTTACGTATTTG" />
+    <edge source="GTTCAGTTACGTATTT" target="TTCAGTTACGTATTTA" />
+    <edge source="CAGTTACGTATTGCTG" target="AGTTACGTATTGCTGC" />
+    <edge source="CAGTTACGTATTGCTG" target="AGTTACGTATTGCTGA" />
+    <edge source="CAGTTACGTATTGCTG" target="AGTTACGTATTGCTGT" />
+    <edge source="CAGTTACGTATTGCTG" target="AGTTACGTATTGCTGG" />
+    <edge source="GTTCCAGTTACGTATT" target="TTCCAGTTACGTATTG" />
+    <edge source="TGTGCTTCGTTCAGTT" target="GTGCTTCGTTCAGTTA" />
+    <edge source="TCCGTTCAGTTACGTA" target="CCGTTCAGTTACGTAT" />
+    <edge source="CCGTTCAGTTACGTAT" target="CGTTCAGTTACGTATT" />
+    <edge source="CGTTCAGTTACGTACT" target="GTTCAGTTACGTACTC" />
+    <edge source="TTCGTTCAGTTGCGTA" target="TCGTTCAGTTGCGTAT" />
+    <edge source="TACGTTCAGTTACGTA" target="ACGTTCAGTTACGTAT" />
+    <edge source="AGTTCAGTTACGTATT" target="GTTCAGTTACGTATTG" />
+    <edge source="AGTTCAGTTACGTATT" target="GTTCAGTTACGTATTA" />
+    <edge source="AGTTCAGTTACGTATT" target="GTTCAGTTACGTATTT" />
+    <edge source="TCGTTCAGTTGCGTAT" target="CGTTCAGTTGCGTATT" />
+    <edge source="GATTCAGTTACGTATT" target="ATTCAGTTACGTATTG" />
+    <edge source="TCGTTCCAGTTACGTA" target="CGTTCCAGTTACGTAT" />
+    <edge source="CAGTTACGTATTGCTT" target="AGTTACGTATTGCTTA" />
+    <edge source="CAGTTACGTATTGCTT" target="AGTTACGTATTGCTTC" />
+    <edge source="CAGTTACGTATTGCTT" target="AGTTACGTATTGCTTG" />
+    <edge source="CAGTTACGTATTGCTT" target="AGTTACGTATTGCTTT" />
+    <edge source="CGTTCAGTTGCGTATT" target="GTTCAGTTGCGTATTG" />
+    <edge source="TCGTTCAGTTACGTAC" target="CGTTCAGTTACGTACT" />
+    <edge source="TTCAGTTACGTATTTG" target="TCAGTTACGTATTTGC" />
+    <edge source="TTCAGTTACGTATTTG" target="TCAGTTACGTATTTGT" />
+    <edge source="GTGTACTTCGTTCAGT" target="TGTACTTCGTTCAGTT" />
+    <edge source="TTCAGTTACGTATTAC" target="TCAGTTACGTATTACT" />
+    <edge source="TTCCAGTTACGTATTG" target="TCCAGTTACGTATTGC" />
+    <edge source="GTACTTCGTTCAGTTG" target="TACTTCGTTCAGTTGC" />
+    <edge source="GTACTTCGTTCAGTTG" target="TACTTCGTTCAGTTGT" />
+    <edge source="TCAGTTACGTATTACT" target="CAGTTACGTATTACTC" />
+    <edge source="TCAGTTACGTATTACT" target="CAGTTACGTATTACTA" />
+    <edge source="TCAGTTACGTATTACT" target="CAGTTACGTATTACTT" />
+    <edge source="GTACTTCCGTTCAGTT" target="TACTTCCGTTCAGTTA" />
+    <edge source="TTTCAGTTACGTATTG" target="TTCAGTTACGTATTGC" />
+    <edge source="TTTCAGTTACGTATTG" target="TTCAGTTACGTATTGT" />
+    <edge source="GCACTTCGTTCAGTTA" target="CACTTCGTTCAGTTAC" />
+    <edge source="GTTCAGTTGCGTATTG" target="TTCAGTTGCGTATTGC" />
+    <edge source="TCAGTTACGTATTGTT" target="CAGTTACGTATTGTTA" />
+    <edge source="ATTCAGTTACGTATTG" target="TTCAGTTACGTATTGC" />
+    <edge source="ATTCAGTTACGTATTG" target="TTCAGTTACGTATTGT" />
+    <edge source="CGTACTTCGTTCAGTT" target="GTACTTCGTTCAGTTA" />
+    <edge source="CGTACTTCGTTCAGTT" target="GTACTTCGTTCAGTTG" />
+    <edge source="GTACTTCGTTCCAGTT" target="TACTTCGTTCCAGTTA" />
+    <edge source="TCAGTTACGTATTTGC" target="CAGTTACGTATTTGCT" />
+    <edge source="TCCAGTTACGTATTGC" target="CCAGTTACGTATTGCT" />
+    <edge source="TTCAGTTGCGTATTGC" target="TCAGTTGCGTATTGCT" />
+    <edge source="CCAGTTACGTATTGCT" target="CAGTTACGTATTGCTC" />
+    <edge source="CCAGTTACGTATTGCT" target="CAGTTACGTATTGCTA" />
+    <edge source="CCAGTTACGTATTGCT" target="CAGTTACGTATTGCTG" />
+    <edge source="CCAGTTACGTATTGCT" target="CAGTTACGTATTGCTT" />
+    <edge source="ATTGTACTTCGTTCAG" target="TTGTACTTCGTTCAGT" />
+    <edge source="TGTACTTCCGTTCAGT" target="GTACTTCCGTTCAGTT" />
+    <edge source="TGTACTTCGTTCCAGT" target="GTACTTCGTTCCAGTT" />
+    <edge source="AGTTACGTATTGCTCA" target="GTTACGTATTGCTCAT" />
+    <edge source="AGTTACGTATTGCTCA" target="GTTACGTATTGCTCAG" />
+    <edge source="AGTTACGTATTGCTCA" target="GTTACGTATTGCTCAC" />
+    <edge source="AGTTACGTATTGCTCA" target="GTTACGTATTGCTCAA" />
+    <edge source="AGTTACGTATTGCTCT" target="GTTACGTATTGCTCTA" />
+    <edge source="AGTTACGTATTGCTCT" target="GTTACGTATTGCTCTG" />
+    <edge source="AGTTACGTATTGCTCT" target="GTTACGTATTGCTCTC" />
+    <edge source="AGTTACGTATTGCTCT" target="GTTACGTATTGCTCTT" />
+    <edge source="ATGCTTCGTTCAGTTA" target="TGCTTCGTTCAGTTAC" />
+    <edge source="AGTTACGTATTGCTAC" target="GTTACGTATTGCTACT" />
+    <edge source="AGTTACGTATTGCTAC" target="GTTACGTATTGCTACA" />
+    <edge source="AGTTACGTATTGCTAC" target="GTTACGTATTGCTACC" />
+    <edge source="AGTTACGTATTGCTTA" target="GTTACGTATTGCTTAT" />
+    <edge source="AGTTACGTATTGCTTA" target="GTTACGTATTGCTTAG" />
+    <edge source="AGTTACGTATTGCTTA" target="GTTACGTATTGCTTAA" />
+    <edge source="GTTGTACTTCGTTCAG" target="TTGTACTTCGTTCAGT" />
+    <edge source="AGTTACGTATTGCTGA" target="GTTACGTATTGCTGAT" />
+    <edge source="AGTTACGTATTGCTGA" target="GTTACGTATTGCTGAC" />
+    <edge source="AGTTACGTATTGCTGA" target="GTTACGTATTGCTGAG" />
+    <edge source="AGTTACGTATTGCTGA" target="GTTACGTATTGCTGAA" />
+    <edge source="AGTTACGTATTGCTAT" target="GTTACGTATTGCTATG" />
+    <edge source="AGTTACGTATTGCTAT" target="GTTACGTATTGCTATA" />
+    <edge source="AGTTACGTATTGCTAT" target="GTTACGTATTGCTATC" />
+    <edge source="AGTTACGTATTGCTAT" target="GTTACGTATTGCTATT" />
+    <edge source="AGTTACGTATTGCTCG" target="GTTACGTATTGCTCGT" />
+    <edge source="AGTTACGTATTGCTCG" target="GTTACGTATTGCTCGA" />
+    <edge source="AGTTACGTATTGCTCG" target="GTTACGTATTGCTCGC" />
+    <edge source="AGTTACGTATTGCTCG" target="GTTACGTATTGCTCGG" />
+    <edge source="TATGCTTCGTTCAGTT" target="ATGCTTCGTTCAGTTA" />
+    <edge source="TATGCTTCGTTCAGTT" target="ATGCTTCGTTCAGTTG" />
+    <edge source="AGTTACGTATTGCTGT" target="GTTACGTATTGCTGTA" />
+    <edge source="AGTTACGTATTGCTGT" target="GTTACGTATTGCTGTC" />
+    <edge source="AGTTACGTATTGCTGT" target="GTTACGTATTGCTGTG" />
+    <edge source="AGTTACGTATTGCTGT" target="GTTACGTATTGCTGTT" />
+    <edge source="ATTACTTCGTTCAGTT" target="TTACTTCGTTCAGTTA" />
+    <edge source="AGTTACGTATTGCTTC" target="GTTACGTATTGCTTCA" />
+    <edge source="AGTTACGTATTGCTTC" target="GTTACGTATTGCTTCT" />
+    <edge source="AGTTACGTATTGCTTC" target="GTTACGTATTGCTTCC" />
+    <edge source="TTGTGCTTCGTTCAGT" target="TGTGCTTCGTTCAGTT" />
+    <edge source="AGTTACGTATTGCTAG" target="GTTACGTATTGCTAGT" />
+    <edge source="AGTTACGTATTGCTAG" target="GTTACGTATTGCTAGC" />
+    <edge source="AGTTACGTATTGCTAG" target="GTTACGTATTGCTAGA" />
+    <edge source="AGTTACGTATTGCTAG" target="GTTACGTATTGCTAGG" />
+    <edge source="GCTTCGTTCAGTTACA" target="CTTCGTTCAGTTACAT" />
+    <edge source="GCTTCGTTCAGTTACA" target="CTTCGTTCAGTTACAC" />
+    <edge source="AGTGTACTTCGTTCAG" target="GTGTACTTCGTTCAGT" />
+    <edge source="TTCGTTCAGTTACATG" target="TCGTTCAGTTACATGT" />
+    <edge source="TTCGTTCAGTTACATG" target="TCGTTCAGTTACATGC" />
+    <edge source="AGTTACGTATTGCTTG" target="GTTACGTATTGCTTGA" />
+    <edge source="AGTTACGTATTGCTTG" target="GTTACGTATTGCTTGT" />
+    <edge source="CTTCGTTCAGTTGCAT" target="TTCGTTCAGTTGCATG" />
+    <edge source="CTTCGTTCAGTTGCAT" target="TTCGTTCAGTTGCATT" />
+    <edge source="TCGTTCAGTTACATGT" target="CGTTCAGTTACATGTT" />
+    <edge source="TCGTTCAGTTACATGT" target="CGTTCAGTTACATGTG" />
+    <edge source="GTATACTTCGTTCAGT" target="TATACTTCGTTCAGTT" />
+    <edge source="TGCTTCGTTCAGTTGC" target="GCTTCGTTCAGTTGCA" />
+    <edge source="AATACTTCGTTCAGTT" target="ATACTTCGTTCAGTTA" />
+    <edge source="AATACTTCGTTCAGTT" target="ATACTTCGTTCAGTTG" />
+    <edge source="AGTTACGTATTGCTCC" target="GTTACGTATTGCTCCA" />
+    <edge source="AGTTACGTATTGCTCC" target="GTTACGTATTGCTCCT" />
+    <edge source="AGTTACGTATTGCTCC" target="GTTACGTATTGCTCCG" />
+    <edge source="AGTTACGTATTGCTCC" target="GTTACGTATTGCTCCC" />
+    <edge source="ATACTTCGTTCAGTTG" target="TACTTCGTTCAGTTGC" />
+    <edge source="ATACTTCGTTCAGTTG" target="TACTTCGTTCAGTTGT" />
+    <edge source="AGTTACGTATTGCTAA" target="GTTACGTATTGCTAAT" />
+    <edge source="AGTTACGTATTGCTAA" target="GTTACGTATTGCTAAC" />
+    <edge source="AGTTACGTATTGCTAA" target="GTTACGTATTGCTAAG" />
+    <edge source="AGTTACGTATTGCTAA" target="GTTACGTATTGCTAAA" />
+    <edge source="TTTGTACTTCGTTCAG" target="TTGTACTTCGTTCAGT" />
+    <edge source="TTGCTTCGTTCAGTTA" target="TGCTTCGTTCAGTTAC" />
+    <edge source="TTGTACTTCCGTTCAG" target="TGTACTTCCGTTCAGT" />
+    <edge source="CGTTCAGTTACGTGTG" target="GTTCAGTTACGTGTGT" />
+    <edge source="CGTTCAGTTACGTGTG" target="GTTCAGTTACGTGTGC" />
+    <edge source="ATATACTTCGTTCAGT" target="TATACTTCGTTCAGTT" />
+    <edge source="GCCTTCGTTCAGTTAC" target="CCTTCGTTCAGTTACG" />
+    <edge source="CATACTTCGTTCAGTT" target="ATACTTCGTTCAGTTA" />
+    <edge source="CATACTTCGTTCAGTT" target="ATACTTCGTTCAGTTG" />
+    <edge source="TTGTACTTCGTTCCAG" target="TGTACTTCGTTCCAGT" />
+    <edge source="AATGTACTTCGTTCAG" target="ATGTACTTCGTTCAGT" />
+    <edge source="AGTTACGTATTGCTTT" target="GTTACGTATTGCTTTA" />
+    <edge source="AGTTACGTATTGCTTT" target="GTTACGTATTGCTTTC" />
+    <edge source="GTATGCTTCGTTCAGT" target="TATGCTTCGTTCAGTT" />
+    <edge source="CTTCGTTCAGTTACAC" target="TTCGTTCAGTTACACG" />
+    <edge source="TAATACTTCGTTCAGT" target="AATACTTCGTTCAGTT" />
+    <edge source="TATTACTTCGTTCAGT" target="ATTACTTCGTTCAGTT" />
+    <edge source="TTCGTTCAGTTACATT" target="TCGTTCAGTTACATTG" />
+    <edge source="TTCGTTCAGTTACATT" target="TCGTTCAGTTACATTA" />
+    <edge source="GTTCAGTTACGTGTGT" target="TTCAGTTACGTGTGTG" />
+    <edge source="CGTTCAGTTACATGTT" target="GTTCAGTTACATGTTA" />
+    <edge source="TCAGTTACGTATTGTG" target="CAGTTACGTATTGTGT" />
+    <edge source="TCAGTTACGTATTGTG" target="CAGTTACGTATTGTGC" />
+    <edge source="ACTTCGTTCAGTTGCA" target="CTTCGTTCAGTTGCAT" />
+    <edge source="CTTCACGTTCAGTTAC" target="TTCACGTTCAGTTACG" />
+    <edge source="GTTACGTATTGCTCAT" target="TTACGTATTGCTCATG" />
+    <edge source="GTTACGTATTGCTCTA" target="TTACGTATTGCTCTAA" />
+    <edge source="GTAGTACTTCGTTCAG" target="TAGTACTTCGTTCAGT" />
+    <edge source="AGTTACGTATTGCTGG" target="GTTACGTATTGCTGGT" />
+    <edge source="AGTTACGTATTGCTGG" target="GTTACGTATTGCTGGA" />
+    <edge source="AGTTACGTATTGCTGG" target="GTTACGTATTGCTGGG" />
+    <edge source="TTCGTTCAGTTACACG" target="TCGTTCAGTTACACGT" />
+    <edge source="TCGTTCAGTTACACGT" target="CGTTCAGTTACACGTA" />
+    <edge source="CTTCGTTCAGTTGTAT" target="TTCGTTCAGTTGTATT" />
+    <edge source="CAGTTACGTATTGTTA" target="AGTTACGTATTGTTAT" />
+    <edge source="TTCAGTTACGTATTAT" target="TCAGTTACGTATTATT" />
+    <edge source="CTTCGTTCAGTTGTGT" target="TTCGTTCAGTTGTGTG" />
+    <edge source="ACACTTCGTTCAGTTA" target="CACTTCGTTCAGTTAC" />
+    <edge source="TACTTCGTTCAGTTGT" target="ACTTCGTTCAGTTGTA" />
+    <edge source="TACTTCGTTCAGTTGT" target="ACTTCGTTCAGTTGTG" />
+    <edge source="GTTACGTATTGCTCTG" target="TTACGTATTGCTCTGA" />
+    <edge source="GTTACGTATTGCTCTG" target="TTACGTATTGCTCTGT" />
+    <edge source="GTTACGTATTGCTCAG" target="TTACGTATTGCTCAGT" />
+    <edge source="GTTACGTATTGCTCAG" target="TTACGTATTGCTCAGA" />
+    <edge source="GTGTGCTTCGTTCAGT" target="TGTGCTTCGTTCAGTT" />
+    <edge source="TTCAGTTACGTGTGTG" target="TCAGTTACGTGTGTGT" />
+    <edge source="ATGTGCTTCGTTCAGT" target="TGTGCTTCGTTCAGTT" />
+    <edge source="GATGTACTTCGTTCAG" target="ATGTACTTCGTTCAGT" />
+    <edge source="GTTACGTATTGCTGTA" target="TTACGTATTGCTGTAT" />
+    <edge source="ACTTCGTTCAGTTGTA" target="CTTCGTTCAGTTGTAT" />
+    <edge source="TACTTCACGTTCAGTT" target="ACTTCACGTTCAGTTA" />
+    <edge source="CGTTCAGTTACATTAT" target="GTTCAGTTACATTATT" />
+    <edge source="TCACGTTCAGTTACGT" target="CACGTTCAGTTACGTA" />
+    <edge source="CGTTCAGTTACACGTA" target="GTTCAGTTACACGTAT" />
+    <edge source="TTCAGTTACGTATTTA" target="TCAGTTACGTATTTAT" />
+    <edge source="CAGTTACGTATTGTGT" target="AGTTACGTATTGTGTG" />
+    <edge source="TTCACGTTCAGTTACG" target="TCACGTTCAGTTACGT" />
+    <edge source="GTTCAGTTACACGTAT" target="TTCAGTTACACGTATT" />
+    <edge source="TCGTTCAGTTACATTA" target="CGTTCAGTTACATTAT" />
+    <edge source="GTTACGTATTGCTCAC" target="TTACGTATTGCTCACA" />
+    <edge source="GTTACGTATTGCTTAT" target="TTACGTATTGCTTATG" />
+    <edge source="CACGTTCAGTTACGTA" target="ACGTTCAGTTACGTAT" />
+    <edge source="GTTACGTATTGCTACA" target="TTACGTATTGCTACAC" />
+    <edge source="TTCAGTTACGTGTGCT" target="TCAGTTACGTGTGCTC" />
+    <edge source="GTTACGTATTGCTTCT" target="TTACGTATTGCTTCTG" />
+    <edge source="GTTACGTATTGCTTCT" target="TTACGTATTGCTTCTC" />
+    <edge source="ACTTCACGTTCAGTTA" target="CTTCACGTTCAGTTAC" />
+    <edge source="GTTCAGTTACGTGTGC" target="TTCAGTTACGTGTGCT" />
+    <edge source="GTTACGTATTGCTGAC" target="TTACGTATTGCTGACA" />
+    <edge source="TTCAGTTACACGTATT" target="TCAGTTACACGTATTG" />
+    <edge source="GTTCAGTTACATTATT" target="TTCAGTTACATTATTG" />
+    <edge source="ATTTCAGTTACGTATT" target="TTTCAGTTACGTATTG" />
+    <edge source="GTTACGTATTGCTCTC" target="TTACGTATTGCTCTCT" />
+    <edge source="TTCGTTCAGTTGTATT" target="TCGTTCAGTTGTATTG" />
+    <edge source="ACTTCGTTCAGTTGTG" target="CTTCGTTCAGTTGTGT" />
+    <edge source="GTTACGTATTGCTGTC" target="TTACGTATTGCTGTCT" />
+    <edge source="CAGTTACGTATTGTGC" target="AGTTACGTATTGTGCT" />
+    <edge source="GTTACGTATTGCTCCT" target="TTACGTATTGCTCCTA" />
+    <edge source="TTATGCTTCGTTCAGT" target="TATGCTTCGTTCAGTT" />
+    <edge source="GTTACGTATTGCTGTG" target="TTACGTATTGCTGTGT" />
+    <edge source="GTTACGTATTGCTTGT" target="TTACGTATTGCTTGTG" />
+    <edge source="GTTACGTATTGCTCAA" target="TTACGTATTGCTCAAA" />
+    <edge source="GTTACGTATTGCTGAG" target="TTACGTATTGCTGAGA" />
+    <edge source="ATTGCTTCGTTCAGTT" target="TTGCTTCGTTCAGTTA" />
+    <edge source="CATTGTACTTCGTTCA" target="ATTGTACTTCGTTCAG" />
+    <edge source="GTTACGTATTGCTCTT" target="TTACGTATTGCTCTTA" />
+    <edge source="CGTGTACTTCGTTCAG" target="GTGTACTTCGTTCAGT" />
+    <edge source="TCAGTTACACGTATTG" target="CAGTTACACGTATTGC" />
+    <edge source="AATTGTACTTCGTTCA" target="ATTGTACTTCGTTCAG" />
+    <edge source="GTTACGTATTGCTAAC" target="TTACGTATTGCTAACA" />
+    <edge source="AGTATACTTCGTTCAG" target="GTATACTTCGTTCAGT" />
+    <edge source="TCGTTCAGTTGTATTG" target="CGTTCAGTTGTATTGC" />
+    <edge source="ATTTGTACTTCGTTCA" target="TTTGTACTTCGTTCAG" />
+    <edge source="GTACTTCACGTTCAGT" target="TACTTCACGTTCAGTT" />
+    <edge source="GTTACGTATTGCTGGT" target="TTACGTATTGCTGGTT" />
+    <edge source="CAGTTACACGTATTGC" target="AGTTACACGTATTGCT" />
+    <edge source="CGTTCAGTTGTATTGC" target="GTTCAGTTGTATTGCT" />
+    <edge source="TGTACTTCACGTTCAG" target="GTACTTCACGTTCAGT" />
+    <edge source="GTTACGTATTGCTACC" target="TTACGTATTGCTACCT" />
+    <edge source="TTATTACTTCGTTCAG" target="TATTACTTCGTTCAGT" />
+    <edge source="TTAATACTTCGTTCAG" target="TAATACTTCGTTCAGT" />
+    <edge source="TTACGTATTGCTCTGT" target="TACGTATTGCTCTGTG" />
+    <edge source="TTACGTATTGCTCTGT" target="TACGTATTGCTCTGTC" />
+    <edge source="AGTTACGTATTGTTAT" target="GTTACGTATTGTTATT" />
+    <edge source="TTACGTATTGCTCACA" target="TACGTATTGCTCACAC" />
+    <edge source="TTACGTATTGCTCACA" target="TACGTATTGCTCACAG" />
+    <edge source="TGTTGTACTTCGTTCA" target="GTTGTACTTCGTTCAG" />
+    <edge source="TTACGTATTGCTCAGA" target="TACGTATTGCTCAGAC" />
+    <edge source="TTACGTATTGCTGTGT" target="TACGTATTGCTGTGTG" />
+    <edge source="TTACGTATTGCTCTAA" target="TACGTATTGCTCTAAC" />
+    <edge source="TTACGTATTGCTTCTG" target="TACGTATTGCTTCTGT" />
+    <edge source="ATATGCTTCGTTCAGT" target="TATGCTTCGTTCAGTT" />
+    <edge source="ATGCTTCGTTCAGTTG" target="TGCTTCGTTCAGTTGC" />
+    <edge source="ATGCTTCGTTCAGTTG" target="TGCTTCGTTCAGTTGT" />
+    <edge source="TTACGTATTGCTACAC" target="TACGTATTGCTACACA" />
+    <edge source="CATGCTTCGTTCAGTT" target="ATGCTTCGTTCAGTTA" />
+    <edge source="CATGCTTCGTTCAGTT" target="ATGCTTCGTTCAGTTG" />
+    <edge source="TTACGTATTGCTTGTG" target="TACGTATTGCTTGTGT" />
+    <edge source="TTGTACTTCACGTTCA" target="TGTACTTCACGTTCAG" />
+    <edge source="TTACGTATTGCTGAGA" target="TACGTATTGCTGAGAG" />
+    <edge source="GTATTACTTCGTTCAG" target="TATTACTTCGTTCAGT" />
+    <edge source="ATATTACTTCGTTCAG" target="TATTACTTCGTTCAGT" />
+    <edge source="GTAATACTTCGTTCAG" target="TAATACTTCGTTCAGT" />
+    <edge source="CGTTCAGTTACATGTG" target="GTTCAGTTACATGTGT" />
+    <edge source="CGTTCAGTTACATGTG" target="GTTCAGTTACATGTGC" />
+    <edge source="AGTATGCTTCGTTCAG" target="GTATGCTTCGTTCAGT" />
+    <edge source="TTCGTTCAGTTGCATG" target="TCGTTCAGTTGCATGT" />
+    <edge source="GCTTCGTTCAGTTGCA" target="CTTCGTTCAGTTGCAT" />
+    <edge source="TCATGCTTCGTTCAGT" target="CATGCTTCGTTCAGTT" />
+    <edge source="TCGTTCAGTTGCATGT" target="CGTTCAGTTGCATGTG" />
+    <edge source="GTTCAGTTACATGTGT" target="TTCAGTTACATGTGTG" />
+    <edge source="TACGTATTGCTGTGTG" target="ACGTATTGCTGTGTGT" />
+    <edge source="TACGTATTGCTCACAC" target="ACGTATTGCTCACACA" />
+    <edge source="TACGTATTGCTTGTGT" target="ACGTATTGCTTGTGTG" />
+    <edge source="TGCTTCGTTCAGTTGT" target="GCTTCGTTCAGTTGTG" />
+    <edge source="TTACGTATTGCTGGTT" target="TACGTATTGCTGGTTA" />
+    <edge source="TACGTATTGCTACACA" target="ACGTATTGCTACACAC" />
+    <edge source="CGTTCAGTTGCATGTG" target="GTTCAGTTGCATGTGC" />
+    <edge source="TCGTTCAGTTACATGC" target="CGTTCAGTTACATGCT" />
+    <edge source="CCGTTCAGTTACATGT" target="CGTTCAGTTACATGTT" />
+    <edge source="CCGTTCAGTTACATGT" target="CGTTCAGTTACATGTG" />
+    <edge source="TACGTATTGCTCTAAC" target="ACGTATTGCTCTAACC" />
+    <edge source="TTCAGTTACATGTGTG" target="TCAGTTACATGTGTGT" />
+    <edge source="TTCAGTTACATGTGCT" target="TCAGTTACATGTGCTC" />
+    <edge source="GTTCAGTTACATGTGC" target="TTCAGTTACATGTGCT" />
+    <edge source="AGTAATACTTCGTTCA" target="GTAATACTTCGTTCAG" />
+    <edge source="AGTATTACTTCGTTCA" target="GTATTACTTCGTTCAG" />
+    <edge source="GCTTCGTTCAGTTGTG" target="CTTCGTTCAGTTGTGT" />
+    <edge source="TACGTATTGCTGAGAG" target="ACGTATTGCTGAGAGA" />
+    <edge source="GGTATGCTTCGTTCAG" target="GTATGCTTCGTTCAGT" />
+    <edge source="TTCGTTCAGTTGCATT" target="TCGTTCAGTTGCATTA" />
+    <edge source="ACGTATTGCTCACACA" target="CGTATTGCTCACACAC" />
+    <edge source="TCAGTTACATGTGTGT" target="CAGTTACATGTGTGTG" />
+    <edge source="GTTACGTATTGTTATT" target="TTACGTATTGTTATTG" />
+    <edge source="TTCGTTCAGTTGTGTG" target="TCGTTCAGTTGTGTGC" />
+    <edge source="ACGTATTGCTTGTGTG" target="CGTATTGCTTGTGTGT" />
+    <edge source="ATCATGCTTCGTTCAG" target="TCATGCTTCGTTCAGT" />
+    <edge source="GGTAATACTTCGTTCA" target="GTAATACTTCGTTCAG" />
+    <edge source="CGTATTGCTCACACAC" target="GTATTGCTCACACACA" />
+    <edge source="GTATTGCTCACACACA" target="TATTGCTCACACACAC" />
+    <edge source="CGTTCAGTTGTGTGCT" target="GTTCAGTTGTGTGCTC" />
+    <edge source="TCGTTCAGTTGTGTGC" target="CGTTCAGTTGTGTGCT" />
+    <edge source="TTACGTATTGTTATTG" target="TACGTATTGTTATTGC" />
+    <edge source="ACGTATTGCTCTAACC" target="CGTATTGCTCTAACCT" />
+    <edge source="AATCATGCTTCGTTCA" target="ATCATGCTTCGTTCAG" />
+    <edge source="CGTATTGCTCTAACCT" target="GTATTGCTCTAACCTA" />
+    <edge source="TACGTATTGTTATTGC" target="ACGTATTGTTATTGCT" />
+  </graph>
+</graphml>
