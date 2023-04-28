@@ -1,0 +1,6 @@
+Building DAG of jobs...
+Creating conda environment envs/porechop_abi.yaml...
+Downloading and installing remote packages.
+Environment for /home/guillaume/ChimereNanoporePipeline/envs/porechop_abi.yaml created (location: .snakemake/conda/8ff5eb033241f5889665bcedcbfab59f_)
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-04-28T104014.086350.snakemake.log

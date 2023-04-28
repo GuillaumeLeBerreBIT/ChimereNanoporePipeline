@@ -1,6 +1,7 @@
 rule all:
     input:
-        "reports/Results.html"
+        "reports/Results.html",
+        "reports/Statistics.txt"
 
 rule porechopABI_call:
     input: 
@@ -9,7 +10,7 @@ rule porechopABI_call:
         reads="PorechopABI/Output_reads.fastq",
         statistics="reports/Statistics.txt"
     conda: 
-        "porechop_abi"
+        "envs/porechop_abi.yaml"
     shell: 
         "porechop_abi -abi -i {input} -o {output.reads} > {output.statistics} 2>&1"
 

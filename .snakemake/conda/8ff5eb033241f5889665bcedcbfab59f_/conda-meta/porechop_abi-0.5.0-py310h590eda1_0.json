@@ -1,0 +1,356 @@
+{
+  "build": "py310h590eda1_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "_openmp_mutex >=4.5",
+    "libgcc-ng >=12",
+    "libstdcxx-ng >=12",
+    "libzlib >=1.2.12,<1.3.0a0",
+    "networkx",
+    "python >=3.10,<3.11.0a0",
+    "python_abi 3.10.* *_cp310",
+    "zlib >=1.2.12,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/guillaume/miniconda3/pkgs/porechop_abi-0.5.0-py310h590eda1_0",
+  "features": "",
+  "files": [
+    "bin/porechop_abi",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/INSTALLER",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/LICENSE",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/METADATA",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/RECORD",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/REQUESTED",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/WHEEL",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/direct_url.json",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/entry_points.txt",
+    "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/top_level.txt",
+    "lib/python3.10/site-packages/porechop_abi/__init__.py",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/__init__.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/abinitio.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/adapters.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/arg_parser.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/consensus.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/cpp_function_wrappers.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/drop_cut.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/misc.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/nanopore_read.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/parse_adapter_file.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/porechop_abi.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/__pycache__/version.cpython-310.pyc",
+    "lib/python3.10/site-packages/porechop_abi/ab_initio.config",
+    "lib/python3.10/site-packages/porechop_abi/abinitio.py",
+    "lib/python3.10/site-packages/porechop_abi/adapters.py",
+    "lib/python3.10/site-packages/porechop_abi/approx_counter",
+    "lib/python3.10/site-packages/porechop_abi/arg_parser.py",
+    "lib/python3.10/site-packages/porechop_abi/compatibility.so",
+    "lib/python3.10/site-packages/porechop_abi/consensus.py",
+    "lib/python3.10/site-packages/porechop_abi/cpp_function_wrappers.py",
+    "lib/python3.10/site-packages/porechop_abi/cpp_functions.so",
+    "lib/python3.10/site-packages/porechop_abi/drop_cut.py",
+    "lib/python3.10/site-packages/porechop_abi/misc.py",
+    "lib/python3.10/site-packages/porechop_abi/msa_consensus",
+    "lib/python3.10/site-packages/porechop_abi/nanopore_read.py",
+    "lib/python3.10/site-packages/porechop_abi/parse_adapter_file.py",
+    "lib/python3.10/site-packages/porechop_abi/porechop_abi.py",
+    "lib/python3.10/site-packages/porechop_abi/version.py"
+  ],
+  "fn": "porechop_abi-0.5.0-py310h590eda1_0.tar.bz2",
+  "license": "GPL3",
+  "link": {
+    "source": "/home/guillaume/miniconda3/pkgs/porechop_abi-0.5.0-py310h590eda1_0",
+    "type": 1
+  },
+  "md5": "8fb8e482a9eeb3748a5d46b4644e2373",
+  "name": "porechop_abi",
+  "package_tarball_full_path": "/home/guillaume/miniconda3/pkgs/porechop_abi-0.5.0-py310h590eda1_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/porechop_abi",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/conda/conda-bld/porechop_abi_1665152358039/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "5e480549d4f01a04e796ffb7c3c6f62b6b8c37546eccb742645d34960c18ee59",
+        "sha256_in_prefix": "6b5e55bdd6cced66a1b3baeff82e00a60c16662ce144a941e4d3b46e927b7a4b",
+        "size_in_bytes": 478
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+        "sha256_in_prefix": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+        "size_in_bytes": 35147
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "715a025010debe2f0bb65c233cd7625b80c2a86ef23b67d335780e56b2b62917",
+        "sha256_in_prefix": "715a025010debe2f0bb65c233cd7625b80c2a86ef23b67d335780e56b2b62917",
+        "size_in_bytes": 12433
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "09f16c0596e5b4c960433d823bbfb470bb53ceb4b495cc62f9cf3e8668fde52a",
+        "sha256_in_prefix": "09f16c0596e5b4c960433d823bbfb470bb53ceb4b495cc62f9cf3e8668fde52a",
+        "size_in_bytes": 3006
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "1b5e87e00dc87a84269cead8578b9e6462928e18a95f1f3373c9eef451a5bcc0",
+        "sha256_in_prefix": "1b5e87e00dc87a84269cead8578b9e6462928e18a95f1f3373c9eef451a5bcc0",
+        "size_in_bytes": 92
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "18b68f72b233b8557c484c7956f31927a6fe01b2cb8a57439897ea52ad0b71cb",
+        "sha256_in_prefix": "18b68f72b233b8557c484c7956f31927a6fe01b2cb8a57439897ea52ad0b71cb",
+        "size_in_bytes": 86
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "3657984aca8af3ef92dcbf11ae7c6ac73083792e6869d4f842d9e7fbeaaf5070",
+        "sha256_in_prefix": "3657984aca8af3ef92dcbf11ae7c6ac73083792e6869d4f842d9e7fbeaaf5070",
+        "size_in_bytes": 64
+      },
+      {
+        "_path": "lib/python3.10/site-packages/Porechop_ABI-0.5.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "900cada43c7f79afdaab499521b026157cc72a508d032fe387c3a5f6e53063d4",
+        "sha256_in_prefix": "900cada43c7f79afdaab499521b026157cc72a508d032fe387c3a5f6e53063d4",
+        "size_in_bytes": 13
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/__init__.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "713762d7730f54b3f3c5ff01f5bd9d3c71d86f717e55dd88dd3d564243186511",
+        "sha256_in_prefix": "713762d7730f54b3f3c5ff01f5bd9d3c71d86f717e55dd88dd3d564243186511",
+        "size_in_bytes": 146
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/abinitio.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "6e32210b8a2cfb8d25544835877ced1cde5e3c727280c9f0768bae66697d3f03",
+        "sha256_in_prefix": "6e32210b8a2cfb8d25544835877ced1cde5e3c727280c9f0768bae66697d3f03",
+        "size_in_bytes": 23288
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/adapters.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "b47855122c1b398547f25f5d1651dd9517815b21d9d2e95a83289670ff1f4ff6",
+        "sha256_in_prefix": "b47855122c1b398547f25f5d1651dd9517815b21d9d2e95a83289670ff1f4ff6",
+        "size_in_bytes": 18079
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/arg_parser.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "c1f4b7bb2f1e5d9e158800c43b83a074d3409edb657f443e35d52847cab353f0",
+        "sha256_in_prefix": "c1f4b7bb2f1e5d9e158800c43b83a074d3409edb657f443e35d52847cab353f0",
+        "size_in_bytes": 11660
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/consensus.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "e03d5ea8e00f5419fc9dbd0ee808e4ee38b9a5962ff75257713652060174930f",
+        "sha256_in_prefix": "e03d5ea8e00f5419fc9dbd0ee808e4ee38b9a5962ff75257713652060174930f",
+        "size_in_bytes": 9991
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/cpp_function_wrappers.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "40b258036c4c4a7f4d433aafeb160efccc629242e0938e1dbb53b7b6f9659bee",
+        "sha256_in_prefix": "40b258036c4c4a7f4d433aafeb160efccc629242e0938e1dbb53b7b6f9659bee",
+        "size_in_bytes": 2284
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/drop_cut.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "3ff71e2cb7663cb00bb7bfadc6cca5bfd213cbc76559f9096b9928a1b2452dfc",
+        "sha256_in_prefix": "3ff71e2cb7663cb00bb7bfadc6cca5bfd213cbc76559f9096b9928a1b2452dfc",
+        "size_in_bytes": 3697
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/misc.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "de6499f1c60130d6aa8ec1f3e0238d316fda640e57b326dc5ff4e4e267cb5d83",
+        "sha256_in_prefix": "de6499f1c60130d6aa8ec1f3e0238d316fda640e57b326dc5ff4e4e267cb5d83",
+        "size_in_bytes": 11625
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/nanopore_read.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "f960757b008acec8cbee679c15ce767add4ec1513c04e512274064e1903beb00",
+        "sha256_in_prefix": "f960757b008acec8cbee679c15ce767add4ec1513c04e512274064e1903beb00",
+        "size_in_bytes": 14721
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/parse_adapter_file.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "4e42a09d8c56f57fffae5ed37ec7d09fb06136cbbdf03cf8191c319fce80ca9a",
+        "sha256_in_prefix": "4e42a09d8c56f57fffae5ed37ec7d09fb06136cbbdf03cf8191c319fce80ca9a",
+        "size_in_bytes": 2044
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/porechop_abi.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "5324f6286c186a2700d98c24ac856196af060547c1124362e6685487f5aaefe6",
+        "sha256_in_prefix": "5324f6286c186a2700d98c24ac856196af060547c1124362e6685487f5aaefe6",
+        "size_in_bytes": 18864
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/__pycache__/version.cpython-310.pyc",
+        "path_type": "hardlink",
+        "sha256": "ea5d28e91678ea7a5b19658e817a080a023fcb78be2d51805501ecbe9bc2c729",
+        "sha256_in_prefix": "ea5d28e91678ea7a5b19658e817a080a023fcb78be2d51805501ecbe9bc2c729",
+        "size_in_bytes": 307
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/ab_initio.config",
+        "path_type": "hardlink",
+        "sha256": "bb7b0fb9a474edfeb34a5e554e9db72cf1b096722be02c057cf8f9a8e42f8e55",
+        "sha256_in_prefix": "bb7b0fb9a474edfeb34a5e554e9db72cf1b096722be02c057cf8f9a8e42f8e55",
+        "size_in_bytes": 696
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/abinitio.py",
+        "path_type": "hardlink",
+        "sha256": "79f584dca77e7b164ebede2de8d4ad87219582c495785246f14f806a3675a6fc",
+        "sha256_in_prefix": "79f584dca77e7b164ebede2de8d4ad87219582c495785246f14f806a3675a6fc",
+        "size_in_bytes": 33880
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/adapters.py",
+        "path_type": "hardlink",
+        "sha256": "2797d2e21904777da7b33df23cb6dc62622cb0058c891bf04186ad35b8fab5ae",
+        "sha256_in_prefix": "2797d2e21904777da7b33df23cb6dc62622cb0058c891bf04186ad35b8fab5ae",
+        "size_in_bytes": 29280
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/approx_counter",
+        "path_type": "hardlink",
+        "sha256": "ff2d035ac66ddf62f769b1a6b3a5951f7040f72cbea1a4e9e5c3970a5ec8311c",
+        "sha256_in_prefix": "ff2d035ac66ddf62f769b1a6b3a5951f7040f72cbea1a4e9e5c3970a5ec8311c",
+        "size_in_bytes": 1076200
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/arg_parser.py",
+        "path_type": "hardlink",
+        "sha256": "639a7dff3a4526e043af91562a67afa3a989193caffa78189e3f4b0dd8a8362d",
+        "sha256_in_prefix": "639a7dff3a4526e043af91562a67afa3a989193caffa78189e3f4b0dd8a8362d",
+        "size_in_bytes": 17727
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/compatibility.so",
+        "path_type": "hardlink",
+        "sha256": "c7d4f4a1d41a36f6f08d45938b4720a189507da4bd08f68df06c0b44bb8e21fa",
+        "sha256_in_prefix": "c7d4f4a1d41a36f6f08d45938b4720a189507da4bd08f68df06c0b44bb8e21fa",
+        "size_in_bytes": 63664
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/consensus.py",
+        "path_type": "hardlink",
+        "sha256": "0b2e987c4ad0048201e87bb9cabe85365d0a0f3b2198eb1a613a4e79fc7e3127",
+        "sha256_in_prefix": "0b2e987c4ad0048201e87bb9cabe85365d0a0f3b2198eb1a613a4e79fc7e3127",
+        "size_in_bytes": 11159
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/cpp_function_wrappers.py",
+        "path_type": "hardlink",
+        "sha256": "80d34307ebc9890b761b709a827d65903a683de621d64809982f0d7e2f3651dd",
+        "sha256_in_prefix": "80d34307ebc9890b761b709a827d65903a683de621d64809982f0d7e2f3651dd",
+        "size_in_bytes": 2740
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/cpp_functions.so",
+        "path_type": "hardlink",
+        "sha256": "bcc75f26dc0bf58b81de398682795543e31f65cbed7b88b9dc97dfd4c50fdda8",
+        "sha256_in_prefix": "bcc75f26dc0bf58b81de398682795543e31f65cbed7b88b9dc97dfd4c50fdda8",
+        "size_in_bytes": 79392
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/drop_cut.py",
+        "path_type": "hardlink",
+        "sha256": "41e5298d2dfaf3d94f2b725081666ec92e504fb677fc038e72a3143768da71ca",
+        "sha256_in_prefix": "41e5298d2dfaf3d94f2b725081666ec92e504fb677fc038e72a3143768da71ca",
+        "size_in_bytes": 4445
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/misc.py",
+        "path_type": "hardlink",
+        "sha256": "8cc8f2cb926fb3c1acedccec445b3082dcf42bea32b5b05389e77c4ae87dffdf",
+        "sha256_in_prefix": "8cc8f2cb926fb3c1acedccec445b3082dcf42bea32b5b05389e77c4ae87dffdf",
+        "size_in_bytes": 13007
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/msa_consensus",
+        "path_type": "hardlink",
+        "sha256": "ba1cebe236779172d59b8f8bb39f4cc1b9e876678f413cc8e18a9f2308f0a1aa",
+        "sha256_in_prefix": "ba1cebe236779172d59b8f8bb39f4cc1b9e876678f413cc8e18a9f2308f0a1aa",
+        "size_in_bytes": 399936
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/nanopore_read.py",
+        "path_type": "hardlink",
+        "sha256": "f7b1992660368746a5a0a36d6c36a92acd4dc428d714f0a02c23bc50b4d2bad2",
+        "sha256_in_prefix": "f7b1992660368746a5a0a36d6c36a92acd4dc428d714f0a02c23bc50b4d2bad2",
+        "size_in_bytes": 23749
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/parse_adapter_file.py",
+        "path_type": "hardlink",
+        "sha256": "a201c58a0281cf0e2b99beb373c315a48986ad84979a86a3acd4b583752941c6",
+        "sha256_in_prefix": "a201c58a0281cf0e2b99beb373c315a48986ad84979a86a3acd4b583752941c6",
+        "size_in_bytes": 2600
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/porechop_abi.py",
+        "path_type": "hardlink",
+        "sha256": "a6f9d454a6faf3ca71fc4100b7803272e2ba7d80130d593c4e822451af63bace",
+        "sha256_in_prefix": "a6f9d454a6faf3ca71fc4100b7803272e2ba7d80130d593c4e822451af63bace",
+        "size_in_bytes": 30160
+      },
+      {
+        "_path": "lib/python3.10/site-packages/porechop_abi/version.py",
+        "path_type": "hardlink",
+        "sha256": "6d088e1357438ef1a6c4ba45ba8a3abbec4e5f5d9f54844cb8d720e19b1c22ff",
+        "sha256_in_prefix": "6d088e1357438ef1a6c4ba45ba8a3abbec4e5f5d9f54844cb8d720e19b1c22ff",
+        "size_in_bytes": 153
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "porechop_abi==0.5.0=py310h590eda1_0",
+  "sha256": "c17bb2e66503fe677292e803a08d7f46fb60c339f012ab80c32214ec96f570ac",
+  "size": 655442,
+  "subdir": "linux-64",
+  "timestamp": 1665152803000,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/porechop_abi-0.5.0-py310h590eda1_0.tar.bz2",
+  "version": "0.5.0"
+}
