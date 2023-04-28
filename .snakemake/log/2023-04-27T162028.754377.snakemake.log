@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+porechopABI_call        1              1              1
+total                   1              1              1
+
+Select jobs to execute...
+
+[Thu Apr 27 16:20:29 2023]
+rule porechopABI_call:
+    input: PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/Output_reads.fastq, reports/Statistics.txt
+    jobid: 0
+    reason: Missing output files: reports/Statistics.txt, PorechopABI/Output_reads.fastq
+    resources: tmpdir=/tmp
+
+Activating conda environment: porechop_abi
+[Thu Apr 27 16:21:58 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2023-04-27T162028.754377.snakemake.log

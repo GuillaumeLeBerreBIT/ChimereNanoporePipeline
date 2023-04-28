@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+StatisticsToHTML        1              1              1
+all                     1              1              1
+porechopABI_call        1              1              1
+total                   3              1              1
+
+Select jobs to execute...
+
+[Fri Apr 28 10:04:14 2023]
+rule porechopABI_call:
+    input: PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/Output_reads.fastq, reports/Statistics.txt
+    jobid: 2
+    reason: Missing output files: reports/Statistics.txt
+    resources: tmpdir=/tmp
+
+Activating conda environment: porechop_abi
+[Fri Apr 28 10:04:14 2023]
+Error in rule porechopABI_call:
+    jobid: 2
+    input: PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/Output_reads.fastq, reports/Statistics.txt
+    conda-env: porechop_abi
+    shell:
+        porechop_abi -abi -i PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq -o PorechopABI/Output_reads.fastq > reports/Statistics.txt 2>&1
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job porechopABI_call since they might be corrupted:
+reports/Statistics.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-04-28T100413.812401.snakemake.log

@@ -1,11 +1,22 @@
+rule all:
+    input:
+        "reports/Results.html"
 
+rule porechopABI_call:
+    input: 
+        "PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq"
+    output: 
+        reads="PorechopABI/Output_reads.fastq",
+        statistics="reports/Statistics.txt"
+    conda: 
+        "porechop_abi"
+    shell: 
+        "porechop_abi -abi -i {input} -o {output.reads} > {output.statistics} 2>&1"
 
-rule myporechopABI:
-    input: "PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq"
-    
-    output: "PorechopABI/output_reads.fastq"
-    
-    conda: "envs/porechopabi.yml"
-    
-    shell: "porechop_abi -abi -i {input} -o {output} > log_file.txt 2>&1"
-    #shell: "~/miniconda3/envs/porechop_abi/bin/porechop_abi -abi -i {input} -o {output} > Log_file.txt 2>&1"
+rule StatisticsToHTML:
+    input: 
+        "reports/Statistics.txt"
+    output: 
+        "reports/Results.html"
+    script: 
+        "scripts/generate_report.py"

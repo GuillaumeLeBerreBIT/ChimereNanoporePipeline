@@ -1,0 +1,5 @@
+#!/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/6e167647/bin/python3.10
+
+import pydoc
+if __name__ == '__main__':
+    pydoc.cli()

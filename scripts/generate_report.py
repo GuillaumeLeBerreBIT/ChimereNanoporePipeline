@@ -5,7 +5,7 @@
 import re, os, webbrowser, time
 
 # Change the path to the directory of the file
-os.chdir("../PorechopABI/report/")
+#os.chdir("../reports/")
 print(os.getcwd())
 
 #######################################
@@ -13,7 +13,7 @@ print(os.getcwd())
 #######################################
 
 # Opening the file from the current location 
-with open("Log_file.txt", "r") as text_file:
+with open("reports/Statistics.txt", "r") as text_file:
     #Splitting the lines of the file to get a list
     splitted_file = text_file.readlines()
     #print(splitted_file)
@@ -82,7 +82,7 @@ for adap_loc in cleaned_text_list[-3:]:
 # Adding the last line to the file
 html_end = "</body> </html>"
 
-with open("report.html", "w") as html_file:
+with open("reports/Results.html", "w") as html_file:
     html_file.writelines(html_header)
     
     for ul in unorder_list:
@@ -94,5 +94,5 @@ with open("report.html", "w") as html_file:
     html_file.writelines(html_end)
 
 # Does not work on the WSL ubuntu yet, could be because no browser installed on it
-time.sleep(2)
-webbrowser.open_new_tab("report.html")
+#time.sleep(2)
+#webbrowser.open_new_tab("report.html")
