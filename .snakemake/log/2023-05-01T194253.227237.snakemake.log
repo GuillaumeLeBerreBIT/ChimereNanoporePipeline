@@ -1,0 +1,7 @@
+The flag 'directory' used in rule all is only valid for outputs, not inputs.
+Building DAG of jobs...
+MissingInputException in rule ProwlerTrim in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 30:
+Missing input files for rule ProwlerTrim:
+    output: Prowlerprocessed
+    affected files:
+        Output_reads.fastq

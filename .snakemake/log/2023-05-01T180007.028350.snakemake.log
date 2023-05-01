@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule ProwlerTrim in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 29:
+Missing input files for rule ProwlerTrim:
+    output: Prowlerprocessed
+    affected files:
+        Output_reads.fastq

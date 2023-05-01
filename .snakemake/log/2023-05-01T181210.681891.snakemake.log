@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+StatisticsToHTML        1              1              1
+all                     1              1              1
+porechopABI_call        1              1              1
+total                   3              1              1
+
+Select jobs to execute...
+
+[Mon May  1 18:12:11 2023]
+rule porechopABI_call:
+    input: PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/Output_reads.fastq, reports/Statistics.txt
+    jobid: 2
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/8ff5eb033241f5889665bcedcbfab59f_
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

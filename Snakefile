@@ -2,7 +2,8 @@
 rule all:
     input:
         "reports/Results.html",
-        "reports/Statistics.txt"
+        "reports/Statistics.txt",
+        directory("ProwlerProcessed")
 
 # The rule to call the porechop program and saving the output in files
 rule porechopABI_call:
@@ -24,3 +25,12 @@ rule StatisticsToHTML:
         "reports/Results.html"
     script: 
         "scripts/generate_report.py"
+
+# Rule to trim the reads using Prowler and save the output
+rule ProwlerTrim:
+    input:
+        "PorechopABI/Output_reads.fastq" 
+    output:
+        directory("ProwlerProcessed") 
+    shell:
+        "python3 scripts/TrimmerLarge.py -f {input} -i PorechopABI/ -o {output} -m 'D' -r '.fasta'"
