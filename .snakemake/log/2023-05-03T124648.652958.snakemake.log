@@ -1,0 +1,81 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+ProwlerTrim             1              1              1
+SACRAcall               1              1              1
+StatisticsToHTML        1              1              1
+all                     1              1              1
+porechopABIcall         1              1              1
+total                   5              1              1
+
+Select jobs to execute...
+
+[Wed May  3 12:46:49 2023]
+rule porechopABIcall:
+    input: PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/PoreChopReads.fastq, reports/Statistics.txt
+    jobid: 2
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/8ff5eb033241f5889665bcedcbfab59f_
+[Wed May  3 12:48:21 2023]
+Finished job 2.
+1 of 5 steps (20%) done
+Select jobs to execute...
+
+[Wed May  3 12:48:21 2023]
+rule ProwlerTrim:
+    input: PorechopABI/PoreChopReads.fastq
+    output: ProwlerProcessed/PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    jobid: 3
+    reason: Input files updated by another job: PorechopABI/PoreChopReads.fastq
+    resources: tmpdir=/tmp
+
+[Wed May  3 12:48:23 2023]
+Finished job 3.
+2 of 5 steps (40%) done
+Select jobs to execute...
+
+[Wed May  3 12:48:23 2023]
+rule SACRAcall:
+    input: ProwlerProcessed/PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    output: SACRAResults/SacraResults.fasta
+    jobid: 4
+    reason: Input files updated by another job: ProwlerProcessed/PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/f655fa01c3df1c861f181a2fd0ee0401_
+[Wed May  3 12:51:39 2023]
+Finished job 4.
+3 of 5 steps (60%) done
+Select jobs to execute...
+
+[Wed May  3 12:51:39 2023]
+rule StatisticsToHTML:
+    input: reports/Statistics.txt, PorechopABI/PoreChopReads.fastq, ProwlerProcessed/PoreChopReadsTrimLT-U0-D7W100L100R0.fasta, SACRAResults/SacraResults.fasta
+    output: reports/Results.html
+    jobid: 1
+    reason: Missing output files: reports/Results.html; Input files updated by another job: SACRAResults/SacraResults.fasta, reports/Statistics.txt, PorechopABI/PoreChopReads.fastq, ProwlerProcessed/PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    resources: tmpdir=/tmp
+
+[Wed May  3 12:51:40 2023]
+Finished job 1.
+4 of 5 steps (80%) done
+Select jobs to execute...
+
+[Wed May  3 12:51:40 2023]
+localrule all:
+    input: reports/Results.html
+    jobid: 0
+    reason: Input files updated by another job: reports/Results.html
+    resources: tmpdir=/tmp
+
+[Wed May  3 12:51:40 2023]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2023-05-03T124648.652958.snakemake.log

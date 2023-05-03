@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule StatisticsToHTML in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 47:
+Missing input files for rule StatisticsToHTML:
+    output: reports/Results.html
+    affected files:
+        ProwlerProcessed/PoreChopReadsTrimLT-U0-D7W100L100R0.csv
