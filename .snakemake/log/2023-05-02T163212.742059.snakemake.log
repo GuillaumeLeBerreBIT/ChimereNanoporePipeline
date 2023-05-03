@@ -1,0 +1,37 @@
+The flag 'directory' used in rule all is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+ProwlerTrim             1              1              1
+StatisticsToHTML        1              1              1
+all                     1              1              1
+porechopABI_call        1              1              1
+total                   4              1              1
+
+Select jobs to execute...
+
+[Tue May  2 16:32:13 2023]
+rule porechopABI_call:
+    input: PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/Output_reads.fastq, reports/Statistics.txt
+    jobid: 2
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/8ff5eb033241f5889665bcedcbfab59f_
+Terminating processes on user request, this might take some time.
+[Tue May  2 16:32:49 2023]
+Error in rule porechopABI_call:
+    jobid: 2
+    input: PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/Output_reads.fastq, reports/Statistics.txt
+    conda-env: /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/8ff5eb033241f5889665bcedcbfab59f_
+    shell:
+        porechop_abi -abi -i PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq -o PorechopABI/Output_reads.fastq > reports/Statistics.txt 2>&1
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-05-02T163212.742059.snakemake.log

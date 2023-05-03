@@ -1,0 +1,201 @@
+{
+  "build": "hdbcaa40_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "future",
+    "libgcc-ng >=7.3.0",
+    "libstdcxx-ng >=7.3.0",
+    "parallel",
+    "pillow",
+    "python",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/guillaume/miniconda3/pkgs/last-963-hdbcaa40_1",
+  "features": "",
+  "files": [
+    "bin/fastq-interleave",
+    "bin/last-dotplot",
+    "bin/last-map-probs",
+    "bin/last-merge-batches",
+    "bin/last-pair-probs",
+    "bin/last-postmask",
+    "bin/last-split",
+    "bin/last-split8",
+    "bin/last-train",
+    "bin/lastal",
+    "bin/lastal8",
+    "bin/lastdb",
+    "bin/lastdb8",
+    "bin/maf-convert",
+    "bin/maf-cut",
+    "bin/maf-join",
+    "bin/maf-sort",
+    "bin/maf-swap",
+    "bin/parallel-fasta",
+    "bin/parallel-fastq"
+  ],
+  "fn": "last-963-hdbcaa40_1.tar.bz2",
+  "license": "GPLv3",
+  "link": {
+    "source": "/home/guillaume/miniconda3/pkgs/last-963-hdbcaa40_1",
+    "type": 1
+  },
+  "md5": "942159782e208061a73ec53847fe8244",
+  "name": "last",
+  "package_tarball_full_path": "/home/guillaume/miniconda3/pkgs/last-963-hdbcaa40_1.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/fastq-interleave",
+        "path_type": "hardlink",
+        "sha256": "92a46a7fe3250c8d45d5d9d33f5a74ac6e8a81f8b8e97fd4195b063bb648ae3e",
+        "sha256_in_prefix": "92a46a7fe3250c8d45d5d9d33f5a74ac6e8a81f8b8e97fd4195b063bb648ae3e",
+        "size_in_bytes": 518
+      },
+      {
+        "_path": "bin/last-dotplot",
+        "path_type": "hardlink",
+        "sha256": "b7041107abfdb806af08152a15667e484aa0833bc526694c821fcaa3347c948a",
+        "sha256_in_prefix": "b7041107abfdb806af08152a15667e484aa0833bc526694c821fcaa3347c948a",
+        "size_in_bytes": 41497
+      },
+      {
+        "_path": "bin/last-map-probs",
+        "path_type": "hardlink",
+        "sha256": "16c90abd57e1ad392d3daec8c3f46dfe1e29d6f3b98bf6e8f8c91c2011d977b7",
+        "sha256_in_prefix": "16c90abd57e1ad392d3daec8c3f46dfe1e29d6f3b98bf6e8f8c91c2011d977b7",
+        "size_in_bytes": 5035
+      },
+      {
+        "_path": "bin/last-merge-batches",
+        "path_type": "hardlink",
+        "sha256": "533d0cb736792fe494124a67d1f8701591db12d3805fdc8383e58be630ee429b",
+        "sha256_in_prefix": "533d0cb736792fe494124a67d1f8701591db12d3805fdc8383e58be630ee429b",
+        "size_in_bytes": 20560
+      },
+      {
+        "_path": "bin/last-pair-probs",
+        "path_type": "hardlink",
+        "sha256": "829d4862eb5b84f07e0d20fe73b58be28720282d1e3c13f669753b060bb8c5d4",
+        "sha256_in_prefix": "829d4862eb5b84f07e0d20fe73b58be28720282d1e3c13f669753b060bb8c5d4",
+        "size_in_bytes": 99616
+      },
+      {
+        "_path": "bin/last-postmask",
+        "path_type": "hardlink",
+        "sha256": "7ba9ab811d30b38a5a455c65c45297feb2e1f035b154864a6ba8a6d46ee0f0a8",
+        "sha256_in_prefix": "7ba9ab811d30b38a5a455c65c45297feb2e1f035b154864a6ba8a6d46ee0f0a8",
+        "size_in_bytes": 5516
+      },
+      {
+        "_path": "bin/last-split",
+        "path_type": "hardlink",
+        "sha256": "88156adbc4cc9ceea60def50a39724521ddb003409d92d948fb06565777f6e76",
+        "sha256_in_prefix": "88156adbc4cc9ceea60def50a39724521ddb003409d92d948fb06565777f6e76",
+        "size_in_bytes": 240360
+      },
+      {
+        "_path": "bin/last-split8",
+        "path_type": "hardlink",
+        "sha256": "348853ef62390184125a6bc1a5d3f6a646d4fc74ed3ec5fac1114488d819911b",
+        "sha256_in_prefix": "348853ef62390184125a6bc1a5d3f6a646d4fc74ed3ec5fac1114488d819911b",
+        "size_in_bytes": 240424
+      },
+      {
+        "_path": "bin/last-train",
+        "path_type": "hardlink",
+        "sha256": "8b8ccd7e0abcb929dd968ae163ca6555bb6c0bcc7a42f188829f4e468d67c449",
+        "sha256_in_prefix": "8b8ccd7e0abcb929dd968ae163ca6555bb6c0bcc7a42f188829f4e468d67c449",
+        "size_in_bytes": 20674
+      },
+      {
+        "_path": "bin/lastal",
+        "path_type": "hardlink",
+        "sha256": "3b2bf50361340d3345b26ab9b8f8b65c91532b03dd27f1481364780c01dd74b4",
+        "sha256_in_prefix": "3b2bf50361340d3345b26ab9b8f8b65c91532b03dd27f1481364780c01dd74b4",
+        "size_in_bytes": 1177920
+      },
+      {
+        "_path": "bin/lastal8",
+        "path_type": "hardlink",
+        "sha256": "730a40faa3f7c8e97c84d76e4fd91af020b4d0dd774332c61ff17cc11afbaf66",
+        "sha256_in_prefix": "730a40faa3f7c8e97c84d76e4fd91af020b4d0dd774332c61ff17cc11afbaf66",
+        "size_in_bytes": 1181272
+      },
+      {
+        "_path": "bin/lastdb",
+        "path_type": "hardlink",
+        "sha256": "3e162b911831fa10334a2b4b1eae53c1ca0236315bc359dec6a51f23f8c22f59",
+        "sha256_in_prefix": "3e162b911831fa10334a2b4b1eae53c1ca0236315bc359dec6a51f23f8c22f59",
+        "size_in_bytes": 290720
+      },
+      {
+        "_path": "bin/lastdb8",
+        "path_type": "hardlink",
+        "sha256": "37e1abcd06684480096a43b8718614a4550063110753d5ce090409efdfbe619a",
+        "sha256_in_prefix": "37e1abcd06684480096a43b8718614a4550063110753d5ce090409efdfbe619a",
+        "size_in_bytes": 290720
+      },
+      {
+        "_path": "bin/maf-convert",
+        "path_type": "hardlink",
+        "sha256": "468282beeec01fcfebb2c0f1b0279fa6e204f0233022554b693cf5aabb874181",
+        "sha256_in_prefix": "468282beeec01fcfebb2c0f1b0279fa6e204f0233022554b693cf5aabb874181",
+        "size_in_bytes": 28988
+      },
+      {
+        "_path": "bin/maf-cut",
+        "path_type": "hardlink",
+        "sha256": "da004a63f32cf5dd31b0af71ab9e996f312eca5c67d7638c98a7257eee979c4f",
+        "sha256_in_prefix": "da004a63f32cf5dd31b0af71ab9e996f312eca5c67d7638c98a7257eee979c4f",
+        "size_in_bytes": 4340
+      },
+      {
+        "_path": "bin/maf-join",
+        "path_type": "hardlink",
+        "sha256": "4719a8e5c9e240308af3294196256b8177edea309fcb4a9225319a622d4e367d",
+        "sha256_in_prefix": "4719a8e5c9e240308af3294196256b8177edea309fcb4a9225319a622d4e367d",
+        "size_in_bytes": 9183
+      },
+      {
+        "_path": "bin/maf-sort",
+        "path_type": "hardlink",
+        "sha256": "36b626da8b43e23cbda69a7e2d83bbd265231c5f1686d6eb401aa42365ff9d70",
+        "sha256_in_prefix": "36b626da8b43e23cbda69a7e2d83bbd265231c5f1686d6eb401aa42365ff9d70",
+        "size_in_bytes": 2027
+      },
+      {
+        "_path": "bin/maf-swap",
+        "path_type": "hardlink",
+        "sha256": "a0f5100638dc68db7f8cdce472cbcb7f23c8e7e3c895686b28ac277ea0d32c5a",
+        "sha256_in_prefix": "a0f5100638dc68db7f8cdce472cbcb7f23c8e7e3c895686b28ac277ea0d32c5a",
+        "size_in_bytes": 4914
+      },
+      {
+        "_path": "bin/parallel-fasta",
+        "path_type": "hardlink",
+        "sha256": "f4d3e3a92644f3c8c7770c88a8d3a9dc7a34b57cfafd6881de1db73bfccb00f6",
+        "sha256_in_prefix": "f4d3e3a92644f3c8c7770c88a8d3a9dc7a34b57cfafd6881de1db73bfccb00f6",
+        "size_in_bytes": 234
+      },
+      {
+        "_path": "bin/parallel-fastq",
+        "path_type": "hardlink",
+        "sha256": "49555e8438d78b566c8e7c03c787fbb8cba9e079ef91009c1973a07ed8937885",
+        "sha256_in_prefix": "49555e8438d78b566c8e7c03c787fbb8cba9e079ef91009c1973a07ed8937885",
+        "size_in_bytes": 295
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "last==963=hdbcaa40_1",
+  "sha256": "c4e5f7aeb0cfe72971f77d7da8c826d851afa53ebe2bad410a427e34a1546b67",
+  "size": 1385696,
+  "subdir": "linux-64",
+  "timestamp": 1557690779000,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/last-963-hdbcaa40_1.tar.bz2",
+  "version": "963"
+}

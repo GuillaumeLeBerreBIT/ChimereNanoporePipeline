@@ -11,40 +11,40 @@ Number of runs:        10
 Verbosity level:       1
 
 A total of 10 runs will be performed.
-[2.14044 ms]	Parsing FASTA file
-[22.0269 ms]	Number of sequences found: 3909.
+[2.55203 ms]	Parsing FASTA file
+[22.0516 ms]	Number of sequences found: 3909.
 Starting run number 1
 /!\ WARNING: Sequence set too small for the requested sample size
 /!\ WARNING: The whole set will be used.
-[22.0822 ms]	Working on sequence start.
-[484.242 ms]	Working on sequence end.
+[22.1194 ms]	Working on sequence start.
+[464.866 ms]	Working on sequence end.
 Starting run number 2
-[845.543 ms]	Working on sequence start.
-[1302.84 ms]	Working on sequence end.
+[821.069 ms]	Working on sequence start.
+[1262.26 ms]	Working on sequence end.
 Starting run number 3
-[1690.12 ms]	Working on sequence start.
-[2207.26 ms]	Working on sequence end.
+[1615.32 ms]	Working on sequence start.
+[2055.74 ms]	Working on sequence end.
 Starting run number 4
-[2579.19 ms]	Working on sequence start.
-[3027.33 ms]	Working on sequence end.
+[2408.82 ms]	Working on sequence start.
+[2837.09 ms]	Working on sequence end.
 Starting run number 5
-[3386.63 ms]	Working on sequence start.
-[3826.35 ms]	Working on sequence end.
+[3185.16 ms]	Working on sequence start.
+[3631.57 ms]	Working on sequence end.
 Starting run number 6
-[4208.3 ms]	Working on sequence start.
-[4644.72 ms]	Working on sequence end.
+[3982.61 ms]	Working on sequence start.
+[4438.1 ms]	Working on sequence end.
 Starting run number 7
-[5016.87 ms]	Working on sequence start.
-[5453.54 ms]	Working on sequence end.
+[4797.06 ms]	Working on sequence start.
+[5246.43 ms]	Working on sequence end.
 Starting run number 8
-[5815.47 ms]	Working on sequence start.
-[6259.3 ms]	Working on sequence end.
+[5667.88 ms]	Working on sequence start.
+[6105.37 ms]	Working on sequence end.
 Starting run number 9
-[6613.06 ms]	Working on sequence start.
-[7059.54 ms]	Working on sequence end.
+[6464.52 ms]	Working on sequence start.
+[6895.58 ms]	Working on sequence end.
 Starting run number 10
-[7413.9 ms]	Working on sequence start.
-[7850.36 ms]	Working on sequence end.
+[7251.11 ms]	Working on sequence start.
+[7701.64 ms]	Working on sequence end.
 /!\	 Could not compute end adaper with heavy method
 /!\	 The resulting graph probably contains a loop.
 /!\	 For more details, read the error report below:
@@ -119,70 +119,70 @@ Number of runs:        20
 Verbosity level:       1
 
 A total of 20 runs will be performed.
-[2.1208 ms]	Parsing FASTA file
-[22.7427 ms]	Number of sequences found: 3909.
+[1.99749 ms]	Parsing FASTA file
+[21.5864 ms]	Number of sequences found: 3909.
 Starting run number 1
 /!\ WARNING: Sequence set too small for the requested sample size
 /!\ WARNING: The whole set will be used.
-[22.8111 ms]	Working on sequence start.
-[460.607 ms]	Working on sequence end.
+[21.665 ms]	Working on sequence start.
+[459.112 ms]	Working on sequence end.
 Starting run number 2
-[820.704 ms]	Working on sequence start.
-[1255.3 ms]	Working on sequence end.
+[817.816 ms]	Working on sequence start.
+[1258.01 ms]	Working on sequence end.
 Starting run number 3
-[1610.39 ms]	Working on sequence start.
-[2050.02 ms]	Working on sequence end.
+[1612.98 ms]	Working on sequence start.
+[2046.87 ms]	Working on sequence end.
 Starting run number 4
-[2412.49 ms]	Working on sequence start.
-[2850.81 ms]	Working on sequence end.
+[2412.14 ms]	Working on sequence start.
+[2865.18 ms]	Working on sequence end.
 Starting run number 5
-[3207.65 ms]	Working on sequence start.
-[3653.74 ms]	Working on sequence end.
+[3223.64 ms]	Working on sequence start.
+[3653.19 ms]	Working on sequence end.
 Starting run number 6
-[4021.51 ms]	Working on sequence start.
-[4481.68 ms]	Working on sequence end.
+[4008.81 ms]	Working on sequence start.
+[4447.54 ms]	Working on sequence end.
 Starting run number 7
-[4860.33 ms]	Working on sequence start.
-[5319.06 ms]	Working on sequence end.
+[4828.53 ms]	Working on sequence start.
+[5267.41 ms]	Working on sequence end.
 Starting run number 8
-[5736.34 ms]	Working on sequence start.
-[6213.5 ms]	Working on sequence end.
+[5622.96 ms]	Working on sequence start.
+[6065.8 ms]	Working on sequence end.
 Starting run number 9
-[6593.39 ms]	Working on sequence start.
-[7064.53 ms]	Working on sequence end.
+[6419.44 ms]	Working on sequence start.
+[6859.96 ms]	Working on sequence end.
 Starting run number 10
-[7435.34 ms]	Working on sequence start.
-[7888.31 ms]	Working on sequence end.
+[7219.09 ms]	Working on sequence start.
+[7655.38 ms]	Working on sequence end.
 Starting run number 11
-[8261.87 ms]	Working on sequence start.
-[8723.8 ms]	Working on sequence end.
+[8018.14 ms]	Working on sequence start.
+[8454.65 ms]	Working on sequence end.
 Starting run number 12
-[9121.78 ms]	Working on sequence start.
-[9578.31 ms]	Working on sequence end.
+[8813.61 ms]	Working on sequence start.
+[9250.44 ms]	Working on sequence end.
 Starting run number 13
-[9947.78 ms]	Working on sequence start.
-[10385.1 ms]	Working on sequence end.
+[9601.5 ms]	Working on sequence start.
+[10038.6 ms]	Working on sequence end.
 Starting run number 14
-[10750.7 ms]	Working on sequence start.
-[11191.2 ms]	Working on sequence end.
+[10391.6 ms]	Working on sequence start.
+[10831.3 ms]	Working on sequence end.
 Starting run number 15
-[11548.9 ms]	Working on sequence start.
-[11985.7 ms]	Working on sequence end.
+[11186.9 ms]	Working on sequence start.
+[11626.6 ms]	Working on sequence end.
 Starting run number 16
-[12345.6 ms]	Working on sequence start.
-[12785.7 ms]	Working on sequence end.
+[12008.9 ms]	Working on sequence start.
+[12446.3 ms]	Working on sequence end.
 Starting run number 17
-[13151.5 ms]	Working on sequence start.
-[13605.4 ms]	Working on sequence end.
+[12801.6 ms]	Working on sequence start.
+[13240.5 ms]	Working on sequence end.
 Starting run number 18
-[13972.4 ms]	Working on sequence start.
-[14413.7 ms]	Working on sequence end.
+[13599 ms]	Working on sequence start.
+[14037.9 ms]	Working on sequence end.
 Starting run number 19
-[14782.6 ms]	Working on sequence start.
-[15232.8 ms]	Working on sequence end.
+[14395.8 ms]	Working on sequence start.
+[14844.8 ms]	Working on sequence end.
 Starting run number 20
-[15598.3 ms]	Working on sequence start.
-[16044.5 ms]	Working on sequence end.
+[15210.5 ms]	Working on sequence start.
+[15642.4 ms]	Working on sequence end.
 /!\	 Could not compute end adaper with heavy method
 /!\	 The resulting graph probably contains a loop.
 /!\	 For more details, read the error report below:

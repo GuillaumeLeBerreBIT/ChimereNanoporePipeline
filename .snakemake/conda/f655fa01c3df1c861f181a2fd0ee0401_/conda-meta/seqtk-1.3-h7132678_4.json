@@ -1,0 +1,45 @@
+{
+  "build": "h7132678_4",
+  "build_number": 4,
+  "channel": "https://conda.anaconda.org/bioconda/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=10.3.0",
+    "libzlib >=1.2.11,<1.3.0a0",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/guillaume/miniconda3/pkgs/seqtk-1.3-h7132678_4",
+  "features": "",
+  "files": [
+    "bin/seqtk"
+  ],
+  "fn": "seqtk-1.3-h7132678_4.tar.bz2",
+  "license": "MIT",
+  "link": {
+    "source": "/home/guillaume/miniconda3/pkgs/seqtk-1.3-h7132678_4",
+    "type": 1
+  },
+  "md5": "b3917ce9564f6f2bfa1cabe3add20a10",
+  "name": "seqtk",
+  "package_tarball_full_path": "/home/guillaume/miniconda3/pkgs/seqtk-1.3-h7132678_4.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/seqtk",
+        "path_type": "hardlink",
+        "sha256": "7f95f5869c97d9768836ea05fe04ebc70e578f3040f73103a1f6adcda680acc3",
+        "sha256_in_prefix": "7f95f5869c97d9768836ea05fe04ebc70e578f3040f73103a1f6adcda680acc3",
+        "size_in_bytes": 69872
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "seqtk==1.3=h7132678_4",
+  "sha256": "5af620262d004351dc10761e29ea4d476c5f02e5719dd6f5ec5a18f27cdd7291",
+  "size": 37517,
+  "subdir": "linux-64",
+  "timestamp": 1645505469000,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/linux-64/seqtk-1.3-h7132678_4.tar.bz2",
+  "version": "1.3"
+}

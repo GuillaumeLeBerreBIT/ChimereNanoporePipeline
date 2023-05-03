@@ -1,0 +1,7 @@
+The flag 'directory' used in rule all is only valid for outputs, not inputs.
+Building DAG of jobs...
+MissingInputException in rule SACRAcall in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 35:
+Missing input files for rule SACRAcall:
+    output: SACRAResults/sacra_results.fasta
+    affected files:
+        ProwlerProcessed/Output_readsTrimLT-U0-D7W100L100R0.fasta

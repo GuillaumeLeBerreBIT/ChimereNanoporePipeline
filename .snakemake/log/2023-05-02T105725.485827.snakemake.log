@@ -1,0 +1,25 @@
+The flag 'directory' used in rule all is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+ProwlerTrim        1              1              1
+all                1              1              1
+total              2              1              1
+
+Select jobs to execute...
+
+[Tue May  2 10:57:26 2023]
+rule ProwlerTrim:
+    input: scripts, PorechopABI/Output_reads.fastq
+    output: ProwlerProcessed
+    jobid: 3
+    reason: Missing output files: ProwlerProcessed
+    resources: tmpdir=/tmp
+
+RuleException in rule ProwlerTrim in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 30:
+NameError: The name 'out_fastq' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+python3 {script}/TrimmerLarge.py -f {out_fastq} -i PorechopABI/ -o {output} -m 'D' -r '.fasta'

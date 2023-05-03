@@ -1,0 +1,27 @@
+The flag 'directory' used in rule all is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+porechopABIcall        1              1              1
+total                  1              1              1
+
+Select jobs to execute...
+
+[Tue May  2 22:10:59 2023]
+rule porechopABIcall:
+    input: PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/Output_reads.fastq, reports/Statistics.txt
+    jobid: 0
+    reason: Forced execution
+    priority: 10
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/8ff5eb033241f5889665bcedcbfab59f_
+[Tue May  2 22:12:30 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2023-05-02T221058.924752.snakemake.log
