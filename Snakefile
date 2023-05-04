@@ -3,7 +3,7 @@ configfile: "config_snakemake.yaml"
 # Rule to get all the output files and save
 rule all:
     input:
-        "reports/Results.html"
+        expand("reports/{identifier}Results.html", identifier = config["identifier"])
 
 
 # Rule to call the porechop program and saving the output in files
@@ -15,8 +15,8 @@ rule porechopABIcall:
         #config['start']
         expand("PorechopABI/{sample}", sample=config["samples"])
     output: 
-        reads="PorechopABI/PoreChopReads.fastq",
-        statistics="reports/Statistics.txt"
+        reads = expand("PorechopABI/{identifier}PoreChopReads.fastq", identifier=config["identifier"]),
+        statistics = expand("reports/{identifier}Statistics.txt", identifier=config["identifier"])
     conda: 
         "envs/porechop_abi.yaml"
     shell: 
@@ -27,9 +27,10 @@ rule porechopABIcall:
 # Have to format the name of the output file since it is dependant on parameters provided by the config file.  
 rule ProwlerTrim:
     input:
-        out_fastq="PorechopABI/PoreChopReads.fastq" 
+        out_fastq = expand("PorechopABI/{identifier}PoreChopReads.fastq", identifier=config["identifier"]) 
     output:
-        out_prow_fasta = expand("ProwlerProcessed/PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
+        out_prow_fasta = expand("ProwlerProcessed/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
+            identifier = config["identifier"],
             clip = config['prowler']['clip'], 
             fragments = config['prowler']['fragments'],
             trimmode = config['prowler']['trimmode'],
@@ -52,7 +53,8 @@ rule ProwlerTrim:
 # Again here using a formatted string since it is dependant on certain parameters provided by a script.  
 rule SACRAcall:
     input:
-        in_sacra = expand("ProwlerProcessed/PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
+        in_sacra = expand("ProwlerProcessed/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
+            identifier = config["identifier"],
             clip = config['prowler']['clip'], 
             fragments = config['prowler']['fragments'],
             trimmode = config['prowler']['trimmode'],
@@ -61,18 +63,9 @@ rule SACRAcall:
             minlen = config['prowler']['minlen'],
             datamax = config['prowler']['datamax'])
     output: 
-        "SACRAResults/SacraResults.fasta"
-    conda:
-        "envs/sacra.yaml"
-    shell: 
-        "scripts/SACRA.sh -i {input.in_sacra} -p {output} -t 6 -c config_sacra.yml"
-
-# Combining all different files used to generate a general report file.  
-rule StatisticsToHTML:
-    input: 
-        poreStat = "reports/Statistics.txt",
-        poreFastq = "PorechopABI/PoreChopReads.fastq",
-        prow = expand("ProwlerProcessed/PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
+        sacraFull = expand("SACRAResults/{identifier}SacraResults.fasta", identifier = config["identifier"]),
+        sacraChim = expand("ProwlerProcessed/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.split.fasta", 
+            identifier = config["identifier"],
             clip = config['prowler']['clip'], 
             fragments = config['prowler']['fragments'],
             trimmode = config['prowler']['trimmode'],
@@ -80,8 +73,53 @@ rule StatisticsToHTML:
             windowsize = config['prowler']['windowsize'],
             minlen = config['prowler']['minlen'],
             datamax = config['prowler']['datamax']),
-        sacra = "SACRAResults/SacraResults.fasta"
-    output: 
-        "reports/Results.html"
+        sacraNonChim = expand("ProwlerProcessed/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.non_chimera.fasta", 
+            identifier = config["identifier"],
+            clip = config['prowler']['clip'], 
+            fragments = config['prowler']['fragments'],
+            trimmode = config['prowler']['trimmode'],
+            qscore = config['prowler']['qscore'],
+            windowsize = config['prowler']['windowsize'],
+            minlen = config['prowler']['minlen'],
+            datamax = config['prowler']['datamax'])
+    conda:
+        "envs/sacra.yaml"
     shell: 
-        "python3 scripts/generate_report.py {input.poreStat} {input.poreFastq} {input.prow} {input.sacra}"
+        "scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 6 -c config_sacra.yml"
+
+# Combining all different files used to generate a general report file.  
+rule StatisticsToHTML:
+    input: 
+        poreStat = expand("reports/{identifier}Statistics.txt", identifier=config["identifier"]),
+        poreFastq = expand("PorechopABI/{identifier}PoreChopReads.fastq", identifier=config["identifier"]),
+        prow = expand("ProwlerProcessed/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
+            identifier = config['identifier'],
+            clip = config['prowler']['clip'], 
+            fragments = config['prowler']['fragments'],
+            trimmode = config['prowler']['trimmode'],
+            qscore = config['prowler']['qscore'],
+            windowsize = config['prowler']['windowsize'],
+            minlen = config['prowler']['minlen'],
+            datamax = config['prowler']['datamax']),
+        sacraChim = expand("ProwlerProcessed/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.split.fasta", 
+            identifier = config["identifier"],
+            clip = config['prowler']['clip'], 
+            fragments = config['prowler']['fragments'],
+            trimmode = config['prowler']['trimmode'],
+            qscore = config['prowler']['qscore'],
+            windowsize = config['prowler']['windowsize'],
+            minlen = config['prowler']['minlen'],
+            datamax = config['prowler']['datamax']),
+        sacraNonChim = expand("ProwlerProcessed/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.non_chimera.fasta", 
+            identifier = config["identifier"],
+            clip = config['prowler']['clip'], 
+            fragments = config['prowler']['fragments'],
+            trimmode = config['prowler']['trimmode'],
+            qscore = config['prowler']['qscore'],
+            windowsize = config['prowler']['windowsize'],
+            minlen = config['prowler']['minlen'],
+            datamax = config['prowler']['datamax'])
+    output: 
+        expand("reports/{identifier}Results.html", identifier = config["identifier"])
+    shell: 
+        "python3 scripts/generate_report.py {output} {input.poreStat} {input.poreFastq} {input.prow} {input.sacraChim} {input.sacraNonChim}"
