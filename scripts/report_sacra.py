@@ -6,9 +6,10 @@
 import os, argparse, re
 from Bio import SeqIO   # pip install biopython
 import numpy as np
-import seaborn as sns
+#import seaborn as sns
+import pandas as pd
 import matplotlib.pyplot as plt     # pip install matplotlib
-
+from scipy import stats         # pip install scipy
 
 #######################################
 # COMMAND LINE INPUT
@@ -27,6 +28,8 @@ args = parser.parse_args()
 prow_records = []
 chim_records = []
 nonchim_records = []
+# This list with gather the seq len from Non-Cimera and Chimera reads
+sacra_seq_len = []
 
 ### PROWLER SEQUENCES
 # Reading in the Prowler Fasta file
@@ -41,6 +44,8 @@ count_prow = len([record for record in prow_records])
 for seq_record in SeqIO.parse(args.sacraChimere, "fasta"):
     # Append each record to a list
     chim_records.append(seq_record.id)
+    # Gathering the read lengths. 
+    sacra_seq_len.append(len(seq_record.seq))
 # Counting the number of IDs == Number of sequences
 count_chim = len([record for record in chim_records])
 
@@ -67,6 +72,8 @@ count_unique_chim = len([record for record in unique_chim])
 # Reading in the Prowler Fasta file with Non Chimere reads
 for seq_record in SeqIO.parse(args.sacraNonChimere, "fasta"):
     nonchim_records.append(seq_record.id)
+    # Gathering the read lengths. 
+    sacra_seq_len.append(len(seq_record.seq))
 # Counting the number of IDs == Number of reads
 count_nonchim = len([record for record in nonchim_records])
 
@@ -80,11 +87,102 @@ print(f"Reads after Prowler: {count_prow}\
 # VISUALIZATION
 #######################################
 
+### RAW RESULTS
+# Creating a pandas dataframe. >> Parse to matplotlib
+sacraDf = pd.DataFrame([["No. sequences", count_unique_chim, count_nonchim]],
+                       columns = ["Amount", "Chimera sequences", "Non chimera sequences"])
+#Plotting the rows  of the No. sequences per bar.
+# Setting the width of the bars bit smaller. 
+# Adding colormap for visualization. 
+ax = sacraDf.plot(x='Amount', kind='bar', stacked=True, width = 0.2,
+                colormap = "Set3",  
+                title='Total amounft of chimera and non-chimera sequences after SACRA')
+# Iterating over the patches to obtain the width and height
+# Using the x, y coordinates to place it in the center of corresponding bar
+for p in ax.patches:
+    width, height = p.get_width(), p.get_height()
+    x, y = p.get_xy() 
+    # labelling text based on gathered positions. 
+    ax.text(x+width/2, 
+            y+height/2, 
+            '{:.0f}'.format(height), 
+            horizontalalignment='center', 
+            verticalalignment='center')
+
+# For some reason have to set the ticks to 0 to get the label horizontally. 
+plt.xticks(rotation=0)
+# Shrink current axis by 20%
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+# Legend location to the upper right
+# bbox anchor is to change the location, placed it outside the box, bbox_to_anchor(x,y)
+plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
+# Label y-axis
+plt.ylabel("No. of sequences")
 
 
+plt.show()
 
+### RELATIVE RESULTS
+# Calculations
+total_sacra_seq = count_unique_chim + count_nonchim
+rel_unique_chim = (count_unique_chim / total_sacra_seq) * 100
+rel_nonchim = (count_nonchim / total_sacra_seq) * 100
+# Creating a pandas dataframe. >> Parse to matplotlib
+sacraDf = pd.DataFrame([["No. sequences", rel_unique_chim, rel_nonchim]],
+                       columns = ["Amount", "Chimera sequences", "Non chimera sequences"])
+#Plotting the rows  of the No. sequences per bar.
+# Setting the width of the bars bit smaller. 
+# Adding colormap for visualization. 
+ax = sacraDf.plot(x='Amount', kind='bar', stacked=True, width = 0.2,
+                colormap = "Set3",  
+                title='Total amounft of chimera and non-chimera sequences after SACRA')
+# Iterating over the patches to obtain the width and height
+# Using the x, y coordinates to place it in the center of corresponding bar
+for p in ax.patches:
+    width, height = p.get_width(), p.get_height()
+    x, y = p.get_xy() 
+    # labelling text based on gathered positions. 
+    ax.text(x+width/2, 
+            y+height/2, 
+            '{:.2f} %'.format(height), 
+            horizontalalignment='center', 
+            verticalalignment='center')
 
+# For some reason have to set the ticks to 0 to get the label horizontally. 
+plt.xticks(rotation=0)
+# Shrink current axis by 20%
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+# Legend location to the upper right
+# bbox anchor is to change the location, placed it outside the box, bbox_to_anchor(x,y)
+plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
+# Label y-axis
+plt.ylabel("No. of sequences")
 
+#plt.savefig("reports/SACRA-Stacked-Seq-Rel-Amount.png", dpi=200)
+plt.show()
+
+### HISTOGRAM LENGTH READS
+# Convert the read length lists to numpy arrays for plotting
+sacra_array = np.array(sacra_seq_len)
+
+# Plot a histogram of sequence lengths after SACRA
+# Setting amount of bins, range of the graph, setting the density line to true.
+plt.hist(sacra_array, bins=30, range = [min(sacra_array), 1000])
+plt.title('Sequence lengths after SACRA')
+plt.xlabel('Sequence length')
+plt.ylabel('Frequency')
+
+# From scipy can use to plot the lines
+# Kernel density estimation is a way to estimate the probability density function (PDF)
+#density = stats.gaussian_kde(sacra_array)
+#Evenly spread between 0 and 1000 of 200 different values
+#dens = np.linspace(min(sacra_array), 1000, 200)
+#plt.plot(dens, density(dens), color='red', alpha = 0.5)
+
+#plt.savefig("reports/SACRA-Hist-Distribution.png", dpi=200)
+plt.show()
 """
 labels = ["Reads after Prowler", "Chimere Reads", "Non-Chimere Reads"]
 total_reads = [count_prow, count_chim, count_nonchim]

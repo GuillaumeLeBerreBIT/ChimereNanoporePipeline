@@ -1,5 +1,7 @@
 samples: "fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq"
 
+identifier: "fastq_runid_211"
+
 prowler:
   clip: "LT"
   fragments: "U0"
@@ -8,3 +10,6 @@ prowler:
   windowsize: 100
   minlen: 100
   datamax: 0
+
+filterSACRA:
+  bases: 50

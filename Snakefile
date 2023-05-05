@@ -87,6 +87,17 @@ rule SACRAcall:
     shell: 
         "scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 6 -c config_sacra.yml"
 
+rule FilterFastaSACRA:
+    input:
+        sacraUF = expand("SACRAResults/{identifier}SacraResults.fasta", identifier = config["identifier"])
+    output:
+        sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"])
+    params:
+        bases = config['filterSACRA']['bases']
+    shell:
+        "python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}"
+
+
 # Combining all different files used to generate a general report file.  
 rule StatisticsToHTML:
     input: 
@@ -118,8 +129,9 @@ rule StatisticsToHTML:
             qscore = config['prowler']['qscore'],
             windowsize = config['prowler']['windowsize'],
             minlen = config['prowler']['minlen'],
-            datamax = config['prowler']['datamax'])
+            datamax = config['prowler']['datamax']),
+        sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"])
     output: 
         expand("reports/{identifier}Results.html", identifier = config["identifier"])
     shell: 
-        "python3 scripts/generate_report.py {output} {input.poreStat} {input.poreFastq} {input.prow} {input.sacraChim} {input.sacraNonChim}"
+        "python3 scripts/generate_report.py {output} {input.poreStat} {input.poreFastq} {input.prow} {input.sacraChim} {input.sacraNonChim} {input.sacraF}"
