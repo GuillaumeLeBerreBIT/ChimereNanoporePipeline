@@ -1,15 +1,32 @@
+# Give the sample names want to run. 
 samples: "fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq"
 
+# Using a unique identifier for each sample isntead of parsing the full name. 
 identifier: "fastq_runid_211"
 
+# PROWLER
 prowler:
+  # Select L to clip leading Ns, T to trim trialing Ns and LT to trim both (default=LT)
   clip: "LT"
+  # The fragmetation mode default U0
   fragments: "U0"
+  # Set the trimming algorithm Static == "S" OR Dynamic == "D"
   trimmode: "D"
+  # Set the quality score trimming treshold.
   qscore: 7
+  # Change the size of the trimming window
   windowsize: 100
+  # The minimum acceptable numer of bases in a read
   minlen: 100
+  # Select a maximum data subsample in MB (default = 0, entire sample)
   datamax: 0
 
+# Give the number of bases as minimum treshold to filter the fasta file one. 
 filterSACRA:
   bases: 50
+
+Diamond:
+  # The maximum number of target sequences per query to report alignments for
+  max-target-seq: 1
+  # Format of the output file: 6 == BLAST tabular format, 5 == BLAST XML, 0 == Pairwise alignemnt, ...
+  output-format: 6

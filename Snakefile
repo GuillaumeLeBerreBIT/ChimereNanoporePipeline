@@ -97,6 +97,16 @@ rule FilterFastaSACRA:
     shell:
         "python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}"
 
+rule DiamondAlignmentCOI:
+    input: 
+        sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"])
+    output: 
+        DiamondCOI = expand("Diamond/{identifier}DiamondCOI.csv", identifier = config["identifier"])
+    params:
+        k = config['Diamond']['max-target-seq'],
+        f = config['Diamond']['output-format']
+    shell: 
+        "diamond blastx -d Diamond/COI -q  {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCOI}"
 
 # Combining all different files used to generate a general report file.  
 rule StatisticsToHTML:
@@ -134,4 +144,4 @@ rule StatisticsToHTML:
     output: 
         expand("reports/{identifier}Results.html", identifier = config["identifier"])
     shell: 
-        "python3 scripts/generate_report.py {output} {input.poreStat} {input.poreFastq} {input.prow} {input.sacraChim} {input.sacraNonChim} {input.sacraF}"
+        "python3 scripts/StatisticalReportGenerator.py {output} {input.poreStat} {input.poreFastq} {input.prow} {input.sacraChim} {input.sacraNonChim} {input.sacraF}"

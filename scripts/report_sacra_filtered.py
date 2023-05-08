@@ -16,10 +16,14 @@ for seq_record in SeqIO.parse("SACRAResults/fastq_runid_211SacraResultsFiltered.
 # Convert the read length lists to numpy arrays for plotting
 before_array = np.array(filtered_sacra)
 
-# Plot a histogram of read lengths before trimming
+# Plot a histogram with a predefined number of bins & a range set from x1 to x2.
 plt.hist(before_array, bins=40, range=[0,1000])
+# Setting the title
 plt.title('After filtereing on No. of bases')
+# X-axis label
 plt.xlabel('Read length')
+# Setting y-axis label
 plt.ylabel('Frequency')
+# Detrmining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
 plt.show()
