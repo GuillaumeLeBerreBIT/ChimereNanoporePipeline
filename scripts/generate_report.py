@@ -33,9 +33,8 @@ parser.add_argument('sacraNonChimere', type=str,
 parser.add_argument('sacraFiltered', type=str, 
                     help='Give the Fasta file containing the filtered reads on a certain threshold.')
 args = parser.parse_args()
-# Just to handle it nothing necasssary
-nofunction = args.sacraFiltered
 
+## PARSING UNIQUE IDENTIFIER
 # Use the unique identifier per sample 
 uniquelabel = args.outputFile
 # Substitute the unwanted part by nothing >> using regular expression
@@ -49,12 +48,10 @@ identifier = re.sub("reports/","",identifier)
 #######################################
 # PORECHOP REPORT
 #######################################
-
 # Opening the file from the current location 
 with open(args.porechopStat, "r") as text_file:
-    #Splitting the lines of the file to get a list
+    # Splitting the lines of the file to get a list of each newline
     splitted_file = text_file.readlines()
-    #print(splitted_file)
 
     # Setting up a flag
     flag = 0 
@@ -63,75 +60,76 @@ with open(args.porechopStat, "r") as text_file:
 
     for line in splitted_file:
         # Setting up the different conditions to handle the wanted output
+        # When the re.search matches the pattern of a line it will return == True if not == False
         if re.search("Trimming adapters from read ends", line):
             flag = 1
         elif re.search("adapters trimmed from their", line):
             flag = 2
         elif re.search("reads were split based on middle adapters", line):
             flag = 3
-        # When encoutering a newline then set flag to 0 to nat add the output into a file.
+        # When encoutering a newline flag == 0 == Not add the line to the list
         elif re.search("^\n", line):
             flag = 0
 
-        #If any of the flags are set then will save the output in a list
+        # If any of the flags match the set value == save the output in a list
         if flag == 1 or flag == 2 or flag == 3:
-            print(line)
+            # print(line)
+            # Removing leading or trailing characters
             stripped_line = line.strip()
-            statistics_list.append(stripped_line)
-            
-    print(statistics_list)
+            # Add each stripped line now to a file 
+            statistics_list.append(stripped_line)     
+    #print(statistics_list)
 
-    # Removing special characters
+    # Removing special characters from the lines
     cleaned_text_list = []
 
     for text in statistics_list:
+        # If any of the patterns match in the item from lsit then replace it by nothing == Removing
         cleaned_text = re.sub(r'\x1b\[1m\x1b\[4m|\x1b\[0m|\x1b\[31m', '', text)
-        
+        # If the filtered item has nothing == Do nothing with it
+        # Else keep it and add to a list 
         if cleaned_text == '':
             continue
         else: 
-            cleaned_text_list.append(cleaned_text)
-
-    print(cleaned_text_list)      
+            cleaned_text_list.append(cleaned_text)    
 
 #######################################
 # GENERATING PROWLER REPORT
 #######################################
-
-# Lists to store the read lengths before and after trimming
+# Empty lists to store the read lengths before and after trimming
 before_trim = []
 after_trim = []
-
-# Read the input fastq file and append the length of each read to before_trim
+# Biopython has a usefull library that can handle the read of fastq and fasta files. 
+# Makes it much more easier to read in files and can filter on what part of each sequence you want == .seq, .id 
+# Read the input fastq file and append the length of each read to before_trim aka a list
 for seq_record in SeqIO.parse(args.porechopFastq, "fastq"):
     before_trim.append(len(seq_record.seq))
 
-# Read the trimmed fasta file and append the length of each read to after_trim
+# Read the trimmed fasta file and append the length of each read to after_trim aka a list
 for seq_record in SeqIO.parse(args.prowlerFasta, "fasta"):
     after_trim.append(len(seq_record.seq))
 
-# Convert the read length lists to numpy arrays for plotting
+# Convert the read length lists to numpy arrays >> Plots require numpy array == [[...]]
 before_array = np.array(before_trim)
 after_array = np.array(after_trim)
 
-# Create a figure with two subplots
-fig, axs = plt.subplots(1, 2, tight_layout=True)
+# Create a figure with two subplots + tight layout
+fig, axs = plt.subplots(1, 2, tight_layout=True, figsize = (10,5))
 
-# Plot a histogram of read lengths before trimming
-axs[0].hist(before_array, bins=30, range=[0,10000])
+# Plot a histogram of read lengths before trimming + setting number of bins + setting the range of x axis
+axs[0].hist(before_array, bins = 40, range = [0,10000])
 axs[0].set_title('Before trimming Reads')
 axs[0].set_xlabel('Read length')
 axs[0].set_ylabel('Frequency')
-
-# Plot a histogram of read lengths after trimming
-axs[1].hist(after_array, bins=30, range=[0,10000])
+# Plot a histogram of read lengths before trimming + setting number of bins + setting the range of x axis
+axs[1].hist(after_array, bins = 40, range = [0,10000])
 axs[1].set_title('After trimming Reads')
 axs[1].set_xlabel('Read length')
 axs[1].set_ylabel('Frequency')
 
 # Saving the file before show
 plt.savefig("reports/" + identifier + "Before&After-Prowler.png", dpi=200)
-# Savefig does not close the plot. 
+# Savefig does not close the plot. >> clf = close
 plt.clf()
 
 #######################################
@@ -141,48 +139,51 @@ plt.clf()
 prow_records = []
 chim_records = []
 nonchim_records = []
-# This list with gather the seq len from Non-Cimera and Chimera reads
+# This list with the gathered seq len from Non-Cimera and Chimera reads
 sacra_seq_len = []
 
 ### PROWLER SEQUENCES
-# Reading in the Prowler Fasta file
+# Reading in the Prowler Fasta file using Biopython to handel fasta files
 for seq_record in SeqIO.parse(args.prowlerFasta, "fasta"):
     # Append each record to a list
     prow_records.append(seq_record.id)
-# Counting the number of IDs == Number of sequences
+# Counting the number of IDs == Number of sequences >> total number of sequences present in the fasta file.
 count_prow = len([record for record in prow_records])
 
 ### CHIMERA SEQUENCES
 # Reading in the Fasta file with Chimere sequences
 for seq_record in SeqIO.parse(args.sacraChimere, "fasta"):
-    # Append each record to a list
+    # Append each record/header to a list
     chim_records.append(seq_record.id)
-    # Gathering the read lengths. 
+    
+    # Gathering the read lengths. >> Want all read lengths even of the headers contain multiple lengths
     sacra_seq_len.append(len(seq_record.seq))
-# Counting the number of IDs == Number of sequences
+
+# Counting the number of IDs == Number of sequences >> total number of sequences present in the fasta file.
 count_chim = len([record for record in chim_records])
 
 ### UNIQUE CHIMERA SEQUENCE ID
-# Will try to count and see how many reads had one/multiple chimera reads
+# Will try to count and see how many reads had one/multiple chimera reads == UNIQUE HEADERS!!
 # Setting empty list beforehand
 record_splitted = []
-#Iterating over the already collected chimera sequence records
+# Iterating over the collected chimera sequence records
 for chim in chim_records:
-    # Split since each record hase the sequence pos start and end included.
+    # Split each item >> HEADER:START-END == Want only the first part to find unique headers
     chim_splitted = chim.split(":")
-    # Only retain the chimeric sequence IDs
+    # Only ID part retained
     record_splitted.append(chim_splitted[0])
-# Set an empty set to start
+# Set an empty set >> Set == only unique IDs
 unique_chim = set()
 # Iterate over the sequence IDs
 for i in record_splitted:
-    # Add to a set of IDs
+    # Add to the set of IDs
     unique_chim.add(i)
 # Counting the number of IDs == Number of UNIQUE sequences
 count_unique_chim = len([record for record in unique_chim])
 
 ### NON CHIMERA SEQUENCES
-# Reading in the Prowler Fasta file with Non Chimere reads
+# Non chimera sequences were not splitted or so thus headers remain unique
+# Reading in the Prowler Fasta file with Non Chimere reads, using the Biopython library
 for seq_record in SeqIO.parse(args.sacraNonChimere, "fasta"):
     nonchim_records.append(seq_record.id)
     # Gathering the read lengths. 
@@ -199,16 +200,16 @@ count_nonchim = len([record for record in nonchim_records])
 
 ### VISUALIZATION
 ### RAW RESULTS
-# Creating a pandas dataframe. >> Parse to matplotlib
+# Creating a pandas dataframe >> Parse to matplotlib
 sacraDf = pd.DataFrame([["No. sequences", count_unique_chim, count_nonchim]],
                        columns = ["Amount", "Chimera", "Non chimera"])
-#Plotting the rows  of the No. sequences per bar.
+# Plotting the rows  of the No. sequences per bar.
 # Setting the width of the bars bit smaller. 
 # Adding colormap for visualization. 
 ax = sacraDf.plot(x='Amount', kind='bar', stacked=True, width = 0.2,
                 colormap = "Set3",  
                 title='Total amounft of chimera and non-chimera sequences after SACRA')
-# Iterating over the patches to obtain the width and height
+# Iterating over the patches to obtain the width and height + x and y coordinates
 # Using the x, y coordinates to place it in the center of corresponding bar
 for p in ax.patches:
     width, height = p.get_width(), p.get_height()
@@ -225,19 +226,18 @@ plt.xticks(rotation=0)
 # Legend location to the upper right
 # bbox anchor is to change the location, placed it outside the box, bbox_to_anchor(x,y)
 plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
-# Shrink current axis by 20%
+# Shrink current axis by 20% (x-axis)
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 # Label y-axis
 plt.ylabel("No. of sequences")
-
 # Saving the picture 
 plt.savefig("reports/" + identifier + "SACRA-Stacked-Seq-Amount.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
 
 ### RELATIVE RESULTS
-# Calculations
+# Calculations Relative Amount
 total_sacra_seq = count_unique_chim + count_nonchim
 rel_unique_chim = (count_unique_chim / total_sacra_seq) * 100
 rel_nonchim = (count_nonchim / total_sacra_seq) * 100
@@ -250,7 +250,7 @@ sacraDf = pd.DataFrame([["No. sequences", rel_unique_chim, rel_nonchim]],
 ax = sacraDf.plot(x='Amount', kind='bar', stacked=True, width = 0.2,
                 colormap = "Set3",  
                 title='Total amounft of chimera and non-chimera sequences after SACRA')
-# Iterating over the patches to obtain the width and height
+# Iterating over the patches to obtain the width and height + x and y coordinates
 # Using the x, y coordinates to place it in the center of corresponding bar
 for p in ax.patches:
     width, height = p.get_width(), p.get_height()
@@ -272,7 +272,7 @@ ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
 # Label y-axis
 plt.ylabel("No. of sequences")
-
+# Saving the created plot as .png, using the dpi to set the size of the figure. 
 plt.savefig("reports/" + identifier + "SACRA-Stacked-Seq-Rel-Amount.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
@@ -281,15 +281,45 @@ plt.clf()
 sacra_array = np.array(sacra_seq_len)
 
 # Plot a histogram of sequence lengths after SACRA
-# Setting amount of bins, range of the graph, setting the density line to true.
-plt.hist(sacra_array, bins=30, range = [min(sacra_array), 1000])
+# Setting amount of bins & range of the graph. 
+plt.hist(sacra_array, bins = 40, range = [min(sacra_array), 1000])
+# Setting title, x and y labels. 
 plt.title('Sequence lengths after SACRA')
 plt.xlabel('Sequence length')
 plt.ylabel('Frequency')
-
+# Determining to show the interval of x-axis ticks. 
+plt.xticks(np.arange(0, 1000, 100))
+# Saving the figure in .png format. 
 plt.savefig("reports/" + identifier + "SACRA-Hist-Distribution.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
+
+#######################################
+# SACRA FILTERING STEP
+#######################################
+# Lists to store the sequence lengths after the filtering of fasta file on certain length. 
+filtered_sacra = []
+# Read the input fastq file and append the length of each sequence to before_trim list
+for seq_record in SeqIO.parse(args.sacraFiltered, "fasta"):
+    filtered_sacra.append(len(seq_record.seq))
+# Convert the read length lists to numpy arrays for plotting
+before_array = np.array(filtered_sacra)
+
+# Plot a histogram with a predefined number of bins & a range set from x1 to x2.
+plt.hist(before_array, bins=40, range=[0,1000])
+# Setting the title
+plt.title('Filtering on a treshhold of ' + str(min(filtered_sacra)) + ' bases')
+# X-axis label
+plt.xlabel('Read length')
+# Setting y-axis label
+plt.ylabel('Frequency')
+# Detrmining to show the interval of x-axis ticks. 
+plt.xticks(np.arange(0, 1000, 100))
+
+plt.savefig("reports/" + identifier + "SACRA-Hist-FilteredSeq.png", dpi=200)
+# Close the plot
+plt.clf()
+
 #######################################
 # GENERATING HTML REPORT
 #######################################
@@ -346,6 +376,9 @@ with open(statisticalFile, "w") as html_file:
     html_file.writelines("\t<img src='" + identifier + "SACRA-Stacked-Seq-Amount.png' height='800px'>\n")
     html_file.writelines("\t<img src='" + identifier + "SACRA-Stacked-Seq-Rel-Amount.png' height='800px'>\n")
     html_file.writelines("\t<img src='" + identifier + "SACRA-Hist-Distribution.png' height='800px'>\n")
+    # The statistical ouput after filtering on certain amount of bases
+    html_file.writelines("<h2>SACRA Filtered Reads</h2>\n")
+    html_file.writelines("\t<img src='" + identifier + "SACRA-Hist-FilteredSeq.png' height='800px'>\n")
 
     html_file.writelines(html_end)
 
