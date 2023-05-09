@@ -26,7 +26,7 @@ args = parser.parse_args()
 # FILE HANDLING
 #######################################
 
-# GHATHERING ALL IDS ABOVE X NT
+# GATHERING ALL IDS ABOVE X # OF NT
 list_wanted_records = []
 # Setting a counter
 counter_1 = 0

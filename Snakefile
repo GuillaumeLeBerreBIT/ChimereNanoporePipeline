@@ -97,16 +97,23 @@ rule FilterFastaSACRA:
     shell:
         "python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}"
 
-rule DiamondAlignmentCOI:
+rule DiamondAlignmentATP6:
     input: 
-        sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"])
+        sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", 
+                        identifier = config["identifier"])
     output: 
-        DiamondCOI = expand("Diamond/{identifier}DiamondCOI.csv", identifier = config["identifier"])
+        DiamondATP6 = expand("Diamond/{identifier}DiamondATP6.csv", identifier = config['identifier']),
+        DiamondATP8 = expand("Diamond/{identifier}DiamondATP8.csv", identifier = config['identifier'])
+        #gene = config ['Diamond']['genes'])
     params:
         k = config['Diamond']['max-target-seq'],
         f = config['Diamond']['output-format']
+        #gene = config ['Diamond']['genes']
     shell: 
-        "diamond blastx -d Diamond/COI -q  {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCOI}"
+        """
+        diamond blastx -d Diamond/DB/ATP6 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondATP6}
+        diamond blastx -d Diamond/DB/ATP8 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondATP8}
+        """
 
 # Combining all different files used to generate a general report file.  
 rule StatisticsToHTML:
@@ -140,7 +147,9 @@ rule StatisticsToHTML:
             windowsize = config['prowler']['windowsize'],
             minlen = config['prowler']['minlen'],
             datamax = config['prowler']['datamax']),
-        sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"])
+        sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"]),
+        DiamondATP6 = expand("Diamond/{identifier}DiamondATP6.csv", identifier = config['identifier']),
+        DiamondATP8 = expand("Diamond/{identifier}DiamondATP8.csv", identifier = config['identifier'])
     output: 
         expand("reports/{identifier}Results.html", identifier = config["identifier"])
     shell: 

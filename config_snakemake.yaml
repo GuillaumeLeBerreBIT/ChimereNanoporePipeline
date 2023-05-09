@@ -30,3 +30,5 @@ Diamond:
   max-target-seq: 1
   # Format of the output file: 6 == BLAST tabular format, 5 == BLAST XML, 0 == Pairwise alignemnt, ...
   output-format: 6
+  # The 13 MDA genes used for Diamond BLAST. 
+  genes: ["ATP6","ATP8","COX1","COX2","COX3","CYTB","NAD1", "NAD2","NAD3","NAD4","NAD4L","NAD5","NAD6"]
