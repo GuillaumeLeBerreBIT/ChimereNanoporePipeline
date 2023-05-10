@@ -3,11 +3,8 @@
 # MODULES
 #######################################
 
-import re, os, argparse, webbrowser, time
-from Bio.SeqIO.FastaIO import SimpleFastaParser
+import re, argparse
 from Bio import SeqIO   # pip install biopython
-#import numpy as np      # pip install numpy
-#import matplotlib.pyplot as plt     # pip install matplotlib
 
 #######################################
 # COMMAND LINE INPUT

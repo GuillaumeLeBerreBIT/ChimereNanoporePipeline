@@ -8,9 +8,7 @@
 import re, os, argparse, webbrowser, time
 from Bio import SeqIO   # pip install biopython
 import numpy as np      # pip install numpy
-import seaborn as sns   # pip install seaborn
 import matplotlib.pyplot as plt     # pip install matplotlib
-from scipy import stats         # pip install scipy
 import pandas as pd
 
 #######################################

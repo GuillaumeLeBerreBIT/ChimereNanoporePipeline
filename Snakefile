@@ -87,6 +87,7 @@ rule SACRAcall:
     shell: 
         "scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 6 -c config_sacra.yml"
 
+# Makes use of a script to filter the fasta files based on the length of the reads, to only retain above certain treshold.
 rule FilterFastaSACRA:
     input:
         sacraUF = expand("SACRAResults/{identifier}SacraResults.fasta", identifier = config["identifier"])
@@ -97,23 +98,61 @@ rule FilterFastaSACRA:
     shell:
         "python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}"
 
-rule DiamondAlignmentATP6:
+rule DiamondAlignment:
     input: 
         sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", 
                         identifier = config["identifier"])
     output: 
-        DiamondATP6 = expand("Diamond/{identifier}DiamondATP6.csv", identifier = config['identifier']),
-        DiamondATP8 = expand("Diamond/{identifier}DiamondATP8.csv", identifier = config['identifier'])
-        #gene = config ['Diamond']['genes'])
+        DiamondATP6 = expand("Diamond/{identifier}/{identifier}Diamond_ATP6.csv", identifier = config['identifier']),
+        DiamondATP8 = expand("Diamond/{identifier}/{identifier}Diamond_ATP8.csv", identifier = config['identifier']),
+        DiamondCOX1 = expand("Diamond/{identifier}/{identifier}Diamond_COX1.csv", identifier = config['identifier']),
+        DiamondCOX2 = expand("Diamond/{identifier}/{identifier}Diamond_COX2.csv", identifier = config['identifier']),
+        DiamondCOX3 = expand("Diamond/{identifier}/{identifier}Diamond_COX3.csv", identifier = config['identifier']),
+        DiamondCYTB = expand("Diamond/{identifier}/{identifier}Diamond_CYTB.csv", identifier = config['identifier']),
+        DiamondNAD1 = expand("Diamond/{identifier}/{identifier}Diamond_NAD1.csv", identifier = config['identifier']),
+        DiamondNAD2 = expand("Diamond/{identifier}/{identifier}Diamond_NAD2.csv", identifier = config['identifier']),
+        DiamondNAD3 = expand("Diamond/{identifier}/{identifier}Diamond_NAD3.csv", identifier = config['identifier']),
+        DiamondNAD4 = expand("Diamond/{identifier}/{identifier}Diamond_NAD4.csv", identifier = config['identifier']),
+        DiamondNAD4L = expand("Diamond/{identifier}/{identifier}Diamond_NAD4L.csv", identifier = config['identifier']),
+        DiamondNAD5 = expand("Diamond/{identifier}/{identifier}Diamond_NAD5.csv", identifier = config['identifier']),
+        DiamondNAD6 = expand("Diamond/{identifier}/{identifier}Diamond_NAD6.csv", identifier = config['identifier'])
     params:
         k = config['Diamond']['max-target-seq'],
-        f = config['Diamond']['output-format']
-        #gene = config ['Diamond']['genes']
+        f = config['Diamond']['output-format'],
+        folder = config['identifier']
+    # Will create a folder with the identifier, since then only the resulst to a specific run belong to that folder. 
+    # To generate statistical output its easier to handel the files in a  determined directory.  
+    # Using """ Can all have different bash commands each executed on seperate line
+    # Do not have to set a "mkdir folder" since the path defined will automatically create a destined folder. 
     shell: 
         """
         diamond blastx -d Diamond/DB/ATP6 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondATP6}
         diamond blastx -d Diamond/DB/ATP8 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondATP8}
+        diamond blastx -d Diamond/DB/COX1 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCOX1}
+        diamond blastx -d Diamond/DB/COX2 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCOX2}
+        diamond blastx -d Diamond/DB/COX3 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCOX3}
+        diamond blastx -d Diamond/DB/CYTB -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCYTB}
+        diamond blastx -d Diamond/DB/NAD1 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD1}
+        diamond blastx -d Diamond/DB/NAD2 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD2}
+        diamond blastx -d Diamond/DB/NAD3 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD3}
+        diamond blastx -d Diamond/DB/NAD4 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD4}
+        diamond blastx -d Diamond/DB/NAD4L -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD4L}
+        diamond blastx -d Diamond/DB/NAD5 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD5}
+        diamond blastx -d Diamond/DB/NAD6 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD6}
         """
+
+rule FilteringDIAMOND:
+    input: 
+        DiamondATP6 = expand("Diamond/{identifier}/{identifier}Diamond_ATP6.csv", identifier = config['identifier']),
+        #inFol = expand("Diamond/{fold}", fold = config['identifier']),
+        sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"])
+    output: 
+        assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier'])
+    params:
+        folder = config['identifier']
+    shell:
+        "python3 scripts/DiamondToAssembly.py Diamond/{params.folder} {input.sacraF} {output.assem}"
+
 
 # Combining all different files used to generate a general report file.  
 rule StatisticsToHTML:
@@ -148,8 +187,8 @@ rule StatisticsToHTML:
             minlen = config['prowler']['minlen'],
             datamax = config['prowler']['datamax']),
         sacraF = expand("SACRAResults/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"]),
-        DiamondATP6 = expand("Diamond/{identifier}DiamondATP6.csv", identifier = config['identifier']),
-        DiamondATP8 = expand("Diamond/{identifier}DiamondATP8.csv", identifier = config['identifier'])
+        DiamondNAD6 = expand("Diamond/{identifier}/{identifier}Diamond_NAD6.csv", identifier = config['identifier']),
+        assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier'])
     output: 
         expand("reports/{identifier}Results.html", identifier = config["identifier"])
     shell: 
