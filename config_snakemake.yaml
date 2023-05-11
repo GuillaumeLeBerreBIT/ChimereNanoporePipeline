@@ -1,8 +1,12 @@
 # Give the sample names want to run. 
 samples: "fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq"
 
-# Using a unique identifier for each sample isntead of parsing the full name. 
+# Using a unique identifier for each sample instead of parsing the full name. 
+# The name will also be used to create the folder for saving the Blast results after each DIAMOND run.  
 identifier: "fastq_runid_211"
+
+# The mitochondriol genes
+genes: ["ATP6","ATP8","COX1","COX2","COX3","CYTB","NAD1", "NAD2","NAD3","NAD4","NAD4L","NAD5","NAD6"]
 
 # PROWLER
 prowler:
@@ -30,5 +34,12 @@ Diamond:
   max-target-seq: 1
   # Format of the output file: 6 == BLAST tabular format, 5 == BLAST XML, 0 == Pairwise alignemnt, ...
   output-format: 6
-  # The 13 MDA genes used for Diamond BLAST. 
-  genes: ["ATP6","ATP8","COX1","COX2","COX3","CYTB","NAD1", "NAD2","NAD3","NAD4","NAD4L","NAD5","NAD6"]
+
+filtDIA:
+  # The minimum percentage Identity. 
+  idperc: 70
+  # The min length residues of a sequence. 
+  len: 20
+  # Set the max evalue to filter the BLASTX results on
+  # E-value is seen as string in YAML file, thats how it works. In python convert to float 
+  eval: 10e-6

@@ -36,8 +36,11 @@ args = parser.parse_args()
 # Use the unique identifier per sample 
 uniquelabel = args.outputFile
 # Substitute the unwanted part by nothing >> using regular expression
+# This will automatically create the specified == path-identifier/identifier...
+# Will only take the base path and have the identifier once
 identifier = re.sub("Results.html","",uniquelabel)
 identifier = re.sub("reports/","",identifier)
+identifier = os.path.basename(identifier)
 
 #######################################
 # HANDLING FILES
@@ -126,7 +129,7 @@ axs[1].set_xlabel('Read length')
 axs[1].set_ylabel('Frequency')
 
 # Saving the file before show
-plt.savefig("reports/" + identifier + "Before&After-Prowler.png", dpi=200)
+plt.savefig(f"reports/{identifier}/{identifier}Before&After-Prowler.png", dpi=200)
 # Savefig does not close the plot. >> clf = close
 plt.clf()
 
@@ -230,7 +233,7 @@ ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 # Label y-axis
 plt.ylabel("No. of sequences")
 # Saving the picture 
-plt.savefig("reports/" + identifier + "SACRA-Stacked-Seq-Amount.png", dpi=200)
+plt.savefig(f"reports/{identifier}/{identifier}SACRA-Stacked-Seq-Amount.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
 
@@ -271,7 +274,7 @@ plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
 # Label y-axis
 plt.ylabel("No. of sequences")
 # Saving the created plot as .png, using the dpi to set the size of the figure. 
-plt.savefig("reports/" + identifier + "SACRA-Stacked-Seq-Rel-Amount.png", dpi=200)
+plt.savefig(f"reports/{identifier}/{identifier}SACRA-Stacked-Seq-Rel-Amount.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
 ### HISTOGRAM LENGTH READS
@@ -288,7 +291,7 @@ plt.ylabel('Frequency')
 # Determining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
 # Saving the figure in .png format. 
-plt.savefig("reports/" + identifier + "SACRA-Hist-Distribution.png", dpi=200)
+plt.savefig(f"reports/{identifier}/{identifier}SACRA-Hist-Distribution.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
 
@@ -315,7 +318,7 @@ plt.ylabel('Frequency')
 # np.arange to go from a to b in x amount of steps. 
 plt.xticks(np.arange(0, 1000, 100))
 # Saving the figure 
-plt.savefig("reports/" + identifier + "SACRA-Hist-FilteredSeq.png", dpi=200)
+plt.savefig(f"reports/{identifier}/{identifier}SACRA-Hist-FilteredSeq.png", dpi=200)
 # Close the plot
 plt.clf()
 
@@ -367,20 +370,35 @@ with open(statisticalFile, "w") as html_file:
     # PROWLER
     html_file.writelines("<h2>Prowler Trimming</h2>\n")
     # Have to set the locatio from where the html file will be, so set picture in same folder
-    html_file.writelines("\t<img src='" + identifier + "Before&After-Prowler.png' height='800px'>\n")
+    html_file.writelines(f"\t<img src='{identifier}Before&After-Prowler.png' height='800px'>\n")
 
     # SACRA
     html_file.writelines("<h2>Split Amplified Chimeric Read Algorithm (SACRA)</h2>\n")
     # Have to set the locatio from where the html file will be, so set picture in same folder
-    html_file.writelines("\t<img src='" + identifier + "SACRA-Stacked-Seq-Amount.png' height='800px'>\n")
-    html_file.writelines("\t<img src='" + identifier + "SACRA-Stacked-Seq-Rel-Amount.png' height='800px'>\n")
-    html_file.writelines("\t<img src='" + identifier + "SACRA-Hist-Distribution.png' height='800px'>\n")
+    html_file.writelines(f"\t<img src='{identifier}SACRA-Stacked-Seq-Amount.png' height='800px'>\n")
+    html_file.writelines(f"\t<img src='{identifier}SACRA-Stacked-Seq-Rel-Amount.png' height='800px'>\n")
+    html_file.writelines(f"\t<img src='{identifier}SACRA-Hist-Distribution.png' height='800px'>\n")
     # The statistical ouput after filtering on certain amount of bases
     html_file.writelines("<h2>SACRA Filtered Reads</h2>\n")
-    html_file.writelines("\t<img src='" + identifier + "SACRA-Hist-FilteredSeq.png' height='800px'>\n")
+    html_file.writelines(f"\t<img src='{identifier}SACRA-Hist-FilteredSeq.png' height='800px'>\n")
 
+    # DIAMOND
+    html_file.writelines("<h2>DIAMOND </h2>\n")
+    # Read the file containing the amount a hit has been found in the genes
+    with open(f"reports/{identifier}/{identifier}HeaderCountDIAMOND.txt", "r") as text_reader:
+        lines_read = text_reader.readlines()
+        # Write the output in an unordered list
+        html_file.writelines("<ul>\n")
+        for line in lines_read:
+            # Write each newline in a list item, strip the line for \n. 
+            html_file.writelines(f"\t<li>{line.strip()}</li>\n")
+        html_file.writelines("</ul>\n")
+    # Writing the pictures to the html file. 
+    html_file.writelines(f"\t<img src='{identifier}Bar-HitsPerGene-DIAMOND&Filtering.png' height='800px'>\n")
+    html_file.writelines(f"\t<img src='{identifier}Hist-SequenceLengthAfterDIAMOND&Filtering.png' height='800px'>\n")
+    #Add the end of html to the file. 
     html_file.writelines(html_end)
-
+# Close the file that has been written to
 html_file.close()
 # Does not work on the WSL ubuntu yet, could be because no browser installed on it
 #time.sleep(2)

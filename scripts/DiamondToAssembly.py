@@ -29,7 +29,8 @@ parser.add_argument('-i', '--identity', type=int, default = 70, required = False
                     help ='Give a number of the percentage identity as the minimum treshold.')
 parser.add_argument('-l', '--len', type=int, default = 20, required = False, 
                     help ='Give a number of the min length of residues want to set as minimum treshold.')
-parser.add_argument('-e', '--evalue', type=int, default = 10e-6, required = False, 
+# Will later convert it to a float -- > YAML sets it as an integer
+parser.add_argument('-e', '--evalue', type=str, default = 10e-6, required = False, 
                     help ='Give the minimum value to filter the sequences from DIAMOND.')
 args = parser.parse_args()
 
@@ -106,14 +107,15 @@ for file in os.listdir(diamond_folder):
             genus_name = splitted_genus[0]   
             gene = splitted_genus[2]
             # The float will function in the same way as the integers and can now compare numbers
+            # Convert str -- > float/int
             # args.identity == Percentage Identity
             # args.len == Min length of residues 
             # args.evalue == Max e-value a sequence can have as treshold
             if float(row[2]) >= args.identity and\
                 int(row[3]) >= args.len and\
-                float(row[10]) <= args.evalue and\
+                float(row[10]) <= float(args.evalue) and\
                 genus_name in crab_genus:
-                
+
                 # Get all the headers that match the set filters
                 # The headers that will be used to create FASTA file for assembly 
                 # Add a '>' since the fasta files start with a '>' 
@@ -221,12 +223,12 @@ plt.xlabel('Genes')
 plt.ylabel('No. of hits')
 # Title for the plot
 plt.title('DIAMOND BLAST Results')
-plt.savefig("reports/" + identifier + "Bar-HitsPerGene-DIAMOND&Filtering.png", dpi=200)
+plt.savefig(f"reports/{identifier}/{identifier}Bar-HitsPerGene-DIAMOND&Filtering.png", dpi=200)
 # Close the plot
 plt.clf()
 
 # REPORT HOW MANY TIMES HEADER BEEN MATCHED
-with open("reports/" + identifier + "HeaderCountDIAMOND.txt","w") as tmp_to_write:
+with open(f"reports/{identifier}/{identifier}HeaderCountDIAMOND.txt","w") as tmp_to_write:
     for key, val in header_freq.items():
         tmp_to_write.writelines(f"For the headers found {key} time(s) after DIAMOND: {val} sequences.\n")
 
@@ -238,6 +240,7 @@ for seq_record in SeqIO.parse(args.outputAssembly, "fasta"):
 # Convert the read length lists to numpy arrays for plotting
 assembly_array = np.array(assembly_seq_len)
 
+# Set a predefined picture size to save in format 
 plt.figure(figsize=(7,5))
 # Plot a histogram of sequence lengths after DIAMOND & Filtering BLAST matches
 # Setting amount of bins & range of the graph. 
@@ -248,6 +251,6 @@ plt.xlabel('Sequence length')
 plt.ylabel('Frequency')
 # Determining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
-plt.savefig("reports/" + identifier + "Hist-SequenceLengthAfterDIAMOND&Filtering.png", dpi=200)
+plt.savefig(f"reports/{identifier}/{identifier}Hist-SequenceLengthAfterDIAMOND&Filtering.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
