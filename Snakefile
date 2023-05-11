@@ -5,6 +5,13 @@ rule all:
     input:
         expand("reports/{identifier}/{identifier}Results.html", identifier = config["identifier"])
 
+rule ConcatFiles:
+    input: 
+        startFolder = expand("{startfolder}/", startfolder = config['startfolder']) 
+    output: 
+        outputFile = expand("PorechopABI/{identifier}/{identifier}Concatfiles.fastq")
+    run: 
+        "python3 scripts/ConcatFiles.py {input.startFolder} {output.outputFile}"
 
 # Rule to call the porechop program and saving the output in files
 # Config makes it possible to parse commands through the command line, it overwrites the config file itself. 
@@ -13,7 +20,7 @@ rule all:
 rule porechopABIcall:
     input: 
         #config['start']
-        expand("PorechopABI/{identifier}/{sample}", sample=config["samples"], identifier = config["identifier"])
+        expand("PorechopABI/{identifier}/{identifier}Concatfiles.fastq")
     output: 
         reads = expand("PorechopABI/{identifier}/{identifier}PoreChopReads.fastq", identifier=config["identifier"]),
         statistics = expand("reports/{identifier}/{identifier}Statistics.txt", identifier=config["identifier"])

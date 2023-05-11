@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Creating a report file to generate a report file after performing the Porechop ABI
+# Creating a report file. 
 
 #######################################
 # MODULES
