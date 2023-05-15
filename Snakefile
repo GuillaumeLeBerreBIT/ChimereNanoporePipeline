@@ -1,131 +1,166 @@
-# Giving the necassary configfile with snakemake >> This contains input files as parameters to perfroms scripts/commands. 
+#################### MODULES ####################
+import os
+#################### CONFIG FILE ####################
 configfile: "config_snakemake.yaml"
-# Rule to get all the output files and save
+#################### CONFIG VARIABLES ####################
+# Calling for the starting folder as variable from the config file. 
+inputfolder = config['startfolder']
+# The files as input 
+FASTQFOL = os.listdir(inputfolder)
+FILES = []
+# Iterate over the folder to get the extension removed
+for fastq in FASTQFOL:
+    stripped_fastq = fastq.replace(".fastq", "")
+    FILES.append(stripped_fastq)
+
+# Calling a identifier to use for the folders where files are created. 
+identifier = config["identifier"]
+
+clip = config['prowler']['clip']
+
+fragments = config['prowler']['fragments']
+
+trimmode = config['prowler']['trimmode']
+
+qscore = config['prowler']['qscore']
+
+windowsize = config['prowler']['windowsize']
+
+minlen = config['prowler']['minlen']
+
+datamax = config['prowler']['datamax']
+
+gene = config['genes']
+
+#################### RULE ALL ####################
 rule all:
     input:
-        expand("reports/{identifier}/{identifier}Results.html", identifier = config["identifier"])
+        # This is to make sure everything for the last "FOR" loop is completed == TARGETS
+        expand("SACRAResults/{identifier}/{i}SacraResults.fasta", identifier = identifier, i = FILES),
+        # Set the actual target file == TARGET
+        f"reports/{identifier}/{identifier}Results.html"
+
+
+#################### PORECHOP ABI ####################
+# Config makes it possible to parse commands through the command line, it overwrites the config file itself. 
+# Changed so the input file is taken from the config file to process
+# When using loops con not name them
+for i in FILES:
+    rule:
+        input: 
+            f"{inputfolder}/{i}.fastq"
+        output: 
+            reads = f"PorechopABI/{identifier}/{i}PoreChopReads.fastq",
+            statistics = f"reports/{identifier}/PorechopABI/{i}Statistics.txt"
+        conda: 
+            "envs/porechop_abi.yaml"
+        shell: 
+            """
+            porechop_abi -abi -i {input} -o {output.reads} > {output.statistics} 2>&1
+            """
+
+#################### PROWLER TRIMMING ####################
+# Have to format the name of the output file since it is dependant on parameters provided by the config file.  
+for i in FILES:    
+    rule:
+        input:
+            out_fastq = f"PorechopABI/{identifier}/{i}PoreChopReads.fastq" 
+        output:
+            out_prow_fasta = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta" 
+                
+        params:
+            clip = config['prowler']['clip'], 
+            fragments = config['prowler']['fragments'],
+            trimmode = config['prowler']['trimmode'],
+            qscore = config['prowler']['qscore'],
+            windowsize = config['prowler']['windowsize'],
+            minlen = config['prowler']['minlen'],
+            datamax = config['prowler']['datamax'],
+            folder = config['identifier']
+        shell:
+            """
+            python3 scripts/TrimmerLarge.py -f {input.out_fastq} -i PorechopABI/{params.folder}/ -o ProwlerProcessed/{params.folder}/ -m {params.trimmode} -c {params.clip} -g {params.fragments} -q {params.qscore} -w {params.windowsize} -l {params.minlen} -d {params.datamax} -r '.fasta'
+            """
+#################### SACRA ####################
+# Makes use of a script to filter the fasta files based on the length of the reads, to only retain above certain treshold.
+for i in FILES:    
+    rule:
+        input:
+            in_sacra = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta"
+                
+        output: 
+            sacraFull = f"SACRAResults/{identifier}/{i}SacraResults.fasta"    
+        conda:
+            "envs/sacra.yaml"
+        params:
+            blasttab = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.blasttab",
+            bck = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.bck",
+            des = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.des",
+            prj = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.prj",
+            sds = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.sds",
+            ssp = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.ssp",
+            suf = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.suf",
+            tis = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.tis"
+        shell: 
+            """
+            scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 6 -c config_snakemake.yaml
+            rm {params.blasttab}* {params.bck} {params.des} {params.prj} {params.sds} {params.ssp} {params.suf} {params.tis}
+            """
+
+################# CONCAT FILES ####################
+# Can experiment with this may not even have to wait, extra security check
+# First file
+first_file = FILES[0]
+# The target file 
+target_file = FILES[-1] + "SacraResults.fasta"
 
 rule ConcatFiles:
     input: 
-        startFolder = expand("{startfolder}/", startfolder = config['startfolder']) 
+        filesSacra = f"SACRAResults/{identifier}/{first_file}SacraResults.fasta",
+        #dummySacra = expand("SACRAResults/{identifier}/{i}SacraResults.fasta", identifier = config['identifier'], i = FILES)
     output: 
-        outputFile = expand("PorechopABI/{identifier}/{identifier}Concatfiles.fastq")
-    run: 
-        "python3 scripts/ConcatFiles.py {input.startFolder} {output.outputFile}"
-
-# Rule to call the porechop program and saving the output in files
-# Config makes it possible to parse commands through the command line, it overwrites the config file itself. 
-# snakemake --use-conda --cores all --forceall --config start="PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq"
-# Changed so the input file is taken from the config file to process
-rule porechopABIcall:
-    input: 
-        #config['start']
-        expand("PorechopABI/{identifier}/{identifier}Concatfiles.fastq")
-    output: 
-        reads = expand("PorechopABI/{identifier}/{identifier}PoreChopReads.fastq", identifier=config["identifier"]),
-        statistics = expand("reports/{identifier}/{identifier}Statistics.txt", identifier=config["identifier"])
-    conda: 
-        "envs/porechop_abi.yaml"
-    shell: 
-        "porechop_abi -abi -i {input} -o {output.reads} > {output.statistics} 2>&1"
-        
-# Rule to trim the reads using Prowler and save the output
-# Define the script folder in the rule
-# Have to format the name of the output file since it is dependant on parameters provided by the config file.  
-rule ProwlerTrim:
-    input:
-        out_fastq = expand("PorechopABI/{identifier}/{identifier}PoreChopReads.fastq", identifier=config["identifier"]) 
-    output:
-        out_prow_fasta = expand("ProwlerProcessed/{identifier}/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
-            identifier = config["identifier"],
-            clip = config['prowler']['clip'], 
-            fragments = config['prowler']['fragments'],
-            trimmode = config['prowler']['trimmode'],
-            qscore = config['prowler']['qscore'],
-            windowsize = config['prowler']['windowsize'],
-            minlen = config['prowler']['minlen'],
-            datamax = config['prowler']['datamax'])
+        outputFile = f"SACRAResults/{identifier}Concatfiles.fasta"
     params:
-        clip = config['prowler']['clip'], 
-        fragments = config['prowler']['fragments'],
-        trimmode = config['prowler']['trimmode'],
-        qscore = config['prowler']['qscore'],
-        windowsize = config['prowler']['windowsize'],
-        minlen = config['prowler']['minlen'],
-        datamax = config['prowler']['datamax'],
-        folder = config['identifier']
-    shell:
-        "python3 scripts/TrimmerLarge.py -f {input.out_fastq} -i PorechopABI/{params.folder}/ -o ProwlerProcessed/{params.folder}/ -m {params.trimmode} -c {params.clip} -g {params.fragments} -q {params.qscore} -w {params.windowsize} -l {params.minlen} -d {params.datamax} -r '.fasta'"
-
-# Rule to use the SACRA reads
-# Again here using a formatted string since it is dependant on certain parameters provided by a script.  
-rule SACRAcall:
-    input:
-        in_sacra = expand("ProwlerProcessed/{identifier}/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
-            identifier = config["identifier"],
-            clip = config['prowler']['clip'], 
-            fragments = config['prowler']['fragments'],
-            trimmode = config['prowler']['trimmode'],
-            qscore = config['prowler']['qscore'],
-            windowsize = config['prowler']['windowsize'],
-            minlen = config['prowler']['minlen'],
-            datamax = config['prowler']['datamax'])
-    output: 
-        sacraFull = expand("SACRAResults/{identifier}/{identifier}SacraResults.fasta", identifier = config["identifier"]),
-        sacraChim = expand("ProwlerProcessed/{identifier}/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.split.fasta", 
-            identifier = config["identifier"],
-            clip = config['prowler']['clip'], 
-            fragments = config['prowler']['fragments'],
-            trimmode = config['prowler']['trimmode'],
-            qscore = config['prowler']['qscore'],
-            windowsize = config['prowler']['windowsize'],
-            minlen = config['prowler']['minlen'],
-            datamax = config['prowler']['datamax']),
-        sacraNonChim = expand("ProwlerProcessed/{identifier}/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.non_chimera.fasta", 
-            identifier = config["identifier"],
-            clip = config['prowler']['clip'], 
-            fragments = config['prowler']['fragments'],
-            trimmode = config['prowler']['trimmode'],
-            qscore = config['prowler']['qscore'],
-            windowsize = config['prowler']['windowsize'],
-            minlen = config['prowler']['minlen'],
-            datamax = config['prowler']['datamax'])
-    conda:
-        "envs/sacra.yaml"
+        target_fil = target_file
     shell: 
-        "scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 6 -c config_sacra.yml"
+        """
+        python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} {params.target_fil}
+        """
 
+################# FILTER SACRA ####################
 # Makes use of a script to filter the fasta files based on the length of the reads, to only retain above certain treshold.
 rule FilterFastaSACRA:
     input:
-        sacraUF = expand("SACRAResults/{identifier}/{identifier}SacraResults.fasta", identifier = config["identifier"])
+        sacraUF = f"SACRAResults/{identifier}Concatfiles.fasta"
     output:
-        sacraF = expand("SACRAResults/{identifier}/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"])
+        sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
     params:
         bases = config['filterSACRA']['bases']
     shell:
-        "python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}"
+        """
+        python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}
+        """
 
+################# DIAMOND ####################
 # DIAMOND will be used to BLASTX the fasta file against the mitochondriol genes, split up into 13 databases.
 # It will generate the output in a folder containing 13 csv files, each containing the BLASTX results against one of the genes. 
 rule DiamondAlignment:
     input: 
-        sacraF = expand("SACRAResults/{identifier}/{identifier}SacraResultsFiltered.fasta", 
-                        identifier = config["identifier"])
+        sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
     output: 
-        DiamondATP6 = expand("Diamond/{identifier}/{identifier}Diamond_ATP6.csv", identifier = config['identifier']),
-        DiamondATP8 = expand("Diamond/{identifier}/{identifier}Diamond_ATP8.csv", identifier = config['identifier']),
-        DiamondCOX1 = expand("Diamond/{identifier}/{identifier}Diamond_COX1.csv", identifier = config['identifier']),
-        DiamondCOX2 = expand("Diamond/{identifier}/{identifier}Diamond_COX2.csv", identifier = config['identifier']),
-        DiamondCOX3 = expand("Diamond/{identifier}/{identifier}Diamond_COX3.csv", identifier = config['identifier']),
-        DiamondCYTB = expand("Diamond/{identifier}/{identifier}Diamond_CYTB.csv", identifier = config['identifier']),
-        DiamondNAD1 = expand("Diamond/{identifier}/{identifier}Diamond_NAD1.csv", identifier = config['identifier']),
-        DiamondNAD2 = expand("Diamond/{identifier}/{identifier}Diamond_NAD2.csv", identifier = config['identifier']),
-        DiamondNAD3 = expand("Diamond/{identifier}/{identifier}Diamond_NAD3.csv", identifier = config['identifier']),
-        DiamondNAD4 = expand("Diamond/{identifier}/{identifier}Diamond_NAD4.csv", identifier = config['identifier']),
-        DiamondNAD4L = expand("Diamond/{identifier}/{identifier}Diamond_NAD4L.csv", identifier = config['identifier']),
-        DiamondNAD5 = expand("Diamond/{identifier}/{identifier}Diamond_NAD5.csv", identifier = config['identifier']),
-        DiamondNAD6 = expand("Diamond/{identifier}/{identifier}Diamond_NAD6.csv", identifier = config['identifier'])
+        DiamondATP6 = f"Diamond/{identifier}/{identifier}Diamond_ATP6.csv",
+        DiamondATP8 = f"Diamond/{identifier}/{identifier}Diamond_ATP8.csv",
+        DiamondCOX1 = f"Diamond/{identifier}/{identifier}Diamond_COX1.csv",
+        DiamondCOX2 = f"Diamond/{identifier}/{identifier}Diamond_COX2.csv",
+        DiamondCOX3 = f"Diamond/{identifier}/{identifier}Diamond_COX3.csv",
+        DiamondCYTB = f"Diamond/{identifier}/{identifier}Diamond_CYTB.csv",
+        DiamondNAD1 = f"Diamond/{identifier}/{identifier}Diamond_NAD1.csv",
+        DiamondNAD2 = f"Diamond/{identifier}/{identifier}Diamond_NAD2.csv",
+        DiamondNAD3 = f"Diamond/{identifier}/{identifier}Diamond_NAD3.csv",
+        DiamondNAD4 = f"Diamond/{identifier}/{identifier}Diamond_NAD4.csv",
+        DiamondNAD4L = f"Diamond/{identifier}/{identifier}Diamond_NAD4L.csv",
+        DiamondNAD5 = f"Diamond/{identifier}/{identifier}Diamond_NAD5.csv",
+        DiamondNAD6 = f"Diamond/{identifier}/{identifier}Diamond_NAD6.csv"
     params:
         k = config['Diamond']['max-target-seq'],
         f = config['Diamond']['output-format'],
@@ -151,6 +186,7 @@ rule DiamondAlignment:
         diamond blastx -d Diamond/DB/NAD6 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD6}
         """
 
+################# FILTER DIAMOND ####################
 # Having all the BLASTX results in a csv file, all gathered in a folder. The script will scan folder for all files being a csv file and extract the results. 
 # In the config file can set up filters: ID percentage, Length of residues and e-value. 
 # It will generate statistical figures & rewrite the BLAST hits to a new FASTA file for ASSEMBLY.  
@@ -158,9 +194,9 @@ rule FilteringDIAMOND:
     input: 
         Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
         #inFol = expand("Diamond/{fold}", fold = config['identifier']),
-        sacraF = expand("SACRAResults/{identifier}/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"])
+        sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
     output: 
-        assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier'])
+        assem = f"AssemblyFasta/{identifier}FastaForAssembly.fasta"
     params:
         # Define folders under params and not as output otherwise will get an error.
         folder = config['identifier'],
@@ -171,42 +207,21 @@ rule FilteringDIAMOND:
         "python3 scripts/DiamondToAssembly.py -i {params.idper} -l {params.length} -e {params.evalue} Diamond/{params.folder} {input.sacraF} {output.assem}"
 
 
+################# STATISTICS TO HTML ####################
 # Combining all different files used to generate a general report file.  
 rule StatisticsToHTML:
     input: 
-        poreStat = expand("reports/{identifier}/{identifier}Statistics.txt", identifier=config["identifier"]),
-        poreFastq = expand("PorechopABI/{identifier}/{identifier}PoreChopReads.fastq", identifier=config["identifier"]),
-        prow = expand("ProwlerProcessed/{identifier}/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta", 
-            identifier = config['identifier'],
-            clip = config['prowler']['clip'], 
-            fragments = config['prowler']['fragments'],
-            trimmode = config['prowler']['trimmode'],
-            qscore = config['prowler']['qscore'],
-            windowsize = config['prowler']['windowsize'],
-            minlen = config['prowler']['minlen'],
-            datamax = config['prowler']['datamax']),
-        sacraChim = expand("ProwlerProcessed/{identifier}/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.split.fasta", 
-            identifier = config["identifier"],
-            clip = config['prowler']['clip'], 
-            fragments = config['prowler']['fragments'],
-            trimmode = config['prowler']['trimmode'],
-            qscore = config['prowler']['qscore'],
-            windowsize = config['prowler']['windowsize'],
-            minlen = config['prowler']['minlen'],
-            datamax = config['prowler']['datamax']),
-        sacraNonChim = expand("ProwlerProcessed/{identifier}/{identifier}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.non_chimera.fasta", 
-            identifier = config["identifier"],
-            clip = config['prowler']['clip'], 
-            fragments = config['prowler']['fragments'],
-            trimmode = config['prowler']['trimmode'],
-            qscore = config['prowler']['qscore'],
-            windowsize = config['prowler']['windowsize'],
-            minlen = config['prowler']['minlen'],
-            datamax = config['prowler']['datamax']),
-        sacraF = expand("SACRAResults/{identifier}/{identifier}SacraResultsFiltered.fasta", identifier = config["identifier"]),
+        sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta",
         Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
         assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier'])
     output: 
-        expand("reports/{identifier}/{identifier}Results.html", identifier = config["identifier"])
+        f"reports/{identifier}/{identifier}Results.html"
+    params:
+        # Set the folders as parameters to give on the command line
+        poreStat = f"reports/{identifier}/PorechopABI/",
+        poreFastq = f"PorechopABI/{identifier}/",
+        prowFold = f"ProwlerProcessed/{identifier}/"
     shell: 
-        "python3 scripts/StatisticalReportGenerator.py {output} {input.poreStat} {input.poreFastq} {input.prow} {input.sacraChim} {input.sacraNonChim} {input.sacraF}"
+        """
+        python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF}
+        """

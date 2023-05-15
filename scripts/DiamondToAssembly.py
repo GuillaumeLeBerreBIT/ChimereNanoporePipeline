@@ -14,10 +14,10 @@ import os, argparse, csv, re
 from Bio import SeqIO   # pip install biopython
 import matplotlib.pyplot as plt
 import numpy as np
+
 #####################################################################
 # COMMAND LINE INPUT
 #####################################################################
-
 parser = argparse.ArgumentParser(description='From DIAMOND to Assembly')
 parser.add_argument('inputFolder', type=str, 
                     help='Give the (path to and) name of the folder containing the files after DIAMOND.')
