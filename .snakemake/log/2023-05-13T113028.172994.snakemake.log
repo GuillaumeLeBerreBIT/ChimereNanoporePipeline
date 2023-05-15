@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+StatisticsToHTML        1              1              1
+all                     1              1              1
+porechopABIcall         1              1              1
+total                   3              1              1
+
+Select jobs to execute...
+
+[Sat May 13 11:30:29 2023]
+rule porechopABIcall:
+    input: Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq, reports/fastq_runid_211/fastq_runid_211Statistics.txt
+    jobid: 2
+    reason: Missing output files: reports/fastq_runid_211/fastq_runid_211Statistics.txt, PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq; Set of input files has changed since last execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/2d5175163c35337e572d841e1046dee7_
+[Sat May 13 11:31:59 2023]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Sat May 13 11:31:59 2023]
+rule StatisticsToHTML:
+    input: reports/fastq_runid_211/fastq_runid_211Statistics.txt, PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq
+    output: reports/fastq_runid_211/fastq_runid_211Results.html
+    jobid: 1
+    reason: Missing output files: reports/fastq_runid_211/fastq_runid_211Results.html; Input files updated by another job: reports/fastq_runid_211/fastq_runid_211Statistics.txt, PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq
+    resources: tmpdir=/tmp
+
+[Sat May 13 11:31:59 2023]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Sat May 13 11:31:59 2023]
+localrule all:
+    input: reports/fastq_runid_211/fastq_runid_211Results.html
+    jobid: 0
+    reason: Input files updated by another job: reports/fastq_runid_211/fastq_runid_211Results.html
+    resources: tmpdir=/tmp
+
+[Sat May 13 11:31:59 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2023-05-13T113028.172994.snakemake.log

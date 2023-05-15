@@ -1,0 +1,3 @@
+NameError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 41:
+name 'startingfiles' is not defined
+  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 41, in <module>

@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+FilterFastaSACRA        1              1              1
+all                     1              1              1
+total                   2              1              1
+
+Select jobs to execute...
+
+[Mon May 15 12:21:27 2023]
+rule FilterFastaSACRA:
+    input: SACRAResults/fastq_runid_211Concatfiles.fasta
+    output: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    jobid: 7
+    reason: Missing output files: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta; Set of input files has changed since last execution; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Mon May 15 12:21:42 2023]
+Finished job 7.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Mon May 15 12:21:42 2023]
+localrule all:
+    input: SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0SacraResults.fasta, SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0SacraResults.fasta, SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    jobid: 0
+    reason: Input files updated by another job: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    resources: tmpdir=/tmp
+
+[Mon May 15 12:21:42 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-05-15T122126.168410.snakemake.log

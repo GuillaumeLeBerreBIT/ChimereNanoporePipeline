@@ -1,0 +1,14 @@
+prefix=/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_
+exec_prefix=/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_
+libdir=/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_/lib
+includedir=/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_/include
+
+Name: FreeType 2
+URL: https://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 24.3.18
+Requires: 
+Requires.private: zlib, libpng
+Libs: -L/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_/lib -lfreetype
+Libs.private: 
+Cflags: -I${includedir}/freetype2

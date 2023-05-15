@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+ConcatFiles             1              4              4
+DiamondAlignment        1              6              6
+FilterFastaSACRA        1              4              4
+FilteringDIAMOND        1              4              4
+ProwlerTrim             1              4              4
+SACRAcall               1              8              8
+StatisticsToHTML        1              4              4
+all                     1              1              1
+porechopABIcall         1              6              6
+total                   9              1              8
+
+Select jobs to execute...
+
+[Fri May 12 00:31:05 2023]
+rule ConcatFiles:
+    output: PorechopABI/fastq_runid_211/fastq_runid_211Concatfiles.fastq
+    jobid: 2
+    reason: Forced execution
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri May 12 00:31:05 2023]
+Finished job 2.
+1 of 9 steps (11%) done
+Select jobs to execute...
+
+[Fri May 12 00:31:05 2023]
+rule porechopABIcall:
+    input: PorechopABI/fastq_runid_211/fastq_runid_211Concatfiles.fastq
+    output: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq, reports/fastq_runid_211/fastq_runid_211Statistics.txt
+    jobid: 3
+    reason: Input files updated by another job: PorechopABI/fastq_runid_211/fastq_runid_211Concatfiles.fastq
+    threads: 6
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/2d5175163c35337e572d841e1046dee7_
+Terminating processes on user request, this might take some time.
+[Fri May 12 00:32:12 2023]
+Error in rule porechopABIcall:
+    jobid: 3
+    input: PorechopABI/fastq_runid_211/fastq_runid_211Concatfiles.fastq
+    output: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq, reports/fastq_runid_211/fastq_runid_211Statistics.txt
+    conda-env: /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_
+    shell:
+        porechop_abi -abi -i PorechopABI/fastq_runid_211/fastq_runid_211Concatfiles.fastq -o PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq > reports/fastq_runid_211/fastq_runid_211Statistics.txt 2>&1
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-05-12T003104.213617.snakemake.log

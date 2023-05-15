@@ -1,6 +1,0 @@
-The flag 'directory' used in rule all is only valid for outputs, not inputs.
-ProwlerTrim
-Sacra_call
-StatisticsToHTML
-all
-porechopABI_call

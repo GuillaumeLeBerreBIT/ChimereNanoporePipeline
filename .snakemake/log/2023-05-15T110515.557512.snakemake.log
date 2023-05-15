@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+2                  1              1              1
+4                  1              1              1
+6                  1              1              1
+ConcatFiles        1              1              1
+all                1              1              1
+total              5              1              1
+
+Select jobs to execute...
+
+[Mon May 15 11:05:16 2023]
+rule 2:
+    input: Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReads.fastq, reports/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0Statistics.txt
+    jobid: 4
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/2d5175163c35337e572d841e1046dee7_
+Terminating processes on user request, this might take some time.
+[Mon May 15 11:05:20 2023]
+Error in rule 2:
+    jobid: 4
+    input: Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReads.fastq, reports/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0Statistics.txt
+    conda-env: /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_
+    shell:
+        
+            porechop_abi -abi -i Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq -o PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReads.fastq > reports/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0Statistics.txt 2>&1
+            
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-05-15T110515.557512.snakemake.log

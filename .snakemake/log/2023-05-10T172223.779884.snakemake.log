@@ -1,0 +1,2 @@
+SyntaxError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 121:
+positional argument follows keyword argument

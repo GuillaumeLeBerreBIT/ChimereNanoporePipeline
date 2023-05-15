@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+DiamondAlignment        1              1              1
+FilterFastaSACRA        1              1              1
+FilteringDIAMOND        1              1              1
+ProwlerTrim             1              1              1
+SACRAcall               1              1              1
+StatisticsToHTML        1              1              1
+all                     1              1              1
+total                   7              1              1
+
+Select jobs to execute...
+
+[Thu May 11 11:17:21 2023]
+rule ProwlerTrim:
+    input: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq
+    output: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    jobid: 3
+    reason: Missing output files: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    resources: tmpdir=/tmp
+
+[Thu May 11 11:17:22 2023]
+Finished job 3.
+1 of 7 steps (14%) done
+Select jobs to execute...
+
+[Thu May 11 11:17:22 2023]
+rule SACRAcall:
+    input: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    output: SACRAResults/fastq_runid_211/fastq_runid_211SacraResults.fasta, ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.split.fasta, ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.non_chimera.fasta
+    jobid: 4
+    reason: Missing output files: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.split.fasta, SACRAResults/fastq_runid_211/fastq_runid_211SacraResults.fasta, ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.non_chimera.fasta; Input files updated by another job: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/f655fa01c3df1c861f181a2fd0ee0401_
+Terminating processes on user request, this might take some time.
+[Thu May 11 11:17:26 2023]
+Error in rule SACRAcall:
+    jobid: 4
+    input: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    output: SACRAResults/fastq_runid_211/fastq_runid_211SacraResults.fasta, ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.split.fasta, ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.non_chimera.fasta
+    conda-env: /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/f655fa01c3df1c861f181a2fd0ee0401_
+    shell:
+        scripts/SACRA.sh -i ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta -p SACRAResults/fastq_runid_211/fastq_runid_211SacraResults.fasta -t 6 -c config_sacra.yml
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-05-11T111720.072910.snakemake.log

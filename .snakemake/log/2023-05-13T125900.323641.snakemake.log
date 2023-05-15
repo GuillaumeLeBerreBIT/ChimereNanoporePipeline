@@ -1,0 +1,3 @@
+NameError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 21:
+name 'LINS' is not defined
+  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 21, in <module>

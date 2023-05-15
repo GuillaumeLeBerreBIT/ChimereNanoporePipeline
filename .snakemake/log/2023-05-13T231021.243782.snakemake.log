@@ -1,0 +1,3 @@
+WildcardError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 9:
+No values given for wildcard 'filenr'.
+  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 9, in <module>

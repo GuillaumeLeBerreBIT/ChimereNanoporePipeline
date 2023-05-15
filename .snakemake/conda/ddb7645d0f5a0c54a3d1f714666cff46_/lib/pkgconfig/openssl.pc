@@ -1,0 +1,9 @@
+prefix=/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: OpenSSL
+Description: Secure Sockets Layer and cryptography libraries and tools
+Version: 3.1.0
+Requires: libssl libcrypto

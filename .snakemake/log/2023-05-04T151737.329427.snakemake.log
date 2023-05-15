@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule StatisticsToHTML in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 73:
+Missing input files for rule StatisticsToHTML:
+    output: reports/fastq_runid_211Results.html
+    affected files:
+        ProwlerProcessed/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.split.fasta
+        ProwlerProcessed/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.non_chimera.fasta
+        ProwlerProcessed/PoreChopReadsTrimLT-U0-D7W100L100R0.fasta

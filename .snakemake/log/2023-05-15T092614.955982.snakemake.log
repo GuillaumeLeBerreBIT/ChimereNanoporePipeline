@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+ConcatFiles        1              1              1
+all                1              1              1
+total              2              1              1
+
+Select jobs to execute...
+
+[Mon May 15 09:26:15 2023]
+rule ConcatFiles:
+    input: SACRAResults/fastq_runid_211
+    output: SACRAResults/fastq_runid_211Concatfiles.fastq
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-15T092614.955982.snakemake.log

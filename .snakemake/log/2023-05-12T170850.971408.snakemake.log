@@ -1,0 +1,3 @@
+KeyError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 16:
+'identifier'
+  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 16, in <module>

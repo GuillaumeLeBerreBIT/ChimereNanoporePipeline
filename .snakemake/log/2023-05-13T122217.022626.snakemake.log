@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule StatisticsToHTML in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 35:
+Missing input files for rule StatisticsToHTML:
+    output: reports/fastq_runid_211/Results.html
+    affected files:
+        PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq
+        reports/fastq_runid_211/fastq_runid_211Statistics.txt

@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule 4 in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 63:
+Missing input files for rule 4:
+    output: ProwlerProcessed/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    affected files:
+        PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReads.fastq

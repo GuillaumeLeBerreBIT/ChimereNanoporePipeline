@@ -1,0 +1,3 @@
+NameError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 20:
+name 'i' is not defined
+  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 20, in <module>

@@ -1,0 +1,180 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+2                       1              1              1
+3                       1              1              1
+4                       1              1              1
+5                       1              1              1
+6                       1              1              1
+7                       1              1              1
+ConcatFiles             1              1              1
+DiamondAlignment        1              1              1
+FilterFastaSACRA        1              1              1
+FilteringDIAMOND        1              1              1
+StatisticsToHTML        1              1              1
+all                     1              1              1
+total                  12              1              1
+
+Select jobs to execute...
+
+[Mon May 15 14:21:52 2023]
+rule 2:
+    input: Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReads.fastq, reports/fastq_runid_211/PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0Statistics.txt
+    jobid: 3
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/2d5175163c35337e572d841e1046dee7_
+
+[Mon May 15 14:21:52 2023]
+rule 3:
+    input: Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0.fastq
+    output: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0PoreChopReads.fastq, reports/fastq_runid_211/PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0Statistics.txt
+    jobid: 6
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/2d5175163c35337e572d841e1046dee7_
+[Mon May 15 14:23:53 2023]
+Finished job 6.
+1 of 12 steps (8%) done
+Select jobs to execute...
+
+[Mon May 15 14:23:53 2023]
+rule 5:
+    input: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0PoreChopReads.fastq
+    output: ProwlerProcessed/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    jobid: 5
+    reason: Input files updated by another job: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0PoreChopReads.fastq
+    resources: tmpdir=/tmp
+
+[Mon May 15 14:23:53 2023]
+Finished job 3.
+2 of 12 steps (17%) done
+Select jobs to execute...
+
+[Mon May 15 14:23:53 2023]
+rule 4:
+    input: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReads.fastq
+    output: ProwlerProcessed/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    jobid: 2
+    reason: Input files updated by another job: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReads.fastq
+    resources: tmpdir=/tmp
+
+[Mon May 15 14:23:55 2023]
+Finished job 5.
+3 of 12 steps (25%) done
+Select jobs to execute...
+
+[Mon May 15 14:23:55 2023]
+rule 7:
+    input: ProwlerProcessed/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    output: SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0SacraResults.fasta
+    jobid: 4
+    reason: Input files updated by another job: ProwlerProcessed/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_
+[Mon May 15 14:23:55 2023]
+Finished job 2.
+4 of 12 steps (33%) done
+Select jobs to execute...
+
+[Mon May 15 14:23:55 2023]
+rule 6:
+    input: ProwlerProcessed/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    output: SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0SacraResults.fasta
+    jobid: 1
+    reason: Input files updated by another job: ProwlerProcessed/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_
+[Mon May 15 14:29:59 2023]
+Finished job 4.
+5 of 12 steps (42%) done
+[Mon May 15 14:30:13 2023]
+Finished job 1.
+6 of 12 steps (50%) done
+Select jobs to execute...
+
+[Mon May 15 14:30:13 2023]
+rule ConcatFiles:
+    input: SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0SacraResults.fasta
+    output: SACRAResults/fastq_runid_211Concatfiles.fasta
+    jobid: 9
+    reason: Input files updated by another job: SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0SacraResults.fasta
+    resources: tmpdir=/tmp
+
+[Mon May 15 14:30:14 2023]
+Finished job 9.
+7 of 12 steps (58%) done
+Select jobs to execute...
+
+[Mon May 15 14:30:14 2023]
+rule FilterFastaSACRA:
+    input: SACRAResults/fastq_runid_211Concatfiles.fasta
+    output: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    jobid: 8
+    reason: Input files updated by another job: SACRAResults/fastq_runid_211Concatfiles.fasta
+    resources: tmpdir=/tmp
+
+[Mon May 15 14:30:26 2023]
+Finished job 8.
+8 of 12 steps (67%) done
+Select jobs to execute...
+
+[Mon May 15 14:30:26 2023]
+rule DiamondAlignment:
+    input: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    output: Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv
+    jobid: 10
+    reason: Input files updated by another job: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    resources: tmpdir=/tmp
+
+[Mon May 15 14:30:36 2023]
+Finished job 10.
+9 of 12 steps (75%) done
+Select jobs to execute...
+
+[Mon May 15 14:30:36 2023]
+rule FilteringDIAMOND:
+    input: Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv, SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    output: AssemblyFasta/fastq_runid_211FastaForAssembly.fasta
+    jobid: 11
+    reason: Input files updated by another job: Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, SACRAResults/fastq_runid_211SacraResultsFiltered.fasta, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv
+    resources: tmpdir=/tmp
+
+[Mon May 15 14:30:37 2023]
+Finished job 11.
+10 of 12 steps (83%) done
+Select jobs to execute...
+
+[Mon May 15 14:30:37 2023]
+rule StatisticsToHTML:
+    input: reports/fastq_runid_211/PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0Statistics.txt, PorechopABI/fastq_runid_211, ProwlerProcessed/fastq_runid_211, SACRAResults/fastq_runid_211SacraResultsFiltered.fasta, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv, AssemblyFasta/fastq_runid_211FastaForAssembly.fasta
+    output: reports/fastq_runid_211/fastq_runid_211Results.html
+    jobid: 7
+    reason: Missing output files: reports/fastq_runid_211/fastq_runid_211Results.html; Input files updated by another job: Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, reports/fastq_runid_211/PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0Statistics.txt, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, SACRAResults/fastq_runid_211SacraResultsFiltered.fasta, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, AssemblyFasta/fastq_runid_211FastaForAssembly.fasta, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv
+    resources: tmpdir=/tmp
+
+[Mon May 15 14:30:39 2023]
+Finished job 7.
+11 of 12 steps (92%) done
+Select jobs to execute...
+
+[Mon May 15 14:30:39 2023]
+localrule all:
+    input: SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0SacraResults.fasta, SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0SacraResults.fasta, reports/fastq_runid_211/fastq_runid_211Results.html
+    jobid: 0
+    reason: Input files updated by another job: SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0SacraResults.fasta, reports/fastq_runid_211/fastq_runid_211Results.html, SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0SacraResults.fasta
+    resources: tmpdir=/tmp
+
+[Mon May 15 14:30:39 2023]
+Finished job 0.
+12 of 12 steps (100%) done
+Complete log: .snakemake/log/2023-05-15T142150.614743.snakemake.log

@@ -1,0 +1,11 @@
+prefix=/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/ddb7645d0f5a0c54a3d1f714666cff46_
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: lcms2
+Description: LCMS Color Management Library
+Version: 2.12
+Libs: -L${libdir} -llcms2 
+Libs.private: -lm -lpthread
+Cflags: -I${includedir}

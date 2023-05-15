@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+DiamondAlignment        1              1              1
+StatisticsToHTML        1              1              1
+all                     1              1              1
+total                   3              1              1
+
+Select jobs to execute...
+
+[Tue May  9 15:50:12 2023]
+rule DiamondAlignment:
+    input: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    output: Diamond/fastq_runid_211DiamondATP6.csv, Diamond/fastq_runid_211DiamondATP8.csv, Diamond/fastq_runid_211DiamondCOX1.csv, Diamond/fastq_runid_211DiamondCOX2.csv, Diamond/fastq_runid_211DiamondCOX3.csv, Diamond/fastq_runid_211DiamondCYTB.csv, Diamond/fastq_runid_211DiamondNAD1.csv, Diamond/fastq_runid_211DiamondNAD2.csv, Diamond/fastq_runid_211DiamondNAD3.csv, Diamond/fastq_runid_211DiamondNAD4.csv, Diamond/fastq_runid_211DiamondNAD4L.csv, Diamond/fastq_runid_211DiamondNAD5.csv, Diamond/fastq_runid_211DiamondNAD6.csv
+    jobid: 6
+    reason: Missing output files: Diamond/fastq_runid_211DiamondCYTB.csv, Diamond/fastq_runid_211DiamondNAD5.csv, Diamond/fastq_runid_211DiamondNAD3.csv, Diamond/fastq_runid_211DiamondNAD1.csv, Diamond/fastq_runid_211DiamondNAD2.csv, Diamond/fastq_runid_211DiamondNAD4.csv, Diamond/fastq_runid_211DiamondATP6.csv, Diamond/fastq_runid_211DiamondNAD4L.csv, Diamond/fastq_runid_211DiamondCOX1.csv, Diamond/fastq_runid_211DiamondCOX2.csv, Diamond/fastq_runid_211DiamondNAD6.csv, Diamond/fastq_runid_211DiamondCOX3.csv, Diamond/fastq_runid_211DiamondATP8.csv
+    resources: tmpdir=/tmp
+
+[Tue May  9 15:50:12 2023]
+Error in rule DiamondAlignment:
+    jobid: 6
+    input: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    output: Diamond/fastq_runid_211DiamondATP6.csv, Diamond/fastq_runid_211DiamondATP8.csv, Diamond/fastq_runid_211DiamondCOX1.csv, Diamond/fastq_runid_211DiamondCOX2.csv, Diamond/fastq_runid_211DiamondCOX3.csv, Diamond/fastq_runid_211DiamondCYTB.csv, Diamond/fastq_runid_211DiamondNAD1.csv, Diamond/fastq_runid_211DiamondNAD2.csv, Diamond/fastq_runid_211DiamondNAD3.csv, Diamond/fastq_runid_211DiamondNAD4.csv, Diamond/fastq_runid_211DiamondNAD4L.csv, Diamond/fastq_runid_211DiamondNAD5.csv, Diamond/fastq_runid_211DiamondNAD6.csv
+    shell:
+        diamond blastx -d Diamond/DB/ATP6 ATP8 COX1 COX2 COX3 CYTB NAD1 NAD2 NAD3 NAD4 NAD4L NAD5 NAD6 -q SACRAResults/fastq_runid_211SacraResultsFiltered.fasta -k 1 -f 6 -o Diamond/Diamond/fastq_runid_211DiamondATP6.csv Diamond/fastq_runid_211DiamondATP8.csv Diamond/fastq_runid_211DiamondCOX1.csv Diamond/fastq_runid_211DiamondCOX2.csv Diamond/fastq_runid_211DiamondCOX3.csv Diamond/fastq_runid_211DiamondCYTB.csv Diamond/fastq_runid_211DiamondNAD1.csv Diamond/fastq_runid_211DiamondNAD2.csv Diamond/fastq_runid_211DiamondNAD3.csv Diamond/fastq_runid_211DiamondNAD4.csv Diamond/fastq_runid_211DiamondNAD4L.csv Diamond/fastq_runid_211DiamondNAD5.csv Diamond/fastq_runid_211DiamondNAD6.csv.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-09T155011.487833.snakemake.log

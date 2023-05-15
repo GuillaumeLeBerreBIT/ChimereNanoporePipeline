@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule porechopABIcall in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 13:
+Missing input files for rule porechopABIcall:
+    output: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq, reports/fastq_runid_211/fastq_runid_211Statistics.txt
+    affected files:
+        PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq

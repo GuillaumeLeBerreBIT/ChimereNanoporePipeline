@@ -1,0 +1,3 @@
+WildcardError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 104:
+No values given for wildcard 'genes'.
+  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 104, in <module>

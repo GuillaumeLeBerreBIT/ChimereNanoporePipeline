@@ -1,0 +1,3 @@
+NameError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 14:
+name 'RUN_ID' is not defined
+  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 14, in <module>

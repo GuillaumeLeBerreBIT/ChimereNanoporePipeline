@@ -1,0 +1,51 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+DiamondAlignmentATP6        1              1              1
+StatisticsToHTML            1              1              1
+all                         1              1              1
+total                       3              1              1
+
+Select jobs to execute...
+
+[Tue May  9 16:24:17 2023]
+rule DiamondAlignmentATP6:
+    input: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    output: Diamond/fastq_runid_211DiamondATP6.csv
+    jobid: 6
+    reason: Missing output files: Diamond/fastq_runid_211DiamondATP6.csv
+    resources: tmpdir=/tmp
+
+[Tue May  9 16:24:17 2023]
+Finished job 6.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Tue May  9 16:24:17 2023]
+rule StatisticsToHTML:
+    input: reports/fastq_runid_211Statistics.txt, PorechopABI/fastq_runid_211PoreChopReads.fastq, ProwlerProcessed/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta, ProwlerProcessed/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.split.fasta, ProwlerProcessed/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta.non_chimera.fasta, SACRAResults/fastq_runid_211SacraResultsFiltered.fasta, Diamond/fastq_runid_211DiamondATP6.csv
+    output: reports/fastq_runid_211Results.html
+    jobid: 1
+    reason: Input files updated by another job: Diamond/fastq_runid_211DiamondATP6.csv; Set of input files has changed since last execution; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Tue May  9 16:24:20 2023]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Tue May  9 16:24:20 2023]
+localrule all:
+    input: reports/fastq_runid_211Results.html
+    jobid: 0
+    reason: Input files updated by another job: reports/fastq_runid_211Results.html
+    resources: tmpdir=/tmp
+
+[Tue May  9 16:24:20 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2023-05-09T162416.421570.snakemake.log

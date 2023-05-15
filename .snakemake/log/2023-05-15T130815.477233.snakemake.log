@@ -1,0 +1,51 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+DiamondAlignment        1              1              1
+FilteringDIAMOND        1              1              1
+all                     1              1              1
+total                   3              1              1
+
+Select jobs to execute...
+
+[Mon May 15 13:08:16 2023]
+rule DiamondAlignment:
+    input: SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    output: Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv
+    jobid: 8
+    reason: Missing output files: Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv
+    resources: tmpdir=/tmp
+
+[Mon May 15 13:08:26 2023]
+Finished job 8.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Mon May 15 13:08:26 2023]
+rule FilteringDIAMOND:
+    input: Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv, SACRAResults/fastq_runid_211SacraResultsFiltered.fasta
+    output: AssemblyFasta/fastq_runid_211FastaForAssembly.fasta
+    jobid: 7
+    reason: Missing output files: AssemblyFasta/fastq_runid_211FastaForAssembly.fasta; Input files updated by another job: Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv; Set of input files has changed since last execution
+    resources: tmpdir=/tmp
+
+[Mon May 15 13:08:27 2023]
+Finished job 7.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Mon May 15 13:08:27 2023]
+localrule all:
+    input: SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0SacraResults.fasta, SACRAResults/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0SacraResults.fasta, AssemblyFasta/fastq_runid_211FastaForAssembly.fasta
+    jobid: 0
+    reason: Input files updated by another job: AssemblyFasta/fastq_runid_211FastaForAssembly.fasta
+    resources: tmpdir=/tmp
+
+[Mon May 15 13:08:27 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2023-05-15T130815.477233.snakemake.log

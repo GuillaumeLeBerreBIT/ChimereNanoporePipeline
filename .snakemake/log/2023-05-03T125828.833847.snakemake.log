@@ -1,3 +1,0 @@
-KeyError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 36:
-'clip'
-  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 36, in <module>

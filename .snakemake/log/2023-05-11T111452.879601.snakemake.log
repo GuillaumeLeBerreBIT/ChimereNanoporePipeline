@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+DiamondAlignment        1              1              1
+FilterFastaSACRA        1              1              1
+FilteringDIAMOND        1              1              1
+ProwlerTrim             1              1              1
+SACRAcall               1              1              1
+StatisticsToHTML        1              1              1
+all                     1              1              1
+porechopABIcall         1              1              1
+total                   8              1              1
+
+Select jobs to execute...
+
+[Thu May 11 11:14:54 2023]
+rule porechopABIcall:
+    input: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_0_0.fastq
+    output: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq, reports/fastq_runid_211/fastq_runid_211Statistics.txt
+    jobid: 2
+    reason: Missing output files: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq
+    resources: tmpdir=/tmp
+
+Activating conda environment: .snakemake/conda/8ff5eb033241f5889665bcedcbfab59f_
+[Thu May 11 11:16:23 2023]
+Finished job 2.
+1 of 8 steps (12%) done
+Select jobs to execute...
+
+[Thu May 11 11:16:23 2023]
+rule ProwlerTrim:
+    input: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq
+    output: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    jobid: 3
+    reason: Missing output files: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta; Input files updated by another job: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq
+    resources: tmpdir=/tmp
+
+[Thu May 11 11:16:23 2023]
+Error in rule ProwlerTrim:
+    jobid: 3
+    input: PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq
+    output: ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+    shell:
+        python3 scripts/TrimmerLarge.py -f PorechopABI/fastq_runid_211/fastq_runid_211PoreChopReads.fastq -i PorechopABI/fastq_runid_211 -o ProwlerProcessed/fastq_runid_211 -m D -c LT -g U0 -q 7 -w 100 -l 100 -d 0 -r '.fasta'
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ProwlerTrim since they might be corrupted:
+ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-11T111452.879601.snakemake.log

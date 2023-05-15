@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule DiamondAlignment in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 142:
+Missing input files for rule DiamondAlignment:
+    output: Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP6.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_ATP8.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_COX3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_CYTB.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD1.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD2.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD3.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD4L.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD5.csv, Diamond/fastq_runid_211/fastq_runid_211Diamond_NAD6.csv
+    affected files:
+        SACRAResults/fastq_runid_211/fastq_runid_211SacraResultsFiltered.fasta

@@ -1,0 +1,52 @@
+{
+  "build": "h27826a3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=9.3.0",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/guillaume/miniconda3/pkgs/pigz-2.6-h27826a3_0",
+  "features": "",
+  "files": [
+    "bin/pigz",
+    "bin/unpigz"
+  ],
+  "fn": "pigz-2.6-h27826a3_0.tar.bz2",
+  "license": "zlib",
+  "link": {
+    "source": "/home/guillaume/miniconda3/pkgs/pigz-2.6-h27826a3_0",
+    "type": 1
+  },
+  "md5": "677798489006b14291e8617223e34348",
+  "name": "pigz",
+  "package_tarball_full_path": "/home/guillaume/miniconda3/pkgs/pigz-2.6-h27826a3_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/pigz",
+        "path_type": "hardlink",
+        "sha256": "0dc96520ea16a54c936e2773e89ef2d0f8285fabb728bd838a3ba130aa0ce655",
+        "sha256_in_prefix": "0dc96520ea16a54c936e2773e89ef2d0f8285fabb728bd838a3ba130aa0ce655",
+        "size_in_bytes": 152208
+      },
+      {
+        "_path": "bin/unpigz",
+        "path_type": "hardlink",
+        "sha256": "0dc96520ea16a54c936e2773e89ef2d0f8285fabb728bd838a3ba130aa0ce655",
+        "sha256_in_prefix": "0dc96520ea16a54c936e2773e89ef2d0f8285fabb728bd838a3ba130aa0ce655",
+        "size_in_bytes": 152208
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "pigz==2.6=h27826a3_0",
+  "sha256": "186298fcc5fabf73ab8324f0b3af71ac523f3a6d9ec36b784f5751b020b08e6f",
+  "size": 89461,
+  "subdir": "linux-64",
+  "timestamp": 1616006194000,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/pigz-2.6-h27826a3_0.tar.bz2",
+  "version": "2.6"
+}

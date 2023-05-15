@@ -1,2 +1,0 @@
-SyntaxError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 10:
-Expected a descending order of rule names, e.g. rule1 > rule2 > rule3 ... (Snakefile, line 10)

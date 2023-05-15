@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 29:
+Missing input files for rule all:
+    affected files:
+        SACRAResults/fastq_runid_211/fastq_runid_211SacraResults.fasta

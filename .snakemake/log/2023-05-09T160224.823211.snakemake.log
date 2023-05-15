@@ -1,0 +1,3 @@
+WildcardError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 105:
+No values given for wildcard 'identifier'.
+  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 105, in <module>
