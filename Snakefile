@@ -123,7 +123,7 @@ rule ConcatFiles:
         outputFile = f"SACRAResults/{identifier}Concatfiles.fasta"
     params:
         target_num = target_number
-    threads: 1
+    threads: 4
     shell: 
         """
         python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} {params.target_num}
@@ -138,6 +138,7 @@ rule FilterFastaSACRA:
         sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
     params:
         bases = config['filterSACRA']['bases']
+    threads: 4
     shell:
         """
         python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}
@@ -167,6 +168,7 @@ rule DiamondAlignment:
         k = config['Diamond']['max-target-seq'],
         f = config['Diamond']['output-format'],
         folder = config['identifier']
+    threads: 4
     # Will create a folder with the identifier, since then only the resulst to a specific run belong to that folder. 
     # To generate statistical output its easier to handel the files in a  determined directory.  
     # Using """ Can all have different bash commands each executed on seperate line.
@@ -205,6 +207,7 @@ rule FilteringDIAMOND:
         idper = config['filtDIA']['idperc'],
         length = config['filtDIA']['len'],
         evalue = config['filtDIA']['eval']
+    threads: 4
     shell:
         "python3 scripts/DiamondToAssembly.py -i {params.idper} -l {params.length} -e {params.evalue} Diamond/{params.folder} {input.sacraF} {output.assem}"
 
@@ -223,6 +226,7 @@ rule StatisticsToHTML:
         poreStat = f"reports/{identifier}/PorechopABI/",
         poreFastq = f"PorechopABI/{identifier}/",
         prowFold = f"ProwlerProcessed/{identifier}/"
+    threads: 4
     shell: 
         """
         python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF}
