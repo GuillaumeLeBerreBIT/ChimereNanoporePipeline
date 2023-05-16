@@ -58,6 +58,7 @@ for i in FILES:
             """
             porechop_abi -abi -i {input} -o {output.reads} > {output.statistics} 2>&1
             """
+    
 
 #################### PROWLER TRIMMING ####################
 # Have to format the name of the output file since it is dependant on parameters provided by the config file.  
@@ -111,8 +112,8 @@ for i in FILES:
 # Can experiment with this may not even have to wait, extra security check
 # First file
 first_file = FILES[0]
-# The target file 
-target_file = FILES[-1] + "SacraResults.fasta"
+# The target number of files 
+target_number = len(FILES) 
 
 rule ConcatFiles:
     input: 
@@ -121,10 +122,11 @@ rule ConcatFiles:
     output: 
         outputFile = f"SACRAResults/{identifier}Concatfiles.fasta"
     params:
-        target_fil = target_file
+        target_num = target_number
+    threads: 1
     shell: 
         """
-        python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} {params.target_fil}
+        python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} {params.target_num}
         """
 
 ################# FILTER SACRA ####################
