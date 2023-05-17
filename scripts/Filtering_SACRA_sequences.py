@@ -2,10 +2,8 @@
 #######################################
 # MODULES
 #######################################
-
 import re, argparse
 from Bio import SeqIO   # pip install biopython
-
 #######################################
 # COMMAND LINE INPUT
 #######################################
@@ -19,14 +17,14 @@ parser.add_argument('-b', '--bases', type=int, default = 50, required = False,
                     help ='Give a number of bases want to have as minimum treshold to filter on.')
 args = parser.parse_args()
 
+"""
 #######################################
 # FILE HANDLING
 #######################################
-
 # GATHERING ALL IDS ABOVE X # OF NT
 list_wanted_records = []
 # Setting a counter
-counter_1 = 0
+#counter_1 = 0
 # Readigng in the input file 
 for seq_record in SeqIO.parse(args.inputFile, "fasta"):
     # Filter on the length of the amount of bases smaller then X, default 50
@@ -38,7 +36,7 @@ for seq_record in SeqIO.parse(args.inputFile, "fasta"):
         # The records do not have the starting ">", so add it here so the parsing can be done much easier. 
         # Will have == >@9030c343-3ff2-4b66-ab1b-c1e3327c3de0:1-188
         list_wanted_records.append(">" + seq_record.id)
-        counter_1 += 1 
+        #counter_1 += 1 
 
 # HANDLING THE FILE
 # Opening a file to write to
@@ -48,9 +46,9 @@ with open(args.outputFile, "w") as file_to_write:
         # This will create a list based on the newlines, containing strings
         reading_lines = file_to_read.readlines()
         # Setting a counter
-        counter_2 = 0
-        counter_3 = 0
-        counter_4 = 0
+        #counter_2 = 0
+        #counter_3 = 0
+        #counter_4 = 0
         # Setting a flag
         flag = 0 
         # Iterating over the lines in the list
@@ -65,7 +63,7 @@ with open(args.outputFile, "w") as file_to_write:
                 iso_header = splitted_header[0]
                 # If the header is in the list set the flag to 1 == to write
                 if iso_header in list_wanted_records:
-                    counter_2 += 1
+                    #counter_2 += 1
                     flag = 1
                 # If the header is not in the list then set flag to 0 == not write
                 elif iso_header not in list_wanted_records:
@@ -74,17 +72,27 @@ with open(args.outputFile, "w") as file_to_write:
             # This flag will allow ot print the lines to a file
             if flag == 1:
                 file_to_write.writelines(line)
-                counter_3 += 1
+                #counter_3 += 1
             # When flag is 0 it will skip the lines. 
             elif flag == 0:
-                counter_4 += 1
+                #counter_4 += 1
                 continue
 # Closing the files for good practice
     file_to_read.close()
 file_to_write.close()
 
 # To get information out the parsed reads.
-print(f"File readed through Biopython: {counter_1}\
-      \nFile handled for checking matching lines (manually): {counter_2}\
-      \nLines printed {counter_3}\
-      \nLines skipped {counter_4}")
+#print(f"File readed through Biopython: {counter_1}\
+#      \nFile handled for checking matching lines (manually): {counter_2}\
+#      \nLines printed {counter_3}\
+#      \nLines skipped {counter_4}")
+"""
+#######################################
+# BIOPYTHON 
+#######################################
+# Parse the input file want to filter on
+input_seq_iterator = SeqIO.parse(args.inputFile, "fasta")
+# Using a generator expression, more memory efficient then using list comprehension creating list of records.
+treshold_seq_iterator = (record for record in input_seq_iterator if len(record.seq) >= args.bases)
+# Writes the wanetd sequences to the outputfile
+SeqIO.write(treshold_seq_iterator, args.outputFile, "fasta")
