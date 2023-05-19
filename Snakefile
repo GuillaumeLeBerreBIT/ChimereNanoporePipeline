@@ -123,7 +123,8 @@ rule ConcatFiles:
         outputFile = f"SACRAResults/{identifier}Concatfiles.fasta"
     params:
         target_num = target_number
-    threads: 4
+    threads: 
+        4
     shell: 
         """
         python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} {params.target_num}
@@ -138,11 +139,29 @@ rule FilterFastaSACRA:
         sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
     params:
         bases = config['filterSACRA']['bases']
-    threads: 4
+    threads: 
+        4
     shell:
         """
         python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}
         """
+    
+#Makes use of a script to filter the fasta files based on the length of the reads, to only retain above certain treshold.
+#rule FilterFastaSACRA:
+#    input:
+#        sacraUF = f"SACRAResults/{identifier}Concatfiles.fasta"
+#    output:
+#        sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
+#    conda:
+#        "envs/seqkit.yaml"
+#    params:
+#        bases = config['filterSACRA']['bases']
+#    threads: 
+#        4
+#    shell:
+#        """
+#        seqkit seq -m {params.bases} {input.sacraUF} > {output.sacraF}
+#        """
 
 ################# DIAMOND ####################
 # DIAMOND will be used to BLASTX the fasta file against the mitochondriol genes, split up into 13 databases.
@@ -168,7 +187,8 @@ rule DiamondAlignment:
         k = config['Diamond']['max-target-seq'],
         f = config['Diamond']['output-format'],
         folder = config['identifier']
-    threads: 4
+    threads: 
+        4
     # Will create a folder with the identifier, since then only the resulst to a specific run belong to that folder. 
     # To generate statistical output its easier to handel the files in a  determined directory.  
     # Using """ Can all have different bash commands each executed on seperate line.
@@ -207,7 +227,8 @@ rule FilteringDIAMOND:
         idper = config['filtDIA']['idperc'],
         length = config['filtDIA']['len'],
         evalue = config['filtDIA']['eval']
-    threads: 4
+    threads: 
+        4
     shell:
         "python3 scripts/DiamondToAssembly.py -i {params.idper} -l {params.length} -e {params.evalue} Diamond/{params.folder} {input.sacraF} {output.assem}"
 
@@ -226,7 +247,8 @@ rule StatisticsToHTML:
         poreStat = f"reports/{identifier}/PorechopABI/",
         poreFastq = f"PorechopABI/{identifier}/",
         prowFold = f"ProwlerProcessed/{identifier}/"
-    threads: 4
+    threads: 
+        4
     shell: 
         """
         python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF}

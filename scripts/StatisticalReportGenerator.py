@@ -453,8 +453,8 @@ with open(statisticalFile, "w") as html_file:
     html_file.writelines(adap_loc_header)
     #Removed adapters
     html_file.writelines(f"\t<div>{StartAdapRem} / {StartTotReads} reads had adapters trimmed from their start ({StartBasePairs} bp removed)</div>")
-    html_file.writelines(f"\t<div>{MidAdapRem} / {MidTotReads} reads had adapters trimmed from their start </div>")
-    html_file.writelines(f"\t<div>{EndAdapRem} / {EndTotReads} reads had adapters trimmed from their start ({EndBasePairs} bp removed)</div>")
+    html_file.writelines(f"\t<div>{MidAdapRem} / {MidTotReads} reads had adapters trimmed from their middle </div>")
+    html_file.writelines(f"\t<div>{EndAdapRem} / {EndTotReads} reads had adapters trimmed from their end ({EndBasePairs} bp removed)</div>")
     # PROWLER
     html_file.writelines("<h2>Prowler Trimming</h2>\n")
     # Have to set the locatio from where the html file will be, so set picture in same folder
