@@ -1,6 +1,29 @@
-import re
-with open("fastq_runid_211FastaForAssembly-BioPython-removed@.fasta", "w") as file_to_write:
-    with open("fastq_runid_211FastaForAssembly-BioPython.fasta", "r") as file_to_read:
+#!/usr/bin/python3
+#####################################################################
+# Remove @ from headers 
+#####################################################################
+# MODULES
+#####################################################################
+import argparse, re
+
+#####################################################################
+# COMMAND LINE INPUT
+#####################################################################
+parser = argparse.ArgumentParser(description='Remove @ from headers - Nanopore data')                                                         
+parser.add_argument('inputFile', type=str, 
+                    help='Provide the input file to remove @ from the headers. Due to complications parsing to samtools/Flye. ')
+parser.add_argument('outputFile', type=str, 
+                    help='Give a (path to and) name to call the outputfile.')
+#parser.add_argument('targetNum', type=int, 
+#                    help='Give a target File.')
+args = parser.parse_args()
+
+#####################################################################
+# FILE HANDLING
+#####################################################################
+
+with open(args.outputFile, "w") as file_to_write:
+    with open(args.inputFile, "r") as file_to_read:
         file_lines = file_to_read.readlines()
 
         for line in file_lines:
@@ -9,3 +32,5 @@ with open("fastq_runid_211FastaForAssembly-BioPython-removed@.fasta", "w") as fi
                 file_to_write.writelines(removed_at)
             else:
                 file_to_write.writelines(line)
+    file_to_read.close()
+file_to_write.close()

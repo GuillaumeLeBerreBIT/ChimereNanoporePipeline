@@ -224,8 +224,8 @@ sacra_seq_len = []
 ### PROWLER SEQUENCES
 for prow_file in os.listdir(args.prowlerFolder):   
     
-    if not re.search(".csv",prow_file) or\
-        re.search(".non_chimera.fasta",prow_file) or\
+    if not re.search(".csv",prow_file) and\
+        re.search(".non_chimera.fasta",prow_file) and\
         re.search(".split.fasta", prow_file):
           
         file_path_prow = f"{args.prowlerFolder}/{prow_file}"
