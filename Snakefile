@@ -78,6 +78,8 @@ for i in FILES:
             minlen = config['prowler']['minlen'],
             datamax = config['prowler']['datamax'],
             folder = config['identifier']
+        conda:
+            "envs/pythonChimereWorkflow.yaml"
         shell:
             """
             python3 scripts/TrimmerLarge.py -f {input.out_fastq} -i PorechopABI/{params.folder}/ -o ProwlerProcessed/{params.folder}/ -m {params.trimmode} -c {params.clip} -g {params.fragments} -q {params.qscore} -w {params.windowsize} -l {params.minlen} -d {params.datamax} -r '.fasta'
@@ -114,20 +116,22 @@ for i in FILES:
 first_file = FILES[0]
 # The target number of files 
 target_number = len(FILES) 
-
+# {params.target_num}
 rule ConcatFiles:
     input: 
         filesSacra = f"SACRAResults/{identifier}/{first_file}SacraResults.fasta",
         #dummySacra = expand("SACRAResults/{identifier}/{i}SacraResults.fasta", identifier = config['identifier'], i = FILES)
     output: 
         outputFile = f"SACRAResults/{identifier}Concatfiles.fasta"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
     params:
         target_num = target_number
     threads: 
         4
     shell: 
         """
-        python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} {params.target_num}
+        python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} 
         """
 
 ################# FILTER SACRA ####################
@@ -137,6 +141,8 @@ rule FilterFastaSACRA:
         sacraUF = f"SACRAResults/{identifier}Concatfiles.fasta"
     output:
         sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
     params:
         bases = config['filterSACRA']['bases']
     threads: 
@@ -183,6 +189,8 @@ rule DiamondAlignment:
         DiamondNAD4L = f"Diamond/{identifier}/{identifier}Diamond_NAD4L.csv",
         DiamondNAD5 = f"Diamond/{identifier}/{identifier}Diamond_NAD5.csv",
         DiamondNAD6 = f"Diamond/{identifier}/{identifier}Diamond_NAD6.csv"
+    conda:
+        "envs/diamond.yaml"
     params:
         k = config['Diamond']['max-target-seq'],
         f = config['Diamond']['output-format'],
@@ -221,6 +229,8 @@ rule FilteringDIAMOND:
         sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
     output: 
         assem = f"AssemblyFasta/{identifier}FastaForAssembly.fasta"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
     params:
         # Define folders under params and not as output otherwise will get an error.
         folder = config['identifier'],
@@ -242,6 +252,8 @@ rule StatisticsToHTML:
         assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier'])
     output: 
         f"reports/{identifier}/{identifier}Results.html"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
     params:
         # Set the folders as parameters to give on the command line
         poreStat = f"reports/{identifier}/PorechopABI/",
