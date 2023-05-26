@@ -1,0 +1,7 @@
+Cmaenas_minion_data/**
+workflow/AssemblyFasta/**
+workflow/Diamond/**
+workflow/PorechopABI/**
+workflow/ProwlerProcessed/**
+workflow/SACRAResults/**
+.snakemake/**
