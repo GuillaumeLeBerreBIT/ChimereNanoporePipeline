@@ -58,7 +58,7 @@ for i in FILES:
             "envs/porechop_abi.yaml"
         shell: 
             """
-            porechop_abi -abi -i {input} -o {output.reads} > {output.statistics} 2>&1
+            porechop_abi -abi -i {input} -o {output.reads} -t 2 > {output.statistics} 2>&1
             """
     
 
