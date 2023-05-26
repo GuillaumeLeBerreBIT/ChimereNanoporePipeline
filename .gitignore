@@ -5,3 +5,8 @@ workflow/PorechopABI/**
 workflow/ProwlerProcessed/**
 workflow/SACRAResults/**
 .snakemake/**
+!workflow/AssemblyFasta/.gitkeep
+!workflow/Diamond/.gitkeep
+!workflow/PorechopABI/.gitkeep
+!workflow/ProwlerProcessed/.gitkeep
+!workflow/SACRAResults/.gitkeep
