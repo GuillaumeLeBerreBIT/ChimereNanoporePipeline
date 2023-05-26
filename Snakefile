@@ -203,19 +203,19 @@ rule DiamondAlignment:
     # Do not have to set a "mkdir folder" since the path defined will automatically create a destined folder. 
     shell: 
         """
-        diamond blastx -d Diamond/DB/ATP6 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondATP6}
-        diamond blastx -d Diamond/DB/ATP8 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondATP8}
-        diamond blastx -d Diamond/DB/COX1 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCOX1}
-        diamond blastx -d Diamond/DB/COX2 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCOX2}
-        diamond blastx -d Diamond/DB/COX3 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCOX3}
-        diamond blastx -d Diamond/DB/CYTB -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondCYTB}
-        diamond blastx -d Diamond/DB/NAD1 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD1}
-        diamond blastx -d Diamond/DB/NAD2 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD2}
-        diamond blastx -d Diamond/DB/NAD3 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD3}
-        diamond blastx -d Diamond/DB/NAD4 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD4}
-        diamond blastx -d Diamond/DB/NAD4L -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD4L}
-        diamond blastx -d Diamond/DB/NAD5 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD5}
-        diamond blastx -d Diamond/DB/NAD6 -q {input.sacraF} -k {params.k} -f {params.f} -o {output.DiamondNAD6}
+        diamond blastx -d Diamond/DB/ATP6 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondATP6}
+        diamond blastx -d Diamond/DB/ATP8 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondATP8}
+        diamond blastx -d Diamond/DB/COX1 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX1}
+        diamond blastx -d Diamond/DB/COX2 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX2}
+        diamond blastx -d Diamond/DB/COX3 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX3}
+        diamond blastx -d Diamond/DB/CYTB -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCYTB}
+        diamond blastx -d Diamond/DB/NAD1 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD1}
+        diamond blastx -d Diamond/DB/NAD2 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD2}
+        diamond blastx -d Diamond/DB/NAD3 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD3}
+        diamond blastx -d Diamond/DB/NAD4 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD4}
+        diamond blastx -d Diamond/DB/NAD4L -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD4L}
+        diamond blastx -d Diamond/DB/NAD5 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD5}
+        diamond blastx -d Diamond/DB/NAD6 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD6}
         """
 
 ################# FILTER DIAMOND ####################
