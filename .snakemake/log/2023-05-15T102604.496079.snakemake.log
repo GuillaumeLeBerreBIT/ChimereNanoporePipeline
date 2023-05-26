@@ -1,3 +1,0 @@
-TypeError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 31:
-'str' object is not callable
-  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 31, in <module>

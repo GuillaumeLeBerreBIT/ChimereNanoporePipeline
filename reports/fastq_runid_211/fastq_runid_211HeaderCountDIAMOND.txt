@@ -1,3 +1,0 @@
-For the headers found 1 time(s) after DIAMOND: 61 sequences.
-For the headers found 2 time(s) after DIAMOND: 1 sequences.
-For the headers found 0 time(s) after DIAMOND: 24906 sequences.

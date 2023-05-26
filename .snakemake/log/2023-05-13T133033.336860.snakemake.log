@@ -1,3 +1,0 @@
-WorkflowError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 38:
-Duplicate output file pattern in rule StatisticsToHTML. First two duplicate for entries 0 and 1.
-  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 38, in <module>

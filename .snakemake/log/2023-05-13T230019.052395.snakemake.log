@@ -1,3 +1,0 @@
-ValueError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 1:
-not enough values to unpack (expected 2, got 1)
-  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 1, in <module>

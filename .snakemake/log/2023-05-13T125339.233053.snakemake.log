@@ -1,8 +1,0 @@
-Building DAG of jobs...
-InputFunctionException in rule porechopABIcall in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 19:
-Error:
-  AttributeError: 'Wildcards' object has no attribute 'run_id'
-Wildcards:
-
-Traceback:
-  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 6, in get_input_files

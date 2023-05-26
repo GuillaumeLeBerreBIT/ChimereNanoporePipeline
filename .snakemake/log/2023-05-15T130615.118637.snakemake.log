@@ -1,6 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule FilteringDIAMOND in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 188:
-Missing input files for rule FilteringDIAMOND:
-    output: AssemblyFasta/fastq_runid_211FastaForAssembly.fasta
-    affected files:
-        SACRAResults/fastq_runid_211/fastq_runid_211SacraResultsFiltered.fasta

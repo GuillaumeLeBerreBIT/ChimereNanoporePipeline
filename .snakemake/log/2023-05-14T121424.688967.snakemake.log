@@ -1,5 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 29:
-Missing input files for rule all:
-    affected files:
-        ProwlerProcessed/fastq_runid_211/fastq_runid_211PoreChopReadsTrimLT-U0-D7W100L100R0.fasta

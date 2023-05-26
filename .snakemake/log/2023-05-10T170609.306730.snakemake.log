@@ -1,7 +1,0 @@
-IndexError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 188:
-tuple index out of range
-  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 188, in <module>
-  File "/usr/lib/python3.10/string.py", line 165, in vformat
-  File "/usr/lib/python3.10/string.py", line 205, in _vformat
-  File "/usr/lib/python3.10/string.py", line 270, in get_field
-  File "/usr/lib/python3.10/string.py", line 225, in get_value

@@ -1,6 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule ConcatFiles in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 102:
-Missing input files for rule ConcatFiles:
-    output: SACRAResults/fastq_runid_211Concatfiles.fasta
-    affected files:
-        SACRAResults/fastq_runid_211/fSacraResults.fasta

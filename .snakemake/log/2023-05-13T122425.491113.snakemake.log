@@ -1,8 +1,0 @@
-Building DAG of jobs...
-InputFunctionException in rule porechopABIcall in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 21:
-Error:
-  NameError: name 'file' is not defined
-Wildcards:
-
-Traceback:
-  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 8, in get_input_files

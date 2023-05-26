@@ -1,6 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule 2 in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 44:
-Missing input files for rule 2:
-    output: PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0.fastqPoreChopReads.fastq, reports/fastq_runid_211/PorechopABI/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0.fastqStatistics.txt
-    affected files:
-        Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0.fastq.fastq

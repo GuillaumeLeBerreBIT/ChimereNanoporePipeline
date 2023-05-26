@@ -1,0 +1,55 @@
+<html>
+<head>
+</head>
+<body>
+<h1>Statistical Report - Workflow</h1>
+<h2>Porechop ABI</h2>
+<h3>Trimming adapters from read ends</h3>
+<ul>
+	<li>Consensus_1_end_(100.0%): CCTTAACCTCACCAAATCTAAATTTAACCTGATTTAACCTAACCTAACC</li>
+	<li>Consensus_1_end_(100.0%): CCTTAACCTCACCAAATCTAAATTTAACCTGATTTAACCCTAACCT</li>
+	<li>Consensus_1_end_(100.0%): TTAACCTGATTTAACCTAACCTAACC</li>
+	<li>Consensus_1_end_(100.0%): GGTTAGGTTAAATCAGGTTAAATTTAGATTTGGTGAGGTTAAGGACAGGTTAGGTTAAATC</li>
+	<li>SQK-NSK007_Y_Bottom: GCAATACGTAACTGAACGAAGT</li>
+	<li>Consensus_1_end_(100.0%): AATTTAACCTGATTTAACCTAACCTGTCCTTAACCTCACCAA</li>
+	<li>1D2_part_2_end: CACCCAAGCAGACGCCAGCAATACGTAACT</li>
+	<li>Consensus_1_end_(93.3%): GTGTGAGCAATACGTAACT</li>
+	<li>SQK-MAP006_Short_Y_Bottom_LI33: GGTTAAACACCCAAGCAGACGCCG</li>
+	<li>Consensus_1_end_(100.0%): TTAACCTGATTTAACCTAACCTGTCCTTAACCTCACCAAATCTAAATTTAACCTGATT</li>
+	<li>Consensus_1_end_(100.0%): GGTTAGGTTAAATCAGGTTAAAGTTAGATTTGGTGAGGT</li>
+	<li>SQK-MAP006_Short_Y_Top_LI32: CGGCGTCTGCTTGGGTGTTTAACCT</li>
+	<li>Consensus_1_end_(100.0%): CCTTAACCTCACCAAATCTAAATTTAACCTGATTTAACCTAA</li>
+	<li>NB01_start: AATGTACTTCGTTCAGTTACGTATTGCTAAGGTTAACACAAAGACACCGACAACTTTCTTCAGCACCT</li>
+	<li>Consensus_1_end_(100.0%): TTAACCTGATTTAACCTAACCTGTCCTTAACCTCACCAAATCTCAATTTAACCTGATTT</li>
+	<li>BC01_rev: CACAAAGACACCGACAACTTTCTT</li>
+	<li>Consensus_1_end_(100.0%): TTAACCCGATTTAACCTAACCTGTCCTTAACCTCACCAAATCTAAATTTAACCTGATTTAACCTAACCTAACC</li>
+	<li>1D2_part_2_start: CTTCGTTCAGTTACGTATTGCTGGCGTCTGCTT</li>
+	<li>Consensus_1_end_(100.0%): TTAGATTTGGTGAGGTTAAGGACAGGTTAGGTTAAATCGG</li>
+	<li>Consensus_1_end_(100.0%): TAACCTAACCTGTCCTTAACCTCACCAAATCTAAATTTAACCTGATTTAACCTAACCTAACC</li>
+	<li>Consensus_1_end_(100.0%): ACTTTAACCTGATTTAACCTAACCTGTCCTTAACCTCACCAAATCTAACTTTAACCTGATCT</li>
+	<li>NB01_end: AGGTGCTGAAGAAAGTTGTCGGTGTCTTTGTGTTAACCTTAGCAATACGTAACTGAACGAAGT</li>
+	<li>Consensus_1_start_(100.0%): AATTGTACTTCGTTCAGTTACGTATTGCT</li>
+	<li>BC01: AAGAAAGTTGTCGGTGTCTTTGTG</li>
+	<li>SQK-NSK007_Y_Top: AATGTACTTCGTTCAGTTACGTATTGCT</li>
+	<li>Consensus_1_start_(100.0%): CATTGTACTTCGTTCAGTTACGTATTGCT</li>
+</ul>
+<h3>Adapters Removed</h3>
+	<div>287814 / 329750 reads had adapters trimmed from their start (10069052 bp removed)</div>	<div>6453 / 329750 reads had adapters trimmed from their middle </div>	<div>218411 / 329750 reads had adapters trimmed from their end (3422699 bp removed)</div><h2>Prowler Trimming</h2>
+	<img src='fastq_runid_211Before&After-Prowler.png' height='800px'>
+<h2>Split Amplified Chimeric Read Algorithm (SACRA)</h2>
+	<img src='fastq_runid_211SACRA-Stacked-Seq-Amount.png' height='800px'>
+	<img src='fastq_runid_211SACRA-Stacked-Seq-Rel-Amount.png' height='800px'>
+	<img src='fastq_runid_211SACRA-Hist-Distribution.png' height='800px'>
+<h2>SACRA Filtered Reads</h2>
+	<img src='fastq_runid_211SACRA-Hist-FilteredSeq.png' height='800px'>
+<h2>DIAMOND </h2>
+<ul>
+	<li>For the headers found 1 time(s) after DIAMOND: 4039 sequences.</li>
+	<li>For the headers found 2 time(s) after DIAMOND: 73 sequences.</li>
+	<li>For the headers found 3 time(s) after DIAMOND: 1 sequences.</li>
+	<li>For the headers found 0 time(s) after DIAMOND: 2199835 sequences.</li>
+</ul>
+	<img src='fastq_runid_211Bar-HitsPerGene-DIAMOND&Filtering.png' height='800px'>
+	<img src='fastq_runid_211Hist-SequenceLengthAfterDIAMOND&Filtering.png' height='800px'>
+</body>
+</html>

@@ -1,0 +1,87 @@
+# The path to the folder contating all the input files (fastq). Can use relative/aboslute paths. 
+startfolder: "../Cmaenas_minion_data"
+
+# Using a unique identifier this for creating folder/file names. Using different names to save the rsults in different runs. 
+# WATCH OUT! Pre used identifier where same files are still repsent may results in rewriting files or combine files from different experiments.
+# Identifier can also be used as species identifier, to in the future add files of previously used species to get more results.
+identifier: "fastq_runid_211"
+
+# The mitochondriol genes
+genes: ["ATP6","ATP8","COX1","COX2","COX3","CYTB","NAD1", "NAD2","NAD3","NAD4","NAD4L","NAD5","NAD6"]
+
+# PROWLER
+prowler:
+  # Select L to clip leading Ns, T to trim trialing Ns and LT to trim both (default=LT)
+  clip: "LT"
+  # The fragmetation mode default U0
+  fragments: "U0"
+  # Set the trimming algorithm Static == "S" OR Dynamic == "D"
+  trimmode: "D"
+  # Set the quality score trimming treshold.
+  qscore: 7
+  # Change the size of the trimming window
+  windowsize: 100
+  # The minimum acceptable numer of bases in a read
+  minlen: 100
+  # Select a maximum data subsample in MB (default = 0, entire sample)
+  datamax: 0
+
+# Give the number of bases as minimum treshold to filter the fasta file one. 
+filterSACRA:
+  bases: 50
+
+Diamond:
+  # The maximum number of target sequences per query to report alignments for
+  max-target-seq: 1
+  # Format of the output file: 6 == BLAST tabular format, 5 == BLAST XML, 0 == Pairwise alignemnt, ...
+  output-format: 6
+
+filtDIA:
+  # The minimum percentage Identity. 
+  idperc: 70
+  # The min length residues of a sequence. 
+  len: 20
+  # Set the max evalue to filter the BLASTX results on
+  # E-value is seen as string in YAML file, thats how it works. In python convert to float 
+  eval: 10e-6
+
+
+alignment:
+  R: "01"
+  u: "NEAR"
+  a: 0 
+  A: 10 
+  b: 15 
+  B: 7 
+  S: 1  
+  f: "BlastTab+"
+
+parsdepth:
+  al: 100 
+  tl: 50 
+  pd: 1 
+  id: 75
+
+pcratio:
+  ad: 50 
+  id: 75
+
+mpc:
+  sp: "false"
+  rf: "lambda.fasta"
+  R: "01"
+  u: "NEAR"
+  a: 8
+  A: 16 
+  b: 12 
+  B: 5
+  S: 1  
+  f: "BlastTab+"
+  id: 95
+  al: 50
+  lt: 50
+
+split:
+  pc: 10
+  dp: 0 
+  sl: 100

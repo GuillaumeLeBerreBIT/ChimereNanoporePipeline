@@ -1,2 +1,0 @@
-IndentationError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 9:
-expected an indented block after 'for' statement on line 7

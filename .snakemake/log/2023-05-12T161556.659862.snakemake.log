@@ -1,3 +1,0 @@
-WildcardError in file /home/guillaume/ChimereNanoporePipeline/Snakefile, line 28:
-No values given for wildcard 'i'.
-  File "/home/guillaume/ChimereNanoporePipeline/Snakefile", line 28, in <module>

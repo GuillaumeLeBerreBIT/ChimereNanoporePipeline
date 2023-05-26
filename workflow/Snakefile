@@ -269,7 +269,7 @@ rule EditingHeaders:
         """
 
 ################# FLYE ####################
-# 
+# Flye is a de novo assembler for single-molecule sequencing reads, such as those produced by Oxford Nanopore Technologies
 # Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
 rule FlyeAssembly:
     input: 
@@ -282,15 +282,15 @@ rule FlyeAssembly:
         # Define folders under params and not as output otherwise will get an error.
         FlyeFolder = f"{identifier}FlyeResults/"
     threads: 
-        4
+        8
     shell:
         """
         mkdir {params.FlyeFolder}
         flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 8
         """
 
-################# FLYE ####################
-# 
+################# MITOS ####################
+# This is a mitogenome annotator. Detecting the genes present in the addembly made by Flye.   
 # Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
 rule MITOS:
     input: 

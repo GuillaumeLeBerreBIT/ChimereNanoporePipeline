@@ -1,0 +1,518 @@
+
+[1m[4mAb Initio Phase[0m
+Kmer size:             16
+Sampled sequences:     40000
+Sampling length        100
+LC filter threshold:   1
+Adjusted LC threshold: 1
+Nb thread:             8
+Number of kept kmer:   500
+Number of runs:        10
+Verbosity level:       1
+
+A total of 10 runs will be performed.
+[8.16656 ms]	Parsing FASTA file
+[28.9663 ms]	Number of sequences found: 3936.
+Starting run number 1
+/!\ WARNING: Sequence set too small for the requested sample size
+/!\ WARNING: The whole set will be used.
+[29.0425 ms]	Working on sequence start.
+[504.629 ms]	Working on sequence end.
+Starting run number 2
+[901.875 ms]	Working on sequence start.
+[1369.18 ms]	Working on sequence end.
+Starting run number 3
+[1749.1 ms]	Working on sequence start.
+[2212.57 ms]	Working on sequence end.
+Starting run number 4
+[2580.11 ms]	Working on sequence start.
+[3048.76 ms]	Working on sequence end.
+Starting run number 5
+[3418.12 ms]	Working on sequence start.
+[3896.77 ms]	Working on sequence end.
+Starting run number 6
+[4276.46 ms]	Working on sequence start.
+[4727.04 ms]	Working on sequence end.
+Starting run number 7
+[5124.78 ms]	Working on sequence start.
+[5584.76 ms]	Working on sequence end.
+Starting run number 8
+[5986.44 ms]	Working on sequence start.
+[6438.39 ms]	Working on sequence end.
+Starting run number 9
+[6826.58 ms]	Working on sequence start.
+[7289.93 ms]	Working on sequence end.
+Starting run number 10
+[7670.05 ms]	Working on sequence start.
+[8122.27 ms]	Working on sequence end.
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 The adapters currently found are not all identical.
+/!\	 A consensus will be made.
+/!\	 Launching 20 additional runs to build a consensus.
+Kmer size:             16
+Sampled sequences:     40000
+Sampling length        100
+LC filter threshold:   1
+Adjusted LC threshold: 1
+Nb thread:             8
+Number of kept kmer:   500
+Number of runs:        20
+Verbosity level:       1
+
+A total of 20 runs will be performed.
+[2.37609 ms]	Parsing FASTA file
+[23.2085 ms]	Number of sequences found: 3936.
+Starting run number 1
+/!\ WARNING: Sequence set too small for the requested sample size
+/!\ WARNING: The whole set will be used.
+[23.2846 ms]	Working on sequence start.
+[483.541 ms]	Working on sequence end.
+Starting run number 2
+[881.364 ms]	Working on sequence start.
+[1351.99 ms]	Working on sequence end.
+Starting run number 3
+[1737.7 ms]	Working on sequence start.
+[2192.94 ms]	Working on sequence end.
+Starting run number 4
+[2571.69 ms]	Working on sequence start.
+[3024.86 ms]	Working on sequence end.
+Starting run number 5
+[3402.09 ms]	Working on sequence start.
+[3865.45 ms]	Working on sequence end.
+Starting run number 6
+[4258.83 ms]	Working on sequence start.
+[4718.57 ms]	Working on sequence end.
+Starting run number 7
+[5115.12 ms]	Working on sequence start.
+[5556.66 ms]	Working on sequence end.
+Starting run number 8
+[5947.36 ms]	Working on sequence start.
+[6408.94 ms]	Working on sequence end.
+Starting run number 9
+[6792.88 ms]	Working on sequence start.
+[7245.16 ms]	Working on sequence end.
+Starting run number 10
+[7627.13 ms]	Working on sequence start.
+[8095.09 ms]	Working on sequence end.
+Starting run number 11
+[8466.29 ms]	Working on sequence start.
+[8924.73 ms]	Working on sequence end.
+Starting run number 12
+[9315.92 ms]	Working on sequence start.
+[9768.83 ms]	Working on sequence end.
+Starting run number 13
+[10165.2 ms]	Working on sequence start.
+[10635 ms]	Working on sequence end.
+Starting run number 14
+[11040.8 ms]	Working on sequence start.
+[11491.8 ms]	Working on sequence end.
+Starting run number 15
+[11883.5 ms]	Working on sequence start.
+[12365.4 ms]	Working on sequence end.
+Starting run number 16
+[12741.7 ms]	Working on sequence start.
+[13221 ms]	Working on sequence end.
+Starting run number 17
+[13593.1 ms]	Working on sequence start.
+[14056 ms]	Working on sequence end.
+Starting run number 18
+[14432.3 ms]	Working on sequence start.
+[14891.9 ms]	Working on sequence end.
+Starting run number 19
+[15279.7 ms]	Working on sequence start.
+[15727.3 ms]	Working on sequence end.
+Starting run number 20
+[16111.5 ms]	Working on sequence start.
+[16572.4 ms]	Working on sequence end.
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+Starting with a 10 run batch.
+Using config file:/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config
+Command line:
+ /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/approx_counter Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_6_0.fastq -v 1 --config /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count -nt 8 -mr 10
+Assembling run 1
+Assembling run 2
+Assembling run 3
+Assembling run 4
+Assembling run 5
+Assembling run 6
+Assembling run 7
+Assembling run 8
+Assembling run 9
+Assembling run 10
+Following with a 20 run batch.
+Using config file:/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config
+Command line:
+ /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/approx_counter Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_6_0.fastq -v 1 --config /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count_sup -nt 8 -mr 20
+Assembling run 1
+Assembling run 2
+Assembling run 3
+Assembling run 4
+Assembling run 5
+Assembling run 6
+Assembling run 7
+Assembling run 8
+Assembling run 9
+Assembling run 10
+Assembling run 11
+Assembling run 12
+Assembling run 13
+Assembling run 14
+Assembling run 15
+Assembling run 16
+Assembling run 17
+Assembling run 18
+Assembling run 19
+Assembling run 20
+Consensus step done
+
+Rebuild adapters:
+
+Start
+Consensus_1_start_(100.0%)
+AATTGTACTTCGTTCAGTTACGTATTGCT
+
+End
+Consensus_1_end_(100.0%)
+TTAACCTGATTTAACCTAACCTGTCCTTAACCTCACCAAATCTCAATTTAACCTGATTT
+
+Building consensus adapter objects
+The inference of adapters sequence is done.
+
+[1m[4mLoading reads[0m
+Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_6_0.fastq
+3,936 reads loaded
+
+
+[1m[4mLooking for known adapter sets[0m
+0 / 3,936 (0.0%)10 / 3,936 (0.3%)20 / 3,936 (0.5%)30 / 3,936 (0.8%)40 / 3,936 (1.0%)50 / 3,936 (1.3%)60 / 3,936 (1.5%)70 / 3,936 (1.8%)80 / 3,936 (2.0%)90 / 3,936 (2.3%)100 / 3,936 (2.5%)110 / 3,936 (2.8%)120 / 3,936 (3.0%)130 / 3,936 (3.3%)140 / 3,936 (3.6%)150 / 3,936 (3.8%)160 / 3,936 (4.1%)170 / 3,936 (4.3%)180 / 3,936 (4.6%)190 / 3,936 (4.8%)200 / 3,936 (5.1%)210 / 3,936 (5.3%)220 / 3,936 (5.6%)230 / 3,936 (5.8%)240 / 3,936 (6.1%)250 / 3,936 (6.4%)260 / 3,936 (6.6%)270 / 3,936 (6.9%)280 / 3,936 (7.1%)290 / 3,936 (7.4%)300 / 3,936 (7.6%)310 / 3,936 (7.9%)320 / 3,936 (8.1%)330 / 3,936 (8.4%)340 / 3,936 (8.6%)350 / 3,936 (8.9%)360 / 3,936 (9.1%)370 / 3,936 (9.4%)380 / 3,936 (9.7%)390 / 3,936 (9.9%)400 / 3,936 (10.2%)410 / 3,936 (10.4%)420 / 3,936 (10.7%)430 / 3,936 (10.9%)440 / 3,936 (11.2%)450 / 3,936 (11.4%)460 / 3,936 (11.7%)470 / 3,936 (11.9%)480 / 3,936 (12.2%)490 / 3,936 (12.4%)500 / 3,936 (12.7%)510 / 3,936 (13.0%)520 / 3,936 (13.2%)530 / 3,936 (13.5%)540 / 3,936 (13.7%)550 / 3,936 (14.0%)560 / 3,936 (14.2%)570 / 3,936 (14.5%)580 / 3,936 (14.7%)590 / 3,936 (15.0%)600 / 3,936 (15.2%)610 / 3,936 (15.5%)620 / 3,936 (15.8%)630 / 3,936 (16.0%)640 / 3,936 (16.3%)650 / 3,936 (16.5%)660 / 3,936 (16.8%)670 / 3,936 (17.0%)680 / 3,936 (17.3%)690 / 3,936 (17.5%)700 / 3,936 (17.8%)710 / 3,936 (18.0%)720 / 3,936 (18.3%)730 / 3,936 (18.5%)740 / 3,936 (18.8%)750 / 3,936 (19.1%)760 / 3,936 (19.3%)770 / 3,936 (19.6%)780 / 3,936 (19.8%)790 / 3,936 (20.1%)800 / 3,936 (20.3%)810 / 3,936 (20.6%)820 / 3,936 (20.8%)830 / 3,936 (21.1%)840 / 3,936 (21.3%)850 / 3,936 (21.6%)860 / 3,936 (21.8%)870 / 3,936 (22.1%)880 / 3,936 (22.4%)890 / 3,936 (22.6%)900 / 3,936 (22.9%)910 / 3,936 (23.1%)920 / 3,936 (23.4%)930 / 3,936 (23.6%)940 / 3,936 (23.9%)950 / 3,936 (24.1%)960 / 3,936 (24.4%)970 / 3,936 (24.6%)980 / 3,936 (24.9%)990 / 3,936 (25.2%)1,000 / 3,936 (25.4%)1,010 / 3,936 (25.7%)1,020 / 3,936 (25.9%)1,030 / 3,936 (26.2%)1,040 / 3,936 (26.4%)1,050 / 3,936 (26.7%)1,060 / 3,936 (26.9%)1,070 / 3,936 (27.2%)1,080 / 3,936 (27.4%)1,090 / 3,936 (27.7%)1,100 / 3,936 (27.9%)1,110 / 3,936 (28.2%)1,120 / 3,936 (28.5%)1,130 / 3,936 (28.7%)1,140 / 3,936 (29.0%)1,150 / 3,936 (29.2%)1,160 / 3,936 (29.5%)1,170 / 3,936 (29.7%)1,180 / 3,936 (30.0%)1,190 / 3,936 (30.2%)1,200 / 3,936 (30.5%)1,210 / 3,936 (30.7%)1,220 / 3,936 (31.0%)1,230 / 3,936 (31.2%)1,240 / 3,936 (31.5%)1,250 / 3,936 (31.8%)1,260 / 3,936 (32.0%)1,270 / 3,936 (32.3%)1,280 / 3,936 (32.5%)1,290 / 3,936 (32.8%)1,300 / 3,936 (33.0%)1,310 / 3,936 (33.3%)1,320 / 3,936 (33.5%)1,330 / 3,936 (33.8%)1,340 / 3,936 (34.0%)1,350 / 3,936 (34.3%)1,360 / 3,936 (34.6%)1,370 / 3,936 (34.8%)1,380 / 3,936 (35.1%)1,390 / 3,936 (35.3%)1,400 / 3,936 (35.6%)1,410 / 3,936 (35.8%)1,420 / 3,936 (36.1%)1,430 / 3,936 (36.3%)1,440 / 3,936 (36.6%)1,450 / 3,936 (36.8%)1,460 / 3,936 (37.1%)1,470 / 3,936 (37.3%)1,480 / 3,936 (37.6%)1,490 / 3,936 (37.9%)1,500 / 3,936 (38.1%)1,510 / 3,936 (38.4%)1,520 / 3,936 (38.6%)1,530 / 3,936 (38.9%)1,540 / 3,936 (39.1%)1,550 / 3,936 (39.4%)1,560 / 3,936 (39.6%)1,570 / 3,936 (39.9%)1,580 / 3,936 (40.1%)1,590 / 3,936 (40.4%)1,600 / 3,936 (40.7%)1,610 / 3,936 (40.9%)1,620 / 3,936 (41.2%)1,630 / 3,936 (41.4%)1,640 / 3,936 (41.7%)1,650 / 3,936 (41.9%)1,660 / 3,936 (42.2%)1,670 / 3,936 (42.4%)1,680 / 3,936 (42.7%)1,690 / 3,936 (42.9%)1,700 / 3,936 (43.2%)1,710 / 3,936 (43.4%)1,720 / 3,936 (43.7%)1,730 / 3,936 (44.0%)1,740 / 3,936 (44.2%)1,750 / 3,936 (44.5%)1,760 / 3,936 (44.7%)1,770 / 3,936 (45.0%)1,780 / 3,936 (45.2%)1,790 / 3,936 (45.5%)1,800 / 3,936 (45.7%)1,810 / 3,936 (46.0%)1,820 / 3,936 (46.2%)1,830 / 3,936 (46.5%)1,840 / 3,936 (46.7%)1,850 / 3,936 (47.0%)1,860 / 3,936 (47.3%)1,870 / 3,936 (47.5%)1,880 / 3,936 (47.8%)1,890 / 3,936 (48.0%)1,900 / 3,936 (48.3%)1,910 / 3,936 (48.5%)1,920 / 3,936 (48.8%)1,930 / 3,936 (49.0%)1,940 / 3,936 (49.3%)1,950 / 3,936 (49.5%)1,960 / 3,936 (49.8%)1,970 / 3,936 (50.1%)1,980 / 3,936 (50.3%)1,990 / 3,936 (50.6%)2,000 / 3,936 (50.8%)2,010 / 3,936 (51.1%)2,020 / 3,936 (51.3%)2,030 / 3,936 (51.6%)2,040 / 3,936 (51.8%)2,050 / 3,936 (52.1%)2,060 / 3,936 (52.3%)2,070 / 3,936 (52.6%)2,080 / 3,936 (52.8%)2,090 / 3,936 (53.1%)2,100 / 3,936 (53.4%)2,110 / 3,936 (53.6%)2,120 / 3,936 (53.9%)2,130 / 3,936 (54.1%)2,140 / 3,936 (54.4%)2,150 / 3,936 (54.6%)2,160 / 3,936 (54.9%)2,170 / 3,936 (55.1%)2,180 / 3,936 (55.4%)2,190 / 3,936 (55.6%)2,200 / 3,936 (55.9%)2,210 / 3,936 (56.1%)2,220 / 3,936 (56.4%)2,230 / 3,936 (56.7%)2,240 / 3,936 (56.9%)2,250 / 3,936 (57.2%)2,260 / 3,936 (57.4%)2,270 / 3,936 (57.7%)2,280 / 3,936 (57.9%)2,290 / 3,936 (58.2%)2,300 / 3,936 (58.4%)2,310 / 3,936 (58.7%)2,320 / 3,936 (58.9%)2,330 / 3,936 (59.2%)2,340 / 3,936 (59.5%)2,350 / 3,936 (59.7%)2,360 / 3,936 (60.0%)2,370 / 3,936 (60.2%)2,380 / 3,936 (60.5%)2,390 / 3,936 (60.7%)2,400 / 3,936 (61.0%)2,410 / 3,936 (61.2%)2,420 / 3,936 (61.5%)2,430 / 3,936 (61.7%)2,440 / 3,936 (62.0%)2,450 / 3,936 (62.2%)2,460 / 3,936 (62.5%)2,470 / 3,936 (62.8%)2,480 / 3,936 (63.0%)2,490 / 3,936 (63.3%)2,500 / 3,936 (63.5%)2,510 / 3,936 (63.8%)2,520 / 3,936 (64.0%)2,530 / 3,936 (64.3%)2,540 / 3,936 (64.5%)2,550 / 3,936 (64.8%)2,560 / 3,936 (65.0%)2,570 / 3,936 (65.3%)2,580 / 3,936 (65.5%)2,590 / 3,936 (65.8%)2,600 / 3,936 (66.1%)2,610 / 3,936 (66.3%)2,620 / 3,936 (66.6%)2,630 / 3,936 (66.8%)2,640 / 3,936 (67.1%)2,650 / 3,936 (67.3%)2,660 / 3,936 (67.6%)2,670 / 3,936 (67.8%)2,680 / 3,936 (68.1%)2,690 / 3,936 (68.3%)2,700 / 3,936 (68.6%)2,710 / 3,936 (68.9%)2,720 / 3,936 (69.1%)2,730 / 3,936 (69.4%)2,740 / 3,936 (69.6%)2,750 / 3,936 (69.9%)2,760 / 3,936 (70.1%)2,770 / 3,936 (70.4%)2,780 / 3,936 (70.6%)2,790 / 3,936 (70.9%)2,800 / 3,936 (71.1%)2,810 / 3,936 (71.4%)2,820 / 3,936 (71.6%)2,830 / 3,936 (71.9%)2,840 / 3,936 (72.2%)2,850 / 3,936 (72.4%)2,860 / 3,936 (72.7%)2,870 / 3,936 (72.9%)2,880 / 3,936 (73.2%)2,890 / 3,936 (73.4%)2,900 / 3,936 (73.7%)2,910 / 3,936 (73.9%)2,920 / 3,936 (74.2%)2,930 / 3,936 (74.4%)2,940 / 3,936 (74.7%)2,950 / 3,936 (74.9%)2,960 / 3,936 (75.2%)2,970 / 3,936 (75.5%)2,980 / 3,936 (75.7%)2,990 / 3,936 (76.0%)3,000 / 3,936 (76.2%)3,010 / 3,936 (76.5%)3,020 / 3,936 (76.7%)3,030 / 3,936 (77.0%)3,040 / 3,936 (77.2%)3,050 / 3,936 (77.5%)3,060 / 3,936 (77.7%)3,070 / 3,936 (78.0%)3,080 / 3,936 (78.3%)3,090 / 3,936 (78.5%)3,100 / 3,936 (78.8%)3,110 / 3,936 (79.0%)3,120 / 3,936 (79.3%)3,130 / 3,936 (79.5%)3,140 / 3,936 (79.8%)3,150 / 3,936 (80.0%)3,160 / 3,936 (80.3%)3,170 / 3,936 (80.5%)3,180 / 3,936 (80.8%)3,190 / 3,936 (81.0%)3,200 / 3,936 (81.3%)3,210 / 3,936 (81.6%)3,220 / 3,936 (81.8%)3,230 / 3,936 (82.1%)3,240 / 3,936 (82.3%)3,250 / 3,936 (82.6%)3,260 / 3,936 (82.8%)3,270 / 3,936 (83.1%)3,280 / 3,936 (83.3%)3,290 / 3,936 (83.6%)3,300 / 3,936 (83.8%)3,310 / 3,936 (84.1%)3,320 / 3,936 (84.3%)3,330 / 3,936 (84.6%)3,340 / 3,936 (84.9%)3,350 / 3,936 (85.1%)3,360 / 3,936 (85.4%)3,370 / 3,936 (85.6%)3,380 / 3,936 (85.9%)3,390 / 3,936 (86.1%)3,400 / 3,936 (86.4%)3,410 / 3,936 (86.6%)3,420 / 3,936 (86.9%)3,430 / 3,936 (87.1%)3,440 / 3,936 (87.4%)3,450 / 3,936 (87.7%)3,460 / 3,936 (87.9%)3,470 / 3,936 (88.2%)3,480 / 3,936 (88.4%)3,490 / 3,936 (88.7%)3,500 / 3,936 (88.9%)3,510 / 3,936 (89.2%)3,520 / 3,936 (89.4%)3,530 / 3,936 (89.7%)3,540 / 3,936 (89.9%)3,550 / 3,936 (90.2%)3,560 / 3,936 (90.4%)3,570 / 3,936 (90.7%)3,580 / 3,936 (91.0%)3,590 / 3,936 (91.2%)3,600 / 3,936 (91.5%)3,610 / 3,936 (91.7%)3,620 / 3,936 (92.0%)3,630 / 3,936 (92.2%)3,640 / 3,936 (92.5%)3,650 / 3,936 (92.7%)3,660 / 3,936 (93.0%)3,670 / 3,936 (93.2%)3,680 / 3,936 (93.5%)3,690 / 3,936 (93.8%)3,700 / 3,936 (94.0%)3,710 / 3,936 (94.3%)3,720 / 3,936 (94.5%)3,730 / 3,936 (94.8%)3,740 / 3,936 (95.0%)3,750 / 3,936 (95.3%)3,760 / 3,936 (95.5%)3,770 / 3,936 (95.8%)3,780 / 3,936 (96.0%)3,790 / 3,936 (96.3%)3,800 / 3,936 (96.5%)3,810 / 3,936 (96.8%)3,820 / 3,936 (97.1%)3,830 / 3,936 (97.3%)3,840 / 3,936 (97.6%)3,850 / 3,936 (97.8%)3,860 / 3,936 (98.1%)3,870 / 3,936 (98.3%)3,880 / 3,936 (98.6%)3,890 / 3,936 (98.8%)3,900 / 3,936 (99.1%)3,910 / 3,936 (99.3%)3,920 / 3,936 (99.6%)3,930 / 3,936 (99.8%)3,936 / 3,936 (100.0%)3,936 / 3,936 (100.0%)
+                                        Best               [0m
+                                        read       Best    [0m
+                                        start      read end[0m
+  [4mSet                                   %ID        %ID     [0m
+  [32mSQK-NSK007                               100.0       86.4[0m
+  Rapid                                     64.9        0.0
+  RBK004_upstream                           80.0        0.0
+  SQK-MAP006                                80.0       81.8
+  SQK-MAP006 short                          73.1       75.0
+  PCR adapters 1                            81.8       82.6
+  PCR adapters 2                            78.3       81.8
+  PCR adapters 3                            82.6       83.3
+  1D^2 part 1                               72.4       72.4
+  [32m1D^2 part 2                               91.2       81.8[0m
+  cDNA SSP                                  67.5       69.8
+  Barcode 1 (reverse)                       76.9       81.5
+  Barcode 2 (reverse)                       77.8       79.2
+  Barcode 3 (reverse)                       75.0       72.0
+  Barcode 4 (reverse)                       75.0       77.8
+  Barcode 5 (reverse)                       75.0       73.1
+  Barcode 6 (reverse)                       73.1       74.1
+  Barcode 7 (reverse)                       73.1       80.8
+  Barcode 8 (reverse)                       76.9       76.0
+  Barcode 9 (reverse)                       75.0       76.0
+  Barcode 10 (reverse)                      76.0       76.9
+  Barcode 11 (reverse)                      75.0       76.9
+  Barcode 12 (reverse)                      83.3       80.0
+  Barcode 1 (forward)                       84.0       84.0
+  Barcode 2 (forward)                       80.8       80.0
+  Barcode 3 (forward)                       73.1       75.0
+  Barcode 4 (forward)                       76.9       76.0
+  Barcode 5 (forward)                       77.8       73.1
+  Barcode 6 (forward)                       76.0       74.1
+  Barcode 7 (forward)                       76.0       75.0
+  Barcode 8 (forward)                       73.1       76.0
+  Barcode 9 (forward)                       75.0       73.1
+  Barcode 10 (forward)                      74.1       73.1
+  Barcode 11 (forward)                      75.0       74.1
+  Barcode 12 (forward)                      80.0       80.0
+  Barcode 13 (forward)                      80.0       73.1
+  Barcode 14 (forward)                      75.9       73.1
+  Barcode 15 (forward)                      74.1       75.0
+  Barcode 16 (forward)                      75.0       73.1
+  Barcode 17 (forward)                      76.9       75.0
+  Barcode 18 (forward)                      80.0       80.0
+  Barcode 19 (forward)                      76.0       80.0
+  Barcode 20 (forward)                      81.5       79.2
+  Barcode 21 (forward)                      75.0       75.0
+  Barcode 22 (forward)                      76.9       77.8
+  Barcode 23 (forward)                      75.0       76.0
+  Barcode 24 (forward)                      79.2       76.0
+  Barcode 25 (forward)                      80.0       75.0
+  Barcode 26 (forward)                      76.0       79.2
+  Barcode 27 (forward)                      72.0       76.9
+  Barcode 28 (forward)                      73.1       73.1
+  Barcode 29 (forward)                      76.0       76.0
+  Barcode 30 (forward)                      75.0       73.1
+  Barcode 31 (forward)                      80.0       76.9
+  Barcode 32 (forward)                      75.0       73.1
+  Barcode 33 (forward)                      74.1       74.1
+  Barcode 34 (forward)                      75.0       76.9
+  Barcode 35 (forward)                      73.1       76.0
+  Barcode 36 (forward)                      76.9       75.0
+  Barcode 37 (forward)                      76.0       73.1
+  Barcode 38 (forward)                      81.5       81.5
+  Barcode 39 (forward)                      75.0       73.1
+  Barcode 40 (forward)                      75.0       75.0
+  Barcode 41 (forward)                      75.0       76.0
+  Barcode 42 (forward)                      80.0       76.9
+  Barcode 43 (forward)                      75.0       76.0
+  Barcode 44 (forward)                      74.1       76.0
+  Barcode 45 (forward)                      80.0       75.0
+  Barcode 46 (forward)                      80.0       83.3
+  Barcode 47 (forward)                      73.1       75.0
+  Barcode 48 (forward)                      76.0       75.0
+  Barcode 49 (forward)                      75.0       72.0
+  Barcode 50 (forward)                      74.1       76.0
+  Barcode 51 (forward)                      76.9       73.1
+  Barcode 52 (forward)                      79.2       75.0
+  Barcode 53 (forward)                      76.0       73.1
+  Barcode 54 (forward)                      83.3       76.0
+  Barcode 55 (forward)                      75.0       76.9
+  Barcode 56 (forward)                      76.0       76.0
+  Barcode 57 (forward)                      72.4       74.1
+  Barcode 58 (forward)                      76.9       76.0
+  Barcode 59 (forward)                      80.0       76.9
+  Barcode 60 (forward)                      73.1       75.0
+  Barcode 61 (forward)                      73.1       73.1
+  Barcode 62 (forward)                      80.0       80.0
+  Barcode 63 (forward)                      74.1       76.9
+  Barcode 64 (forward)                      73.1       75.0
+  Barcode 65 (forward)                      76.0       77.8
+  Barcode 66 (forward)                      75.0       76.9
+  Barcode 67 (forward)                      79.2       76.0
+  Barcode 68 (forward)                      76.0       76.0
+  Barcode 69 (forward)                      75.0       75.0
+  Barcode 70 (forward)                      79.2       79.2
+  Barcode 71 (forward)                      73.1       73.1
+  Barcode 72 (forward)                      76.0       76.9
+  Barcode 73 (forward)                      76.0       80.0
+  Barcode 74 (forward)                      80.0       76.9
+  Barcode 75 (forward)                      76.9       73.1
+  Barcode 76 (forward)                      75.0       73.1
+  Barcode 77 (forward)                      73.1       74.1
+  Barcode 78 (forward)                      76.9       76.9
+  Barcode 79 (forward)                      76.0       80.0
+  Barcode 80 (forward)                      76.0       76.0
+  Barcode 81 (forward)                      73.1       73.1
+  Barcode 82 (forward)                      75.0       74.1
+  Barcode 83 (forward)                      79.2       79.2
+  Barcode 84 (forward)                      75.0       73.1
+  Barcode 85 (forward)                      79.2       79.2
+  Barcode 86 (forward)                      73.1       75.0
+  Barcode 87 (forward)                      76.0       76.0
+  Barcode 88 (forward)                      76.9       72.0
+  Barcode 89 (forward)                      74.1       76.9
+  Barcode 90 (forward)                      75.9       76.9
+  Barcode 91 (forward)                      73.1       75.0
+  Barcode 92 (forward)                      76.0       76.0
+  Barcode 93 (forward)                      76.0       76.0
+  Barcode 94 (forward)                      75.0       76.0
+  Barcode 95 (forward)                      79.2       73.1
+  Barcode 96 (forward)                      73.1       75.0
+  [32mConsensus_1_start_(100.0%)_adapter        96.7        0.0[0m
+  [32mConsensus_1_end_(100.0%)_adapter           0.0       98.3[0m
+
+
+[1m[4mTrimming adapters from read ends[0m
+            SQK-NSK007_Y_Top: [31mAATGTACTTCGTTCAGTTACGTATTGCT[0m
+         SQK-NSK007_Y_Bottom: [31mGCAATACGTAACTGAACGAAGT[0m
+            1D2_part_2_start: [31mCTTCGTTCAGTTACGTATTGCTGGCGTCTGCTT[0m
+              1D2_part_2_end: [31mCACCCAAGCAGACGCCAGCAATACGTAACT[0m
+  Consensus_1_start_(100.0%): [31mAATTGTACTTCGTTCAGTTACGTATTGCT
+[0m
+    Consensus_1_end_(100.0%): [31mTTAACCTGATTTAACCTAACCTGTCCTTAACCTCACCAAATCTCAATTTAACCTGATTT
+[0m
+
+0 / 3,936 (0.0%)10 / 3,936 (0.3%)20 / 3,936 (0.5%)30 / 3,936 (0.8%)40 / 3,936 (1.0%)50 / 3,936 (1.3%)60 / 3,936 (1.5%)70 / 3,936 (1.8%)80 / 3,936 (2.0%)90 / 3,936 (2.3%)100 / 3,936 (2.5%)110 / 3,936 (2.8%)120 / 3,936 (3.0%)130 / 3,936 (3.3%)140 / 3,936 (3.6%)150 / 3,936 (3.8%)160 / 3,936 (4.1%)170 / 3,936 (4.3%)180 / 3,936 (4.6%)190 / 3,936 (4.8%)200 / 3,936 (5.1%)210 / 3,936 (5.3%)220 / 3,936 (5.6%)230 / 3,936 (5.8%)240 / 3,936 (6.1%)250 / 3,936 (6.4%)260 / 3,936 (6.6%)270 / 3,936 (6.9%)280 / 3,936 (7.1%)290 / 3,936 (7.4%)300 / 3,936 (7.6%)310 / 3,936 (7.9%)320 / 3,936 (8.1%)330 / 3,936 (8.4%)340 / 3,936 (8.6%)350 / 3,936 (8.9%)360 / 3,936 (9.1%)370 / 3,936 (9.4%)380 / 3,936 (9.7%)390 / 3,936 (9.9%)400 / 3,936 (10.2%)410 / 3,936 (10.4%)420 / 3,936 (10.7%)430 / 3,936 (10.9%)440 / 3,936 (11.2%)450 / 3,936 (11.4%)460 / 3,936 (11.7%)470 / 3,936 (11.9%)480 / 3,936 (12.2%)490 / 3,936 (12.4%)500 / 3,936 (12.7%)510 / 3,936 (13.0%)520 / 3,936 (13.2%)530 / 3,936 (13.5%)540 / 3,936 (13.7%)550 / 3,936 (14.0%)560 / 3,936 (14.2%)570 / 3,936 (14.5%)580 / 3,936 (14.7%)590 / 3,936 (15.0%)600 / 3,936 (15.2%)610 / 3,936 (15.5%)620 / 3,936 (15.8%)630 / 3,936 (16.0%)640 / 3,936 (16.3%)650 / 3,936 (16.5%)660 / 3,936 (16.8%)670 / 3,936 (17.0%)680 / 3,936 (17.3%)690 / 3,936 (17.5%)700 / 3,936 (17.8%)710 / 3,936 (18.0%)720 / 3,936 (18.3%)730 / 3,936 (18.5%)740 / 3,936 (18.8%)750 / 3,936 (19.1%)760 / 3,936 (19.3%)770 / 3,936 (19.6%)780 / 3,936 (19.8%)790 / 3,936 (20.1%)800 / 3,936 (20.3%)810 / 3,936 (20.6%)820 / 3,936 (20.8%)830 / 3,936 (21.1%)840 / 3,936 (21.3%)850 / 3,936 (21.6%)860 / 3,936 (21.8%)870 / 3,936 (22.1%)880 / 3,936 (22.4%)890 / 3,936 (22.6%)900 / 3,936 (22.9%)910 / 3,936 (23.1%)920 / 3,936 (23.4%)930 / 3,936 (23.6%)940 / 3,936 (23.9%)950 / 3,936 (24.1%)960 / 3,936 (24.4%)970 / 3,936 (24.6%)980 / 3,936 (24.9%)990 / 3,936 (25.2%)1,000 / 3,936 (25.4%)1,010 / 3,936 (25.7%)1,020 / 3,936 (25.9%)1,030 / 3,936 (26.2%)1,040 / 3,936 (26.4%)1,050 / 3,936 (26.7%)1,060 / 3,936 (26.9%)1,070 / 3,936 (27.2%)1,080 / 3,936 (27.4%)1,090 / 3,936 (27.7%)1,100 / 3,936 (27.9%)1,110 / 3,936 (28.2%)1,120 / 3,936 (28.5%)1,130 / 3,936 (28.7%)1,140 / 3,936 (29.0%)1,150 / 3,936 (29.2%)1,160 / 3,936 (29.5%)1,170 / 3,936 (29.7%)1,180 / 3,936 (30.0%)1,190 / 3,936 (30.2%)1,200 / 3,936 (30.5%)1,210 / 3,936 (30.7%)1,220 / 3,936 (31.0%)1,230 / 3,936 (31.2%)1,240 / 3,936 (31.5%)1,250 / 3,936 (31.8%)1,260 / 3,936 (32.0%)1,270 / 3,936 (32.3%)1,280 / 3,936 (32.5%)1,290 / 3,936 (32.8%)1,300 / 3,936 (33.0%)1,310 / 3,936 (33.3%)1,320 / 3,936 (33.5%)1,330 / 3,936 (33.8%)1,340 / 3,936 (34.0%)1,350 / 3,936 (34.3%)1,360 / 3,936 (34.6%)1,370 / 3,936 (34.8%)1,380 / 3,936 (35.1%)1,390 / 3,936 (35.3%)1,400 / 3,936 (35.6%)1,410 / 3,936 (35.8%)1,420 / 3,936 (36.1%)1,430 / 3,936 (36.3%)1,440 / 3,936 (36.6%)1,450 / 3,936 (36.8%)1,460 / 3,936 (37.1%)1,470 / 3,936 (37.3%)1,480 / 3,936 (37.6%)1,490 / 3,936 (37.9%)1,500 / 3,936 (38.1%)1,510 / 3,936 (38.4%)1,520 / 3,936 (38.6%)1,530 / 3,936 (38.9%)1,540 / 3,936 (39.1%)1,550 / 3,936 (39.4%)1,560 / 3,936 (39.6%)1,570 / 3,936 (39.9%)1,580 / 3,936 (40.1%)1,590 / 3,936 (40.4%)1,600 / 3,936 (40.7%)1,610 / 3,936 (40.9%)1,620 / 3,936 (41.2%)1,630 / 3,936 (41.4%)1,640 / 3,936 (41.7%)1,650 / 3,936 (41.9%)1,660 / 3,936 (42.2%)1,670 / 3,936 (42.4%)1,680 / 3,936 (42.7%)1,690 / 3,936 (42.9%)1,700 / 3,936 (43.2%)1,710 / 3,936 (43.4%)1,720 / 3,936 (43.7%)1,730 / 3,936 (44.0%)1,740 / 3,936 (44.2%)1,750 / 3,936 (44.5%)1,760 / 3,936 (44.7%)1,770 / 3,936 (45.0%)1,780 / 3,936 (45.2%)1,790 / 3,936 (45.5%)1,800 / 3,936 (45.7%)1,810 / 3,936 (46.0%)1,820 / 3,936 (46.2%)1,830 / 3,936 (46.5%)1,840 / 3,936 (46.7%)1,850 / 3,936 (47.0%)1,860 / 3,936 (47.3%)1,870 / 3,936 (47.5%)1,880 / 3,936 (47.8%)1,890 / 3,936 (48.0%)1,900 / 3,936 (48.3%)1,910 / 3,936 (48.5%)1,920 / 3,936 (48.8%)1,930 / 3,936 (49.0%)1,940 / 3,936 (49.3%)1,950 / 3,936 (49.5%)1,960 / 3,936 (49.8%)1,970 / 3,936 (50.1%)1,980 / 3,936 (50.3%)1,990 / 3,936 (50.6%)2,000 / 3,936 (50.8%)2,010 / 3,936 (51.1%)2,020 / 3,936 (51.3%)2,030 / 3,936 (51.6%)2,040 / 3,936 (51.8%)2,050 / 3,936 (52.1%)2,060 / 3,936 (52.3%)2,070 / 3,936 (52.6%)2,080 / 3,936 (52.8%)2,090 / 3,936 (53.1%)2,100 / 3,936 (53.4%)2,110 / 3,936 (53.6%)2,120 / 3,936 (53.9%)2,130 / 3,936 (54.1%)2,140 / 3,936 (54.4%)2,150 / 3,936 (54.6%)2,160 / 3,936 (54.9%)2,170 / 3,936 (55.1%)2,180 / 3,936 (55.4%)2,190 / 3,936 (55.6%)2,200 / 3,936 (55.9%)2,210 / 3,936 (56.1%)2,220 / 3,936 (56.4%)2,230 / 3,936 (56.7%)2,240 / 3,936 (56.9%)2,250 / 3,936 (57.2%)2,260 / 3,936 (57.4%)2,270 / 3,936 (57.7%)2,280 / 3,936 (57.9%)2,290 / 3,936 (58.2%)2,300 / 3,936 (58.4%)2,310 / 3,936 (58.7%)2,320 / 3,936 (58.9%)2,330 / 3,936 (59.2%)2,340 / 3,936 (59.5%)2,350 / 3,936 (59.7%)2,360 / 3,936 (60.0%)2,370 / 3,936 (60.2%)2,380 / 3,936 (60.5%)2,390 / 3,936 (60.7%)2,400 / 3,936 (61.0%)2,410 / 3,936 (61.2%)2,420 / 3,936 (61.5%)2,430 / 3,936 (61.7%)2,440 / 3,936 (62.0%)2,450 / 3,936 (62.2%)2,460 / 3,936 (62.5%)2,470 / 3,936 (62.8%)2,480 / 3,936 (63.0%)2,490 / 3,936 (63.3%)2,500 / 3,936 (63.5%)2,510 / 3,936 (63.8%)2,520 / 3,936 (64.0%)2,530 / 3,936 (64.3%)2,540 / 3,936 (64.5%)2,550 / 3,936 (64.8%)2,560 / 3,936 (65.0%)2,570 / 3,936 (65.3%)2,580 / 3,936 (65.5%)2,590 / 3,936 (65.8%)2,600 / 3,936 (66.1%)2,610 / 3,936 (66.3%)2,620 / 3,936 (66.6%)2,630 / 3,936 (66.8%)2,640 / 3,936 (67.1%)2,650 / 3,936 (67.3%)2,660 / 3,936 (67.6%)2,670 / 3,936 (67.8%)2,680 / 3,936 (68.1%)2,690 / 3,936 (68.3%)2,700 / 3,936 (68.6%)2,710 / 3,936 (68.9%)2,720 / 3,936 (69.1%)2,730 / 3,936 (69.4%)2,740 / 3,936 (69.6%)2,750 / 3,936 (69.9%)2,760 / 3,936 (70.1%)2,770 / 3,936 (70.4%)2,780 / 3,936 (70.6%)2,790 / 3,936 (70.9%)2,800 / 3,936 (71.1%)2,810 / 3,936 (71.4%)2,820 / 3,936 (71.6%)2,830 / 3,936 (71.9%)2,840 / 3,936 (72.2%)2,850 / 3,936 (72.4%)2,860 / 3,936 (72.7%)2,870 / 3,936 (72.9%)2,880 / 3,936 (73.2%)2,890 / 3,936 (73.4%)2,900 / 3,936 (73.7%)2,910 / 3,936 (73.9%)2,920 / 3,936 (74.2%)2,930 / 3,936 (74.4%)2,940 / 3,936 (74.7%)2,950 / 3,936 (74.9%)2,960 / 3,936 (75.2%)2,970 / 3,936 (75.5%)2,980 / 3,936 (75.7%)2,990 / 3,936 (76.0%)3,000 / 3,936 (76.2%)3,010 / 3,936 (76.5%)3,020 / 3,936 (76.7%)3,030 / 3,936 (77.0%)3,040 / 3,936 (77.2%)3,050 / 3,936 (77.5%)3,060 / 3,936 (77.7%)3,070 / 3,936 (78.0%)3,080 / 3,936 (78.3%)3,090 / 3,936 (78.5%)3,100 / 3,936 (78.8%)3,110 / 3,936 (79.0%)3,120 / 3,936 (79.3%)3,130 / 3,936 (79.5%)3,140 / 3,936 (79.8%)3,150 / 3,936 (80.0%)3,160 / 3,936 (80.3%)3,170 / 3,936 (80.5%)3,180 / 3,936 (80.8%)3,190 / 3,936 (81.0%)3,200 / 3,936 (81.3%)3,210 / 3,936 (81.6%)3,220 / 3,936 (81.8%)3,230 / 3,936 (82.1%)3,240 / 3,936 (82.3%)3,250 / 3,936 (82.6%)3,260 / 3,936 (82.8%)3,270 / 3,936 (83.1%)3,280 / 3,936 (83.3%)3,290 / 3,936 (83.6%)3,300 / 3,936 (83.8%)3,310 / 3,936 (84.1%)3,320 / 3,936 (84.3%)3,330 / 3,936 (84.6%)3,340 / 3,936 (84.9%)3,350 / 3,936 (85.1%)3,360 / 3,936 (85.4%)3,370 / 3,936 (85.6%)3,380 / 3,936 (85.9%)3,390 / 3,936 (86.1%)3,400 / 3,936 (86.4%)3,410 / 3,936 (86.6%)3,420 / 3,936 (86.9%)3,430 / 3,936 (87.1%)3,440 / 3,936 (87.4%)3,450 / 3,936 (87.7%)3,460 / 3,936 (87.9%)3,470 / 3,936 (88.2%)3,480 / 3,936 (88.4%)3,490 / 3,936 (88.7%)3,500 / 3,936 (88.9%)3,510 / 3,936 (89.2%)3,520 / 3,936 (89.4%)3,530 / 3,936 (89.7%)3,540 / 3,936 (89.9%)3,550 / 3,936 (90.2%)3,560 / 3,936 (90.4%)3,570 / 3,936 (90.7%)3,580 / 3,936 (91.0%)3,590 / 3,936 (91.2%)3,600 / 3,936 (91.5%)3,610 / 3,936 (91.7%)3,620 / 3,936 (92.0%)3,630 / 3,936 (92.2%)3,640 / 3,936 (92.5%)3,650 / 3,936 (92.7%)3,660 / 3,936 (93.0%)3,670 / 3,936 (93.2%)3,680 / 3,936 (93.5%)3,690 / 3,936 (93.8%)3,700 / 3,936 (94.0%)3,710 / 3,936 (94.3%)3,720 / 3,936 (94.5%)3,730 / 3,936 (94.8%)3,740 / 3,936 (95.0%)3,750 / 3,936 (95.3%)3,760 / 3,936 (95.5%)3,770 / 3,936 (95.8%)3,780 / 3,936 (96.0%)3,790 / 3,936 (96.3%)3,800 / 3,936 (96.5%)3,810 / 3,936 (96.8%)3,820 / 3,936 (97.1%)3,830 / 3,936 (97.3%)3,840 / 3,936 (97.6%)3,850 / 3,936 (97.8%)3,860 / 3,936 (98.1%)3,870 / 3,936 (98.3%)3,880 / 3,936 (98.6%)3,890 / 3,936 (98.8%)3,900 / 3,936 (99.1%)3,910 / 3,936 (99.3%)3,920 / 3,936 (99.6%)3,930 / 3,936 (99.8%)3,936 / 3,936 (100.0%)3,936 / 3,936 (100.0%)
+
+3,433 / 3,936 reads had adapters trimmed from their start (120,373 bp removed)
+2,681 / 3,936 reads had adapters trimmed from their end (53,049 bp removed)
+
+
+[1m[4mSplitting reads containing middle adapters[0m
+0 / 3,936 (0.0%)10 / 3,936 (0.3%)20 / 3,936 (0.5%)30 / 3,936 (0.8%)40 / 3,936 (1.0%)50 / 3,936 (1.3%)60 / 3,936 (1.5%)70 / 3,936 (1.8%)80 / 3,936 (2.0%)90 / 3,936 (2.3%)100 / 3,936 (2.5%)110 / 3,936 (2.8%)120 / 3,936 (3.0%)130 / 3,936 (3.3%)140 / 3,936 (3.6%)150 / 3,936 (3.8%)160 / 3,936 (4.1%)170 / 3,936 (4.3%)180 / 3,936 (4.6%)190 / 3,936 (4.8%)200 / 3,936 (5.1%)210 / 3,936 (5.3%)220 / 3,936 (5.6%)230 / 3,936 (5.8%)240 / 3,936 (6.1%)250 / 3,936 (6.4%)260 / 3,936 (6.6%)270 / 3,936 (6.9%)280 / 3,936 (7.1%)290 / 3,936 (7.4%)300 / 3,936 (7.6%)310 / 3,936 (7.9%)320 / 3,936 (8.1%)330 / 3,936 (8.4%)340 / 3,936 (8.6%)350 / 3,936 (8.9%)360 / 3,936 (9.1%)370 / 3,936 (9.4%)380 / 3,936 (9.7%)390 / 3,936 (9.9%)400 / 3,936 (10.2%)410 / 3,936 (10.4%)420 / 3,936 (10.7%)430 / 3,936 (10.9%)440 / 3,936 (11.2%)450 / 3,936 (11.4%)460 / 3,936 (11.7%)470 / 3,936 (11.9%)480 / 3,936 (12.2%)490 / 3,936 (12.4%)500 / 3,936 (12.7%)510 / 3,936 (13.0%)520 / 3,936 (13.2%)530 / 3,936 (13.5%)540 / 3,936 (13.7%)550 / 3,936 (14.0%)560 / 3,936 (14.2%)570 / 3,936 (14.5%)580 / 3,936 (14.7%)590 / 3,936 (15.0%)600 / 3,936 (15.2%)610 / 3,936 (15.5%)620 / 3,936 (15.8%)630 / 3,936 (16.0%)640 / 3,936 (16.3%)650 / 3,936 (16.5%)660 / 3,936 (16.8%)670 / 3,936 (17.0%)680 / 3,936 (17.3%)690 / 3,936 (17.5%)700 / 3,936 (17.8%)710 / 3,936 (18.0%)720 / 3,936 (18.3%)730 / 3,936 (18.5%)740 / 3,936 (18.8%)750 / 3,936 (19.1%)760 / 3,936 (19.3%)770 / 3,936 (19.6%)780 / 3,936 (19.8%)790 / 3,936 (20.1%)800 / 3,936 (20.3%)810 / 3,936 (20.6%)820 / 3,936 (20.8%)830 / 3,936 (21.1%)840 / 3,936 (21.3%)850 / 3,936 (21.6%)860 / 3,936 (21.8%)870 / 3,936 (22.1%)880 / 3,936 (22.4%)890 / 3,936 (22.6%)900 / 3,936 (22.9%)910 / 3,936 (23.1%)920 / 3,936 (23.4%)930 / 3,936 (23.6%)940 / 3,936 (23.9%)950 / 3,936 (24.1%)960 / 3,936 (24.4%)970 / 3,936 (24.6%)980 / 3,936 (24.9%)990 / 3,936 (25.2%)1,000 / 3,936 (25.4%)1,010 / 3,936 (25.7%)1,020 / 3,936 (25.9%)1,030 / 3,936 (26.2%)1,040 / 3,936 (26.4%)1,050 / 3,936 (26.7%)1,060 / 3,936 (26.9%)1,070 / 3,936 (27.2%)1,080 / 3,936 (27.4%)1,090 / 3,936 (27.7%)1,100 / 3,936 (27.9%)1,110 / 3,936 (28.2%)1,120 / 3,936 (28.5%)1,130 / 3,936 (28.7%)1,140 / 3,936 (29.0%)1,150 / 3,936 (29.2%)1,160 / 3,936 (29.5%)1,170 / 3,936 (29.7%)1,180 / 3,936 (30.0%)1,190 / 3,936 (30.2%)1,200 / 3,936 (30.5%)1,210 / 3,936 (30.7%)1,220 / 3,936 (31.0%)1,230 / 3,936 (31.2%)1,240 / 3,936 (31.5%)1,250 / 3,936 (31.8%)1,260 / 3,936 (32.0%)1,270 / 3,936 (32.3%)1,280 / 3,936 (32.5%)1,290 / 3,936 (32.8%)1,300 / 3,936 (33.0%)1,310 / 3,936 (33.3%)1,320 / 3,936 (33.5%)1,330 / 3,936 (33.8%)1,340 / 3,936 (34.0%)1,350 / 3,936 (34.3%)1,360 / 3,936 (34.6%)1,370 / 3,936 (34.8%)1,380 / 3,936 (35.1%)1,390 / 3,936 (35.3%)1,400 / 3,936 (35.6%)1,410 / 3,936 (35.8%)1,420 / 3,936 (36.1%)1,430 / 3,936 (36.3%)1,440 / 3,936 (36.6%)1,450 / 3,936 (36.8%)1,460 / 3,936 (37.1%)1,470 / 3,936 (37.3%)1,480 / 3,936 (37.6%)1,490 / 3,936 (37.9%)1,500 / 3,936 (38.1%)1,510 / 3,936 (38.4%)1,520 / 3,936 (38.6%)1,530 / 3,936 (38.9%)1,540 / 3,936 (39.1%)1,550 / 3,936 (39.4%)1,560 / 3,936 (39.6%)1,570 / 3,936 (39.9%)1,580 / 3,936 (40.1%)1,590 / 3,936 (40.4%)1,600 / 3,936 (40.7%)1,610 / 3,936 (40.9%)1,620 / 3,936 (41.2%)1,630 / 3,936 (41.4%)1,640 / 3,936 (41.7%)1,650 / 3,936 (41.9%)1,660 / 3,936 (42.2%)1,670 / 3,936 (42.4%)1,680 / 3,936 (42.7%)1,690 / 3,936 (42.9%)1,700 / 3,936 (43.2%)1,710 / 3,936 (43.4%)1,720 / 3,936 (43.7%)1,730 / 3,936 (44.0%)1,740 / 3,936 (44.2%)1,750 / 3,936 (44.5%)1,760 / 3,936 (44.7%)1,770 / 3,936 (45.0%)1,780 / 3,936 (45.2%)1,790 / 3,936 (45.5%)1,800 / 3,936 (45.7%)1,810 / 3,936 (46.0%)1,820 / 3,936 (46.2%)1,830 / 3,936 (46.5%)1,840 / 3,936 (46.7%)1,850 / 3,936 (47.0%)1,860 / 3,936 (47.3%)1,870 / 3,936 (47.5%)1,880 / 3,936 (47.8%)1,890 / 3,936 (48.0%)1,900 / 3,936 (48.3%)1,910 / 3,936 (48.5%)1,920 / 3,936 (48.8%)1,930 / 3,936 (49.0%)1,940 / 3,936 (49.3%)1,950 / 3,936 (49.5%)1,960 / 3,936 (49.8%)1,970 / 3,936 (50.1%)1,980 / 3,936 (50.3%)1,990 / 3,936 (50.6%)2,000 / 3,936 (50.8%)2,010 / 3,936 (51.1%)2,020 / 3,936 (51.3%)2,030 / 3,936 (51.6%)2,040 / 3,936 (51.8%)2,050 / 3,936 (52.1%)2,060 / 3,936 (52.3%)2,070 / 3,936 (52.6%)2,080 / 3,936 (52.8%)2,090 / 3,936 (53.1%)2,100 / 3,936 (53.4%)2,110 / 3,936 (53.6%)2,120 / 3,936 (53.9%)2,130 / 3,936 (54.1%)2,140 / 3,936 (54.4%)2,150 / 3,936 (54.6%)2,160 / 3,936 (54.9%)2,170 / 3,936 (55.1%)2,180 / 3,936 (55.4%)2,190 / 3,936 (55.6%)2,200 / 3,936 (55.9%)2,210 / 3,936 (56.1%)2,220 / 3,936 (56.4%)2,230 / 3,936 (56.7%)2,240 / 3,936 (56.9%)2,250 / 3,936 (57.2%)2,260 / 3,936 (57.4%)2,270 / 3,936 (57.7%)2,280 / 3,936 (57.9%)2,290 / 3,936 (58.2%)2,300 / 3,936 (58.4%)2,310 / 3,936 (58.7%)2,320 / 3,936 (58.9%)2,330 / 3,936 (59.2%)2,340 / 3,936 (59.5%)2,350 / 3,936 (59.7%)2,360 / 3,936 (60.0%)2,370 / 3,936 (60.2%)2,380 / 3,936 (60.5%)2,390 / 3,936 (60.7%)2,400 / 3,936 (61.0%)2,410 / 3,936 (61.2%)2,420 / 3,936 (61.5%)2,430 / 3,936 (61.7%)2,440 / 3,936 (62.0%)2,450 / 3,936 (62.2%)2,460 / 3,936 (62.5%)2,470 / 3,936 (62.8%)2,480 / 3,936 (63.0%)2,490 / 3,936 (63.3%)2,500 / 3,936 (63.5%)2,510 / 3,936 (63.8%)2,520 / 3,936 (64.0%)2,530 / 3,936 (64.3%)2,540 / 3,936 (64.5%)2,550 / 3,936 (64.8%)2,560 / 3,936 (65.0%)2,570 / 3,936 (65.3%)2,580 / 3,936 (65.5%)2,590 / 3,936 (65.8%)2,600 / 3,936 (66.1%)2,610 / 3,936 (66.3%)2,620 / 3,936 (66.6%)2,630 / 3,936 (66.8%)2,640 / 3,936 (67.1%)2,650 / 3,936 (67.3%)2,660 / 3,936 (67.6%)2,670 / 3,936 (67.8%)2,680 / 3,936 (68.1%)2,690 / 3,936 (68.3%)2,700 / 3,936 (68.6%)2,710 / 3,936 (68.9%)2,720 / 3,936 (69.1%)2,730 / 3,936 (69.4%)2,740 / 3,936 (69.6%)2,750 / 3,936 (69.9%)2,760 / 3,936 (70.1%)2,770 / 3,936 (70.4%)2,780 / 3,936 (70.6%)2,790 / 3,936 (70.9%)2,800 / 3,936 (71.1%)2,810 / 3,936 (71.4%)2,820 / 3,936 (71.6%)2,830 / 3,936 (71.9%)2,840 / 3,936 (72.2%)2,850 / 3,936 (72.4%)2,860 / 3,936 (72.7%)2,870 / 3,936 (72.9%)2,880 / 3,936 (73.2%)2,890 / 3,936 (73.4%)2,900 / 3,936 (73.7%)2,910 / 3,936 (73.9%)2,920 / 3,936 (74.2%)2,930 / 3,936 (74.4%)2,940 / 3,936 (74.7%)2,950 / 3,936 (74.9%)2,960 / 3,936 (75.2%)2,970 / 3,936 (75.5%)2,980 / 3,936 (75.7%)2,990 / 3,936 (76.0%)3,000 / 3,936 (76.2%)3,010 / 3,936 (76.5%)3,020 / 3,936 (76.7%)3,030 / 3,936 (77.0%)3,040 / 3,936 (77.2%)3,050 / 3,936 (77.5%)3,060 / 3,936 (77.7%)3,070 / 3,936 (78.0%)3,080 / 3,936 (78.3%)3,090 / 3,936 (78.5%)3,100 / 3,936 (78.8%)3,110 / 3,936 (79.0%)3,120 / 3,936 (79.3%)3,130 / 3,936 (79.5%)3,140 / 3,936 (79.8%)3,150 / 3,936 (80.0%)3,160 / 3,936 (80.3%)3,170 / 3,936 (80.5%)3,180 / 3,936 (80.8%)3,190 / 3,936 (81.0%)3,200 / 3,936 (81.3%)3,210 / 3,936 (81.6%)3,220 / 3,936 (81.8%)3,230 / 3,936 (82.1%)3,240 / 3,936 (82.3%)3,250 / 3,936 (82.6%)3,260 / 3,936 (82.8%)3,270 / 3,936 (83.1%)3,280 / 3,936 (83.3%)3,290 / 3,936 (83.6%)3,300 / 3,936 (83.8%)3,310 / 3,936 (84.1%)3,320 / 3,936 (84.3%)3,330 / 3,936 (84.6%)3,340 / 3,936 (84.9%)3,350 / 3,936 (85.1%)3,360 / 3,936 (85.4%)3,370 / 3,936 (85.6%)3,380 / 3,936 (85.9%)3,390 / 3,936 (86.1%)3,400 / 3,936 (86.4%)3,410 / 3,936 (86.6%)3,420 / 3,936 (86.9%)3,430 / 3,936 (87.1%)3,440 / 3,936 (87.4%)3,450 / 3,936 (87.7%)3,460 / 3,936 (87.9%)3,470 / 3,936 (88.2%)3,480 / 3,936 (88.4%)3,490 / 3,936 (88.7%)3,500 / 3,936 (88.9%)3,510 / 3,936 (89.2%)3,520 / 3,936 (89.4%)3,530 / 3,936 (89.7%)3,540 / 3,936 (89.9%)3,550 / 3,936 (90.2%)3,560 / 3,936 (90.4%)3,570 / 3,936 (90.7%)3,580 / 3,936 (91.0%)3,590 / 3,936 (91.2%)3,600 / 3,936 (91.5%)3,610 / 3,936 (91.7%)3,620 / 3,936 (92.0%)3,630 / 3,936 (92.2%)3,640 / 3,936 (92.5%)3,650 / 3,936 (92.7%)3,660 / 3,936 (93.0%)3,670 / 3,936 (93.2%)3,680 / 3,936 (93.5%)3,690 / 3,936 (93.8%)3,700 / 3,936 (94.0%)3,710 / 3,936 (94.3%)3,720 / 3,936 (94.5%)3,730 / 3,936 (94.8%)3,740 / 3,936 (95.0%)3,750 / 3,936 (95.3%)3,760 / 3,936 (95.5%)3,770 / 3,936 (95.8%)3,780 / 3,936 (96.0%)3,790 / 3,936 (96.3%)3,800 / 3,936 (96.5%)3,810 / 3,936 (96.8%)3,820 / 3,936 (97.1%)3,830 / 3,936 (97.3%)3,840 / 3,936 (97.6%)3,850 / 3,936 (97.8%)3,860 / 3,936 (98.1%)3,870 / 3,936 (98.3%)3,880 / 3,936 (98.6%)3,890 / 3,936 (98.8%)3,900 / 3,936 (99.1%)3,910 / 3,936 (99.3%)3,920 / 3,936 (99.6%)3,930 / 3,936 (99.8%)3,936 / 3,936 (100.0%)3,936 / 3,936 (100.0%)
+
+217 / 3,936 reads were split based on middle adapters
+
+
+[1m[4mSaving trimmed reads to file[0m
+
+Saved result to /home/guillaume/ChimereNanoporePipeline/PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_6_0PoreChopReads.fastq
+
