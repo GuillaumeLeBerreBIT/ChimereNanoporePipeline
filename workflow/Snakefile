@@ -65,6 +65,7 @@ for i in FILES:
 #################### PROWLER TRIMMING ####################
 # Have to format the name of the output file since it is dependant on parameters provided by the config file.  
 # Trimming tool for oxford nanopore sequences. Based on given parameters it will perform quality trimming of the fastq reads, directly coverting it to FASTA file. 
+# Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line. 
 for i in FILES:    
     rule:
         input:
@@ -246,8 +247,71 @@ rule FilteringDIAMOND:
     threads: 
         4
     shell:
-        "python3 scripts/DiamondToAssembly.py -i {params.idper} -l {params.length} -e {params.evalue} Diamond/{params.folder} {input.sacraF} {output.assem}"
+        """
+        python3 scripts/DiamondToAssembly.py -i {params.idper} -l {params.length} -e {params.evalue} Diamond/{params.folder} {input.sacraF} {output.assem}
+        """
 
+################# REMOVE@HEADERS ####################
+# The headers of sequences have @ at the start. Flye will think these are all header lines from SAM file. 
+# By removing them Flye will parse the sequences. This file can be used for mapping then as well due to SAMTOOLS could not parse the files of the same reason. 
+rule EditingHeaders:
+    input: 
+        assem = f"AssemblyFasta/{identifier}FastaForAssembly.fasta"
+    output: 
+        assemEdit = f"AssemblyFasta/{identifier}FastaForAssembly-@-Removed.fasta"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
+    threads: 
+        4
+    shell:
+        """
+        python3 scripts/Remove@FromHeaders.py -i {input.assem} -o {output.assemEdit}
+        """
+
+################# FLYE ####################
+# 
+# Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
+rule FlyeAssembly:
+    input: 
+        assemFlye = f"AssemblyFasta/{identifier}FastaForAssembly-@-Removed.fasta"
+    output: 
+        FlyeFasta = f"{identifier}FlyeResults/assembly.fasta"
+    conda:
+        "envs/flye.yaml"
+    params:
+        # Define folders under params and not as output otherwise will get an error.
+        FlyeFolder = f"{identifier}FlyeResults/"
+    threads: 
+        4
+    shell:
+        """
+        mkdir {params.FlyeFolder}
+        flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 8
+        """
+
+################# FLYE ####################
+# 
+# Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
+rule MITOS:
+    input: 
+        FlyeFasta = f"{identifier}FlyeResults/assembly.fasta"
+    output: 
+        # Will define the output of the first folder since the amount of contigs is variable. 
+        MitosFasta = f"{identifier}MITOS2Results/0/result.faa"
+        
+    conda:
+        "envs/mitos2.yaml"
+    params:
+        # Define folders under params and not as output otherwise will get an error.
+        MitosFolder = f"{identifier}MITOS2Results/",
+        RefFolder = f"../resources/MITOS2-DB",
+        MitRefSeq = f"refseq89m/"
+    threads: 
+        4
+    shell:
+        """
+        runmitos.py -i {input.FlyeFasta} -c 5 -r {params.MitRefSeq} -o {params.MitosFolder} --refdir {params.RefFolder}
+        """
 
 ################# STATISTICS TO HTML ####################
 # Combining all different files used to generate a general report file.
@@ -256,7 +320,8 @@ rule StatisticsToHTML:
     input: 
         sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta",
         Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
-        assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier'])
+        assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier']),
+        MitosFasta = f"{identifier}MITOS2Results/0/result.faa"
     output: 
         f"../results/{identifier}/{identifier}Results.html"
     conda:
