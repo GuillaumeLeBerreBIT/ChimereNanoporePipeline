@@ -13,38 +13,40 @@ for fastq in FASTQFOL:
     stripped_fastq = fastq.replace(".fastq", "")
     FILES.append(stripped_fastq)
 
-# Calling a identifier to use for the folders where files are created. 
+# Identifier == Retraceability & Reproduceability
 identifier = config["identifier"]
-
+# Select L to clip leading Ns, T to trim trialing Ns and LT to trim both (default=LT)
 clip = config['prowler']['clip']
-
+# The fragmetation mode default U0
 fragments = config['prowler']['fragments']
-
+# Set the trimming algorithm Static == "S" OR Dynamic == "D"
 trimmode = config['prowler']['trimmode']
-
+# Set the quality score trimming treshold.
 qscore = config['prowler']['qscore']
-
+# Change the size of the trimming window.
 windowsize = config['prowler']['windowsize']
-
+# The minimum acceptable numer of bases in a read
 minlen = config['prowler']['minlen']
-
+# Select a maximum data subsample in MB (default = 0, entire sample)
 datamax = config['prowler']['datamax']
-
+# The mitochondriol genes
 gene = config['genes']
 
 #################### RULE ALL ####################
+# This rule contains the target files it will run all rules before that target file and only adavnces when the 
+# (all) target file(s) are present at the set location. 
 rule all:
     input:
         # This is to make sure everything for the last "FOR" loop is completed == TARGETS
         expand("SACRAResults/{identifier}/{i}SacraResults.fasta", identifier = identifier, i = FILES),
-        # Set the actual target file == TARGET
+        # Set the actual target file == HTML REPORT
         f"reports/{identifier}/{identifier}Results.html"
 
 
 #################### PORECHOP ABI ####################
-# Config makes it possible to parse commands through the command line, it overwrites the config file itself. 
-# Changed so the input file is taken from the config file to process
-# When using loops con not name them
+# Porechop ABI will detect and remove the adapters present on Nanopore reads. 
+# -abi flag allows to first guess the adapters from the reads, add the adapters to the list of Porechop adapters and then run Porechop. 
+# The output fastq files saved in a folder & statistical report from terminal in another folder. 
 for i in FILES:
     rule:
         input: 
@@ -62,6 +64,7 @@ for i in FILES:
 
 #################### PROWLER TRIMMING ####################
 # Have to format the name of the output file since it is dependant on parameters provided by the config file.  
+# Trimming tool for oxford nanopore sequences. Based on given parameters it will perform quality trimming of the fastq reads, directly coverting it to FASTA file. 
 for i in FILES:    
     rule:
         input:
@@ -85,7 +88,9 @@ for i in FILES:
             python3 scripts/TrimmerLarge.py -f {input.out_fastq} -i PorechopABI/{params.folder}/ -o ProwlerProcessed/{params.folder}/ -m {params.trimmode} -c {params.clip} -g {params.fragments} -q {params.qscore} -w {params.windowsize} -l {params.minlen} -d {params.datamax} -r '.fasta'
             """
 #################### SACRA ####################
-# Makes use of a script to filter the fasta files based on the length of the reads, to only retain above certain treshold.
+# SACRA splits the chimeric reads to the non-chimeric reads in long reads of MDA-treated sample. 
+# Make sure the path to the scripts folder is added onto the path, otherwise SACRA won't be able to find the subscripts. 
+# After running each rule unwanted files will eb cleared == Memory efficiency. 
 for i in FILES:    
     rule:
         input:
@@ -111,11 +116,12 @@ for i in FILES:
             """
 
 ################# CONCAT FILES ####################
+# Combining all fasta files after SACRA in to one big file. 
 # Can experiment with this may not even have to wait, extra security check
 # First file
 first_file = FILES[0]
 # The target number of files 
-target_number = len(FILES) 
+#target_number = len(FILES) 
 # {params.target_num}
 rule ConcatFiles:
     input: 
@@ -125,8 +131,8 @@ rule ConcatFiles:
         outputFile = f"SACRAResults/{identifier}Concatfiles.fasta"
     conda:
         "envs/pythonChimereWorkflow.yaml"
-    params:
-        target_num = target_number
+    #params:
+    #    target_num = target_number
     threads: 
         4
     shell: 
@@ -244,7 +250,8 @@ rule FilteringDIAMOND:
 
 
 ################# STATISTICS TO HTML ####################
-# Combining all different files used to generate a general report file.  
+# Combining all different files used to generate a general report file.
+# Done by a pathon script that will read in files from certain folders.   
 rule StatisticsToHTML:
     input: 
         sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta",
