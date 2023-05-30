@@ -115,7 +115,7 @@ for i in FILES:
             tis = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.tis"
         threads:
             5
-            
+
         shell: 
             """
             scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 4 -c ../config/config_snakemake.yaml
@@ -336,10 +336,11 @@ rule StatisticsToHTML:
         # Set the folders as parameters to give on the command line
         poreStat = f"../results/{identifier}/PorechopABI/",
         poreFastq = f"PorechopABI/{identifier}/",
-        prowFold = f"ProwlerProcessed/{identifier}/"
+        prowFold = f"ProwlerProcessed/{identifier}/",
+        mitosFold = f"{identifier}MITOS2Results/"
     threads: 
         4
     shell: 
         """
-        python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF}
+        python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF} {params.mitosFold}
         """
