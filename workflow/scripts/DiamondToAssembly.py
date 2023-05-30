@@ -223,7 +223,7 @@ plt.xlabel('Genes')
 plt.ylabel('No. of hits')
 # Title for the plot
 plt.title('DIAMOND BLAST Results')
-plt.savefig(f"reports/{identifier}/{identifier}Bar-HitsPerGene-DIAMOND&Filtering.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}Bar-HitsPerGene-DIAMOND&Filtering.png", dpi=200)
 # Close the plot
 plt.clf()
 
