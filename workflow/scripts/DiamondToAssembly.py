@@ -228,7 +228,7 @@ plt.savefig(f"reports/{identifier}/{identifier}Bar-HitsPerGene-DIAMOND&Filtering
 plt.clf()
 
 # REPORT HOW MANY TIMES HEADER BEEN MATCHED
-with open(f"reports/{identifier}/{identifier}HeaderCountDIAMOND.txt","w") as tmp_to_write:
+with open(f"../results/{identifier}/{identifier}HeaderCountDIAMOND.txt","w") as tmp_to_write:
     for key, val in header_freq.items():
         tmp_to_write.writelines(f"For the headers found {key} time(s) after DIAMOND: {val} sequences.\n")
 
@@ -251,6 +251,6 @@ plt.xlabel('Sequence length')
 plt.ylabel('Frequency')
 # Determining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
-plt.savefig(f"reports/{identifier}/{identifier}Hist-SequenceLengthAfterDIAMOND&Filtering.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}Hist-SequenceLengthAfterDIAMOND&Filtering.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
