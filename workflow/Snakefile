@@ -47,6 +47,7 @@ rule all:
 # Porechop ABI will detect and remove the adapters present on Nanopore reads. 
 # -abi flag allows to first guess the adapters from the reads, add the adapters to the list of Porechop adapters and then run Porechop. 
 # The output fastq files saved in a folder & statistical report from terminal in another folder. 
+# THE AMOUNT OF THREADS MORE THEN THE BASH COMMAND PORECHOP
 for i in FILES:
     rule:
         input: 
@@ -56,9 +57,11 @@ for i in FILES:
             statistics = f"../results/{identifier}/PorechopABI/{i}Statistics.txt"
         conda: 
             "envs/porechop_abi.yaml"
+        threads: 
+            2
         shell: 
             """
-            porechop_abi -abi -i {input} -o {output.reads} -t 2 > {output.statistics} 2>&1
+            porechop_abi -abi -i {input} -o {output.reads} -t 1 > {output.statistics} 2>&1
             """
     
 
@@ -110,9 +113,12 @@ for i in FILES:
             ssp = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.ssp",
             suf = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.suf",
             tis = f"ProwlerProcessed/{identifier}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.tis"
+        threads:
+            5
+            
         shell: 
             """
-            scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 6 -c ../config/config_snakemake.yaml
+            scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 4 -c ../config/config_snakemake.yaml
             rm {params.blasttab}* {params.bck} {params.des} {params.prj} {params.sds} {params.ssp} {params.suf} {params.tis}
             """
 
