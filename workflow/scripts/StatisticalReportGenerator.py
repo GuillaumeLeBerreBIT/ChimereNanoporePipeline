@@ -34,9 +34,13 @@ uniquelabel = args.outputFile
 # Substitute the unwanted part by nothing >> using regular expression
 # This will automatically create the specified == path-identifier/identifier...
 # Will only take the base path and have the identifier once
-identifier = re.sub("Results.html","",uniquelabel)
-identifier = re.sub("reports/","",identifier)
-identifier = os.path.basename(identifier)
+#identifier = re.sub("Results.html","",uniquelabel)
+#identifier = re.sub("../results/","",identifier)
+#identifier = os.path.basename(identifier)
+
+# Will use the unique label, ued to create a folder as identifier. Split on paths and get the unique folder name out of it. 
+splitted_label = uniquelabel.split("/")
+identifier = splitted_label[2]
 
 #######################################
 # HANDLING FILES
@@ -207,7 +211,7 @@ axs[1].set_xlabel('Read length')
 axs[1].set_ylabel('Frequency')
 
 # Saving the file before show
-plt.savefig(f"reports/{identifier}/{identifier}Before&After-Prowler.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}Before&After-Prowler.png", dpi=200)
 # Savefig does not close the plot. >> clf = close
 plt.clf()
 
@@ -327,7 +331,7 @@ ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 # Label y-axis
 plt.ylabel("No. of sequences")
 # Saving the picture 
-plt.savefig(f"reports/{identifier}/{identifier}SACRA-Stacked-Seq-Amount.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Amount.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
 
@@ -368,7 +372,7 @@ plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
 # Label y-axis
 plt.ylabel("No. of sequences")
 # Saving the created plot as .png, using the dpi to set the size of the figure. 
-plt.savefig(f"reports/{identifier}/{identifier}SACRA-Stacked-Seq-Rel-Amount.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Rel-Amount.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
 ### HISTOGRAM LENGTH READS
@@ -385,7 +389,7 @@ plt.ylabel('Frequency')
 # Determining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
 # Saving the figure in .png format. 
-plt.savefig(f"reports/{identifier}/{identifier}SACRA-Hist-Distribution.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}SACRA-Hist-Distribution.png", dpi=200)
 # Savefig does not close the plot. 
 plt.clf()
 
@@ -412,7 +416,7 @@ plt.ylabel('Frequency')
 # np.arange to go from a to b in x amount of steps. 
 plt.xticks(np.arange(0, 1000, 100))
 # Saving the figure 
-plt.savefig(f"reports/{identifier}/{identifier}SACRA-Hist-FilteredSeq.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}SACRA-Hist-FilteredSeq.png", dpi=200)
 # Close the plot
 plt.clf()
 
@@ -473,7 +477,7 @@ with open(statisticalFile, "w") as html_file:
     # DIAMOND
     html_file.writelines("<h2>DIAMOND </h2>\n")
     # Read the file containing the amount a hit has been found in the genes
-    with open(f"reports/{identifier}/{identifier}HeaderCountDIAMOND.txt", "r") as text_reader:
+    with open(f"../results/{identifier}/{identifier}HeaderCountDIAMOND.txt", "r") as text_reader:
         lines_read = text_reader.readlines()
         # Write the output in an unordered list
         html_file.writelines("<ul>\n")
