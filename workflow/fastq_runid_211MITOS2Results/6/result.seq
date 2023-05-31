@@ -1,0 +1,29 @@
+>Feature contig_8
+112	395	D-loop
+			note	control region
+451	526	D-loop
+			note	control region
+528	644	gene
+			gene	atp6_0
+528	644	CDS
+			product	ATP synthase F0 subunit 6
+647	1324	gene
+			gene	cox3_0
+647	1324	CDS
+			product	cytochrome c oxidase subunit 3
+1305	1391	gene
+			gene	cox3_1
+1305	1391	CDS
+			product	cytochrome c oxidase subunit 3
+1759	1700	gene
+			gene	trnK(ttt)
+1759	1700	tRNA
+			product	tRNA-LYS
+1864	1939	D-loop
+			note	control region
+1926	1985	gene
+			gene	atp6_1
+1926	1985	CDS
+			product	ATP synthase F0 subunit 6
+1991	2710	D-loop
+			note	control region

@@ -1,0 +1,91 @@
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.4 (Dec 2020)
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         RefDataMitos2/refseq89m//ncRNA/trnA.cm
+# target sequence database:              MITOS2-Anno-89/5///sequence.fas-0
+# max ASCII text line length:            unlimited
+# sequence reporting threshold:          E-value <= 0.1
+# Max sensitivity mode:                  on [all heuristic filters off]
+# maximum DP search matrix size:         80000.0 Mb
+# truncated hit detection:               off [due to --max]
+# number of worker threads:              1 [--cpu]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       trnA  [CLEN=67]
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+  (1) !   6.9e-07   43.4   5.8  contig_7    376    311 -  cm    no 0.20  -
+  (2) !   6.9e-07   43.4   5.8  contig_7   2573   2638 +  cm    no 0.20  -
+  (3) !   1.5e-05   36.3   0.4  contig_7    247    310 +  cm    no 0.23  -
+  (4) !   0.00013   31.5   0.2  contig_7   2702   2644 -  cm    no 0.24  -
+
+
+Hit alignments:
+>> contig_7  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (1) !   6.9e-07   43.4   5.8  cm        1       67 []         376         311 - ..   41.3    no 0.20
+
+                                                                                    NC
+               (((((((,,<<<<_____>>>>,<<<<<_______>>>>>,,,,.<<<<<_____>>>>>))))))): CS
+      trnA   1 aagacuuUAgUUUAAUUAAAAcAucUGaUUUGCAUuCAgaAGAU.GuagguUAaUccuaCaagucuuA 67 
+                AGA:::UA:UUUA  UAAAA:AU::::UUUG  +::::AAGA  :::G:UUA  :C::::::UCU A
+  contig_7 376 CAGAAAAUAGUUUAGAUAAAAUAUUAAUUUUGGGAAUUAAAGAAaAAGGAUUA--UCUUUUUUUCUGA 311
+
+>> contig_7  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (2) !   6.9e-07   43.4   5.8  cm        1       67 []        2573        2638 + ..   41.3    no 0.20
+
+                                                                                     NC
+                (((((((,,<<<<_____>>>>,<<<<<_______>>>>>,,,,.<<<<<_____>>>>>))))))): CS
+      trnA    1 aagacuuUAgUUUAAUUAAAAcAucUGaUUUGCAUuCAgaAGAU.GuagguUAaUccuaCaagucuuA 67  
+                 AGA:::UA:UUUA  UAAAA:AU::::UUUG  +::::AAGA  :::G:UUA  :C::::::UCU A
+  contig_7 2573 CAGAAAAUAGUUUAGAUAAAAUAUUAAUUUUGGGAAUUAAAGAAaAAGGAUUA--UCUUUUUUUCUGA 2638
+
+>> contig_7  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (3) !   1.5e-05   36.3   0.4  cm        1       67 []         247         310 + ..   34.1    no 0.23
+
+                                                                                    NC
+               (((((((,,<<<<._____>>>>,<<<<<_______>>>>>,,,,<<<<<_____>>>>>))))))): CS
+      trnA   1 aagacuuUAgUUU.AAUUAAAAcAucUGaUUUGCAUuCAgaAGAUGuagguUAaUccuaCaagucuuA 67 
+               : :::::UAGUUU AAU+AAAAC U::G: UUG A+:C::A +AUG:A::U    ::U:C::::: : 
+  contig_7 247 GUUUUAAUAGUUUaAAUAAAAACUUUGGUCUUGUAAGCCAAGAAUGAAAAU----UUUUCUUAAAGCU 310
+
+>> contig_7  
+ rank     E-value  score  bias mdl mdl from   mdl to       seq from      seq to       cyksc trunc   gc
+ ----   --------- ------ ----- --- -------- --------    ----------- -----------      ------ ----- ----
+  (4) !   0.00013   31.5   0.2  cm        1       67 []        2702        2644 - ..   30.6    no 0.24
+
+                v                                                                  v  NC
+                (((((((,,<<<<._____>>>>,<<<<<_______>>>>>,,,,<<<<<____._>>>>>))))))): CS
+      trnA    1 aagacuuUAgUUU.AAUUAAAAcAucUGaUUUGCAUuCAgaAGAUGuagguUAa.UccuaCaagucuuA 67  
+                 AGA:::UAGUUU AAU+AAAAC U::G: UUG A+:C::A +AU       AA U     :::UCU A
+  contig_7 2702 CAGAAAAUAGUUUaAAUAAAAACUUUGGUCUUGUAAGCCAAGAAU-----GAAAaU-----UUUUCUUA 2644
+
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (67 consensus positions)
+Target sequences:                                                1  (6958 residues searched)
+Target sequences re-searched for truncated hits:                 0  (0 residues re-searched)
+Windows   passing  local HMM SSV           filter:                  (off)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:                  (off)
+Windows   passing  local HMM Forward  bias filter:                  (off)
+Windows   passing glocal HMM Forward       filter:                  (off)
+Windows   passing glocal HMM Forward  bias filter:                  (off)
+Envelopes passing glocal HMM envelope defn filter:                  (off)
+Envelopes passing  local CM  CYK           filter:                  (off)
+Total CM hits reported:                                          4  (0.03665); includes 0 truncated hit(s)
+
+# CPU time: 1.33u 0.00s 00:00:01.33 Elapsed: 00:00:01.33
+//
+[ok]

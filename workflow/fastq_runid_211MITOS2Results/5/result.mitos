@@ -1,0 +1,11 @@
+contig_7	tRNA	trnT	mitfi	246	309	1	3.60000007235e-13	68.5	TGT	31	.	.	(((((((..((((......)))).(((((.......)))))....(((((.)))))))))))).
+contig_7	tRNA	trnP	mitfi	310	375	-1	9.40000030938e-13	68.2	TGG	30	.	0	(((((((..((((.....)))).(((((.......)))))....(((((....)))))))))))).
+contig_7	gene	nad6	mitos	384	878	1	19408912.7	.	-	-	.	.	.
+contig_7	gene	cob	mitos	884	1390	1	310768279.2	.	-	-	.	1	.
+contig_7	gene	cob	mitos	1431	2063	-1	482728189.0	.	-	-	.	0	.
+contig_7	rep_origin	OH	mitos	2150	2201	1	884.8	.	-	-	.	1	.
+contig_7	tRNA	trnP	mitfi	2572	2637	1	9.40000030938e-13	68.2	TGG	30	.	1	(((((((..((((.....)))).(((((.......)))))....(((((....)))))))))))).
+contig_7	rep_origin	OH	mitos	2654	2696	1	155.6	.	-	-	1	0	.
+contig_7	rep_origin	OH	mitos	3072	3123	1	884.8	.	-	-	.	2	.
+contig_7	rep_origin	OH	mitos	3276	3376	1	1078.2	.	-	-	0	0	.
+contig_7	gene	nad4l	mitos	3477	243	-1	6102353.2	.	-	-	.	.	.

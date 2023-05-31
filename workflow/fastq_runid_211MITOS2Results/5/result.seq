@@ -1,0 +1,37 @@
+>Feature contig_7
+246	309	gene
+			gene	trnT(tgt)
+246	309	tRNA
+			product	tRNA-THR
+375	310	gene
+			gene	trnP_0(tgg)
+375	310	tRNA
+			product	tRNA-PRO
+384	878	gene
+			gene	nad6
+384	878	CDS
+			product	NADH dehydrogenase subunit 6
+884	1390	gene
+			gene	cob_1
+884	1390	CDS
+			product	cytochrome b
+2063	1431	gene
+			gene	cob_0
+2063	1431	CDS
+			product	cytochrome b
+2150	2201	D-loop
+			note	control region
+2572	2637	gene
+			gene	trnP_1(tgg)
+2572	2637	tRNA
+			product	tRNA-PRO
+2654	2696	D-loop
+			note	control region
+3072	3123	D-loop
+			note	control region
+3276	3376	D-loop
+			note	control region
+243	3477	gene
+			gene	nad4l
+243	3477	CDS
+			product	NADH dehydrogenase subunit 4L

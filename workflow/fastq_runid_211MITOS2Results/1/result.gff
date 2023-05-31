@@ -1,0 +1,13 @@
+contig_10	mitos	gene	1	198	.	-	.	ID=gene_cox3_2;gene_id=cox3_2
+contig_10	mitos	mRNA	1	198	.	-	.	ID=transcript_cox3_2;Parent=gene_cox3_2;gene_id=cox3_2
+contig_10	mitos	exon	1	198	86652632.3	-	-1.0	Parent=transcript_cox3_2;Name=cox3_2
+contig_10	mitos	gene	192	593	.	-	.	ID=gene_cox3_1;gene_id=cox3_1
+contig_10	mitos	mRNA	192	593	.	-	.	ID=transcript_cox3_1;Parent=gene_cox3_1;gene_id=cox3_1
+contig_10	mitos	exon	192	593	172552479.8	-	-3.0	Parent=transcript_cox3_1;Name=cox3_1
+contig_10	mitos	origin_of_replication	695	7	.	+	.	ID=gene_OH_0;gene_id=OH_0
+contig_10	mitos	gene	1263	2776	.	-	.	ID=gene_cox3_0;gene_id=cox3_0
+contig_10	mitos	mRNA	1263	2776	.	-	.	ID=transcript_cox3_0;Parent=gene_cox3_0;gene_id=cox3_0
+contig_10	mitos	exon	1263	2039	580402877.6	-	-3.0	Parent=transcript_cox3_0;Name=cox3_0-a
+contig_10	mitos	origin_of_replication	2002	2081	.	+	.	ID=gene_OH_1;gene_id=OH_1
+contig_10	mitos	exon	2086	2776	397898636.4	+	1.0	Parent=transcript_cox3_0;Name=cox3_0-b
+contig_10	mitos	exon	2731	7	2842.0	+	2.0	Parent=transcript_OH_0;Name=OH_0-b

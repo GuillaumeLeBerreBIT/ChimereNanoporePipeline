@@ -1,0 +1,15 @@
+contig_1	mitos	gene	68	529	.	+	.	ID=gene_cox1_0;gene_id=cox1_0
+contig_1	mitos	mRNA	68	529	.	+	.	ID=transcript_cox1_0;Parent=gene_cox1_0;gene_id=cox1_0
+contig_1	mitos	exon	68	529	235813051.8	+	2.0	Parent=transcript_cox1_0;Name=cox1_0
+contig_1	mitos	gene	540	584	.	+	.	ID=gene_cox1_2;gene_id=cox1_2
+contig_1	mitos	mRNA	540	584	.	+	.	ID=transcript_cox1_2;Parent=gene_cox1_2;gene_id=cox1_2
+contig_1	mitos	exon	540	584	199.0	+	3.0	Parent=transcript_cox1_2;Name=cox1_2
+contig_1	mitfi	ncRNA_gene	549	614	.	+	.	ID=gene_trnL2;gene_id=trnL2
+contig_1	mitfi	tRNA	549	614	.	+	.	ID=transcript_trnL2;Parent=gene_trnL2;gene_id=trnL2
+contig_1	mitfi	exon	549	614	4.49999992824e-09	+	.	Parent=transcript_trnL2;Name=trnL2
+contig_1	mitos	gene	569	874	.	-	.	ID=gene_cox2;gene_id=cox2
+contig_1	mitos	mRNA	569	874	.	-	.	ID=transcript_cox2;Parent=gene_cox2;gene_id=cox2
+contig_1	mitos	exon	569	874	59522040.0	-	-2.0	Parent=transcript_cox2;Name=cox2
+contig_1	mitos	gene	851	79	.	-	.	ID=gene_cox1_1;gene_id=cox1_1
+contig_1	mitos	mRNA	851	79	.	-	.	ID=transcript_cox1_1;Parent=gene_cox1_1;gene_id=cox1_1
+contig_1	mitos	exon	851	79	4367906.6	-	-2.0	Parent=transcript_cox1_1;Name=cox1_1

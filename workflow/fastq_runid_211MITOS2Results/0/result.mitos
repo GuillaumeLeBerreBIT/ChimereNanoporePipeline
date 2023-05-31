@@ -1,0 +1,5 @@
+contig_1	gene	cox1	mitos	67	528	1	235813051.8	.	-	-	.	0	.
+contig_1	gene	cox1	mitos	539	583	1	199.0	.	-	-	.	2	.
+contig_1	tRNA	trnL2	mitfi	548	613	1	4.49999992824e-09	46.3	TAA	29	.	.	(((((((..(((......))).(((((.......)))))....(((((....)))))))))).)).
+contig_1	gene	cox2	mitos	568	873	-1	59522040.0	.	-	-	.	.	.
+contig_1	gene	cox1	mitos	850	78	-1	4367906.6	.	-	-	.	1	.

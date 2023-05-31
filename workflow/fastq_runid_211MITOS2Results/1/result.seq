@@ -1,0 +1,23 @@
+>Feature contig_10
+197	0	gene
+			gene	cox3_2
+197	0	CDS
+			product	cytochrome c oxidase subunit 3
+592	191	gene
+			gene	cox3_1
+592	191	CDS
+			product	cytochrome c oxidase subunit 3
+694	1198	D-loop
+			note	control region
+2038	1262	gene
+			gene	cox3_0-a
+2038	1262	CDS
+			product	cytochrome c oxidase subunit 3
+2001	2080	D-loop
+			note	control region
+2085	2775	gene
+			gene	cox3_0-b
+2085	2775	CDS
+			product	cytochrome c oxidase subunit 3
+2730	6	D-loop
+			note	control region

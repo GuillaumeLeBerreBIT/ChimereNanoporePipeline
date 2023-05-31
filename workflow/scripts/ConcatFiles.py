@@ -30,17 +30,17 @@ else:
     # Only use the path to move further
     path_to_files = splitted_path[0]
 
-## Setting a flag to break/continue the loop
-#flag = 0
-## While the amount of total files is not present keep looping until all files are collected 
-#while flag == 0:
-#    # Changes when the folder of SACRA results has all files
-#    if args.targetNum != len(os.listdir(path_to_files)):
-#        flag = 0
-#        #print(len(os.listdir(path_to_files)))
-#    else:
-#        # Loop breaks 
-#        flag = 1
+# Setting a flag to break/continue the loop
+flag = 0
+# While the amount of total files is not present keep looping until all files are collected 
+while flag == 0:
+    # Changes when the folder of SACRA results has all files
+    if args.targetNum != len(os.listdir(path_to_files)):
+        flag = 0
+        #print(len(os.listdir(path_to_files)))
+    else:
+        # Loop breaks 
+        flag = 1
 
 # Open a file to write everything in to
 with open(args.outputFile, "w") as file_to_write:

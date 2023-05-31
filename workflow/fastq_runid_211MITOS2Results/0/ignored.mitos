@@ -1,0 +1,6 @@
+contig_1	gene	cox1	mitos	1	78	-1	2578482.4	.	-	-	.	1	.
+contig_1	gene	cox1	mitos	67	435	1	159758000.2	.	-	-	.	0	.
+contig_1	rep_origin	OH	mitos	70	562	1	27893.5	.	-	-	.	.	.
+contig_1	rep_origin	OH	mitos	70	436	1	20601.5	.	-	-	.	.	.
+contig_1	gene	cox1	mitos	439	546	1	922777.0	.	-	-	1	1	.
+contig_1	gene	cox2	mitos	565	873	-1	59393456.5	.	-	-	.	.	.

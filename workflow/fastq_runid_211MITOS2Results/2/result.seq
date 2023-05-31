@@ -1,0 +1,17 @@
+>Feature contig_2
+66	1	gene
+			gene	cox2
+66	1	CDS
+			product	cytochrome c oxidase subunit 2
+145	81	gene
+			gene	trnL2(taa)
+145	81	tRNA
+			product	tRNA-LEU2
+593	165	gene
+			gene	cox1_0
+593	165	CDS
+			product	cytochrome c oxidase subunit 1
+582	911	gene
+			gene	cox1_1
+582	911	CDS
+			product	cytochrome c oxidase subunit 1
