@@ -128,7 +128,8 @@ for i in FILES:
 # First file
 first_file = FILES[0]
 # The target number of files 
-target_number = len(FILES)
+#target_number = len(FILES)
+# {params.target_num}
 
 rule ConcatFiles:
     input: 
@@ -138,13 +139,13 @@ rule ConcatFiles:
         outputFile = f"SACRAResults/{identifier}Concatfiles.fasta"
     conda:
         "envs/pythonChimereWorkflow.yaml"
-    params:
-        target_num = target_number
+    #params:
+    #    target_num = target_number
     threads: 
         4
     shell: 
         """
-        python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} {params.target_num}
+        python3 scripts/ConcatFiles.py {input.filesSacra} {output.outputFile} 
         """
 
 ################# FILTER SACRA ####################
@@ -271,12 +272,13 @@ rule EditingHeaders:
         4
     shell:
         """
-        python3 scripts/Remove@FromHeaders.py -i {input.assem} -o {output.assemEdit}
+        python3 scripts/Remove@FromHeaders.py {input.assem} {output.assemEdit}
         """
 
 ################# FLYE ####################
 # Flye is a de novo assembler for single-molecule sequencing reads, such as those produced by Oxford Nanopore Technologies
 # Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
+#mkdir {params.FlyeFolder} >> Do not need to create folder since it  will be made in the go. 
 rule FlyeAssembly:
     input: 
         assemFlye = f"AssemblyFasta/{identifier}FastaForAssembly-@-Removed.fasta"
@@ -288,11 +290,10 @@ rule FlyeAssembly:
         # Define folders under params and not as output otherwise will get an error.
         FlyeFolder = f"FlyeResults/{identifier}/"
     threads: 
-        8
+        20
     shell:
         """
-        mkdir {params.FlyeFolder}
-        flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 8
+        flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 20
         """
 
 ################# MITOS ####################
@@ -310,7 +311,7 @@ rule MITOS:
     params:
         # Define folders under params and not as output otherwise will get an error.
         MitosFolder = f"MITOS2Results/{identifier}/",
-        RefFolder = f"../resources/MITOS2-DB",
+        RefFolder = f"../resources/MITOS2-DB/",
         MitRefSeq = f"refseq89m/"
     threads: 
         4

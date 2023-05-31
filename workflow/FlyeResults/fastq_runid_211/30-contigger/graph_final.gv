@@ -1,0 +1,14 @@
+digraph {
+nodesep = 0.5;
+node [shape = circle, label = "", height = 0.3];
+"0" [style = "filled", fillcolor = "grey"];
+"1" [style = "filled", fillcolor = "grey"];
+"2" [style = "filled", fillcolor = "grey"];
+"3" [style = "filled", fillcolor = "grey"];
+"4" -> "4" [label = "id 1\l2.4k 5x", color = "darkgreen" , penwidth = 3] ;
+"5" -> "5" [label = "id -1\l2.4k 5x", color = "darkgreen" , penwidth = 3] ;
+"2" -> "1" [label = "id 2\l1.2k 4x", color = "red" , penwidth = 3] ;
+"0" -> "3" [label = "id -2\l1.2k 4x", color = "red" , penwidth = 3] ;
+"2" -> "1" [label = "id 3\l1.2k 1x", color = "red" , penwidth = 3] ;
+"0" -> "3" [label = "id -3\l1.2k 1x", color = "red" , penwidth = 3] ;
+}

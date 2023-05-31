@@ -426,17 +426,16 @@ plt.clf()
 # GENERATING HTML REPORT
 #######################################
 # Creating the header line
-html_header = f"<html>\n<head>\n</head>\n<body>\n<h1>Statistical Report - Workflow</h1>\n<h2>Porechop ABI</h2>\n<h3>Trimming adapters from read ends</h3>\n"
+html_header = f"<! DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n<title>Statistical Report</title>\n<link rel='stylesheet' href='../../resources/Styles/styles.css'>\n</head>\n<body>\n<div class='main'>\n<h1 id='statisticalReport'>Statistical Report - Workflow</h1>\n<h2 id='porechopABI'>Porechop ABI</h2>\n<h3>Trimming adapters from read ends</h3>\n"
 
 # Creating the table containg everything
 # The last 3 are summary lines from the adapters trimmed so can parse everything until then
-unorder_list = []
-
-unorder_list.append("<ul>\n")
-for adapter in adapters:
-
-    unorder_list.append(f"\t<li>{adapter}</li>\n")
-unorder_list.append("</ul>\n")
+#unorder_list = []
+#unorder_list.append("<ul>\n")
+#for adapter in adapters:
+#
+#    unorder_list.append(f"\t<li>{adapter}</li>\n")
+#unorder_list.append("</ul>\n")
 
 # Header adapter loc
 adap_loc_header = "<h3>Adapters Removed</h3>\n"
@@ -453,31 +452,35 @@ with open(statisticalFile, "w") as html_file:
     # PORECHOP ABI
     html_file.writelines(html_header)
     # Adapters
-    for ul in unorder_list:
-        html_file.writelines(ul)
+    html_file.write("<table>\n\t<tr>\n\t\t<th>Adapter</th>\n\t\t<th>Sequence</th>\n\t</tr>\n")
     
+    for adapter in adapters:
+        splitted_adapter = adapter.split(":")
+        html_file.writelines(f"\t<tr>\n\t\t<td>{splitted_adapter[0]}</td>\n\t\t<td>{splitted_adapter[1]}</td>\n\t</tr>\n")
+    html_file.writelines("</table>\n")
+
     html_file.writelines(adap_loc_header)
     #Removed adapters
-    html_file.writelines(f"\t<div>{StartAdapRem} / {StartTotReads} reads had adapters trimmed from their start ({StartBasePairs} bp removed)</div>")
-    html_file.writelines(f"\t<div>{MidAdapRem} / {MidTotReads} reads had adapters trimmed from their middle </div>")
-    html_file.writelines(f"\t<div>{EndAdapRem} / {EndTotReads} reads had adapters trimmed from their end ({EndBasePairs} bp removed)</div>")
+    html_file.writelines(f"\t<div class='centerdiv'>{StartAdapRem} / {StartTotReads} reads had adapters trimmed from their start ({StartBasePairs} bp removed)</div>")
+    html_file.writelines(f"\t<div class='centerdiv'>{MidAdapRem} / {MidTotReads} reads had adapters trimmed from their middle </div>")
+    html_file.writelines(f"\t<div class='centerdiv'>{EndAdapRem} / {EndTotReads} reads had adapters trimmed from their end ({EndBasePairs} bp removed)</div>")
     # PROWLER
-    html_file.writelines("<h2>Prowler Trimming</h2>\n")
+    html_file.writelines("<h2 id='prowler'>Prowler Trimming</h2>\n")
     # Have to set the locatio from where the html file will be, so set picture in same folder
     html_file.writelines(f"\t<img src='{identifier}Before&After-Prowler.png' height='800px'>\n")
 
     # SACRA
-    html_file.writelines("<h2>Split Amplified Chimeric Read Algorithm (SACRA)</h2>\n")
+    html_file.writelines("<h2 id='sacra'>Split Amplified Chimeric Read Algorithm (SACRA)</h2>\n")
     # Have to set the locatio from where the html file will be, so set picture in same folder
     html_file.writelines(f"\t<img src='{identifier}SACRA-Stacked-Seq-Amount.png' height='800px'>\n")
     html_file.writelines(f"\t<img src='{identifier}SACRA-Stacked-Seq-Rel-Amount.png' height='800px'>\n")
     html_file.writelines(f"\t<img src='{identifier}SACRA-Hist-Distribution.png' height='800px'>\n")
     # The statistical ouput after filtering on certain amount of bases
-    html_file.writelines("<h2>SACRA Filtered Reads</h2>\n")
+    html_file.writelines("<h2 id ='sacrafilt'>SACRA Filtered Reads</h2>\n")
     html_file.writelines(f"\t<img src='{identifier}SACRA-Hist-FilteredSeq.png' height='800px'>\n")
 
     # DIAMOND
-    html_file.writelines("<h2>DIAMOND </h2>\n")
+    html_file.writelines("<h2 id='diamond'>DIAMOND</h2>\n")
     # Read the file containing the amount a hit has been found in the genes
     with open(f"../results/{identifier}/{identifier}HeaderCountDIAMOND.txt", "r") as text_reader:
         lines_read = text_reader.readlines()
@@ -495,10 +498,15 @@ with open(statisticalFile, "w") as html_file:
 
     ######################### MITOS2 ANNOTATION REPORT ###########################
     
+    html_file.writelines("<h2 id='mitos'>MITOS2</h2>\n")
+
     # Filter the list to open files in numerical order. 
     list_folders = os.listdir(args.MITOS2Folder)
     list_folders.sort()
-
+    # Empty contig list to create titles for navbar
+    contig_headers = []
+    # The IDS to link the headers to  
+    ids_headers = []
     # Need to specify the full path to find the specific folder
     for folder in list_folders:
         #print(f"{folder}")
@@ -515,8 +523,14 @@ with open(statisticalFile, "w") as html_file:
                     contig_raw = splitted_item[0]
                     # Edit word
                     contig_list = contig_raw.split("_")
+                    # Format a title and save it into a variable
+                    formatted = contig_list[0].capitalize() + " " + contig_list[1]
+                    # Add the variable to the list 
+                    contig_headers.append(formatted)
+                    # Create string for the ids to link to
+                    ids_headers.append(contig_list[1])
                     # Write title == Contig 
-                    html_file.write(f"<h3>{contig_list[0].capitalize()} {contig_list[1]}</h3>\n")
+                    html_file.write(f"<h3 id='{contig_list[1]}'>{contig_list[0].capitalize()} {contig_list[1]}</h3>\n")
                     # Write the table header to the file
                     html_file.write("<table>\n\t<tr>\n\t\t<th>Source</th>\n\t\t<th>Feature</th>\n\t\t<th>Start position</th>\n\t\t<th>End position</th>\n\t\t<th>Score</th>\n\t\t<th>Strand</th>\n\t\t<th>Frame</th>\n\t\t<th>Attributes</th>\n\t</tr>\n")
                     # Iterate over the lines from the list
@@ -552,10 +566,10 @@ with open(statisticalFile, "w") as html_file:
                         count += 1
                         # To write the first div
                         if re.search("^>", line) and count == 1:
-                            html_file.write(f"\t<div>\n\t\t{line}\n\t</div>\n\t<pre>\n")
+                            html_file.write(f"\t<div class='contigpadd'>\n\t\t{line}\n\t<pre>\n")
                         # To write the divs except first and last
                         elif re.search("^>", line) and count != 1:
-                            html_file.write(f"\t</pre>\n\t<div>\n\t\t{line}\n\t</div>\n\t<pre>\n")
+                            html_file.write(f"\t</pre>\n\t</div>\n\t<div class='contigpadd'>\n\t\t{line}\n\t<pre>\n")
                         # Write the sequence lines
                         elif re.search("^[A,G,C,T,U]", line):
                             # Tab in pre statement will directly visualized. 
@@ -563,9 +577,28 @@ with open(statisticalFile, "w") as html_file:
                     
                     # To write the last div block
                     if count == len(file_lines):
-                        html_file.write(f"\t</pre>\n")
+                        html_file.write(f"\t</pre>\n\t</div>\n")
                 # Close file
                 file_to_read.close()
+    
+    html_file.write(f"</div>\n")
+    # Write a div to a file that will contain the part of the sidebar. 
+    # Write every line connected to a title to the sidebar on the side. 
+    html_file.write(f"<div class='sidenav'>\n")
+    # Only style the first differently to come more out as a header. 
+    html_file.write(f"<a class='header' href='#statisticalReport'>Statistical Report</a>\n")
+    html_file.write(f"<a href='#porechopABI'>Porechop ABI</a>\n")
+    html_file.write(f"<a href='#prowler'>Prowler Trimming</a>\n")
+    html_file.write(f"<a href='#sacra'>SACRA</a>\n")
+    html_file.write(f"<a href='#sacrafilt'>SACRA Filtered</a>\n")
+    html_file.write(f"<a href='#diamond'>DIAMOND</a>\n")
+    html_file.write(f"<a href='#mitos'>MITOS2</a>\n")
+    # Loop over 2 lists one that contains the links to the titles & one with the visible title in the navbar
+    for ids, item in zip(ids_headers, contig_headers):
+        html_file.write(f"<a class='subtitle'href='#{ids}'>{item}</a>\n")
+    # Close the div 
+    html_file.write(f"</div>'>\n")
+
     #Close the file
     html_file.close()
 
