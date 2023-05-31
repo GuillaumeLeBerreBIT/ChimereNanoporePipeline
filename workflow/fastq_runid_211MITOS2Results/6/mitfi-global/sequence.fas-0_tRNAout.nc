@@ -1,3 +1,0 @@
->contig_8|5|1701|1760|-1|1|68|13.7|0.08799999952316284|0.0|40|41|UUU|K|trnC.cm|1|1|l
-ACCUCUGUAGUAAUUACCGGCCUCCGAUGAGGAAUAAUUCUUUUUAUUACCUCAGAGGUU
-(((((((..(((())))................(((((.......))))..)))))))).

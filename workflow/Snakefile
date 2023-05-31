@@ -281,12 +281,12 @@ rule FlyeAssembly:
     input: 
         assemFlye = f"AssemblyFasta/{identifier}FastaForAssembly-@-Removed.fasta"
     output: 
-        FlyeFasta = f"{identifier}FlyeResults/assembly.fasta"
+        FlyeFasta = f"FlyeResults/{identifier}/assembly.fasta"
     conda:
         "envs/flye.yaml"
     params:
         # Define folders under params and not as output otherwise will get an error.
-        FlyeFolder = f"{identifier}FlyeResults/"
+        FlyeFolder = f"FlyeResults/{identifier}/"
     threads: 
         8
     shell:
@@ -300,16 +300,16 @@ rule FlyeAssembly:
 # Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
 rule MITOS:
     input: 
-        FlyeFasta = f"{identifier}FlyeResults/assembly.fasta"
+        FlyeFasta = f"FlyeResults/{identifier}/assembly.fasta"
     output: 
         # Will define the output of the first folder since the amount of contigs is variable. 
-        MitosFasta = f"{identifier}MITOS2Results/0/result.faa"
+        MitosFasta = f"MITOS2Results/{identifier}/0/result.faa"
         
     conda:
         "envs/mitos2.yaml"
     params:
         # Define folders under params and not as output otherwise will get an error.
-        MitosFolder = f"{identifier}MITOS2Results/",
+        MitosFolder = f"MITOS2Results/{identifier}/",
         RefFolder = f"../resources/MITOS2-DB",
         MitRefSeq = f"refseq89m/"
     threads: 
@@ -327,7 +327,7 @@ rule StatisticsToHTML:
         sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta",
         Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
         assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier']),
-        MitosFasta = f"{identifier}MITOS2Results/0/result.faa"
+        MitosFasta = f"MITOS2Results/{identifier}/0/result.faa"
     output: 
         f"../results/{identifier}/{identifier}Results.html"
     conda:
@@ -337,7 +337,7 @@ rule StatisticsToHTML:
         poreStat = f"../results/{identifier}/PorechopABI/",
         poreFastq = f"PorechopABI/{identifier}/",
         prowFold = f"ProwlerProcessed/{identifier}/",
-        mitosFold = f"{identifier}MITOS2Results/"
+        mitosFold = f"MITOS2Results/{identifier}/"
     threads: 
         4
     shell: 

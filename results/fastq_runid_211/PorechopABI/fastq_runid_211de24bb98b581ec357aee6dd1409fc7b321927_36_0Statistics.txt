@@ -5,46 +5,46 @@ Sampled sequences:     40000
 Sampling length        100
 LC filter threshold:   1
 Adjusted LC threshold: 1
-Nb thread:             8
+Nb thread:             2
 Number of kept kmer:   500
 Number of runs:        10
 Verbosity level:       1
 
 A total of 10 runs will be performed.
-[60.6979 ms]	Parsing FASTA file
-[269.651 ms]	Number of sequences found: 3935.
+[2.32305 ms]	Parsing FASTA file
+[26.4071 ms]	Number of sequences found: 3935.
 Starting run number 1
 /!\ WARNING: Sequence set too small for the requested sample size
 /!\ WARNING: The whole set will be used.
-[270.641 ms]	Working on sequence start.
-[4566.18 ms]	Working on sequence end.
+[26.4666 ms]	Working on sequence start.
+[701.363 ms]	Working on sequence end.
 Starting run number 2
-[8729.21 ms]	Working on sequence start.
-[13256.6 ms]	Working on sequence end.
+[1135.55 ms]	Working on sequence start.
+[1775.07 ms]	Working on sequence end.
 Starting run number 3
-[16797.8 ms]	Working on sequence start.
-[21141.8 ms]	Working on sequence end.
+[2228.67 ms]	Working on sequence start.
+[2849.42 ms]	Working on sequence end.
 Starting run number 4
-[24876.3 ms]	Working on sequence start.
-[29309.2 ms]	Working on sequence end.
+[3267.2 ms]	Working on sequence start.
+[3914.47 ms]	Working on sequence end.
 Starting run number 5
-[33283.4 ms]	Working on sequence start.
-[37601.6 ms]	Working on sequence end.
+[4340.4 ms]	Working on sequence start.
+[5004.86 ms]	Working on sequence end.
 Starting run number 6
-[41295.9 ms]	Working on sequence start.
-[45490.3 ms]	Working on sequence end.
+[5438.49 ms]	Working on sequence start.
+[6082.79 ms]	Working on sequence end.
 Starting run number 7
-[49164.1 ms]	Working on sequence start.
-[53556.7 ms]	Working on sequence end.
+[6511.34 ms]	Working on sequence start.
+[7157.9 ms]	Working on sequence end.
 Starting run number 8
-[57304.2 ms]	Working on sequence start.
-[61471.7 ms]	Working on sequence end.
+[7619.14 ms]	Working on sequence start.
+[8279.04 ms]	Working on sequence end.
 Starting run number 9
-[65120.8 ms]	Working on sequence start.
-[69015.5 ms]	Working on sequence end.
+[8727.57 ms]	Working on sequence start.
+[9381.75 ms]	Working on sequence end.
 Starting run number 10
-[72647.8 ms]	Working on sequence start.
-[76866.7 ms]	Working on sequence end.
+[9803.21 ms]	Working on sequence start.
+[10438.5 ms]	Working on sequence end.
 /!\	 Could not compute end adaper with heavy method
 /!\	 The resulting graph probably contains a loop.
 /!\	 For more details, read the error report below:
@@ -113,76 +113,76 @@ Sampled sequences:     40000
 Sampling length        100
 LC filter threshold:   1
 Adjusted LC threshold: 1
-Nb thread:             8
+Nb thread:             2
 Number of kept kmer:   500
 Number of runs:        20
 Verbosity level:       1
 
 A total of 20 runs will be performed.
-[41.2097 ms]	Parsing FASTA file
-[179.472 ms]	Number of sequences found: 3935.
+[2.22726 ms]	Parsing FASTA file
+[24.6424 ms]	Number of sequences found: 3935.
 Starting run number 1
 /!\ WARNING: Sequence set too small for the requested sample size
 /!\ WARNING: The whole set will be used.
-[188.8 ms]	Working on sequence start.
-[3876.43 ms]	Working on sequence end.
+[24.725 ms]	Working on sequence start.
+[664.56 ms]	Working on sequence end.
 Starting run number 2
-[7517.99 ms]	Working on sequence start.
-[11660.7 ms]	Working on sequence end.
+[1132.94 ms]	Working on sequence start.
+[1791.23 ms]	Working on sequence end.
 Starting run number 3
-[15138.9 ms]	Working on sequence start.
-[18963.4 ms]	Working on sequence end.
+[2219.81 ms]	Working on sequence start.
+[2886.85 ms]	Working on sequence end.
 Starting run number 4
-[22415.7 ms]	Working on sequence start.
-[26103.5 ms]	Working on sequence end.
+[3316.7 ms]	Working on sequence start.
+[3969.31 ms]	Working on sequence end.
 Starting run number 5
-[29008 ms]	Working on sequence start.
-[32556.4 ms]	Working on sequence end.
+[4400.23 ms]	Working on sequence start.
+[5105 ms]	Working on sequence end.
 Starting run number 6
-[35677.9 ms]	Working on sequence start.
-[39459.9 ms]	Working on sequence end.
+[5530.39 ms]	Working on sequence start.
+[6173.05 ms]	Working on sequence end.
 Starting run number 7
-[42663.3 ms]	Working on sequence start.
-[47181.5 ms]	Working on sequence end.
+[6601.15 ms]	Working on sequence start.
+[7249.31 ms]	Working on sequence end.
 Starting run number 8
-[50931.4 ms]	Working on sequence start.
-[55377.7 ms]	Working on sequence end.
+[7675.7 ms]	Working on sequence start.
+[8300.13 ms]	Working on sequence end.
 Starting run number 9
-[59428 ms]	Working on sequence start.
-[64003.3 ms]	Working on sequence end.
+[8748.73 ms]	Working on sequence start.
+[9430.35 ms]	Working on sequence end.
 Starting run number 10
-[68397.8 ms]	Working on sequence start.
-[73408.1 ms]	Working on sequence end.
+[10006 ms]	Working on sequence start.
+[10713.9 ms]	Working on sequence end.
 Starting run number 11
-[77988 ms]	Working on sequence start.
-[82195.9 ms]	Working on sequence end.
+[11171.6 ms]	Working on sequence start.
+[11828.1 ms]	Working on sequence end.
 Starting run number 12
-[86405.2 ms]	Working on sequence start.
-[90723.7 ms]	Working on sequence end.
+[12262.6 ms]	Working on sequence start.
+[12930 ms]	Working on sequence end.
 Starting run number 13
-[94232.7 ms]	Working on sequence start.
-[98526.1 ms]	Working on sequence end.
+[13410.1 ms]	Working on sequence start.
+[14024 ms]	Working on sequence end.
 Starting run number 14
-[102400 ms]	Working on sequence start.
-[106639 ms]	Working on sequence end.
+[14477.7 ms]	Working on sequence start.
+[15100 ms]	Working on sequence end.
 Starting run number 15
-[110163 ms]	Working on sequence start.
-[114212 ms]	Working on sequence end.
+[15549.8 ms]	Working on sequence start.
+[16186.3 ms]	Working on sequence end.
 Starting run number 16
-[117691 ms]	Working on sequence start.
-[121416 ms]	Working on sequence end.
+[16672.2 ms]	Working on sequence start.
+[17296.6 ms]	Working on sequence end.
 Starting run number 17
-[124818 ms]	Working on sequence start.
-[128794 ms]	Working on sequence end.
+[17745.2 ms]	Working on sequence start.
+[18430.7 ms]	Working on sequence end.
 Starting run number 18
-[131959 ms]	Working on sequence start.
-[135856 ms]	Working on sequence end.
+[18885.5 ms]	Working on sequence start.
+[19564.9 ms]	Working on sequence end.
 Starting run number 19
-[140359 ms]	Working on sequence start.
-[145214 ms]	Working on sequence end.
+[20012.5 ms]	Working on sequence start.
+[20678.9 ms]	Working on sequence end.
 Starting run number 20
-[149741 ms]	Working on sequence start.
-[153922 ms]	Working on sequence end.
+[21126.3 ms]	Working on sequence start.
+[21771.5 ms]	Working on sequence end.
 /!\	 Could not compute end adaper with heavy method
 /!\	 The resulting graph probably contains a loop.
 /!\	 For more details, read the error report below:
@@ -304,9 +304,9 @@ Starting run number 20
 /!\	 
 
 Starting with a 10 run batch.
-Using config file:/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config
+Using config file:/home/guillaume/miniconda3/envs/porechop_abi/lib/python3.10/site-packages/porechop_abi/ab_initio.config
 Command line:
- /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/approx_counter Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0.fastq -v 1 --config /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count -nt 8 -mr 10
+ /home/guillaume/miniconda3/envs/porechop_abi/lib/python3.10/site-packages/porechop_abi/approx_counter ../Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0.fastq -v 1 --config /home/guillaume/miniconda3/envs/porechop_abi/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count -nt 2 -mr 10
 Assembling run 1
 Assembling run 2
 Assembling run 3
@@ -318,9 +318,9 @@ Assembling run 8
 Assembling run 9
 Assembling run 10
 Following with a 20 run batch.
-Using config file:/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config
+Using config file:/home/guillaume/miniconda3/envs/porechop_abi/lib/python3.10/site-packages/porechop_abi/ab_initio.config
 Command line:
- /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/approx_counter Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0.fastq -v 1 --config /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count_sup -nt 8 -mr 20
+ /home/guillaume/miniconda3/envs/porechop_abi/lib/python3.10/site-packages/porechop_abi/approx_counter ../Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0.fastq -v 1 --config /home/guillaume/miniconda3/envs/porechop_abi/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count_sup -nt 2 -mr 20
 Assembling run 1
 Assembling run 2
 Assembling run 3
@@ -357,7 +357,7 @@ Building consensus adapter objects
 The inference of adapters sequence is done.
 
 [1m[4mLoading reads[0m
-Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0.fastq
+../Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0.fastq
 3,935 reads loaded
 
 
@@ -514,5 +514,5 @@ Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0.fa
 
 [1m[4mSaving trimmed reads to file[0m
 
-Saved result to /home/guillaume/ChimereNanoporePipeline/PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0PoreChopReads.fastq
+Saved result to /home/guillaume/ChimereNanoporePipeline/workflow/PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_36_0PoreChopReads.fastq
 
