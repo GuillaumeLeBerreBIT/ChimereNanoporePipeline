@@ -5,7 +5,9 @@ workflow/PorechopABI/**
 workflow/ProwlerProcessed/**
 workflow/SACRAResults/**
 workflow/MITOS2Results/**
+workflow/FlyeResults/**
 .snakemake/**
+workflow/.snakemake/**
 workflow/.snakemake/**
 !workflow/AssemblyFasta/.gitkeep
 !workflow/Diamond/.gitkeep
@@ -13,3 +15,4 @@ workflow/.snakemake/**
 !workflow/ProwlerProcessed/.gitkeep
 !workflow/SACRAResults/.gitkeep
 !workflow/MITOS2Results/.gitkeep
+!workflow/FlyeResults/.gitkeep

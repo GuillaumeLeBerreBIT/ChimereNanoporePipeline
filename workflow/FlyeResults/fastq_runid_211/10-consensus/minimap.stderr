@@ -1,12 +1,11 @@
-[M::mm_idx_gen::0.006*1.82] collected minimizers
-[M::mm_idx_gen::0.010*3.50] sorted minimizers
-[M::main::0.010*3.48] loaded/built the index for 5 target sequence(s)
-[M::mm_mapopt_update::0.010*3.33] mid_occ = 18
+[M::mm_idx_gen::0.006*1.68] collected minimizers
+[M::mm_idx_gen::0.019*3.43] sorted minimizers
+[M::main::0.019*3.43] loaded/built the index for 5 target sequence(s)
+[M::mm_mapopt_update::0.020*3.38] mid_occ = 18
 [M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 5
-[M::mm_idx_stat::0.011*3.22] distinct minimizers: 2891 (63.37% are singletons); average occurrences: 1.965; average spacing: 5.469; total length: 31069
-[samfaipath] build FASTA index...
-[M::worker_pipeline::0.425*4.21] mapped 4115 sequences
-[M::main] Version: 2.24-r1155-dirty
-[M::main] CMD: flye-minimap2 -x map-ont -t 8 -a -p 0.5 -N 10 --sam-hit-only -L -K 1G -z 1000 -Q --secondary-seq -I 64G /home/genomics/gleberre/FullPipeline/workflow/FlyeResults/fastq_runid_211/00-assembly/draft_assembly.fasta /home/genomics/gleberre/FullPipeline/workflow/AssemblyFasta/fastq_runid_211FastaForAssembly-@-Removed.fasta
-[M::main] Real time: 0.427 sec; CPU: 1.792 sec; Peak RSS: 0.194 GB
+[M::mm_idx_stat::0.020*3.36] distinct minimizers: 2891 (63.37% are singletons); average occurrences: 1.965; average spacing: 5.469; total length: 31069
+[M::worker_pipeline::0.457*5.71] mapped 4115 sequences
+[M::main] Version: 2.18-r1015
+[M::main] CMD: flye-minimap2 -x map-ont -t 20 -a -p 0.5 -N 10 --sam-hit-only -L -K 1G -z 1000 -Q --secondary-seq -I 64G /home/genomics/gleberre/FullPipeline/workflow/FlyeResults/fastq_runid_211/00-assembly/draft_assembly.fasta /home/genomics/gleberre/FullPipeline/workflow/AssemblyFasta/fastq_runid_211FastaForAssembly-@-Removed.fasta
+[M::main] Real time: 0.461 sec; CPU: 2.615 sec; Peak RSS: 0.228 GB
 [bam_sort_core] merging from 0 files and 4 in-memory blocks...
