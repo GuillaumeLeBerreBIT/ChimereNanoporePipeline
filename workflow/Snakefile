@@ -299,6 +299,7 @@ rule FlyeAssembly:
 ################# MITOS ####################
 # This is a mitogenome annotator. Detecting the genes present in the addembly made by Flye.   
 # Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
+# There were some conflicts with _JAVA_OPTIONS which got resolved by unset these. It works without if there is no JAVA version present, but when having Java (different verion) it  confilcts. 
 rule MITOS:
     input: 
         FlyeFasta = f"FlyeResults/{identifier}/assembly.fasta"
@@ -317,6 +318,7 @@ rule MITOS:
         4
     shell:
         """
+        unset _JAVA_OPTIONS
         runmitos.py -i {input.FlyeFasta} -c 5 -r {params.MitRefSeq} -o {params.MitosFolder} --refdir {params.RefFolder}
         """
 
