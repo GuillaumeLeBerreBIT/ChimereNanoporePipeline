@@ -33,7 +33,7 @@ datamax = config['prowler']['datamax']
 gene = config['genes']
 
 #################### RULE ALL ####################
-# This rule contains the target files it will run all rules before that target file and only adavnces when the 
+# This rule contains the target files it will run all rules before that target file and only advances when the 
 # (all) target file(s) are present at the set location. 
 rule all:
     input:
@@ -94,7 +94,7 @@ for i in FILES:
 #################### SACRA ####################
 # SACRA splits the chimeric reads to the non-chimeric reads in long reads of MDA-treated sample. 
 # Make sure the path to the scripts folder is added onto the path, otherwise SACRA won't be able to find the subscripts. 
-# After running each rule unwanted files will eb cleared == Memory efficiency. 
+# After running each rule unwanted files will be cleared == Memory efficiency. 
 for i in FILES:    
     rule:
         input:
@@ -298,6 +298,8 @@ rule FlyeAssembly:
         """
 
 ################# BANDAGE ####################
+# Flye generates different output files, summary of the assembly results. One of the files is a .gfa file. 
+# BANDAGE can visualize the assemblys using the .gfa files. With a command line argument can save the image as png. 
 rule BANDAGE:
     input: 
         f"FlyeResults/{identifier}/assembly_graph.gfa"
