@@ -283,7 +283,8 @@ rule FlyeAssembly:
     input: 
         assemFlye = f"AssemblyFasta/{identifier}FastaForAssembly-@-Removed.fasta"
     output: 
-        FlyeFasta = f"FlyeResults/{identifier}/assembly.fasta"
+        FlyeFasta = f"FlyeResults/{identifier}/assembly.fasta",
+        FlyeGraph = f"FlyeResults/{identifier}/assembly_graph.gfa"
     conda:
         "envs/flye.yaml"
     params:
@@ -294,6 +295,21 @@ rule FlyeAssembly:
     shell:
         """
         flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 20
+        """
+
+################# BANDAGE ####################
+rule BANDAGE:
+    input: 
+        f"FlyeResults/{identifier}/assembly_graph.gfa"
+    output:
+        f"../results/{identifier}/{identifier}BANDAGE-FlyeAssembly.jpg"
+    conda:
+        "envs/bandage.yaml"
+    threads: 
+        4
+    shell:
+        """
+        Bandage image {input} {output} --names --lengths --depth --fontsize 4
         """
 
 ################# MITOS ####################
@@ -330,7 +346,9 @@ rule StatisticsToHTML:
         sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta",
         Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
         assem = expand("AssemblyFasta/{identifier}FastaForAssembly.fasta", identifier = config['identifier']),
+        FlyeGraph = f"../results/{identifier}/{identifier}BANDAGE-FlyeAssembly.jpg",
         MitosFasta = f"MITOS2Results/{identifier}/0/result.faa"
+        
     output: 
         f"../results/{identifier}/{identifier}Results.html"
     conda:
@@ -345,5 +363,5 @@ rule StatisticsToHTML:
         4
     shell: 
         """
-        python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF} {params.mitosFold}
+        python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF} {input.FlyeGraph} {params.mitosFold}
         """
