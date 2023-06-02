@@ -58,10 +58,10 @@ for i in FILES:
         conda: 
             "envs/porechop_abi.yaml"
         threads: 
-            4
+            8
         shell: 
             """
-            porechop_abi -abi -i {input} -o {output.reads} -t 2 > {output.statistics} 2>&1
+            porechop_abi -abi -i {input} -o {output.reads} -t 8 > {output.statistics} 2>&1
             """
     
 
@@ -136,7 +136,6 @@ first_file = FILES[0]
 rule ConcatFiles:
     input: 
         expand("SACRAResults/{identifier}/{i}SacraResults.fasta", identifier = identifier, i = FILES)
-        #dummySacra = expand("SACRAResults/{identifier}/{i}SacraResults.fasta", identifier = config['identifier'], i = FILES)
     output: 
         outputFile = f"SACRAResults/{identifier}Concatfiles.fasta"
     conda:
