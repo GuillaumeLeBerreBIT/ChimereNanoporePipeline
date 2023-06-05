@@ -41,7 +41,7 @@ rule ConcatFiles:
     input: 
         f"{inputfolder}/"
     output: 
-        outputFile = f"PorechopABI/{identifier}CBSConcatfiles.fasta"
+        outputFile = f"PorechopABI/{identifier}CBSConcatfiles.fastq"
     conda:
         "envs/pythonChimereWorkflow.yaml"
     threads: 
@@ -59,7 +59,7 @@ rule ConcatFiles:
 
 rule PorechopABI:
     input: 
-        f"PorechopABI/{identifier}CBSConcatfiles.fasta"
+        f"PorechopABI/{identifier}CBSConcatfiles.fastq"
     output: 
         reads = f"PorechopABI/{identifier}/CBSPoreChopReads.fastq",
         statistics = f"../results/{identifier}/PorechopABI/{identifier}CBSStatistics.txt"
