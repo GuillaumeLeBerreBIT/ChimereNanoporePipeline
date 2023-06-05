@@ -90,17 +90,33 @@ params_id = [65,85,75]
 
 # Iterate over parameter values
 for ids in params_id:
+    # Empty list with rewritten line
+    newlines = [] 
+    # Setting a counter, to count the ids
+    count = 0
     # Update the config file with the new parameter value
     with open('config_snakemake.yaml', 'r') as file:
-        config_data = file.read()
-    
-    ################### STEP 3 CALCULATE ID THRESHOLD CARs ###################
-    # Last value is default (50 %)
-    updated_config_data = re.sub(r"id: \d{1,2}", f"id: {ids}", config_data)
-    
+        config_data = file.readlines()
+        ################### STEP 3 CALCULATE ID THRESHOLD CARs ###################
+        # Last value is default (75 %)
+        for line in config_data:
+            # Each time it encounters an "id:" count one up. If the ":" not placed, matches on identity as well!
+            if re.search(r"\s+id:", line):
+                count += 1
+                # If the count is equal to 2 then edit the line only. Matching 2 conditions
+                if count == 2:
+                    # Using regular expression to replace the value of the line
+                    updated_config_data = re.sub(r"id: \d{1,2}", f"id: {ids}", line)
+                    newlines.append(updated_config_data)
+                else:
+                    newlines.append(line)
+            else:
+                newlines.append(line)
+
     # Save the updated config file
     with open('config_snakemake.yaml', 'w') as file:
-        file.write(updated_config_data)
+        for item in newlines:
+            file.write(item)
     
     # Run the bash command with the updated config file
     #command = 'scripts/SACRA.sh -i reads.fasta -p ReadsAfterSacra.fasta -t 4 -c ../config/config_snakemake.yaml'

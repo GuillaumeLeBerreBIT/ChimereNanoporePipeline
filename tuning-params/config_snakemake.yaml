@@ -29,7 +29,7 @@ pcratio:
   # Minimum length of alignment start/end position from candidate chimeric position
   ad: 50 
   # Alignment identity threshold of CARs
-  id: 75
+  id: 85
 
 mpc:
   # If the mPC ratio is calculated from spike-in reference genome, set it to true, otherwise, set it false.
