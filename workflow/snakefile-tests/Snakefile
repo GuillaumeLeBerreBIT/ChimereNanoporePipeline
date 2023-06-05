@@ -1,0 +1,355 @@
+#################### MODULES ####################
+import os
+#################### CONFIG FILE ####################
+configfile: "../config/config_snakemake.yaml"
+#################### CONFIG VARIABLES ####################
+# Calling for the starting folder as variable from the config file. 
+inputfolder = config['startfolder']
+
+# Identifier == Retraceability & Reproduceability
+identifier = config["identifier"]
+# Select L to clip leading Ns, T to trim trialing Ns and LT to trim both (default=LT)
+clip = config['prowler']['clip']
+# The fragmetation mode default U0
+fragments = config['prowler']['fragments']
+# Set the trimming algorithm Static == "S" OR Dynamic == "D"
+trimmode = config['prowler']['trimmode']
+# Set the quality score trimming treshold.
+qscore = config['prowler']['qscore']
+# Change the size of the trimming window.
+windowsize = config['prowler']['windowsize']
+# The minimum acceptable numer of bases in a read
+minlen = config['prowler']['minlen']
+# Select a maximum data subsample in MB (default = 0, entire sample)
+datamax = config['prowler']['datamax']
+# The mitochondriol genes
+gene = config['genes']
+
+#################### RULE ALL ####################
+# This rule will concatenate all the files from on folder togehter.
+# When to path is given, it will check automatically all the files in the folder.  
+rule all:
+    input:
+        # Set the target file == HTML REPORT
+        f"../results/{identifier}/{identifier}CBSResults.html"
+
+################# CONCAT FILES ####################
+# Combining all fasta files after SACRA in to one big file. 
+# Can experiment with this may not even have to wait, extra security check
+
+rule ConcatFiles:
+    input: 
+        f"{inputfolder}/"
+    output: 
+        outputFile = f"PorechopABI/{identifier}CBSConcatfiles.fasta"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
+    threads: 
+        4
+    shell: 
+        """
+        python3 scripts/ConcatFiles.py {input} {output.outputFile} 
+        """
+
+#################### PORECHOP ABI ####################
+# Porechop ABI will detect and remove the adapters present on Nanopore reads. 
+# -abi flag allows to first guess the adapters from the reads, add the adapters to the list of Porechop adapters and then run Porechop. 
+# The output fastq files saved in a folder & statistical report from terminal in another folder. 
+# THE AMOUNT OF THREADS MORE THEN THE BASH COMMAND PORECHOP
+
+rule PorechopABI:
+    input: 
+        f"PorechopABI/{identifier}CBSConcatfiles.fasta"
+    output: 
+        reads = f"PorechopABI/{identifier}/CBSPoreChopReads.fastq",
+        statistics = f"../results/{identifier}/PorechopABI/{identifier}CBSStatistics.txt"
+    conda: 
+        "envs/porechop_abi.yaml"
+    threads: 
+        8
+    shell: 
+        """
+        porechop_abi -abi -i {input} -o {output.reads} -t 8 > {output.statistics} 2>&1
+        """
+    
+
+#################### PROWLER TRIMMING ####################
+# Have to format the name of the output file since it is dependant on parameters provided by the config file.  
+# Trimming tool for oxford nanopore sequences. Based on given parameters it will perform quality trimming of the fastq reads, directly coverting it to FASTA file. 
+# Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line. 
+    
+rule ProwlerTrim:
+    input:
+        out_fastq = f"PorechopABI/{identifier}/CBSPoreChopReads.fastq" 
+    output:
+        out_prow_fasta = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta" 
+            
+    params:
+        clip = config['prowler']['clip'], 
+        fragments = config['prowler']['fragments'],
+        trimmode = config['prowler']['trimmode'],
+        qscore = config['prowler']['qscore'],
+        windowsize = config['prowler']['windowsize'],
+        minlen = config['prowler']['minlen'],
+        datamax = config['prowler']['datamax'],
+        folder = config['identifier']
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
+    threads:
+        1
+    shell:
+        """
+        python3 scripts/TrimmerLarge.py -f {input.out_fastq} -i PorechopABI/{params.folder}/ -o ProwlerProcessed/{params.folder}/ -m {params.trimmode} -c {params.clip} -g {params.fragments} -q {params.qscore} -w {params.windowsize} -l {params.minlen} -d {params.datamax} -r '.fasta'
+        """
+#################### SACRA ####################
+# SACRA splits the chimeric reads to the non-chimeric reads in long reads of MDA-treated sample. 
+# Make sure the path to the scripts folder is added onto the path, otherwise SACRA won't be able to find the subscripts. 
+# This will be noticed as the output files will be empty & in the terminal says to the steps 3 & 4 command not found. 
+# After running rule unwanted files will be cleared == Memory efficiency. 
+   
+
+rule SACRA:
+    input:
+        in_sacra = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta"
+            
+    output: 
+        sacraFull = f"SACRAResults/{identifier}CBSSacraResults.fasta"    
+    conda:
+        "envs/sacra.yaml"
+    params:
+        blasttab = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.blasttab",
+        bck = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.bck",
+        des = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.des",
+        prj = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.prj",
+        sds = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.sds",
+        ssp = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.ssp",
+        suf = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.suf",
+        tis = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.tis"
+    threads:
+        4
+
+    shell: 
+        """
+        scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 4 -c ../config/config_snakemake.yaml
+        rm {params.blasttab}* {params.bck} {params.des} {params.prj} {params.sds} {params.ssp} {params.suf} {params.tis}
+        """
+
+################# FILTER SACRA ####################
+# Makes use of a script to filter the fasta files based on the length of the reads, to only retain above certain treshold.
+rule FilterFastaSACRA:
+    input:
+        sacraUF = f"SACRAResults/{identifier}CBSSacraResults.fasta"
+    output:
+        sacraF = f"SACRAResults/{identifier}CBSSacraResultsFiltered.fasta"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
+    params:
+        bases = config['filterSACRA']['bases']
+    threads: 
+        4
+    shell:
+        """
+        python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}
+        """
+    
+#Makes use of a script to filter the fasta files based on the length of the reads, to only retain above certain treshold.
+#rule FilterFastaSACRA:
+#    input:
+#        sacraUF = f"SACRAResults/{identifier}Concatfiles.fasta"
+#    output:
+#        sacraF = f"SACRAResults/{identifier}SacraResultsFiltered.fasta"
+#    conda:
+#        "envs/seqkit.yaml"
+#    params:
+#        bases = config['filterSACRA']['bases']
+#    threads: 
+#        4
+#    shell:
+#        """
+#        seqkit seq -m {params.bases} {input.sacraUF} > {output.sacraF}
+#        """
+
+################# DIAMOND ####################
+# DIAMOND will be used to BLASTX the fasta file against the mitochondriol genes, split up into 13 databases.
+# It will generate the output in a folder containing 13 csv files, each containing the BLASTX results against one of the genes. 
+rule DiamondAlignment:
+    input: 
+        sacraF = f"SACRAResults/{identifier}CBSSacraResultsFiltered.fasta"
+    output: 
+        DiamondATP6 = f"Diamond/{identifier}/{identifier}Diamond_ATP6.csv",
+        DiamondATP8 = f"Diamond/{identifier}/{identifier}Diamond_ATP8.csv",
+        DiamondCOX1 = f"Diamond/{identifier}/{identifier}Diamond_COX1.csv",
+        DiamondCOX2 = f"Diamond/{identifier}/{identifier}Diamond_COX2.csv",
+        DiamondCOX3 = f"Diamond/{identifier}/{identifier}Diamond_COX3.csv",
+        DiamondCYTB = f"Diamond/{identifier}/{identifier}Diamond_CYTB.csv",
+        DiamondNAD1 = f"Diamond/{identifier}/{identifier}Diamond_NAD1.csv",
+        DiamondNAD2 = f"Diamond/{identifier}/{identifier}Diamond_NAD2.csv",
+        DiamondNAD3 = f"Diamond/{identifier}/{identifier}Diamond_NAD3.csv",
+        DiamondNAD4 = f"Diamond/{identifier}/{identifier}Diamond_NAD4.csv",
+        DiamondNAD4L = f"Diamond/{identifier}/{identifier}Diamond_NAD4L.csv",
+        DiamondNAD5 = f"Diamond/{identifier}/{identifier}Diamond_NAD5.csv",
+        DiamondNAD6 = f"Diamond/{identifier}/{identifier}Diamond_NAD6.csv"
+    conda:
+        "envs/diamond.yaml"
+    params:
+        k = config['Diamond']['max-target-seq'],
+        f = config['Diamond']['output-format'],
+        folder = config['identifier']
+    threads: 
+        4
+    # Will create a folder with the identifier, since then only the resulst to a specific run belong to that folder. 
+    # To generate statistical output its easier to handel the files in a  determined directory.  
+    # Using """ Can all have different bash commands each executed on seperate line.
+    # Do not have to set a "mkdir folder" since the path defined will automatically create a destined folder. 
+    shell: 
+        """
+        diamond blastx -d ../resources/DIAMOND-DB/ATP6 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondATP6}
+        diamond blastx -d ../resources/DIAMOND-DB/ATP8 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondATP8}
+        diamond blastx -d ../resources/DIAMOND-DB/COX1 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX1}
+        diamond blastx -d ../resources/DIAMOND-DB/COX2 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX2}
+        diamond blastx -d ../resources/DIAMOND-DB/COX3 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX3}
+        diamond blastx -d ../resources/DIAMOND-DB/CYTB -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCYTB}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD1 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD1}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD2 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD2}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD3 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD3}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD4 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD4}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD4L -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD4L}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD5 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD5}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD6 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD6}
+        """
+
+################# FILTER DIAMOND ####################
+# Having all the BLASTX results in a csv file, all gathered in a folder. The script will scan folder for all files being a csv file and extract the results. 
+# In the config file can set up filters: ID percentage, Length of residues and e-value. 
+# It will generate statistical figures & rewrite the BLAST hits to a new FASTA file for ASSEMBLY.  
+rule FilteringDIAMOND:
+    input: 
+        Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
+        #inFol = expand("Diamond/{fold}", fold = config['identifier']),
+        sacraF = f"SACRAResults/{identifier}CBSSacraResultsFiltered.fasta"
+    output: 
+        assem = f"AssemblyFasta/{identifier}CBSFastaForAssembly.fasta"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
+    params:
+        # Define folders under params and not as output otherwise will get an error.
+        folder = config['identifier'],
+        idper = config['filtDIA']['idperc'],
+        length = config['filtDIA']['len'],
+        evalue = config['filtDIA']['eval']
+    threads: 
+        4
+    shell:
+        """
+        python3 scripts/DiamondToAssembly.py -i {params.idper} -l {params.length} -e {params.evalue} Diamond/{params.folder} {input.sacraF} {output.assem}
+        """
+
+################# REMOVE@HEADERS ####################
+# The headers of sequences have @ at the start. Flye will think these are all header lines from SAM file. 
+# By removing them Flye will parse the sequences. This file can be used for mapping then as well due to SAMTOOLS could not parse the files of the same reason. 
+rule EditingHeaders:
+    input: 
+        assem = f"AssemblyFasta/{identifier}CBSFastaForAssembly.fasta"
+    output: 
+        assemEdit = f"AssemblyFasta/{identifier}CBSFastaForAssembly-@-Removed.fasta"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
+    threads: 
+        4
+    shell:
+        """
+        python3 scripts/Remove@FromHeaders.py {input.assem} {output.assemEdit}
+        """
+
+################# FLYE ####################
+# Flye is a de novo assembler for single-molecule sequencing reads, such as those produced by Oxford Nanopore Technologies
+# Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
+#mkdir {params.FlyeFolder} >> Do not need to create folder since it  will be made in the go. 
+rule FlyeAssembly:
+    input: 
+        assemFlye = f"AssemblyFasta/{identifier}CBSFastaForAssembly-@-Removed.fasta"
+    output: 
+        FlyeFasta = f"FlyeResults/{identifier}CBS/assembly.fasta",
+        FlyeGraph = f"FlyeResults/{identifier}CBS/assembly_graph.gfa"
+    conda:
+        "envs/flye.yaml"
+    params:
+        # Define folders under params and not as output otherwise will get an error.
+        FlyeFolder = f"FlyeResults/{identifier}CBS/"
+    threads: 
+        8
+    shell:
+        """
+        flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 8
+        """
+
+################# BANDAGE ####################
+# Flye generates different output files, summary of the assembly results. One of the files is a .gfa file. 
+# BANDAGE can visualize the assemblys using the .gfa files. With a command line argument can save the image as png. 
+rule BANDAGE:
+    input: 
+        f"FlyeResults/{identifier}CBS/assembly_graph.gfa"
+    output:
+        f"../results/{identifier}/{identifier}CBSBANDAGE-FlyeAssembly.jpg"
+    conda:
+        "envs/bandage.yaml"
+    threads: 
+        4
+    shell:
+        """
+        Bandage image {input} {output} --names --lengths --depth --fontsize 4
+        """
+
+################# MITOS ####################
+# This is a mitogenome annotator. Detecting the genes present in the addembly made by Flye.   
+# Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
+# There were some conflicts with _JAVA_OPTIONS which got resolved by unset these. It works without if there is no JAVA version present, but when having Java (different verion) it  confilcts. 
+rule MITOS:
+    input: 
+        FlyeFasta = f"FlyeResults/{identifier}CBS/assembly.fasta"
+    output: 
+        # Will define the output of the first folder since the amount of contigs is variable. 
+        MitosFasta = f"MITOS2Results/{identifier}CBS/0/result.faa"
+        
+    conda:
+        "envs/mitos2.yaml"
+    params:
+        # Define folders under params and not as output otherwise will get an error.
+        MitosFolder = f"MITOS2Results/{identifier}CBS/",
+        RefFolder = f"../resources/MITOS2-DB/",
+        MitRefSeq = f"refseq89m/"
+    threads: 
+        4
+    shell:
+        """
+        unset _JAVA_OPTIONS
+        runmitos.py -i {input.FlyeFasta} -c 5 -r {params.MitRefSeq} -o {params.MitosFolder} --refdir {params.RefFolder}
+        """
+
+################# STATISTICS TO HTML ####################
+# Combining all different files used to generate a general report file.
+# Done by a pathon script that will read in files from certain folders.   
+rule StatisticsToHTML:
+    input: 
+        sacraF = f"SACRAResults/{identifier}CBSSacraResultsFiltered.fasta",
+        Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
+        assem = f"AssemblyFasta/{identifier}CBSFastaForAssembly.fasta",
+        FlyeGraph = f"../results/{identifier}/{identifier}CBSBANDAGE-FlyeAssembly.jpg",
+        MitosFasta = f"MITOS2Results/{identifier}CBS/0/result.faa"
+        
+    output: 
+        f"../results/{identifier}/{identifier}Results.html"
+    conda:
+        "envs/pythonChimereWorkflow.yaml"
+    params:
+        # Set the folders as parameters to give on the command line
+        poreStat = f"../results/{identifier}/PorechopABI/",
+        poreFastq = f"PorechopABI/{identifier}/",
+        prowFold = f"ProwlerProcessed/{identifier}/",
+        mitosFold = f"MITOS2Results/{identifier}CBS/"
+    threads: 
+        4
+    shell: 
+        """
+        python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF} {input.FlyeGraph} {params.mitosFold}
+        """
