@@ -96,6 +96,7 @@ for i in FILES:
 #################### SACRA ####################
 # SACRA splits the chimeric reads to the non-chimeric reads in long reads of MDA-treated sample. 
 # Make sure the path to the scripts folder is added onto the path, otherwise SACRA won't be able to find the subscripts. 
+# This will be noticed as the output files will be empty & in the terminal says to the steps 3 & 4 command not found. 
 # After running each rule unwanted files will be cleared == Memory efficiency. 
 for i in FILES:    
     rule:
