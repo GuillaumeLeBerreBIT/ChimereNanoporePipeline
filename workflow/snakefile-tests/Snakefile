@@ -338,7 +338,7 @@ rule StatisticsToHTML:
         MitosFasta = f"MITOS2Results/{identifier}CBS/0/result.faa"
         
     output: 
-        f"../results/{identifier}/{identifier}Results.html"
+        f"../results/{identifier}/{identifier}CBSResults.html"
     conda:
         "envs/pythonChimereWorkflow.yaml"
     params:
