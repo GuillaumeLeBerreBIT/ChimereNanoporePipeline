@@ -45,7 +45,7 @@ rule ConcatFiles:
     conda:
         "envs/pythonChimereWorkflow.yaml"
     threads: 
-        4
+        8
     shell: 
         """
         python3 scripts/ConcatFiles.py {input} {output.outputFile} 
@@ -96,7 +96,7 @@ rule ProwlerTrim:
     conda:
         "envs/pythonChimereWorkflow.yaml"
     threads:
-        1
+        8
     shell:
         """
         python3 scripts/TrimmerLarge.py -f {input.out_fastq} -i PorechopABI/{params.folder}/ -o ProwlerProcessed/{params.folder}/ -m {params.trimmode} -c {params.clip} -g {params.fragments} -q {params.qscore} -w {params.windowsize} -l {params.minlen} -d {params.datamax} -r '.fasta'
@@ -126,11 +126,11 @@ rule SACRA:
         suf = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.suf",
         tis = f"ProwlerProcessed/{identifier}/CBSPoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.tis"
     threads:
-        4
+        8
 
     shell: 
         """
-        scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 4 -c ../config/config_snakemake.yaml
+        scripts/SACRA.sh -i {input.in_sacra} -p {output.sacraFull} -t 8 -c ../config/config_snakemake.yaml
         rm {params.blasttab}* {params.bck} {params.des} {params.prj} {params.sds} {params.ssp} {params.suf} {params.tis}
         """
 
@@ -146,7 +146,7 @@ rule FilterFastaSACRA:
     params:
         bases = config['filterSACRA']['bases']
     threads: 
-        4
+        8
     shell:
         """
         python3 scripts/Filtering_SACRA_sequences.py -b {params.bases} {input.sacraUF} {output.sacraF}
@@ -196,26 +196,26 @@ rule DiamondAlignment:
         f = config['Diamond']['output-format'],
         folder = config['identifier']
     threads: 
-        4
+        8
     # Will create a folder with the identifier, since then only the resulst to a specific run belong to that folder. 
     # To generate statistical output its easier to handel the files in a  determined directory.  
     # Using """ Can all have different bash commands each executed on seperate line.
     # Do not have to set a "mkdir folder" since the path defined will automatically create a destined folder. 
     shell: 
         """
-        diamond blastx -d ../resources/DIAMOND-DB/ATP6 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondATP6}
-        diamond blastx -d ../resources/DIAMOND-DB/ATP8 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondATP8}
-        diamond blastx -d ../resources/DIAMOND-DB/COX1 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX1}
-        diamond blastx -d ../resources/DIAMOND-DB/COX2 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX2}
-        diamond blastx -d ../resources/DIAMOND-DB/COX3 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCOX3}
-        diamond blastx -d ../resources/DIAMOND-DB/CYTB -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondCYTB}
-        diamond blastx -d ../resources/DIAMOND-DB/NAD1 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD1}
-        diamond blastx -d ../resources/DIAMOND-DB/NAD2 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD2}
-        diamond blastx -d ../resources/DIAMOND-DB/NAD3 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD3}
-        diamond blastx -d ../resources/DIAMOND-DB/NAD4 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD4}
-        diamond blastx -d ../resources/DIAMOND-DB/NAD4L -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD4L}
-        diamond blastx -d ../resources/DIAMOND-DB/NAD5 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD5}
-        diamond blastx -d ../resources/DIAMOND-DB/NAD6 -q {input.sacraF} -k {params.k} -f {params.f} -p 4 -o {output.DiamondNAD6}
+        diamond blastx -d ../resources/DIAMOND-DB/ATP6 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondATP6}
+        diamond blastx -d ../resources/DIAMOND-DB/ATP8 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondATP8}
+        diamond blastx -d ../resources/DIAMOND-DB/COX1 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondCOX1}
+        diamond blastx -d ../resources/DIAMOND-DB/COX2 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondCOX2}
+        diamond blastx -d ../resources/DIAMOND-DB/COX3 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondCOX3}
+        diamond blastx -d ../resources/DIAMOND-DB/CYTB -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondCYTB}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD1 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondNAD1}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD2 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondNAD2}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD3 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondNAD3}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD4 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondNAD4}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD4L -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondNAD4L}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD5 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondNAD5}
+        diamond blastx -d ../resources/DIAMOND-DB/NAD6 -q {input.sacraF} -k {params.k} -f {params.f} -p 8 -o {output.DiamondNAD6}
         """
 
 ################# FILTER DIAMOND ####################
@@ -238,7 +238,7 @@ rule FilteringDIAMOND:
         length = config['filtDIA']['len'],
         evalue = config['filtDIA']['eval']
     threads: 
-        4
+        8
     shell:
         """
         python3 scripts/DiamondToAssembly.py -i {params.idper} -l {params.length} -e {params.evalue} Diamond/{params.folder} {input.sacraF} {output.assem}
@@ -255,7 +255,7 @@ rule EditingHeaders:
     conda:
         "envs/pythonChimereWorkflow.yaml"
     threads: 
-        4
+        8
     shell:
         """
         python3 scripts/Remove@FromHeaders.py {input.assem} {output.assemEdit}
@@ -294,7 +294,7 @@ rule BANDAGE:
     conda:
         "envs/bandage.yaml"
     threads: 
-        4
+        8
     shell:
         """
         Bandage image {input} {output} --names --lengths --depth --fontsize 4
@@ -319,7 +319,7 @@ rule MITOS:
         RefFolder = f"../resources/MITOS2-DB/",
         MitRefSeq = f"refseq89m/"
     threads: 
-        4
+        8
     shell:
         """
         unset _JAVA_OPTIONS
@@ -348,7 +348,7 @@ rule StatisticsToHTML:
         prowFold = f"ProwlerProcessed/{identifier}/",
         mitosFold = f"MITOS2Results/{identifier}CBS/"
     threads: 
-        4
+        8
     shell: 
         """
         python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF} {input.FlyeGraph} {params.mitosFold}
