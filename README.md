@@ -97,6 +97,11 @@ Depending the system using, will have a limited amount of resources. Can limit t
 ```
 snakemake --use-conda --jobs 8
 ```
+Depending on the amount of cores can use need to lower it. It is very important to set the right amount of threads/jobs it can use. When the jobs is set differently then given here, NEED to change the amount of threads Porechop ABI rule can use. When there aren't enough threads available to perform the Porechop ABI rule or too many Porechop rules are running in parallell, results in the pipeline crashing.
+
+Flye is also very computational intensive. When encountering memomory problems need to add `--asm-coverage` & `--genome-size` in the command from flye itself. 
+
+Other programs when the amount of cores specified are not available will be able to scale down the processes. 
 
 ## Credits
 
