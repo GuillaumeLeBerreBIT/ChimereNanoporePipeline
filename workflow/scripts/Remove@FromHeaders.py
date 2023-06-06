@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-#####################################################################
-# Remove @ from headers 
-#####################################################################
-# MODULES
-#####################################################################
+############################# INTRODUCTION #############################
+# Author: Guillaume Le Berre
+# GitHub: https://github.com/GuillaumeLeBerreBIT
+# 
+# Remove the @ from header sequences. Using Flye it conlficted to have @ in the header present. 
+# The same problem occured using samtools, since it thinks it is a SAM-header. 
+#################################### MODULES ####################################
 import argparse, re
 
-#####################################################################
-# COMMAND LINE INPUT
-#####################################################################
+#################################### COMMAND LINE INPUT ####################################
 parser = argparse.ArgumentParser(description='Remove @ from headers - Nanopore data')                                                         
 parser.add_argument('inputFile', type=str, 
                     help='Provide the input file to remove @ from the headers. Due to complications parsing to samtools/Flye. ')
@@ -18,9 +18,7 @@ parser.add_argument('outputFile', type=str,
 #                    help='Give a target File.')
 args = parser.parse_args()
 
-#####################################################################
-# FILE HANDLING
-#####################################################################
+#################################### FILE HANDLING ####################################
 
 with open(args.outputFile, "w") as file_to_write:
     with open(args.inputFile, "r") as file_to_read:

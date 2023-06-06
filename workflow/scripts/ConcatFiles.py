@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-#####################################################################
-# Concatenate multiple files togheter
+############################# INTRODUCTION #############################
+# Author: Guillaume Le Berre
+# GitHub: https://github.com/GuillaumeLeBerreBIT
+# 
+# Purpose: To concatenate multiple files togheter
+# 
 #####################################################################
 # MODULES
 #####################################################################
@@ -46,7 +50,7 @@ else:
 with open(args.outputFile, "w") as file_to_write:
     # Get every file from the directory
     for filename in os.listdir(path_to_files):
-        
+        # Extra failsafe to only get the resulting fasta after SACRA. After changing Snakefile lcoations of the resulting files not necassary anymore. Can delete this.  
         if not re.search(".csv",filename) and\
         not re.search(".non_chimera.fasta",filename) and\
         not re.search(".split.fasta", filename):
@@ -55,6 +59,8 @@ with open(args.outputFile, "w") as file_to_write:
             file_path = os.path.join(path_to_files, filename)
             # True == File
             if os.path.isfile(file_path):
+                # Open the file 
                 with open(file_path, 'r') as file_to_read:
+                    # By reading in the file, can write the output each time to the outputfile. 
                     file_lines = file_to_read.read()
                     file_to_write.write(file_lines)

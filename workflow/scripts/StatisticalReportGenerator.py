@@ -227,7 +227,7 @@ axs[1].set_xlabel('Read length')
 axs[1].set_ylabel('Frequency')
 
 # Saving the graph picture. 
-plt.savefig(f"../results/{identifier}/{identifier}Before&After-Prowler.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}Before&After-Prowler.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. >> clf = close
 plt.clf()
 
@@ -349,13 +349,13 @@ box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 # Label y-axis
 plt.ylabel("No. of sequences")
-# Saving the picture 
-plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Amount.png", dpi=200)
+# Saving the picture, using bbox_inches
+plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Amount.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 
 plt.clf()
 
 ### RELATIVE RESULTS
-# Calculations Relative Amount
+# Calculations Relative Amount oc sequences. 
 total_sacra_seq = count_unique_chim + count_nonchim
 rel_unique_chim = (count_unique_chim / total_sacra_seq) * 100
 rel_nonchim = (count_nonchim / total_sacra_seq) * 100
@@ -390,8 +390,8 @@ ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
 # Label y-axis
 plt.ylabel("No. of sequences")
-# Saving the created plot as .png, using the dpi to set the size of the figure. 
-plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Rel-Amount.png", dpi=200)
+# Saving the created plot as .png, using the dpi to set the size of the figure. bbox_inches makes sure everything is saved in the canvas. 
+plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Rel-Amount.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 
 plt.clf()
 ### HISTOGRAM LENGTH READS
@@ -407,8 +407,8 @@ plt.xlabel('Sequence length')
 plt.ylabel('Frequency')
 # Determining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
-# Saving the figure in .png format. 
-plt.savefig(f"../results/{identifier}/{identifier}SACRA-Hist-Distribution.png", dpi=200)
+# Saving the figure in .png format. bbox_inches makes sure everything is saved in the canvas.
+plt.savefig(f"../results/{identifier}/{identifier}SACRA-Hist-Distribution.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 
 plt.clf()
 
@@ -435,7 +435,7 @@ plt.ylabel('Frequency')
 # np.arange to go from a to b in x amount of steps. 
 plt.xticks(np.arange(0, 1000, 100))
 # Saving the figure 
-plt.savefig(f"../results/{identifier}/{identifier}SACRA-Hist-FilteredSeq.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}SACRA-Hist-FilteredSeq.png", dpi=200, bbox_inches='tight')
 # Close the plot
 plt.clf()
 
@@ -470,7 +470,7 @@ with open(statisticalFile, "w") as html_file:
     html_file.writelines(html_header)
     # Adapters
     html_file.write("<table>\n\t<tr>\n\t\t<th>Adapter</th>\n\t\t<th>Sequence</th>\n\t</tr>\n")
-    
+    # Loop over the list containing all the adapeters. 
     for adapter in adapters:
         splitted_adapter = adapter.split(":")
         html_file.writelines(f"\t<tr>\n\t\t<td>{splitted_adapter[0]}</td>\n\t\t<td>{splitted_adapter[1]}</td>\n\t</tr>\n")

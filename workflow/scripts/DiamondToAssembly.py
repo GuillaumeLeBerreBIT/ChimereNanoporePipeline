@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-#####################################################################
-# DiamondToAssembly
+############################# INTRODUCTION #############################
+# Author: Guillaume Le Berre
+# GitHub: https://github.com/GuillaumeLeBerreBIT
+# 
+# DIAMOND to Assemvly
 # 1) Will loop over the folders containing the blast results in csv format, tab seperated
 # 2) Gather the matches per gene
 # 3) Gather the seq in how many reads found  
-# 4) Filter on 20 len, eval 10^-6, 70 percent identity
+# 4) Filter on 20 len, eval 10^-6, 70 percent identity (depending on the input variables)
 # 5) Histogram -- > Of the read lengths
-# 6) Create a final Fasta file ready for the assembly
+# 6) Create a final Fasta file for the assembly
 #####################################################################
 # MODULES
 #####################################################################
@@ -29,7 +32,7 @@ parser.add_argument('-i', '--identity', type=int, default = 70, required = False
                     help ='Give a number of the percentage identity as the minimum treshold.')
 parser.add_argument('-l', '--len', type=int, default = 20, required = False, 
                     help ='Give a number of the min length of residues want to set as minimum treshold.')
-# Will later convert it to a float -- > YAML sets it as an integer
+# Will later convert it to a float -- > YAML sets it as an string
 parser.add_argument('-e', '--evalue', type=str, default = 10e-6, required = False, 
                     help ='Give the minimum value to filter the sequences from DIAMOND.')
 args = parser.parse_args()
@@ -224,7 +227,7 @@ plt.xlabel('Genes')
 plt.ylabel('No. of hits')
 # Title for the plot
 plt.title('DIAMOND BLAST Results')
-plt.savefig(f"../results/{identifier}/{identifier}Bar-HitsPerGene-DIAMOND&Filtering.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}Bar-HitsPerGene-DIAMOND&Filtering.png", dpi=200, bbox_inches='tight')
 # Close the plot
 plt.clf()
 
@@ -252,6 +255,6 @@ plt.xlabel('Sequence length')
 plt.ylabel('Frequency')
 # Determining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
-plt.savefig(f"../results/{identifier}/{identifier}Hist-SequenceLengthAfterDIAMOND&Filtering.png", dpi=200)
+plt.savefig(f"../results/{identifier}/{identifier}Hist-SequenceLengthAfterDIAMOND&Filtering.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 
 plt.clf()

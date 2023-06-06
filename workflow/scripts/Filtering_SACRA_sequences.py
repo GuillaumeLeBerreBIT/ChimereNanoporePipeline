@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-#######################################
+############################# INTRODUCTION #############################
+# Author: Guillaume Le Berre
+# GitHub: https://github.com/GuillaumeLeBerreBIT
+# 
+# Filter the file after SACRA to retain only the sequences having a higher length then threshold X. 
+# The script can be used for any other fasta file to filter on sequence length
+#####################################################################
 # MODULES
 #######################################
-import re, argparse
+import argparse
 from Bio import SeqIO   # pip install biopython
 #######################################
 # COMMAND LINE INPUT
 #######################################
 
-parser = argparse.ArgumentParser(description='Generate report')                                                         
+parser = argparse.ArgumentParser(description='Filter length sequences')                                                         
 parser.add_argument('inputFile', type=str, 
                     help='Give the input fasta file to filter the legth of the reads on. Can parse the path of file with it.')
 parser.add_argument('outputFile', type=str, 
@@ -16,6 +22,16 @@ parser.add_argument('outputFile', type=str,
 parser.add_argument('-b', '--bases', type=int, default = 50, required = False, 
                     help ='Give a number of bases want to have as minimum treshold to filter on.')
 args = parser.parse_args()
+
+############################## BIOPYTHON ##############################
+
+# Parse the input file want to filter on
+input_seq_iterator = SeqIO.parse(args.inputFile, "fasta")
+# Using a generator expression, more memory efficient then using list comprehension creating list of records.
+treshold_seq_iterator = (record for record in input_seq_iterator if len(record.seq) >= args.bases)
+# Writes the wanetd sequences to the outputfile
+SeqIO.write(treshold_seq_iterator, args.outputFile, "fasta")
+
 
 """
 #######################################
@@ -87,12 +103,3 @@ file_to_write.close()
 #      \nLines printed {counter_3}\
 #      \nLines skipped {counter_4}")
 """
-#######################################
-# BIOPYTHON 
-#######################################
-# Parse the input file want to filter on
-input_seq_iterator = SeqIO.parse(args.inputFile, "fasta")
-# Using a generator expression, more memory efficient then using list comprehension creating list of records.
-treshold_seq_iterator = (record for record in input_seq_iterator if len(record.seq) >= args.bases)
-# Writes the wanetd sequences to the outputfile
-SeqIO.write(treshold_seq_iterator, args.outputFile, "fasta")

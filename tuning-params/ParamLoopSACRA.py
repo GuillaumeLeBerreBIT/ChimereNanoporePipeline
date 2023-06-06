@@ -1,4 +1,7 @@
-################### INTRO ###################
+############################# INTRODUCTION #############################
+# Author: Guillaume Le Berre
+# GitHub: https://github.com/GuillaumeLeBerreBIT
+# 
 # The purpoe of the script is to parse multiple commands of SACRA. This will test certain parameters that may have
 # an influence on the amount of chimere reads that can be found/filtered out. 
 ################### MODULES ###################
@@ -28,6 +31,8 @@ for mpc in params_mpc:
     #updated_config_data = re.sub(r"A: \d{1,2} # First B", f"A: {A} # First B", updated_config_data)
     
     ################### STEP 5 SPLIT ###################
+    # Replace the previously used variable with the new one.
+    #The substitution of the variable is done by using regular expression. 
     updated_config_data = re.sub(r"pc: \d{1,2}", f"pc: {mpc}", updated_config_data)
     
     # Save the updated config file
