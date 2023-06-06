@@ -63,7 +63,8 @@ for file in os.listdir(diamond_folder):
     #Split the file name to get the gene name extracted >> Splitting will return a list
     splitted_gene = file.split("_")
     # Saving the gene name and then removing the .csv
-    gene_name = splitted_gene[3].replace(".csv","")
+    # Taking the last item from the list, since it can vary depending on name given.
+    gene_name = splitted_gene[-1].replace(".csv","")
     # Want to for each gene a starting value of 0
     if gene_name not in gene_matches:
         gene_matches[gene_name] = 0
