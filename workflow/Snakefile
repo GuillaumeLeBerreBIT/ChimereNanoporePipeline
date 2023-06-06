@@ -130,9 +130,6 @@ for i in FILES:
 # Can experiment with this may not even have to wait, extra security check
 # First file
 first_file = FILES[0]
-# The target number of files 
-#target_number = len(FILES)
-# {params.target_num}
 
 rule ConcatFiles:
     input: 
@@ -143,7 +140,6 @@ rule ConcatFiles:
         "envs/pythonChimereWorkflow.yaml"
     params:
         fileSacra = f"SACRAResults/{identifier}/{first_file}SacraResults.fasta"
-        #target_num = target_number
     threads: 
         4
     shell: 
@@ -297,7 +293,7 @@ rule FlyeAssembly:
         8
     shell:
         """
-        flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 8
+        flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 8 
         """
 
 ################# BANDAGE ####################
