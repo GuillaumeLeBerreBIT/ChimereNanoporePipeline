@@ -24,8 +24,8 @@ This is a configuration file written in YAML format. It contains various paramet
 
 - **datamax**: Select a maximum data subsample in MB. The default is 0, which means the entire sample is used.
 
-## filter SACRA Settings
-- **bases**: The minimum threshold of bases to filter the fasta file. The current value is 50.
+## filter SACRA sequences length
+- **bases**: The minimum threshold of base length to filter the fasta file. The current value is 50.
 
 ## DIAMOND Settings
 - **max-target-seq**: The maximum number of target sequences per query to report alignments for. The current value is 1.
@@ -40,6 +40,7 @@ This is a configuration file written in YAML format. It contains various paramet
 - **eval**: The maximum e-value to filter the BLASTX results on. The current value is 10e-6.
 
 ## SACRA Settings
+### STEP 1 - Alignemnt
 - **alignment**: Configuration for the all-vs-all pairwise alignment of input long-read by the LAST aligner for constructing aligned read clusters (ARCs).
   - **R**: "01"
   - **u**: "NEAR"
@@ -51,17 +52,19 @@ This is a configuration file written in YAML format. It contains various paramet
   - **f**: "BlastTab+"
 
 - **parsdepth**: Configuration for detecting partially aligned reads (PARs) and candidate chimeric positions from the alignment result of STEP 1.
+
+### STEP 2 - PARs depth
   - **al**: 100 (Minimum alignment length)
   - **tl**: 50 (Minimum terminal length of unaligned region of PARs)
   - **pd**: Minimum depth of PARs. The current value is 1.
   - **id**: Alignment identity threshold of PARs. The current value is 75.
 
-## pcratio Settings
+### STEP 3 - Calculate PC ratio
 - **ad**: Minimum length of the alignment start/end position from the candidate chimeric position. The current value is 50.
 
 - **id**: Alignment identity threshold of CARs. The current value is 75.
 
-## mpc Settings
+### STEP 4 - Calculate mPC ratio    
 - **sp**: If the mPC ratio is calculated from a spike-in reference genome, set it to true. Otherwise, set it false. The current value is "false".
 
 - **rf**: PATH to the spike-in reference genome. The current value is "lambda.fasta".
@@ -78,7 +81,7 @@ This is a configuration file written in YAML format. It contains various paramet
 - **al**: Minimum alignment length. The current value is 50.
 - **lt**: Threshold of the unaligned length for detecting chimeric reads. The current value is 50.
 
-## split Settings
+## STEP 5 - Split
 - **pc**: Minimum PC ratio (default: 10%). SACRA detects the chimeric positions with a PC ratio greater than this threshold. The current value is 10.
 
 - **dp**: Minimum depth of PARs + CARs. The current value is 0.
