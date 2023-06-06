@@ -3,9 +3,9 @@
 This is a configuration file written in YAML format. It contains various parameters and settings for running a specific program or workflow. The following sections describe the different sections and their corresponding values:
 
 ## General Settings
-- **startfolder**: The path to the folder containing all the input files (fastq). It can use relative or absolute paths. The current value is "../Cmaenas_minion_data".
+- **startfolder**: The path to the folder containing all the input files (fastq). It can use relative or absolute paths. 
 
-- **identifier**: A unique identifier used for creating folder and file names. It is recommended to use different identifiers for each run to avoid overwriting or combining files from different experiments. The current identifier is "fastq_runid_211".
+- **identifier**: A unique identifier used for creating folder and file names. It is recommended to use different identifiers for each run to avoid overwriting or combining files from different experiments. 
 
 - **genes**: A list of mitochondrial genes. The current list includes "ATP6", "ATP8", "COX1", "COX2", "COX3", "CYTB", "NAD1", "NAD2", "NAD3", "NAD4", "NAD4L", "NAD5", and "NAD6".
 
