@@ -50,7 +50,7 @@ Can add the path to the scripts folder using PATH variable. The path is dependan
 ```
 export PATH=$PATH:~/ChimereNanoporePipeline/workflow/scripts/
 ```
-Need to source or restart terminal to configure the PATH variable
+Need to source or restart terminal to configure the PATH variable. 
 ```
 source ~/.bashrc
 ```
