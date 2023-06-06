@@ -42,15 +42,14 @@ This is a configuration file written in YAML format. It contains various paramet
 ## SACRA Settings
 ### STEP 1 - Alignemnt
 - **alignment**: Configuration for the all-vs-all pairwise alignment of input long-read by the LAST aligner for constructing aligned read clusters (ARCs).
-  - **R**: "01"
-  - **u**: "NEAR"
-  - **a**: 0 (Gap existence cost of LAST aligner)
-  - **A**: 10 (Insertion existence cost of LAST aligner)
-  - **b**: 15 (Gap extension cost of LAST aligner)
-  - **B**: 7 (Insertion extension cost of LAST aligner)
-  - **S**: 1
-  - **f**: "BlastTab+"
-
+- **R**: "01"
+- **u**: "NEAR"
+- **a**: 0 (Gap existence cost of LAST aligner)
+- **A**: 10 (Insertion existence cost of LAST aligner)
+- **b**: 15 (Gap extension cost of LAST aligner)
+- **B**: 7 (Insertion extension cost of LAST aligner)
+- **S**: 1
+- **f**: "BlastTab+"
 - **parsdepth**: Configuration for detecting partially aligned reads (PARs) and candidate chimeric positions from the alignment result of STEP 1.
 
 ### STEP 2 - PARs depth

@@ -1,7 +1,6 @@
 # Snakemake workflow: ChimereNanoporePipeline
 
-A Snakemake workflow for removing chimeras from Oxford Nanopore data.
-Designed a snakemake workflow that takes fastq files as input and creates a mitochondriol assembly with gene annotation. 
+A snakemake workflow that takes fastq files as input and creates a mitochondrial assembly with gene annotation. Multiple displacement amplification (MDA) is Whole Genome Amplification which makes of random hexamers binding on denaturated DNA strands. The DNA synthesis of the template   
 
 ## Installation
 
