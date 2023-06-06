@@ -1,6 +1,7 @@
 # Snakemake workflow: ChimereNanoporePipeline
 
 A Snakemake workflow for removing chimeras from Oxford Nanopore data.
+Designed a snakemake workflow that takes fastq files as input and creates a mitochondriol assembly with gene annotation. 
 
 ## Installation
 
