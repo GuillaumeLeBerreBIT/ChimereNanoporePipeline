@@ -17,3 +17,4 @@ tuning-params/input-file/10-Fasta-Files-After-Prow
 !workflow/SACRAResults/.gitkeep
 !workflow/MITOS2Results/.gitkeep
 !workflow/FlyeResults/.gitkeep
+!Cmaenas_minion_data/.gitkeep
