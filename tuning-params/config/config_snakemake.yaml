@@ -1,0 +1,64 @@
+## SACRA
+# all vs all pairwise alignment of input long-read by LAST aligner for constructing aligned read clusters (ARCs)
+alignment:
+  R: "01"
+  u: "NEAR"
+  # Gap existence cost of LAST aligner
+  a: 0 
+  # Insertion existence cost of LAST aligner
+  A: 10 
+  # Gap extension cost of LAST aligner
+  b: 15 
+  # Insertion extension cost of LAST aligner
+  B: 7 
+  S: 1  
+  f: "BlastTab+"
+# Detect the partially aligned reads (PARs) and candidate chimeric positions from the alignment result of STEP 1, 
+# and obtain the depth of PARs at that positions.
+parsdepth:
+  # Minimum alignment length
+  al: 100 
+  # Minimum terminal length of unaligned region of PARs
+  tl: 50 
+  # Minimum depth of PARs
+  pd: 1 
+  # Alignment identity threshold of PARs
+  id: 75
+# Calculate the depth of continuously aligned reads (CARs) and the PARs/CARs ratio (PC ratio) at the candidate chimeric positions.
+pcratio:
+  # Minimum length of alignment start/end position from candidate chimeric position
+  ad: 50 
+  # Alignment identity threshold of CARs
+  id: 75
+
+mpc:
+  # If the mPC ratio is calculated from spike-in reference genome, set it to true, otherwise, set it false.
+  sp: "false"
+  # PATH to the spike-in reference genome.
+  rf: "lambda.fasta"
+  R: "01"
+  u: "NEAR"
+  # Gap existence cost of LAST aligner.
+  a: 8 
+  # Insertion existence cost of LAST aligner
+  A: 16 
+  # Gap extension cost of LAST aligner
+  b: 12 
+  # Insertion extension cost of LAST aligner
+  B: 5
+  S: 1  
+  f: "BlastTab+"
+  # Alignment identity threshold
+  id: 95
+  # Minimum alignment length
+  al: 50
+  # Threshold of the unaligned length for detecting chimeric reads
+  lt: 50
+# Split the chimeric read at the chimeric positions detected by STEP 3
+split:
+  # Minimum PC ratio (default: 10%). SACRA detects the chimeric positions with PC ratio greater than this threshold.
+  pc: 10
+  # Minimum depth of PARs + CARs
+  dp: 0 
+  # Sliding windows threshold (default: 100bp). For detecting the most probable chimeric position from a chimeric junction with similar sequence, SACRA detects the chimeric position with highest PARs depth in this threshold windows.
+  sl: 100

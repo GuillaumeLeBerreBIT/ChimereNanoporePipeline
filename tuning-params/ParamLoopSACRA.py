@@ -1,3 +1,6 @@
+################### INTRO ###################
+# The purpoe of the script is to parse multiple commands of SACRA. This will test certain parameters that may have
+# an influence on the amount of chimere reads that can be found/filtered out. 
 ################### MODULES ###################
 import subprocess, re
 
@@ -8,7 +11,7 @@ params_mpc = [0,5,10,12,15]
 # Iterate over parameter values
 for mpc in params_mpc:
     # Update the config file with the new parameter value
-    with open('config_snakemake.yaml', 'r') as file:
+    with open('config/config_snakemake.yaml', 'r') as file:
         config_data = file.read()
     # Save the file in a variable use to resave each change in config file.  
     updated_config_data = config_data
@@ -28,12 +31,12 @@ for mpc in params_mpc:
     updated_config_data = re.sub(r"pc: \d{1,2}", f"pc: {mpc}", updated_config_data)
     
     # Save the updated config file
-    with open('config_snakemake.yaml', 'w') as file:
+    with open('config/config_snakemake.yaml', 'w') as file:
         file.write(updated_config_data)
     
     # Run the bash command with the updated config file
-    #command = 'scripts/SACRA.sh -i reads.fasta -p ReadsAfterSacra.fasta -t 4 -c ../config/config_snakemake.yaml'
-    command = 'cat config_snakemake.yaml'
+    command = f'scripts/SACRA.sh -i input-file/Concatted-0-9-Files.fasta -p SACRA-Outcome/ReadsAfterSacra-mpc-{mpc}.fasta -t 4 -c config/config_snakemake.yaml'
+    #command = 'cat config_snakemake.yaml'
     subprocess.run(command, shell=True)
 
 ################### PARAMS SL ###################
@@ -43,7 +46,7 @@ params_sl = [75,125,100]
 # Iterate over parameter values
 for sl in params_sl:
     # Update the config file with the new parameter value
-    with open('config_snakemake.yaml', 'r') as file:
+    with open('config/config_snakemake.yaml', 'r') as file:
         config_data = file.read()
     
     ################### STEP 5 SPLIT ###################
@@ -53,12 +56,12 @@ for sl in params_sl:
     updated_config_data = re.sub(r"sl: \d{2,3}", f"sl: {sl}", updated_config_data)
     
     # Save the updated config file
-    with open('config_snakemake.yaml', 'w') as file:
+    with open('config/config_snakemake.yaml', 'w') as file:
         file.write(updated_config_data)
     
     # Run the bash command with the updated config file
-    #command = 'scripts/SACRA.sh -i reads.fasta -p ReadsAfterSacra.fasta -t 4 -c ../config/config_snakemake.yaml'
-    command = 'cat config_snakemake.yaml'
+    command = f'scripts/SACRA.sh -i input-file/Concatted-0-9-Files.fasta -p SACRA-Outcome/ReadsAfterSacra-sl-{sl}.fasta -t 4 -c config/config_snakemake.yaml'
+    #command = 'cat config_snakemake.yaml'
     subprocess.run(command, shell=True)
 
 ################### PARAMS AD ###################
@@ -68,7 +71,7 @@ params_ad = [25,75,50]
 # Iterate over parameter values
 for ad in params_ad:
     # Update the config file with the new parameter value
-    with open('config_snakemake.yaml', 'r') as file:
+    with open('config/config_snakemake.yaml', 'r') as file:
         config_data = file.read()
     
     ################### STEP 3 CALCULATE PC RATIO ###################
@@ -76,12 +79,12 @@ for ad in params_ad:
     updated_config_data = re.sub(r"ad: \d{1,2}", f"ad: {ad}", config_data)
     
     # Save the updated config file
-    with open('config_snakemake.yaml', 'w') as file:
+    with open('config/config_snakemake.yaml', 'w') as file:
         file.write(updated_config_data)
     
     # Run the bash command with the updated config file
-    #command = 'scripts/SACRA.sh -i reads.fasta -p ReadsAfterSacra.fasta -t 4 -c ../config/config_snakemake.yaml'
-    command = 'cat config_snakemake.yaml'
+    command = f'scripts/SACRA.sh -i input-file/Concatted-0-9-Files.fasta -p SACRA-Outcome/ReadsAfterSacra-ad-{ad}.fasta -t 4 -c config/config_snakemake.yaml'
+    #command = 'cat config_snakemake.yaml'
     subprocess.run(command, shell=True)
 
 ################### PARAMS ID ###################
@@ -95,7 +98,7 @@ for ids in params_id:
     # Setting a counter, to count the ids
     count = 0
     # Update the config file with the new parameter value
-    with open('config_snakemake.yaml', 'r') as file:
+    with open('config/config_snakemake.yaml', 'r') as file:
         config_data = file.readlines()
         ################### STEP 3 CALCULATE ID THRESHOLD CARs ###################
         # Last value is default (75 %)
@@ -114,11 +117,11 @@ for ids in params_id:
                 newlines.append(line)
 
     # Save the updated config file
-    with open('config_snakemake.yaml', 'w') as file:
+    with open('config/config_snakemake.yaml', 'w') as file:
         for item in newlines:
             file.write(item)
     
     # Run the bash command with the updated config file
-    #command = 'scripts/SACRA.sh -i reads.fasta -p ReadsAfterSacra.fasta -t 4 -c ../config/config_snakemake.yaml'
-    command = 'cat config_snakemake.yaml'
+    command = f'scripts/SACRA.sh -i input-file/Concatted-0-9-Files.fasta -p SACRA-Outcome/ReadsAfterSacra-id-{ids}.fasta -t 4 -c config/config_snakemake.yaml'
+    #command = 'cat config_snakemake.yaml'
     subprocess.run(command, shell=True)
