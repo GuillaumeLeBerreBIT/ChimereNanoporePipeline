@@ -1,8 +1,5 @@
 # Snakemake workflow: ChimereNanoporePipeline
 
-[![Snakemake](https://img.shields.io/badge/snakemake-≥6.3.0-brightgreen.svg)](https://snakemake.github.io)
-
-
 A Snakemake workflow for removing chimeras from Oxford Nanopore data.
 
 ## Installation
@@ -102,6 +99,8 @@ Depending on the amount of cores can use need to lower it. It is very important 
 Flye is also very computational intensive. When encountering memomory problems need to add `--asm-coverage` & `--genome-size` in the command from flye itself. 
 
 Other programs when the amount of cores specified are not available will be able to scale down the processes. 
+
+Snakefile will use the `config_snakemake.yaml` with all different parameters used in from the pipeline. Before starting Snakemake, will need to specify the input folder by `startfolder: ` containing all the fastq files to parse through the pipeline. Using a unique identifier this for creating folder/file names. Using different names to save the rsults in different runs. WATCH OUT! Previous used identifiers where same files are still repsent may results in rewriting files or combine files from different experiments. Identifier can also be used as species identifier, to in the future add files of previously used species to get more results in addition to previous results. 
 
 ## Credits
 
