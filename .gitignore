@@ -9,6 +9,7 @@ workflow/FlyeResults/**
 .snakemake/**
 workflow/.snakemake/**
 workflow/.snakemake/**
+tuning-params/input-file/10-Fasta-Files-After-Prow
 !workflow/AssemblyFasta/.gitkeep
 !workflow/Diamond/.gitkeep
 !workflow/PorechopABI/.gitkeep
