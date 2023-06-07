@@ -6,9 +6,9 @@ The main purpose is to detect chimeric reads in a dataset and split the sequence
 
 ## Table of Contents 
 
-- [WGA - Chimera reads](#wga)
+- [WGA - Chimera reads](#wga---chimera-reads)
 - [Installation](#installation)
-- [Repository structure](#repository)
+- [Repository structure](#repository-structure)
 - [Usage](#usage)
 - [Credits](#credits)
 
