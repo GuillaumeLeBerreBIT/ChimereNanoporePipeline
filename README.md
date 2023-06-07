@@ -4,6 +4,14 @@ A snakemake workflow that takes fastq files as input and creates a mitochondrial
 
 The main purpose is to detect chimeric reads in a dataset and split the sequences in non-chimeric sequences. Using the corrected sequences to generate mitochondrial genome assembly. 
 
+## Table of Contents 
+
+- [WGA - Chimera reads](#wga - chimera reads)
+- [Installation](#installation)
+- [Repository structure](#repository structure)
+- [Usage](#usage)
+- [Credits](#credits)
+
 ## WGA - Chimera reads
 
 Multiple displacement amplification (MDA) is Whole Genome Amplification method to rapdily amplify DNA samples. It is very efficient to increase small amounts of DNA with a high genome coverage due to the strand displacement and a low error rate. The process starts by annealing random hexamer primers on the ssDNA template. The synthesis will start on multiple sites on the template DNA. Chain-elongation is mediated by polymerase phi 29. Polymerase phi 29 has a high proofreading and strong displacement activity. When phi 20 polymerase encounters a downstream primer, due to it's strong strand displacement activity, it will cause the downstream strand to be gradually displaced of it's 5'-end. The chain-elongation continous as multiple rounds of hexamer primers and polymeases are added to the newly generated ssDNA strands. The exponential growth of DNA, has branched structure generating clusters of DNA molecules. 
@@ -103,13 +111,13 @@ To run the pipeline, go to the `workflow` folder. From there can use the followi
 ```
 snakemake --use-conda 
 ```
-Depending the system using, will have a limited amount of resources. Can limit the amount of threads used, using the `--jobs` command. Using `--jobs 8` will use 8 threads in parallel to perfrom snakemake, depending on your system can lower or make it higher. 
+Depending the system using, will have a limited amount of resources. Can limit the amount of threads used, using the `--jobs` command. Using `--jobs 8` will use 8 threads in parallel to perform snakemake, depending on your system can lower or make it higher. 
 ```
 snakemake --use-conda --jobs 8
 ```
 Depending on the amount of cores can use need to lower it. It is very important to set the right amount of threads/jobs it can use. When the jobs is set differently then given here, NEED to change the amount of threads Porechop ABI rule can use. When there aren't enough threads available to perform the Porechop ABI rule or too many Porechop rules are running in parallell, results in the pipeline crashing.
 
-Flye is also very computational intensive. When encountering memomory problems need to add `--asm-coverage` & `--genome-size` in the command from flye itself. 
+Flye is also very computational intensive. When encountering memomory problems need to add `--asm-coverage` & `--genome-size` in the command from Flye itself. 
 
 Other programs when the amount of cores specified are not available will be able to scale down the processes. 
 
