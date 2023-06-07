@@ -125,6 +125,16 @@ identifier: "fastq_runid_211"
 
 ## Credits
 
-If you use this workflow in a paper, don't forget to give credits to the authors by citing the URL of this (original) <repo>sitory and its DOI (see above).
+Credits to the authors of the different tools that havee been ussed for creating this pipeline.
 
-[a link](https://github.com/bonsai-team/Porechop_ABI)
+Bio-informatics tool for adapter removal: [Porechop ABI](https://github.com/bonsai-team/Porechop_ABI)
+
+Bio-informatics tool for quality trimming: [ProwlerTrimmer](https://github.com/ProwlerForNanopore/ProwlerTrimmer)
+
+Bio-informatics tool for chimera removal: [SACRA](https://github.com/hattori-lab/SACRA) [Paper](https://doi.org/10.1093/dnares/dsab019)
+
+Bio-informatics tool for BLASTX: [DIAMOND](https://github.com/bbuchfink/diamond) [Paper](https://www.nature.com/articles/s41592-021-01101-x)
+
+Bio-informatics tool for assembly: [Flye](https://github.com/fenderglass/Flye) 
+
+Bio-informatics tool for gene annotation: [MITOS2](https://gitlab.com/Bernt/MITOS/-/tree/mitos2)
