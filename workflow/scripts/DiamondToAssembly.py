@@ -45,6 +45,10 @@ args = parser.parse_args()
 filtered_list = []
 # Need a list with all the crab families to match on 
 crab_genus = ["Carcinus", "Charybdis", "Thalamita"]
+# Testing for the Enoplea
+enoplea = ["Eucoleus","Longidorus","Trichinella", "Trichuris"]
+# Testing for the chromadorea
+chromadorea = ["Gnathostoma", "Rhigonema", "Strongyloides", "Camallanus", "Meloidogyne"]
 # Empty dictionary to save the amount of matches per gene
 gene_matches = {}
 # Empty dictionary for saving the headers
