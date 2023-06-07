@@ -1,6 +1,16 @@
 # Snakemake workflow: ChimereNanoporePipeline
 
-A snakemake workflow that takes fastq files as input and creates a mitochondrial assembly with gene annotation. Multiple displacement amplification (MDA) is Whole Genome Amplification which makes of random hexamers binding on denaturated DNA strands. The DNA synthesis of the template   
+A snakemake workflow that takes fastq files as input and creates a mitochondrial genome assembly. As mentioned the workflow is made in Snakemake, integrating different bio-informatic tools as Porechop ABI, Prowler, SACRA, ... with many other Python scripts to gathering output, generating a HTML report file to visualize results of each step in the pipeline. 
+
+The main purpose is to detect chimeric reads in a dataset and split the sequences in non-chimeric sequences. Using the corrected sequences to generate mitochondrial genome assembly. 
+
+## WGA - Chimera reads
+
+Multiple displacement amplification (MDA) is Whole Genome Amplification method to rapdily amplify DNA samples. It is very efficient to increase small amounts of DNA with a high genome coverage due to the strand displacement and a low error rate. The process starts by annealing random hexamer primers on the ssDNA template. The synthesis will start on multiple sites on the template DNA. Chain-elongation is mediated by polymerase phi 29. Polymerase phi 29 has a high proofreading and strong displacement activity. When phi 20 polymerase encounters a downstream primer, due to it's strong strand displacement activity, it will cause the downstream strand to be gradually displaced of it's 5'-end. The chain-elongation continous as multiple rounds of hexamer primers and polymeases are added to the newly generated ssDNA strands. The exponential growth of DNA, has branched structure generating clusters of DNA molecules. 
+
+In the process of MDA creating a branched structure, the displaced ssDNA strands goes in competition with the newly generated template. When the displaced strand re-attaches to the template, the newly generated strand at 3'-end falls off. What happens is the extended strand at 3' will bind with other secondary structures creating these chimera reads. Chimeras are multiple transcripts of DNA sequences joined toghete, also called split reads.   
+
+When the phi 29 polymerase of the newly generated strand attaches to another ssDNA displaced strand. The chain-elongation continous along the new template, creating a ssDNA of 2 or more regions that do not belong togehter. These ssDNA are inverted chimeras. It is also possible that the phi 29 polymerase binds with the original template in a region with a similar base sequence but not identical. It skips the elongation from the displaced 3'-end of ssDNA and to new annealed position of phi 29 polymerase. 
 
 ## Installation
 
