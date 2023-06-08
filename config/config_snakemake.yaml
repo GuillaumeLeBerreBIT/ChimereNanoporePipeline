@@ -110,3 +110,8 @@ split:
   dp: 0 
   # Sliding windows threshold (default: 100bp). For detecting the most probable chimeric position from a chimeric junction with similar sequence, SACRA detects the chimeric position with highest PARs depth in this threshold windows.
   sl: 100
+
+# NCBI's codon table. 
+mitos2:
+  # 5 == Invertebrate, 2 == Vertebrate, 4 == Mold, 14 Alternative flatworm, 9 == Echinoderm, 13 == Ascidian
+  gencode: 5

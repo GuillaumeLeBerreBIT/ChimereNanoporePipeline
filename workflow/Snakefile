@@ -330,13 +330,15 @@ rule MITOS:
         # Define folders under params and not as output otherwise will get an error.
         MitosFolder = f"MITOS2Results/{identifier}/",
         RefFolder = f"../resources/MITOS2-DB/",
-        MitRefSeq = f"refseq89m/"
+        MitRefSeq = f"refseq89m/",
+        gencode = config["mitos2"]['gencode']
+
     threads: 
         4
     shell:
         """
         unset _JAVA_OPTIONS
-        runmitos.py -i {input.FlyeFasta} -c 5 -r {params.MitRefSeq} -o {params.MitosFolder} --refdir {params.RefFolder}
+        runmitos.py -i {input.FlyeFasta} -c {params.gencode} -r {params.MitRefSeq} -o {params.MitosFolder} --refdir {params.RefFolder}
         """
 
 ################# STATISTICS TO HTML ####################

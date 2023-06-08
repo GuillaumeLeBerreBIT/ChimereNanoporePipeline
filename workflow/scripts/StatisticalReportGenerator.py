@@ -541,7 +541,7 @@ with open(statisticalFile, "w") as html_file:
                     file_lines = file_to_read.readlines()
                     # Have to check wheter list is empty or not
                     if len(file_lines) == 0:
-                        #If empty it will return to the test
+                        # If empty it will return to the test
                         continue
                     # The title by getting the contig name
                     splitted_item = file_lines[0].split("\t")
