@@ -26,7 +26,7 @@ Can start by cloning the repository to your local system either using the SSH bu
 ```
 git clone git@github.com:GuillaumeLeBerreBIT/ChimereNanoporePipeline.git
 ```
-Can also use the HTTPS link
+Can also use the HTTPS link. 
 ```
 git clone https://github.com/GuillaumeLeBerreBIT/ChimereNanoporePipeline.git
 ```
@@ -137,7 +137,7 @@ identifier: "fastq_runid_211"
 
 ## Credits
 
-Credits to the authors of the different tools that havee been ussed for creating this pipeline.
+Credits to the authors of the different tools, that have been used for creating this pipeline.
 
 Bio-informatics tool for adapter removal: [Porechop ABI](https://github.com/bonsai-team/Porechop_ABI)
 
