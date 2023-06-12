@@ -22,9 +22,13 @@ When the phi 29 polymerase of the newly generated strand attaches to another ssD
 
 ## Installation
 
-Can start by cloning the repository to your local system. 
+Can start by cloning the repository to your local system either using the SSH but then you need a keypair on your local computer and add the public key to your account. 
 ```
 git clone git@github.com:GuillaumeLeBerreBIT/ChimereNanoporePipeline.git
+```
+Can also use the HTTPS link
+```
+git clone https://github.com/GuillaumeLeBerreBIT/ChimereNanoporePipeline.git
 ```
 
 Snakemake requires to have a conda installation on your system. The preferred conda distribution is mambaforge since it has the required python commands & mamba which is a very fast installation. 
