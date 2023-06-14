@@ -1,362 +1,0 @@
-
-[1m[4mAb Initio Phase[0m
-Kmer size:             16
-Sampled sequences:     40000
-Sampling length        100
-LC filter threshold:   1
-Adjusted LC threshold: 1
-Nb thread:             8
-Number of kept kmer:   500
-Number of runs:        10
-Verbosity level:       1
-
-A total of 10 runs will be performed.
-[40.6985 ms]	Parsing FASTA file
-[49.7568 ms]	Number of sequences found: 649.
-Starting run number 1
-/!\ WARNING: Sequence set too small for the requested sample size
-/!\ WARNING: The whole set will be used.
-[50.6312 ms]	Working on sequence start.
-[830.194 ms]	Working on sequence end.
-Starting run number 2
-[2090.76 ms]	Working on sequence start.
-[3301.28 ms]	Working on sequence end.
-Starting run number 3
-[4560.76 ms]	Working on sequence start.
-[5761.13 ms]	Working on sequence end.
-Starting run number 4
-[6882.23 ms]	Working on sequence start.
-[8031.31 ms]	Working on sequence end.
-Starting run number 5
-[9098.48 ms]	Working on sequence start.
-[10442.4 ms]	Working on sequence end.
-Starting run number 6
-[11598.3 ms]	Working on sequence start.
-[12921.1 ms]	Working on sequence end.
-Starting run number 7
-[14192.1 ms]	Working on sequence start.
-[15620.9 ms]	Working on sequence end.
-Starting run number 8
-[16708.3 ms]	Working on sequence start.
-[17920.9 ms]	Working on sequence end.
-Starting run number 9
-[19148.3 ms]	Working on sequence start.
-[20350.3 ms]	Working on sequence end.
-Starting run number 10
-[21401.3 ms]	Working on sequence start.
-[22621.8 ms]	Working on sequence end.
-/!\	 Could not compute end adaper with heavy method
-/!\	 The resulting graph probably contains a loop.
-/!\	 For more details, read the error report below:
-/!\	 Graph contains a cycle or graph changed during iteration
-/!\	 
-
-/!\	 Could not compute end adaper with heavy method
-/!\	 The resulting graph probably contains a loop.
-/!\	 For more details, read the error report below:
-/!\	 Graph contains a cycle or graph changed during iteration
-/!\	 
-
-/!\	 Could not compute end adaper with heavy method
-/!\	 The resulting graph probably contains a loop.
-/!\	 For more details, read the error report below:
-/!\	 Graph contains a cycle or graph changed during iteration
-/!\	 
-
-/!\	 The adapters currently found are not all identical.
-/!\	 A consensus will be made.
-/!\	 Launching 20 additional runs to build a consensus.
-Kmer size:             16
-Sampled sequences:     40000
-Sampling length        100
-LC filter threshold:   1
-Adjusted LC threshold: 1
-Nb thread:             8
-Number of kept kmer:   500
-Number of runs:        20
-Verbosity level:       1
-
-A total of 20 runs will be performed.
-[50.4967 ms]	Parsing FASTA file
-[56.5148 ms]	Number of sequences found: 649.
-Starting run number 1
-/!\ WARNING: Sequence set too small for the requested sample size
-/!\ WARNING: The whole set will be used.
-[56.5565 ms]	Working on sequence start.
-[800.261 ms]	Working on sequence end.
-Starting run number 2
-[1308.29 ms]	Working on sequence start.
-[2650.8 ms]	Working on sequence end.
-Starting run number 3
-[3741.2 ms]	Working on sequence start.
-[4990.64 ms]	Working on sequence end.
-Starting run number 4
-[6158.26 ms]	Working on sequence start.
-[7350.46 ms]	Working on sequence end.
-Starting run number 5
-[8561.75 ms]	Working on sequence start.
-[9832.5 ms]	Working on sequence end.
-Starting run number 6
-[10961.4 ms]	Working on sequence start.
-[12162.6 ms]	Working on sequence end.
-Starting run number 7
-[13364.8 ms]	Working on sequence start.
-[14570.8 ms]	Working on sequence end.
-Starting run number 8
-[15660.1 ms]	Working on sequence start.
-[16873.6 ms]	Working on sequence end.
-Starting run number 9
-[18135.4 ms]	Working on sequence start.
-[19281.2 ms]	Working on sequence end.
-Starting run number 10
-[20391 ms]	Working on sequence start.
-[21530.8 ms]	Working on sequence end.
-Starting run number 11
-[22621.7 ms]	Working on sequence start.
-[23670.9 ms]	Working on sequence end.
-Starting run number 12
-[24650.6 ms]	Working on sequence start.
-[25719.9 ms]	Working on sequence end.
-Starting run number 13
-[26898.3 ms]	Working on sequence start.
-[28050.8 ms]	Working on sequence end.
-Starting run number 14
-[29160.2 ms]	Working on sequence start.
-[30335.7 ms]	Working on sequence end.
-Starting run number 15
-[31390.6 ms]	Working on sequence start.
-[32503.7 ms]	Working on sequence end.
-Starting run number 16
-[33520.6 ms]	Working on sequence start.
-[34610.6 ms]	Working on sequence end.
-Starting run number 17
-[35708.3 ms]	Working on sequence start.
-[36711.1 ms]	Working on sequence end.
-Starting run number 18
-[37781.2 ms]	Working on sequence start.
-[38860.9 ms]	Working on sequence end.
-Starting run number 19
-[40021.1 ms]	Working on sequence start.
-[41300.9 ms]	Working on sequence end.
-Starting run number 20
-[42448.3 ms]	Working on sequence start.
-[43651.4 ms]	Working on sequence end.
-/!\	 Could not compute end adaper with heavy method
-/!\	 The resulting graph probably contains a loop.
-/!\	 For more details, read the error report below:
-/!\	 Graph contains a cycle or graph changed during iteration
-/!\	 
-
-Starting with a 10 run batch.
-Using config file:/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config
-Command line:
- /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/approx_counter Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_29_0.fastq -v 1 --config /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count -nt 8 -mr 10
-Assembling run 1
-Assembling run 2
-Assembling run 3
-Assembling run 4
-Assembling run 5
-Assembling run 6
-Assembling run 7
-Assembling run 8
-Assembling run 9
-Assembling run 10
-Following with a 20 run batch.
-Using config file:/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config
-Command line:
- /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/approx_counter Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_29_0.fastq -v 1 --config /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/2d5175163c35337e572d841e1046dee7_/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count_sup -nt 8 -mr 20
-Assembling run 1
-Assembling run 2
-Assembling run 3
-Assembling run 4
-Assembling run 5
-Assembling run 6
-Assembling run 7
-Assembling run 8
-Assembling run 9
-Assembling run 10
-Assembling run 11
-Assembling run 12
-Assembling run 13
-Assembling run 14
-Assembling run 15
-Assembling run 16
-Assembling run 17
-Assembling run 18
-Assembling run 19
-Assembling run 20
-Consensus step done
-
-Rebuild adapters:
-
-Start
-Consensus_1_start_(100.0%)
-CATTGTACTTCGTTCAGTTACGTATTGCT
-
-End
-Consensus_1_end_(93.3%)
-GTGTGAGCAATACGTAACT
-
-Building consensus adapter objects
-The inference of adapters sequence is done.
-
-[1m[4mLoading reads[0m
-Cmaenas_minion_data/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_29_0.fastq
-649 reads loaded
-
-
-[1m[4mLooking for known adapter sets[0m
-0 / 649 (0.0%)10 / 649 (1.5%)20 / 649 (3.1%)30 / 649 (4.6%)40 / 649 (6.2%)50 / 649 (7.7%)60 / 649 (9.2%)70 / 649 (10.8%)80 / 649 (12.3%)90 / 649 (13.9%)100 / 649 (15.4%)110 / 649 (16.9%)120 / 649 (18.5%)130 / 649 (20.0%)140 / 649 (21.6%)150 / 649 (23.1%)160 / 649 (24.7%)170 / 649 (26.2%)180 / 649 (27.7%)190 / 649 (29.3%)200 / 649 (30.8%)210 / 649 (32.4%)220 / 649 (33.9%)230 / 649 (35.4%)240 / 649 (37.0%)250 / 649 (38.5%)260 / 649 (40.1%)270 / 649 (41.6%)280 / 649 (43.1%)290 / 649 (44.7%)300 / 649 (46.2%)310 / 649 (47.8%)320 / 649 (49.3%)330 / 649 (50.8%)340 / 649 (52.4%)350 / 649 (53.9%)360 / 649 (55.5%)370 / 649 (57.0%)380 / 649 (58.6%)390 / 649 (60.1%)400 / 649 (61.6%)410 / 649 (63.2%)420 / 649 (64.7%)430 / 649 (66.3%)440 / 649 (67.8%)450 / 649 (69.3%)460 / 649 (70.9%)470 / 649 (72.4%)480 / 649 (74.0%)490 / 649 (75.5%)500 / 649 (77.0%)510 / 649 (78.6%)520 / 649 (80.1%)530 / 649 (81.7%)540 / 649 (83.2%)550 / 649 (84.7%)560 / 649 (86.3%)570 / 649 (87.8%)580 / 649 (89.4%)590 / 649 (90.9%)600 / 649 (92.4%)610 / 649 (94.0%)620 / 649 (95.5%)630 / 649 (97.1%)640 / 649 (98.6%)649 / 649 (100.0%)649 / 649 (100.0%)
-                                        Best               [0m
-                                        read       Best    [0m
-                                        start      read end[0m
-  [4mSet                                   %ID        %ID     [0m
-  [32mSQK-NSK007                               100.0       75.0[0m
-  Rapid                                     63.9        0.0
-  RBK004_upstream                           81.1        0.0
-  SQK-MAP006                                74.2       75.0
-  SQK-MAP006 short                          73.1       73.1
-  PCR adapters 1                            78.3       78.3
-  PCR adapters 2                            76.0       75.0
-  PCR adapters 3                            79.2       79.2
-  1D^2 part 1                               70.0       74.1
-  [32m1D^2 part 2                               91.2       80.6[0m
-  cDNA SSP                                  68.2       66.7
-  Barcode 1 (reverse)                       79.2       76.9
-  Barcode 2 (reverse)                       80.8       76.0
-  Barcode 3 (reverse)                       72.0       69.2
-  Barcode 4 (reverse)                       73.1       73.1
-  Barcode 5 (reverse)                       73.1       73.1
-  Barcode 6 (reverse)                       71.4       70.8
-  Barcode 7 (reverse)                       72.0       70.4
-  Barcode 8 (reverse)                       72.0       75.0
-  Barcode 9 (reverse)                       75.0       74.1
-  Barcode 10 (reverse)                      74.1       76.0
-  Barcode 11 (reverse)                      72.0       73.1
-  Barcode 12 (reverse)                      76.9       79.2
-  Barcode 1 (forward)                       80.8       76.9
-  Barcode 2 (forward)                       80.8       77.8
-  Barcode 3 (forward)                       74.1       72.0
-  Barcode 4 (forward)                       76.0       73.1
-  Barcode 5 (forward)                       71.4       73.1
-  Barcode 6 (forward)                       70.8       72.0
-  Barcode 7 (forward)                       70.4       72.0
-  Barcode 8 (forward)                       73.1       75.0
-  Barcode 9 (forward)                       70.4       76.0
-  Barcode 10 (forward)                      72.0       68.0
-  Barcode 11 (forward)                      70.4       75.0
-  Barcode 12 (forward)                      76.9       76.9
-  Barcode 13 (forward)                      73.1       73.1
-  Barcode 14 (forward)                      67.7       73.1
-  Barcode 15 (forward)                      73.1       75.0
-  Barcode 16 (forward)                      69.2       69.2
-  Barcode 17 (forward)                      68.0       76.0
-  Barcode 18 (forward)                      73.1       80.0
-  Barcode 19 (forward)                      72.0       72.0
-  Barcode 20 (forward)                      76.9       79.2
-  Barcode 21 (forward)                      72.0       73.1
-  Barcode 22 (forward)                      75.0       74.1
-  Barcode 23 (forward)                      75.0       71.4
-  Barcode 24 (forward)                      74.1       73.1
-  Barcode 25 (forward)                      72.0       73.1
-  Barcode 26 (forward)                      75.0       73.1
-  Barcode 27 (forward)                      70.4       72.0
-  Barcode 28 (forward)                      72.0       72.0
-  Barcode 29 (forward)                      69.2       71.4
-  Barcode 30 (forward)                      73.1       70.4
-  Barcode 31 (forward)                      76.0       73.1
-  Barcode 32 (forward)                      70.8       72.0
-  Barcode 33 (forward)                      72.0       76.9
-  Barcode 34 (forward)                      72.0       77.8
-  Barcode 35 (forward)                      70.4       79.2
-  Barcode 36 (forward)                      73.3       75.0
-  Barcode 37 (forward)                      72.0       73.3
-  Barcode 38 (forward)                      80.0       79.2
-  Barcode 39 (forward)                      74.1       72.0
-  Barcode 40 (forward)                      74.1       74.1
-  Barcode 41 (forward)                      75.0       73.1
-  Barcode 42 (forward)                      76.9       73.1
-  Barcode 43 (forward)                      73.1       72.0
-  Barcode 44 (forward)                      73.1       75.0
-  Barcode 45 (forward)                      70.4       72.0
-  Barcode 46 (forward)                      75.0       76.0
-  Barcode 47 (forward)                      72.0       69.2
-  Barcode 48 (forward)                      71.4       72.0
-  Barcode 49 (forward)                      72.0       69.2
-  Barcode 50 (forward)                      70.8       70.4
-  Barcode 51 (forward)                      72.0       72.0
-  Barcode 52 (forward)                      72.0       74.2
-  Barcode 53 (forward)                      73.1       70.4
-  Barcode 54 (forward)                      79.3       73.1
-  Barcode 55 (forward)                      72.0       71.4
-  Barcode 56 (forward)                      76.0       76.0
-  Barcode 57 (forward)                      72.0       70.8
-  Barcode 58 (forward)                      72.0       70.8
-  Barcode 59 (forward)                      73.1       75.0
-  Barcode 60 (forward)                      73.1       72.0
-  Barcode 61 (forward)                      70.8       73.1
-  Barcode 62 (forward)                      75.0       76.0
-  Barcode 63 (forward)                      77.8       76.9
-  Barcode 64 (forward)                      79.2       76.9
-  Barcode 65 (forward)                      72.0       72.0
-  Barcode 66 (forward)                      72.0       73.1
-  Barcode 67 (forward)                      73.1       74.1
-  Barcode 68 (forward)                      76.0       75.0
-  Barcode 69 (forward)                      74.1       75.0
-  Barcode 70 (forward)                      72.0       72.0
-  Barcode 71 (forward)                      75.0       75.0
-  Barcode 72 (forward)                      72.0       73.1
-  Barcode 73 (forward)                      76.9       75.0
-  Barcode 74 (forward)                      76.0       80.0
-  Barcode 75 (forward)                      70.8       73.1
-  Barcode 76 (forward)                      72.0       78.6
-  Barcode 77 (forward)                      70.8       75.0
-  Barcode 78 (forward)                      73.1       72.0
-  Barcode 79 (forward)                      76.0       72.0
-  Barcode 80 (forward)                      72.0       73.1
-  Barcode 81 (forward)                      72.0       72.0
-  Barcode 82 (forward)                      72.0       70.4
-  Barcode 83 (forward)                      74.1       73.1
-  Barcode 84 (forward)                      73.1       76.0
-  Barcode 85 (forward)                      73.1       73.1
-  Barcode 86 (forward)                      77.8       70.8
-  Barcode 87 (forward)                      71.4       73.1
-  Barcode 88 (forward)                      74.1       73.1
-  Barcode 89 (forward)                      76.0       76.0
-  Barcode 90 (forward)                      73.1       76.0
-  Barcode 91 (forward)                      68.0       71.4
-  Barcode 92 (forward)                      72.4       73.1
-  Barcode 93 (forward)                      72.0       73.1
-  Barcode 94 (forward)                      76.0       75.0
-  Barcode 95 (forward)                      72.0       73.1
-  Barcode 96 (forward)                      70.8       72.0
-  [32mConsensus_1_start_(100.0%)_adapter        96.7        0.0[0m
-  [32mConsensus_1_end_(93.3%)_adapter            0.0       95.0[0m
-
-
-[1m[4mTrimming adapters from read ends[0m
-            SQK-NSK007_Y_Top: [31mAATGTACTTCGTTCAGTTACGTATTGCT[0m
-         SQK-NSK007_Y_Bottom: [31mGCAATACGTAACTGAACGAAGT[0m
-            1D2_part_2_start: [31mCTTCGTTCAGTTACGTATTGCTGGCGTCTGCTT[0m
-              1D2_part_2_end: [31mCACCCAAGCAGACGCCAGCAATACGTAACT[0m
-  Consensus_1_start_(100.0%): [31mCATTGTACTTCGTTCAGTTACGTATTGCT
-[0m
-     Consensus_1_end_(93.3%): [31mGTGTGAGCAATACGTAACT
-[0m
-
-0 / 649 (0.0%)10 / 649 (1.5%)20 / 649 (3.1%)30 / 649 (4.6%)40 / 649 (6.2%)50 / 649 (7.7%)60 / 649 (9.2%)70 / 649 (10.8%)80 / 649 (12.3%)90 / 649 (13.9%)100 / 649 (15.4%)110 / 649 (16.9%)120 / 649 (18.5%)130 / 649 (20.0%)140 / 649 (21.6%)150 / 649 (23.1%)160 / 649 (24.7%)170 / 649 (26.2%)180 / 649 (27.7%)190 / 649 (29.3%)200 / 649 (30.8%)210 / 649 (32.4%)220 / 649 (33.9%)230 / 649 (35.4%)240 / 649 (37.0%)250 / 649 (38.5%)260 / 649 (40.1%)270 / 649 (41.6%)280 / 649 (43.1%)290 / 649 (44.7%)300 / 649 (46.2%)310 / 649 (47.8%)320 / 649 (49.3%)330 / 649 (50.8%)340 / 649 (52.4%)350 / 649 (53.9%)360 / 649 (55.5%)370 / 649 (57.0%)380 / 649 (58.6%)390 / 649 (60.1%)400 / 649 (61.6%)410 / 649 (63.2%)420 / 649 (64.7%)430 / 649 (66.3%)440 / 649 (67.8%)450 / 649 (69.3%)460 / 649 (70.9%)470 / 649 (72.4%)480 / 649 (74.0%)490 / 649 (75.5%)500 / 649 (77.0%)510 / 649 (78.6%)520 / 649 (80.1%)530 / 649 (81.7%)540 / 649 (83.2%)550 / 649 (84.7%)560 / 649 (86.3%)570 / 649 (87.8%)580 / 649 (89.4%)590 / 649 (90.9%)600 / 649 (92.4%)610 / 649 (94.0%)620 / 649 (95.5%)630 / 649 (97.1%)640 / 649 (98.6%)649 / 649 (100.0%)649 / 649 (100.0%)
-
-576 / 649 reads had adapters trimmed from their start (19,974 bp removed)
-447 / 649 reads had adapters trimmed from their end (7,277 bp removed)
-
-
-[1m[4mSplitting reads containing middle adapters[0m
-0 / 649 (0.0%)10 / 649 (1.5%)20 / 649 (3.1%)30 / 649 (4.6%)40 / 649 (6.2%)50 / 649 (7.7%)60 / 649 (9.2%)70 / 649 (10.8%)80 / 649 (12.3%)90 / 649 (13.9%)100 / 649 (15.4%)110 / 649 (16.9%)120 / 649 (18.5%)130 / 649 (20.0%)140 / 649 (21.6%)150 / 649 (23.1%)160 / 649 (24.7%)170 / 649 (26.2%)180 / 649 (27.7%)190 / 649 (29.3%)200 / 649 (30.8%)210 / 649 (32.4%)220 / 649 (33.9%)230 / 649 (35.4%)240 / 649 (37.0%)250 / 649 (38.5%)260 / 649 (40.1%)270 / 649 (41.6%)280 / 649 (43.1%)290 / 649 (44.7%)300 / 649 (46.2%)310 / 649 (47.8%)320 / 649 (49.3%)330 / 649 (50.8%)340 / 649 (52.4%)350 / 649 (53.9%)360 / 649 (55.5%)370 / 649 (57.0%)380 / 649 (58.6%)390 / 649 (60.1%)400 / 649 (61.6%)410 / 649 (63.2%)420 / 649 (64.7%)430 / 649 (66.3%)440 / 649 (67.8%)450 / 649 (69.3%)460 / 649 (70.9%)470 / 649 (72.4%)480 / 649 (74.0%)490 / 649 (75.5%)500 / 649 (77.0%)510 / 649 (78.6%)520 / 649 (80.1%)530 / 649 (81.7%)540 / 649 (83.2%)550 / 649 (84.7%)560 / 649 (86.3%)570 / 649 (87.8%)580 / 649 (89.4%)590 / 649 (90.9%)600 / 649 (92.4%)610 / 649 (94.0%)620 / 649 (95.5%)630 / 649 (97.1%)640 / 649 (98.6%)649 / 649 (100.0%)650 / 649 (100.2%)649 / 649 (100.0%)
-
-1 / 649 reads were split based on middle adapters
-
-
-[1m[4mSaving trimmed reads to file[0m
-
-Saved result to /home/guillaume/ChimereNanoporePipeline/PorechopABI/fastq_runid_211/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_29_0PoreChopReads.fastq
-
