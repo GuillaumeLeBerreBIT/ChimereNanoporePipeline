@@ -44,7 +44,7 @@ Snakemake will make use of the conda environment to install envs provided by yam
 conda config --add channels conda-forge
 conda config --add channels bioconda
 ```
-The resulting .condarc file looks like this.
+The resulting .condarc file looks like this. 
 ```
 auto_activate_base: false
 channels:
@@ -52,6 +52,7 @@ channels:
   - conda-forge
   - defaults
 ```
+WATCH OUT! If channel_priority is set to strict, it will not be able to do the conda installations. Can delete it from the .condarc file. 
 
 Snakemake can be instsalled using a conda. Mamba is possible to use as well if installed. 
 ```
@@ -111,7 +112,7 @@ To show an overview of how the respoitory is set up. The results of the pipeline
 
 ## Usage
 
-To run the pipeline, go to the `workflow` folder. From there can use the following command (not recommended). NOTE! Activate the snakemake conda environment to run.
+To run the pipeline, go to the `workflow` folder. From there can use the following command (not recommended). When running the pipeline for the first time it will need to install all the programs used, which is done by installing all dependencies through conda from a YAML-file. The conda installations can take a long time to install. NOTE! Activate the snakemake conda environment to run.
 ```
 snakemake --use-conda 
 ```
@@ -120,8 +121,6 @@ Depending the system using, will have a limited amount of resources. Can limit t
 snakemake --use-conda --jobs 8
 ```
 Depending on the amount of cores can use need to lower it. It is very important to set the right amount of threads/jobs it can use. When the jobs is set differently then given here, NEED to change the amount of threads Porechop ABI rule can use. When there aren't enough threads available to perform the Porechop ABI rule or too many Porechop rules are running in parallell, results in the pipeline crashing.
-
-Flye is also very computational intensive. When encountering memomory problems need to add `--asm-coverage` & `--genome-size` in the command from Flye itself. 
 
 Other programs when the amount of cores specified are not available will be able to scale down the processes. 
 
@@ -148,5 +147,7 @@ Bio-informatics tool for chimera removal: [SACRA](https://github.com/hattori-lab
 Bio-informatics tool for BLASTX: [DIAMOND](https://github.com/bbuchfink/diamond) [Paper](https://www.nature.com/articles/s41592-021-01101-x)
 
 Bio-informatics tool for assembly: [Flye](https://github.com/fenderglass/Flye) 
+
+Bio-informatics tool for assembly: [SPAdes](https://github.com/ablab/spades)
 
 Bio-informatics tool for gene annotation: [MITOS2](https://gitlab.com/Bernt/MITOS/-/tree/mitos2)

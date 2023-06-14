@@ -514,8 +514,8 @@ with open(statisticalFile, "w") as html_file:
     html_file.writelines(html_end)
 
     ######################### FLYE - BANDAGE #########################
-    html_file.writelines("<h2 id='bandage'>Flye - BANDAGE</h2>\n")
-    html_file.writelines(f"\t<img src='{identifier}BANDAGE-FlyeAssembly.jpg' height='800px'>\n")
+    html_file.writelines("<h2 id='bandage'>SPAdes - BANDAGE</h2>\n")
+    html_file.writelines(f"\t<img src='{identifier}BANDAGE-SPAdesAssembly.jpg' height='800px'>\n")
 
     ######################### MITOS2 ANNOTATION REPORT ###########################
     
@@ -617,7 +617,7 @@ with open(statisticalFile, "w") as html_file:
     html_file.write(f"<a href='#sacra'>SACRA</a>\n")
     html_file.write(f"<a href='#sacrafilt'>SACRA Filtered</a>\n")
     html_file.write(f"<a href='#diamond'>DIAMOND</a>\n")
-    html_file.write("<a href='#bandage'>Flye - BANDAGE</a>\n")
+    html_file.write("<a href='#bandage'>SPAdes - BANDAGE</a>\n")
     html_file.write(f"<a href='#mitos'>MITOS2</a>\n")
     # Loop over 2 lists one that contains the links to the titles & one with the visible title in the navbar
     for ids, item in zip(ids_headers, contig_headers):
