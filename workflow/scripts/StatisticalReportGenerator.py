@@ -367,7 +367,7 @@ sacraDf = pd.DataFrame([["No. sequences", rel_unique_chim, rel_nonchim]],
 # Adding colormap for visualization. 
 ax = sacraDf.plot(x='Amount', kind='bar', stacked=True, width = 0.2,
                 colormap = "Set3",  
-                title='Total amounft of chimera and non-chimera sequences after SACRA')
+                title='Total amount of chimera and non-chimera sequences after SACRA')
 # Iterating over the patches to obtain the width and height + x and y coordinates
 # Using the x, y coordinates to place it in the center of corresponding bar
 for p in ax.patches:
@@ -389,7 +389,7 @@ ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 # bbox anchor is to change the location, placed it outside the box, bbox_to_anchor(x,y)
 plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
 # Label y-axis
-plt.ylabel("No. of sequences")
+plt.ylabel("No. of sequences (%)")
 # Saving the created plot as .png, using the dpi to set the size of the figure. bbox_inches makes sure everything is saved in the canvas. 
 plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Rel-Amount.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 

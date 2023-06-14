@@ -9,6 +9,7 @@ workflow/FlyeResults/**
 .snakemake/**
 workflow/.snakemake/**
 workflow/.snakemake/**
+results/**
 tuning-params/input-file/10-Fasta-Files-After-Prow
 !workflow/AssemblyFasta/.gitkeep
 !workflow/Diamond/.gitkeep
@@ -18,3 +19,4 @@ tuning-params/input-file/10-Fasta-Files-After-Prow
 !workflow/MITOS2Results/.gitkeep
 !workflow/FlyeResults/.gitkeep
 !Cmaenas_minion_data/.gitkeep
+!results/.gitkeep
