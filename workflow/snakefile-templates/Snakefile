@@ -69,7 +69,7 @@ rule PorechopABI:
         8
     shell: 
         """
-        porechop_abi -abi -i {input} -o {output.reads} -t 8 > {output.statistics} 2>&1
+        porechop_abi -abi -i {input} -o {output.reads} --no_split -t 8 > {output.statistics} 2>&1
         """
     
 
@@ -265,32 +265,52 @@ rule EditingHeaders:
 # Flye is a de novo assembler for single-molecule sequencing reads, such as those produced by Oxford Nanopore Technologies
 # Can define the output file in the rule without parsing it on the command line. Using params to give the folder on the command line.
 #mkdir {params.FlyeFolder} >> Do not need to create folder since it  will be made in the go. 
-rule FlyeAssembly:
+#rule FlyeAssembly:
+#    input: 
+#        assemFlye = f"AssemblyFasta/{identifier}CBSFastaForAssembly-@-Removed.fasta"
+#    output: 
+#        FlyeFasta = f"FlyeResults/{identifier}CBS/assembly.fasta",
+#        FlyeGraph = f"FlyeResults/{identifier}CBS/assembly_graph.gfa"
+#    conda:
+#        "envs/flye.yaml"
+#    params:
+#        # Define folders under params and not as output otherwise will get an error.
+#        FlyeFolder = f"FlyeResults/{identifier}CBS/"
+#    threads: 
+#        8
+#    shell:
+#        """
+#        flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 8
+#        """
+
+################# SPADES ####################
+rule SPAdes:
     input: 
-        assemFlye = f"AssemblyFasta/{identifier}CBSFastaForAssembly-@-Removed.fasta"
+        assemSPAdes = f"AssemblyFasta/{identifier}CBSFastaForAssembly-@-Removed.fasta"
     output: 
-        FlyeFasta = f"FlyeResults/{identifier}CBS/assembly.fasta",
-        FlyeGraph = f"FlyeResults/{identifier}CBS/assembly_graph.gfa"
+        SPAdesFasta = f"SPAdesResults/{identifier}CBS/contigs.fasta",
+        SPAdesGraph = f"SPAdesResults/{identifier}CBS/assembly_graph.fastg"
     conda:
-        "envs/flye.yaml"
+        "envs/SPAdes.yaml"
     params:
         # Define folders under params and not as output otherwise will get an error.
-        FlyeFolder = f"FlyeResults/{identifier}CBS/"
+        SpadesFolder = f"SPAdesResults/{identifier}CBS/"
     threads: 
         8
     shell:
         """
-        flye --nano-corr {input.assemFlye} --out-dir {params.FlyeFolder} --threads 8
+        spades.py --only-assembler -s {input.assemSPAdes} -o {params.SpadesFolder} -t 8
         """
+
 
 ################# BANDAGE ####################
 # Flye generates different output files, summary of the assembly results. One of the files is a .gfa file. 
 # BANDAGE can visualize the assemblys using the .gfa files. With a command line argument can save the image as png. 
 rule BANDAGE:
     input: 
-        f"FlyeResults/{identifier}CBS/assembly_graph.gfa"
+        f"SPAdesResults/{identifier}CBS/assembly_graph.fastg"
     output:
-        f"../results/{identifier}/{identifier}CBSBANDAGE-FlyeAssembly.jpg"
+        f"../results/{identifier}/{identifier}CBSBANDAGE-SPAdesAssembly.jpg"
     conda:
         "envs/bandage.yaml"
     threads: 
@@ -306,7 +326,7 @@ rule BANDAGE:
 # There were some conflicts with _JAVA_OPTIONS which got resolved by unset these. It works without if there is no JAVA version present, but when having Java (different verion) it  confilcts. 
 rule MITOS:
     input: 
-        FlyeFasta = f"FlyeResults/{identifier}CBS/assembly.fasta"
+        FlyeFasta = f"SPAdesResults/{identifier}CBS/contigs.fasta"
     output: 
         # Will define the output of the first folder since the amount of contigs is variable. 
         MitosFasta = f"MITOS2Results/{identifier}CBS/0/result.faa"
@@ -334,7 +354,7 @@ rule StatisticsToHTML:
         sacraF = f"SACRAResults/{identifier}CBSSacraResultsFiltered.fasta",
         Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
         assem = f"AssemblyFasta/{identifier}CBSFastaForAssembly.fasta",
-        FlyeGraph = f"../results/{identifier}/{identifier}CBSBANDAGE-FlyeAssembly.jpg",
+        FlyeGraph = f"../results/{identifier}/{identifier}CBSBANDAGE-SPAdesAssembly.jpg",
         MitosFasta = f"MITOS2Results/{identifier}CBS/0/result.faa"
         
     output: 

@@ -297,6 +297,7 @@ rule EditingHeaders:
 #        """
 
 ################# SPADES ####################
+# For MDA data can add the --sc flag. 
 rule SPAdes:
     input: 
         assemSPAdes = f"AssemblyFasta/{identifier}FastaForAssembly-@-Removed.fasta"
