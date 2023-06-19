@@ -61,7 +61,7 @@ for i in FILES:
             8
         shell: 
             """
-            porechop_abi -abi -i {input} -o {output.reads} -t 8 > {output.statistics} 2>&1
+            porechop_abi -abi --no_split -i {input} -o {output.reads} -t 8 > {output.statistics} 2>&1
             """
     
 
