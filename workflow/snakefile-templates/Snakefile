@@ -299,7 +299,7 @@ rule SPAdes:
         8
     shell:
         """
-        spades.py --only-assembler -s {input.assemSPAdes} -o {params.SpadesFolder} -t 8
+        spades.py --sc --only-assembler -s {input.assemSPAdes} -o {params.SpadesFolder} -t 8
         """
 
 
