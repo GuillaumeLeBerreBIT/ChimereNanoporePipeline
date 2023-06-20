@@ -515,7 +515,10 @@ with open(statisticalFile, "w") as html_file:
 
     ######################### FLYE - BANDAGE #########################
     html_file.writelines("<h2 id='bandage'>SPAdes - BANDAGE</h2>\n")
-    html_file.writelines(f"\t<img src='{args.BandagePict}' height='800px'>\n")
+    # Split the path of the picture to head and tail part == Tail is Picture
+    splitted_Bandage = os.split.path(args.BandagePict)
+    # Can call the last item in the list which is the Picture (OR [1])
+    html_file.writelines(f"\t<img src='{splitted_Bandage[-1]}' height='800px'>\n")
 
     ######################### MITOS2 ANNOTATION REPORT ###########################
     
