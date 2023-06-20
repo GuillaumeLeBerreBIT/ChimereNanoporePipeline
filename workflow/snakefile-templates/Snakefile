@@ -354,7 +354,7 @@ rule StatisticsToHTML:
         sacraF = f"SACRAResults/{identifier}CBSSacraResultsFiltered.fasta",
         Diamond = expand("Diamond/{identifier}/{identifier}Diamond_{gene}.csv", identifier = config['identifier'], gene = config['genes']),
         assem = f"AssemblyFasta/{identifier}CBSFastaForAssembly.fasta",
-        FlyeGraph = f"../results/{identifier}/{identifier}CBSBANDAGE-SPAdesAssembly.jpg",
+        BandageAssem = f"../results/{identifier}/{identifier}CBSBANDAGE-SPAdesAssembly.jpg",
         MitosFasta = f"MITOS2Results/{identifier}CBS/0/result.faa"
         
     output: 
@@ -371,5 +371,5 @@ rule StatisticsToHTML:
         8
     shell: 
         """
-        python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF} {input.FlyeGraph} {params.mitosFold}
+        python3 scripts/StatisticalReportGenerator.py {output} {params.poreStat} {params.poreFastq} {params.prowFold} {input.sacraF} {input.BandageAssem} {params.mitosFold}
         """
