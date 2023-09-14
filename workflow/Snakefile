@@ -2,6 +2,7 @@
 import os
 #################### CONFIG FILE ####################
 configfile: "../config/config_snakemake.yaml"
+
 #################### CONFIG VARIABLES ####################
 # Calling for the starting folder as variable from the config file. 
 inputfolder = config['startfolder']
