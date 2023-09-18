@@ -1,11 +1,21 @@
 ################################# CONFIG FILE #################################
 # The path to the folder contating all the input files (fastq). Can use relative/aboslute paths. 
-startfolder: "../Cmaenas_minion_data"
+sequencedata: "../Cmaenas_minion_data"
+
+# The path to the main folder where the data will be processed. 
+datafolder: "/home/guillaumelb/ChimereNanoporePipeline"
+
+# The name of the project folder >> All intermediate data will be saved. 
+projectMetadata: "Cmaenas_Seq_Processed"
+
+# Workflow to use 
+MinION: 
+  Workflow: "LowComputational" # Can chooise between "LowComputational" and "HighComputational"
 
 # Using a unique identifier this for creating folder/file names. Using different names to save the rsults in different runs. 
 # WATCH OUT! Pre used identifier where same files are still repsent may results in rewriting files or combine files from different experiments.
 # Identifier can also be used as species identifier, to in the future add files of previously used species to get more results.
-identifier: "fastq_runid_211"
+sample: "Cmaenas_Run_211"
 
 # The mitochondriol genes
 genes: ["ATP6","ATP8","COX1","COX2","COX3","CYTB","NAD1", "NAD2","NAD3","NAD4","NAD4L","NAD5","NAD6"]

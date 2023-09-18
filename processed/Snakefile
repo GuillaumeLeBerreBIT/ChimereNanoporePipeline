@@ -9,6 +9,7 @@ inputfolder = config['startfolder']
 # The files as input 
 FASTQFOL = os.listdir(inputfolder)
 FILES = []
+
 # Iterate over the folder to get the extension removed
 for fastq in FASTQFOL:
     stripped_fastq = fastq.replace(".fastq", "")
