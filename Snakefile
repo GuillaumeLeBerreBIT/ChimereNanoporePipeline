@@ -1,6 +1,6 @@
 
 
-configfile: "../config/MyConfig.yaml"
+configfile: "config/MyConfig.yaml"
 
 SEQ_DIR = config["sequencedata"]
 DATA_DIR = config["datafolder"]

@@ -32,6 +32,6 @@ rule DiamondAlignment:
         for db in ATP6 ATP8 COX1 COX2 COX3 CYTB NAD1 NAD2 NAD3 NAD4 NAD4L NAD5 NAD6; 
         do
             diamond blastx -d resources/DIAMOND-DB/"$db" -q {input} -k {params.k} -f {params.f} \
-            -p 4 -o "Diamond/{params.folder}/{params.folder}Diamond_${db}.csv"
+            -p 4 -o "Diamond/{params.folder}/{params.folder}Diamond_$db.csv"
         done
         """

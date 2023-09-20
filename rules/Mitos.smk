@@ -26,5 +26,5 @@ rule MITOS:
     shell:
         """
         unset _JAVA_OPTIONS
-        runmitos.py -i {input.SPAdesFasta} -c {params.gencode} -r {params.MitRefSeq} -o {params.MitosFolder} --refdir {params.RefFolder}
+        runmitos.py -i {input} -c {params.gencode} -r {params.MitRefSeq} -o {params.MitosFolder} --refdir {params.RefFolder}
         """
