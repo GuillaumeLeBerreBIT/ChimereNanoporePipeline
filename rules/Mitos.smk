@@ -16,7 +16,7 @@ rule MITOS:
         "../envs/mitos2.yaml"
     params:
         # Define folders under params and not as output otherwise will get an error.
-        MitosFolder = "MITOS2Results/{SAMPLE}/",
+        MitosFolder = os.path.join(DATA_DIR, "{META_DIR}/MITOS2Results/{SAMPLE}"),
         RefFolder = "resources/MITOS2-DB/",
         MitRefSeq = "refseq89m/",
         gencode = config["mitos2"]['gencode']
