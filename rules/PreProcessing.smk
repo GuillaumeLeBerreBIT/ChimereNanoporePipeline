@@ -42,14 +42,15 @@ for i in FILES:
             windowsize = config['prowler']['windowsize'],
             minlen = config['prowler']['minlen'],
             datamax = config['prowler']['datamax'],
-            folder = config['sample']
+            infolder = os.path.join(DATA_DIR, f"{META_DIR}/PorechopABI/{SAMPLE}/"),
+            outfolder = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/")
         conda:
-            "envs/pythonChimereWorkflow.yaml"
+            "../envs/pythonChimereWorkflow.yaml"
         threads:
             1
         shell:
             """
-            python3 scripts/TrimmerLarge.py -f {input.out_fastq} -i PorechopABI/{params.folder}/ -o ProwlerProcessed/{params.folder}/ \
+            python3 scripts/TrimmerLarge.py -f {input.out_fastq} -i {params.infolder}/ -o {params.outfolder}/ \
             -m {params.trimmode} -c {params.clip} -g {params.fragments} -q {params.qscore} -w {params.windowsize} -l {params.minlen} \
             -d {params.datamax} -r '.fasta'
             """

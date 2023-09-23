@@ -18,19 +18,19 @@ for i in FILES:
             "../envs/sacra.yaml"
         # Could be the values need to be restored or set the variables in the Snakefile
         params:
-            blasttab = os.path.join(DATA_DIR, f"ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.blasttab"),
-            bck = os.path.join(DATA_DIR, f"ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.bck"),
-            des = os.path.join(DATA_DIR, f"ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.des"),
-            prj = os.path.join(DATA_DIR, f"ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.prj"),
-            sds = os.path.join(DATA_DIR, f"ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.sds"),
-            ssp = os.path.join(DATA_DIR, f"ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.ssp"),
-            suf = os.path.join(DATA_DIR, f"ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.suf"),
-            tis = os.path.join(DATA_DIR, f"ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.tis")
+            blasttab = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.blasttab"),
+            bck = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.bck"),
+            des = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.des"),
+            prj = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.prj"),
+            sds = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.sds"),
+            ssp = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.ssp"),
+            suf = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.suf"),
+            tis = os.path.join(DATA_DIR, f"{META_DIR}/ProwlerProcessed/{SAMPLE}/{i}PoreChopReadsTrim{clip}-{fragments}-{trimmode}{qscore}W{windowsize}L{minlen}R{datamax}.fasta.tis")
         threads:
             4
 
         shell: 
             """
-            scripts/SACRA.sh -i {input} -p {output} -t 4 -c ../config/MyConfig.yaml
+            scripts/SACRA.sh -i {input} -p {output} -t 4 -c scripts/config.yaml
             rm {params.blasttab}* {params.bck} {params.des} {params.prj} {params.sds} {params.ssp} {params.suf} {params.tis}
             """
