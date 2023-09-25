@@ -63,7 +63,9 @@ else:
     diamond_folder = args.inputFolder + "/"
 # Using the unique identifier as name
 splitted_folder = diamond_folder.split('/')
-identifier = splitted_folder[1]
+identifier = splitted_folder[-2]
+project_folder = splitted_folder[-4]
+
 
 # Get each file from the list (13 files) and open each one of them to read its content. 
 for file in os.listdir(diamond_folder):
@@ -114,6 +116,7 @@ for file in os.listdir(diamond_folder):
             splitted_genus = row[1].split("_")
             genus_name = splitted_genus[0]   
             gene = splitted_genus[2]
+            
             # The float will function in the same way as the integers and can now compare numbers
             # Convert str -- > float/int
             # args.identity == Percentage Identity
@@ -122,8 +125,8 @@ for file in os.listdir(diamond_folder):
             if float(row[2]) >= args.identity and\
                 int(row[3]) >= args.len and\
                 float(row[10]) <= float(args.evalue) and\
-                genus_name in crab_genus:
-
+                genus_name in enoplea:
+                
                 # Get all the headers that match the set filters
                 # The headers that will be used to create FASTA file for assembly 
                 # Add a '>' since the fasta files start with a '>' 
@@ -135,7 +138,8 @@ for file in os.listdir(diamond_folder):
                     sequence_count[header] = 1
                 else:
                     sequence_count[header] += 1
-                
+
+
 # Need to know as well how many hits were not matched after the BLAST
 # Rearead the input file from DIAMIND and loop over the headers to check if they are in the dictionary or not.  
 # If they are not in the dictionary set to a value of 0   
@@ -231,12 +235,12 @@ plt.xlabel('Genes')
 plt.ylabel('No. of hits')
 # Title for the plot
 plt.title('DIAMOND BLAST Results')
-plt.savefig(f"../results/{identifier}/{identifier}Bar-HitsPerGene-DIAMOND&Filtering.png", dpi=200, bbox_inches='tight')
+plt.savefig(f"{project_folder}/results/{identifier}/{identifier}Bar-HitsPerGene-DIAMOND&Filtering.png", dpi=200, bbox_inches='tight')
 # Close the plot
 plt.clf()
 
 # REPORT HOW MANY TIMES HEADER BEEN MATCHED
-with open(f"../results/{identifier}/{identifier}HeaderCountDIAMOND.txt","w") as tmp_to_write:
+with open(f"{project_folder}/results/{identifier}/{identifier}HeaderCountDIAMOND.txt","w") as tmp_to_write:
     for key, val in header_freq.items():
         tmp_to_write.writelines(f"For the headers found {key} time(s) after DIAMOND: {val} sequences.\n")
 
@@ -259,6 +263,6 @@ plt.xlabel('Sequence length')
 plt.ylabel('Frequency')
 # Determining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
-plt.savefig(f"../results/{identifier}/{identifier}Hist-SequenceLengthAfterDIAMOND&Filtering.png", dpi=200, bbox_inches='tight')
+plt.savefig(f"{project_folder}/results/{identifier}/{identifier}Hist-SequenceLengthAfterDIAMOND&Filtering.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 
 plt.clf()

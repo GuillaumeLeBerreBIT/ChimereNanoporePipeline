@@ -43,15 +43,18 @@ parser.add_argument('BandagePict', type=str,
                     help='Give the assembly picture created in BANDAGE.')
 parser.add_argument('MITOS2Folder', type=str, 
                     help='Give the folder with the MITOS2 output folders.')
+parser.add_argument('METAFolder', type=str, 
+                    help='Give the folder with all metadata in it.')
 args = parser.parse_args()
 
 ## PARSING UNIQUE IDENTIFIER
 # Use the unique identifier per sample 
 uniquelabel = args.outputFile
+metadata = args.METAFolder
 
 # Will use the unique label, ued to create a folder as identifier. Split on paths ('/') and get the unique identifier name out of the list. 
 splitted_label = uniquelabel.split("/")
-identifier = splitted_label[2]
+identifier = splitted_label[-2]
 
 ############################# HANDLING FILES #######################################
 # This section will contain each of the files used for statistical summary;
@@ -227,7 +230,7 @@ axs[1].set_xlabel('Read length')
 axs[1].set_ylabel('Frequency')
 
 # Saving the graph picture. 
-plt.savefig(f"../results/{identifier}/{identifier}Before&After-Prowler.png", dpi=200, bbox_inches='tight')
+plt.savefig(f"{metadata}/results/{identifier}/{identifier}Before&After-Prowler.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. >> clf = close
 plt.clf()
 
@@ -350,7 +353,7 @@ ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 # Label y-axis
 plt.ylabel("No. of sequences")
 # Saving the picture, using bbox_inches
-plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Amount.png", dpi=200, bbox_inches='tight')
+plt.savefig(f"{metadata}/results/{identifier}/{identifier}SACRA-Stacked-Seq-Amount.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 
 plt.clf()
 
@@ -391,7 +394,7 @@ plt.legend(loc = 'upper right', bbox_to_anchor=(1.4, 0.95))
 # Label y-axis
 plt.ylabel("No. of sequences (%)")
 # Saving the created plot as .png, using the dpi to set the size of the figure. bbox_inches makes sure everything is saved in the canvas. 
-plt.savefig(f"../results/{identifier}/{identifier}SACRA-Stacked-Seq-Rel-Amount.png", dpi=200, bbox_inches='tight')
+plt.savefig(f"{metadata}/results/{identifier}/{identifier}SACRA-Stacked-Seq-Rel-Amount.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 
 plt.clf()
 ### HISTOGRAM LENGTH READS
@@ -408,7 +411,7 @@ plt.ylabel('Frequency')
 # Determining to show the interval of x-axis ticks. 
 plt.xticks(np.arange(0, 1000, 100))
 # Saving the figure in .png format. bbox_inches makes sure everything is saved in the canvas.
-plt.savefig(f"../results/{identifier}/{identifier}SACRA-Hist-Distribution.png", dpi=200, bbox_inches='tight')
+plt.savefig(f"{metadata}/results/{identifier}/{identifier}SACRA-Hist-Distribution.png", dpi=200, bbox_inches='tight')
 # Savefig does not close the plot. 
 plt.clf()
 
@@ -435,7 +438,7 @@ plt.ylabel('Frequency')
 # np.arange to go from a to b in x amount of steps. 
 plt.xticks(np.arange(0, 1000, 100))
 # Saving the figure 
-plt.savefig(f"../results/{identifier}/{identifier}SACRA-Hist-FilteredSeq.png", dpi=200, bbox_inches='tight')
+plt.savefig(f"{metadata}/results/{identifier}/{identifier}SACRA-Hist-FilteredSeq.png", dpi=200, bbox_inches='tight')
 # Close the plot
 plt.clf()
 
@@ -443,7 +446,7 @@ plt.clf()
 # GENERATING HTML REPORT
 #######################################
 # Creating the header line
-html_header = f"<! DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n<title>Statistical Report</title>\n<link rel='stylesheet' href='../../resources/Styles/styles.css'>\n</head>\n<body>\n<div class='main'>\n<h1 id='statisticalReport'>Statistical Report - Workflow</h1>\n<h2 id='porechopABI'>Porechop ABI</h2>\n<h3>Trimming adapters from read ends</h3>\n"
+html_header = f"<! DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n<title>Statistical Report</title>\n<link rel='stylesheet' href='../../../resources/Styles/styles.css'>\n</head>\n<body>\n<div class='main'>\n<h1 id='statisticalReport'>Statistical Report - Workflow</h1>\n<h2 id='porechopABI'>Porechop ABI</h2>\n<h3>Trimming adapters from read ends</h3>\n"
 
 # Creating the table containg everything
 # The last 3 are summary lines from the adapters trimmed so can parse everything until then
@@ -499,7 +502,7 @@ with open(statisticalFile, "w") as html_file:
     ######################### DIAMOND #########################
     html_file.writelines("<h2 id='diamond'>DIAMOND</h2>\n")
     # Read the file containing the amount a hit has been found in the genes
-    with open(f"../results/{identifier}/{identifier}HeaderCountDIAMOND.txt", "r") as text_reader:
+    with open(f"{metadata}/results/{identifier}/{identifier}HeaderCountDIAMOND.txt", "r") as text_reader:
         lines_read = text_reader.readlines()
         # Write the output in an unordered list
         html_file.writelines("<ul>\n")
@@ -531,15 +534,93 @@ with open(statisticalFile, "w") as html_file:
     contig_headers = []
     # The IDS to link the headers to  
     ids_headers = []
-    # Need to specify the full path to find the specific folder
-    for folder in list_folders:
-        #print(f"{folder}")
-        # Have to give the full path with it to find the folder
-        for file in os.listdir(f"{args.MITOS2Folder}/{folder}/"):
+    
+    if list_folders[0] == "0":
+        # Need to specify the full path to find the specific folder
+        for folder in list_folders:
+            #print(f"{folder}")
+            # Have to give the full path with it to find the folder
+            for file in os.listdir(f"{args.MITOS2Folder}/{folder}/"):
+                ## GFF
+                if re.search("result.gff",file):
+                    
+                    with open(f"{args.MITOS2Folder}/{folder}/{file}", "r") as file_to_read:
+                        # Create a list of lines from the file
+                        file_lines = file_to_read.readlines()
+                        # Have to check wheter list is empty or not
+                        if len(file_lines) == 0:
+                            # If empty it will return to the test
+                            continue
+                        # The title by getting the contig name
+                        splitted_item = file_lines[0].split("\t")
+                        contig_raw = splitted_item[0]
+                        # Edit word
+                        contig_list = contig_raw.split("_")
+                        # Format a title and save it into a variable
+                        formatted = contig_list[0].capitalize() + " " + contig_list[1]
+                        # Add the variable to the list 
+                        contig_headers.append(formatted)
+                        # Create string for the ids to link to
+                        ids_headers.append(contig_list[1])
+                        # Write title == Contig 
+                        html_file.write(f"<h3 id='{contig_list[1]}'>{contig_list[0].capitalize()} {contig_list[1]}</h3>\n")
+                        # Write the table header to the file
+                        html_file.write("<table>\n\t<tr>\n\t\t<th>Source</th>\n\t\t<th>Feature</th>\n\t\t<th>Start position</th>\n\t\t<th>End position</th>\n\t\t<th>Score</th>\n\t\t<th>Strand</th>\n\t\t<th>Frame</th>\n\t\t<th>Attributes</th>\n\t</tr>\n")
+                        # Iterate over the lines from the list
+                        for line in file_lines:
+                            # The columns are tab seperated o split on
+                            splitted_gff = line.split("\t")
+                            # 1) seqname - name of the chromosome or scaffold
+                            # 2) source - name of the data source 
+                            # 3) feature - feature type 
+                            # 4) start - Start position
+                            # 5) end - End position
+                            # 6) score - A floating point value.
+                            # 7) strand - defined as + (forward) or - (reverse).
+                            # 8) frame - One of '0', '1' or '2'. '0' indicates that the first base of the feature is the first base of a codon, '1' that the second base is the first base of a codon, and so on..
+                            # 9) attribute - A semicolon-separated list of tag-value pairs, providing additional information about each feature.
+                            #print(splitted_gff)
+                            # Parse everything to a table in the file. 
+                            html_file.write(f"\t<tr>\n\t\t<td>{splitted_gff[1]}</td>\n\t\t<td>{splitted_gff[2]}</td>\n\t\t<td>{splitted_gff[3]}</td>\n\t\t<td>{splitted_gff[4]}</td>\n\t\t<td>{splitted_gff[5]}</td>\n\t\t<td>{splitted_gff[6]}</td>\n\t\t<td>{splitted_gff[7]}</td>\n\t\t<td>{splitted_gff[8].strip()}</td>\n\t</tr>\n")
+                        html_file.write("</table>\n")
+                    file_to_read.close()
+            
+            
+            ## FASTA   
+            # Only open the file name that matches -- > Will be always the same
+            if re.search("result.fas", file):
+                # Open the file to read from
+                with open(f"{args.MITOS2Folder}/{folder}/{file}", "r") as file_to_read:
+                    # Get the lines of a file split on newline in a list. 
+                    file_lines = file_to_read.readlines()
+                    #Set a counter for each file to handle
+                    count = 0
+                    
+                    for line in file_lines:
+                        count += 1
+                        # To write the first div
+                        if re.search("^>", line) and count == 1:
+                            html_file.write(f"\t<div class='contigpadd'>\n\t\t{line}\n\t<pre>\n")
+                        # To write the divs except first and last
+                        elif re.search("^>", line) and count != 1:
+                            html_file.write(f"\t</pre>\n\t</div>\n\t<div class='contigpadd'>\n\t\t{line}\n\t<pre>\n")
+                        # Write the sequence lines
+                        elif re.search("^[A,G,C,T,U]", line):
+                            # Tab in pre statement will directly visualized. 
+                            html_file.write(f"\t{line}")
+                    
+                    # To write the last div block
+                    if count == len(file_lines):
+                        html_file.write(f"\t</pre>\n\t</div>\n")
+                # Close file
+                file_to_read.close()
+    
+    else:
+        for file in os.listdir(f"{args.MITOS2Folder}/"):
             ## GFF
             if re.search("result.gff",file):
                 
-                with open(f"{args.MITOS2Folder}/{folder}/{file}", "r") as file_to_read:
+                with open(f"{args.MITOS2Folder}/{file}", "r") as file_to_read:
                     # Create a list of lines from the file
                     file_lines = file_to_read.readlines()
                     # Have to check wheter list is empty or not
@@ -579,35 +660,35 @@ with open(statisticalFile, "w") as html_file:
                         html_file.write(f"\t<tr>\n\t\t<td>{splitted_gff[1]}</td>\n\t\t<td>{splitted_gff[2]}</td>\n\t\t<td>{splitted_gff[3]}</td>\n\t\t<td>{splitted_gff[4]}</td>\n\t\t<td>{splitted_gff[5]}</td>\n\t\t<td>{splitted_gff[6]}</td>\n\t\t<td>{splitted_gff[7]}</td>\n\t\t<td>{splitted_gff[8].strip()}</td>\n\t</tr>\n")
                     html_file.write("</table>\n")
                 file_to_read.close()
-
-            ## FASTA   
-            # Only open the file name that matches -- > Will be always the same
-            if re.search("result.fas", file):
-                # Open the file to read from
-                with open(f"{args.MITOS2Folder}/{folder}/{file}", "r") as file_to_read:
-                    # Get the lines of a file split on newline in a list. 
-                    file_lines = file_to_read.readlines()
-                    #Set a counter for each file to handle
-                    count = 0
-                    
-                    for line in file_lines:
-                        count += 1
-                        # To write the first div
-                        if re.search("^>", line) and count == 1:
-                            html_file.write(f"\t<div class='contigpadd'>\n\t\t{line}\n\t<pre>\n")
-                        # To write the divs except first and last
-                        elif re.search("^>", line) and count != 1:
-                            html_file.write(f"\t</pre>\n\t</div>\n\t<div class='contigpadd'>\n\t\t{line}\n\t<pre>\n")
-                        # Write the sequence lines
-                        elif re.search("^[A,G,C,T,U]", line):
-                            # Tab in pre statement will directly visualized. 
-                            html_file.write(f"\t{line}")
-                    
-                    # To write the last div block
-                    if count == len(file_lines):
-                        html_file.write(f"\t</pre>\n\t</div>\n")
-                # Close file
-                file_to_read.close()
+        
+        ## FASTA   
+        # Only open the file name that matches -- > Will be always the same
+        if re.search("result.fas", file):
+            # Open the file to read from
+            with open(f"{args.MITOS2Folder}/{file}", "r") as file_to_read:
+                # Get the lines of a file split on newline in a list. 
+                file_lines = file_to_read.readlines()
+                #Set a counter for each file to handle
+                count = 0
+                
+                for line in file_lines:
+                    count += 1
+                    # To write the first div
+                    if re.search("^>", line) and count == 1:
+                        html_file.write(f"\t<div class='contigpadd'>\n\t\t{line}\n\t<pre>\n")
+                    # To write the divs except first and last
+                    elif re.search("^>", line) and count != 1:
+                        html_file.write(f"\t</pre>\n\t</div>\n\t<div class='contigpadd'>\n\t\t{line}\n\t<pre>\n")
+                    # Write the sequence lines
+                    elif re.search("^[A,G,C,T,U]", line):
+                        # Tab in pre statement will directly visualized. 
+                        html_file.write(f"\t{line}")
+                
+                # To write the last div block
+                if count == len(file_lines):
+                    html_file.write(f"\t</pre>\n\t</div>\n")
+            # Close file
+            file_to_read.close()
     
     html_file.write(f"</div>\n")
     # Write a div to a file that will contain the part of the sidebar. 
