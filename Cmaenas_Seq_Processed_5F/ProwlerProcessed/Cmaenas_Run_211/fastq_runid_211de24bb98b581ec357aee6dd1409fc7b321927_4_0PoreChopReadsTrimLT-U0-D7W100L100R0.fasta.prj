@@ -1,0 +1,22 @@
+version=963
+alphabet=ACGT
+numofsequences=3924
+numofletters=4977870
+letterfreqs=1373916 1006913 1116380 1480661
+maxunsortedinterval=0
+keeplowercase=0
+tantansetting=1
+masklowercase=0
+numofindexes=1
+integersize=64
+#lastal -r6 -q18 -a21 -b9
+totallength=4981795
+specialcharacters=3925
+prefixlength=10
+subsetseed=A C G T
+subsetseed=A C G T
+subsetseed=A C G T
+subsetseed=A C G T
+subsetseed=A C G T
+subsetseed=A C G T
+subsetseed=ACGT

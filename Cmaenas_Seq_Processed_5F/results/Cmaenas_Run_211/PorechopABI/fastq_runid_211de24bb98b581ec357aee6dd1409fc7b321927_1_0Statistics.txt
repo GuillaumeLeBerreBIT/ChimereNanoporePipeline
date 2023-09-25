@@ -1,0 +1,167 @@
+
+[1m[4mAb Initio Phase[0m
+Kmer size:             16
+Sampled sequences:     40000
+Sampling length        100
+LC filter threshold:   1
+Adjusted LC threshold: 1
+Nb thread:             8
+Number of kept kmer:   500
+Number of runs:        10
+Verbosity level:       1
+
+A total of 10 runs will be performed.
+[2.93412 ms]	Parsing FASTA file
+[45.931 ms]	Number of sequences found: 3929.
+Starting run number 1
+/!\ WARNING: Sequence set too small for the requested sample size
+/!\ WARNING: The whole set will be used.
+[47.2168 ms]	Working on sequence start.
+[1183.57 ms]	Working on sequence end.
+Starting run number 2
+[2180.23 ms]	Working on sequence start.
+[3424.29 ms]	Working on sequence end.
+Starting run number 3
+[4479.62 ms]	Working on sequence start.
+[5611.7 ms]	Working on sequence end.
+Starting run number 4
+[6612.21 ms]	Working on sequence start.
+[7808.97 ms]	Working on sequence end.
+Starting run number 5
+[8824.73 ms]	Working on sequence start.
+[10108.1 ms]	Working on sequence end.
+Starting run number 6
+[11252.6 ms]	Working on sequence start.
+[12384.9 ms]	Working on sequence end.
+Starting run number 7
+[13379.1 ms]	Working on sequence start.
+[14608.2 ms]	Working on sequence end.
+Starting run number 8
+[15624.5 ms]	Working on sequence start.
+[16857.6 ms]	Working on sequence end.
+Starting run number 9
+[17746.9 ms]	Working on sequence start.
+[18956.7 ms]	Working on sequence end.
+Starting run number 10
+[19748.5 ms]	Working on sequence start.
+[20812.4 ms]	Working on sequence end.
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 Could not compute end adaper with heavy method
+/!\	 The resulting graph probably contains a loop.
+/!\	 For more details, read the error report below:
+/!\	 Graph contains a cycle or graph changed during iteration
+/!\	 
+
+/!\	 The adapters currently found are not all identical.
+/!\	 A consensus will be made.
+/!\	 Launching 20 additional runs to build a consensus.
+Kmer size:             16
+Sampled sequences:     40000
+Sampling length        100
+LC filter threshold:   1
+Adjusted LC threshold: 1
+Nb thread:             8
+Number of kept kmer:   500
+Number of runs:        20
+Verbosity level:       1
+
+A total of 20 runs will be performed.
+[2.36501 ms]	Parsing FASTA file
+[30.326 ms]	Number of sequences found: 3929.
+Starting run number 1
+/!\ WARNING: Sequence set too small for the requested sample size
+/!\ WARNING: The whole set will be used.
+[30.4089 ms]	Working on sequence start.
+Starting with a 10 run batch.
+Using config file:/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/ab_initio.config
+Command line:
+ /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/approx_counter /home/guillaume/ChimereNanoporePipeline/Cmaenas_minion_5F/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0.fastq -v 1 --config /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count -nt 8 -mr 10
+Assembling run 1
+Assembling run 2
+Assembling run 3
+Assembling run 4
+Assembling run 5
+Assembling run 6
+Assembling run 7
+Assembling run 8
+Assembling run 9
+Assembling run 10
+Following with a 20 run batch.
+Using config file:/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/ab_initio.config
+Command line:
+ /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/approx_counter /home/guillaume/ChimereNanoporePipeline/Cmaenas_minion_5F/fastq_runid_211de24bb98b581ec357aee6dd1409fc7b321927_1_0.fastq -v 1 --config /home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/ab_initio.config -o ./tmp/temp_approx_kmer_count_sup -nt 8 -mr 20
+Traceback (most recent call last):
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/bin/porechop_abi", line 11, in <module>
+    sys.exit(main())
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/porechop_abi.py", line 53, in main
+    ADAPTERS += launch_ab_initio(args)
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/abinitio.py", line 879, in launch_ab_initio
+    adp = consensus_adapter(args,
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/abinitio.py", line 711, in consensus_adapter
+    execApproxCounter(args, out_filename, conf_file, nb_run, v, print_dest)
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/site-packages/porechop_abi/abinitio.py", line 433, in execApproxCounter
+    subprocess.check_call(command.split())
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/subprocess.py", line 364, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/subprocess.py", line 347, in call
+    return p.wait(timeout=timeout)
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/subprocess.py", line 1209, in wait
+    return self._wait(timeout=timeout)
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/subprocess.py", line 1959, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/home/guillaume/ChimereNanoporePipeline/.snakemake/conda/c23b884f1484f68890b467fc6eb87f56_/lib/python3.10/subprocess.py", line 1917, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt
