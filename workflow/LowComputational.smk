@@ -1,3 +1,10 @@
+################################# INTRODUCTION #################################
+#
+# The LowComputational workflow allows the user to run the pipeline on local computer
+# This can result in the decrease of quality since SACRA performs better when using 
+# all reads at the same time  to remove chimeric reads
+#
+################################# RULES #################################
 include:
     "../rules/PreProcessing.smk"
 include:
@@ -20,6 +27,8 @@ include:
     "../rules/Mitos.smk"
 include:
     "../rules/GenerateReport.smk"
+
+################################# TARGET RULE #################################
 
 rule Analysis:
     input:

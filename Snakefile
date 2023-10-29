@@ -1,6 +1,16 @@
-
-
+################################# SNAKEFLE #################################
+#
+# A snakemake workflow that takes fastq files as input and creates a mitochondrial genome assembly. 
+# As mentioned the workflow is made in Snakemake, integrating different bio-informatic tools as Porechop ABI, Prowler, SACRA, ... 
+# with many other Python scripts to gathering output, generating a HTML report file to visualize results of each step in the pipeline. 
+#
+# The main purpose is to detect chimeric reads in a dataset and split the sequences in non-chimeric sequences. 
+# Using the corrected sequences to generate mitochondrial genome assembly. 
+#
+################################# CONFIG #################################
 configfile: "config/MyConfig.yaml"
+
+################################# CONSTANTS #################################
 
 SEQ_DIR = config["sequencedata"]
 DATA_DIR = config["datafolder"]
@@ -38,6 +48,8 @@ for fastq in FASTQFOL:
 
 FIRST_FILE = FILES[0]
 
+################################# WORKFLOW #################################
+# To perform the low computational analysis
 if config["MinION"]["Workflow"] == "LowComputational":
     include:
         "workflow/LowComputational.smk"
@@ -50,7 +62,7 @@ if config["MinION"]["Workflow"] == "LowComputational":
                 ],
                 SAMPLE = SAMPLE, i = FILES, META_DIR = META_DIR
             )
-            
+# To perform the high computational analysis            
 elif config["MinION"]["Workflow"] == "HighComputational":
     include:
         "workflows/HighComputational.smk"
